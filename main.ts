@@ -5,6 +5,22 @@ namespace SpriteKind {
  * Set up
  */
 /**
+ * We determine if a box is on a specific tile by comparing their absolute x and y pixel coordiates. We do so, because the MakeCoder lacks a mechanism to calculate the tileset coordinates of a ordinary Sprite.
+ */
+/**
+ * tx, ty are tileset coordinates
+ * 
+ * dtx, dty are relative deviations of tileset coordinates
+ * 
+ * x, y are pixel screen coordinates
+ */
+controller.down.onEvent(ControllerButtonEvent.Released, function () {
+    pressed_down = 0
+})
+controller.up.onEvent(ControllerButtonEvent.Released, function () {
+    pressed_up = 0
+})
+/**
  * Tile coding:
  * 
  * 14 brown  -- wall (#)
@@ -21,17 +37,13 @@ namespace SpriteKind {
  * 
  * 13 tan       -- floor
  */
-controller.down.onEvent(ControllerButtonEvent.Released, function () {
-    pressed_down = 0
-})
-controller.up.onEvent(ControllerButtonEvent.Released, function () {
-    pressed_up = 0
-})
 function init_states () {
     pressed_up = 0
     pressed_down = 0
     pressed_left = 0
     pressed_right = 0
+    undo_ban = []
+    undo_box = []
 }
 function walk (dtx: number, dty: number) {
     move_ban_to(tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + dty, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + 2 * dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + 2 * dty)
@@ -49,14 +61,15 @@ function all_boxes_fit () {
 }
 function init_level_by_tilemap () {
     scene.setTileMap(img`
-        . . e e e e . . . . 
-        . . e d 3 e . . . . 
-        . . e d d e e e . . 
-        . . e 2 7 d d e . . 
-        . . e d d 4 d e . . 
-        . . e d d e e e . . 
-        . . e e e e . . . . 
-        `, TileScale.Sixteen)
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        `)
     for (let t of scene.getTilesByType(2)) {
         box = sprites.create(img`
             4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
@@ -215,17 +228,29 @@ function init_level_by_tilemap () {
         e e e e e e 4 e e e e e e e 4 e 
         e e e e e e 4 e e e e e e e 4 e 
         `, true)
+    scene.cameraFollowSprite(ban)
+    info.setScore(0)
+}
+function undo_move () {
+    if (undo_ban.length == 2) {
+        tiles.placeOnTile(ban, tiles.getTileLocation(undo_ban[0], undo_ban[1]))
+        info.changeScoreBy(-1)
+    }
+    undo_ban = []
+    undo_box = []
 }
 function move_ban_to (tx: number, ty: number, push_tx: number, push_ty: number) {
     if (!(tiles.tileIsWall(tiles.getTileLocation(tx, ty)))) {
         if (box_on_tile(tx, ty)) {
             if (!(tiles.tileIsWall(tiles.getTileLocation(push_tx, push_ty)))) {
                 if (!(box_on_tile(push_tx, push_ty))) {
+                    record_move()
                     move_box(tx, ty, push_tx, push_ty)
                     tiles.placeOnTile(ban, tiles.getTileLocation(tx, ty))
                 }
             }
         } else {
+            record_move()
             tiles.placeOnTile(ban, tiles.getTileLocation(tx, ty))
         }
     }
@@ -259,12 +284,18 @@ function target_on_tile (x: number, y: number) {
     }
     return 0
 }
+function record_move () {
+    undo_ban = [tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column), tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row)]
+    info.changeScoreBy(1)
+}
 let box: Sprite = null
 let ban: Sprite = null
-let pressed_right = 0
-let pressed_left = 0
-let pressed_up = 0
-let pressed_down = 0
+let undo_box: number[] = []
+let undo_ban: number[] = []
+let pressed_right: number = []
+let pressed_left: number = []
+let pressed_up: number = []
+let pressed_down: number = []
 init_states()
 init_level_by_tilemap()
 /**
@@ -272,7 +303,7 @@ init_level_by_tilemap()
  * 
  * A win is when all boxes stand on a target tile (pink).
  * 
- * Buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Meowban continues to move, but not too fast.
+ * Direction buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Meowban continues to move, but not too fast.
  */
 forever(function () {
     if (all_boxes_fit()) {
@@ -281,7 +312,7 @@ forever(function () {
     if (controller.up.isPressed()) {
         if (!(pressed_up)) {
             walk(0, -1)
-            pressed_up = 16
+            pressed_up = 10
         } else {
             pressed_up += -1
         }
@@ -289,7 +320,7 @@ forever(function () {
     if (controller.down.isPressed()) {
         if (!(pressed_down)) {
             walk(0, 1)
-            pressed_down = 16
+            pressed_down = 10
         } else {
             pressed_down += -1
         }
@@ -297,7 +328,7 @@ forever(function () {
     if (controller.left.isPressed()) {
         if (!(pressed_left)) {
             walk(-1, 0)
-            pressed_left = 16
+            pressed_left = 10
         } else {
             pressed_left += -1
         }
@@ -305,9 +336,26 @@ forever(function () {
     if (controller.right.isPressed()) {
         if (!(pressed_right)) {
             walk(1, 0)
-            pressed_right = 16
+            pressed_right = 10
         } else {
             pressed_right += -1
         }
+    }
+    if (controller.A.isPressed()) {
+        game.splash("A - Menu", "B - Undo")
+        if (game.ask("Menu", "Reset this level?")) {
+        	
+        } else {
+            if (game.ask("Menu", "Go to level selection?")) {
+            	
+            } else {
+                if (game.ask("Menu", "See credits?")) {
+                	
+                }
+            }
+        }
+    }
+    if (controller.B.isPressed()) {
+        undo_move()
     }
 })
