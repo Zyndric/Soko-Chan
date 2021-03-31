@@ -39,24 +39,6 @@ d d d d d d d d d d d d d d d d
 d d d d d d d d d d d d d d d d 
 d d d d d d d d d d d d d d d d 
 `;
-            case "image3":return img`
-e e e e e e 4 e e e e e e e 4 e 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-e e 4 e e e e e e e 4 e e e e e 
-e e 4 e e e e e e e 4 e e e e e 
-e e 4 e e e e e e e 4 e e e e e 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-e e e e e e 4 e e e e e e e 4 e 
-e e e e e e 4 e e e e e e e 4 e 
-e e e e e e 4 e e e e e e e 4 e 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-e e 4 e e e e e e e 4 e e e e e 
-e e 4 e e e e e e e 4 e e e e e 
-e e 4 e e e e e e e 4 e e e e e 
-4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-e e e e e e 4 e e e e e e e 4 e 
-e e e e e e 4 e e e e e e e 4 e 
-`;
             case "image1":return img`
 . . e e e e . . . . 
 . . e d 3 e . . . . 
@@ -320,6 +302,60 @@ f e e e e e e e e e e e e e e f
 f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
 f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
 . f f f f f f f f f f f f f f . 
+`;
+            case "image3":return img`
+c c c c c c b c c c c c c c b c 
+b b b b b b b b b b b b b b b b 
+c c b c c c c c c c b c c c c c 
+c c b c c c c c c c b c c c c c 
+c c b c c c c c c c b c c c c c 
+b b b b b b b b b b b b b b b b 
+c c c c c c b c c c c c c c b c 
+c c c c c c b c c c c c c c b c 
+c c c c c c b c c c c c c c b c 
+b b b b b b b b b b b b b b b b 
+c c b c c c c c c c b c c c c c 
+c c b c c c c c c c b c c c c c 
+c c b c c c c c c c b c c c c c 
+b b b b b b b b b b b b b b b b 
+c c c c c c b c c c c c c c b c 
+c c c c c c b c c c c c c c b c 
+`;
+            case "image20":return img`
+d d d d d c c c d d d d d d d d 
+b b b b b d c b b b b b b b b b 
+b b b b b d c b b b b b b b b b 
+b b b b b b c b b b b b b b b b 
+c c c c c c c c c c c c c c c c 
+d d d d d d d d d c c c d d d d 
+b b b b b b b b b d c b b b b b 
+b b b b b b b b b d c b b b b b 
+b b b b b b b b b d c b b b b b 
+b b b b b b b b b c c c b b b b 
+c c c c c c c c c c c c c c c c 
+d d c c c d d d d d d d d d d d 
+b b d c b b b b b b b b b b b b 
+b b d c b b b b b b b b b b b b 
+b b b c b b b b b b b b b b b b 
+c c c c c c c c c c c c c c c c 
+`;
+            case "image22":return img`
+b b b b b b b b b b f f f b b b 
+c c c c c c c c c c b f c c c c 
+c c c c c c c c c c b f c c c c 
+c c c c c c c c c c f f f c c c 
+f f f f f f f f f f f f f f f f 
+f f b b b b b b b b b b b b b f 
+f c c c c c c c c c c c c c c b 
+f c c c c c c c c c c c c c c b 
+f c c c c c c c c c c c c c c b 
+f f c c c c c c c c c c c c c f 
+f f f f f f f f f f f f f f f f 
+b b b f f f b b b b b b b b b b 
+c c c b f c c c c c c c c c c c 
+c c c b f c c c c c c c c c c c 
+c c c f f f c c c c c c c c c c 
+f f f f f f f f f f f f f f f f 
 `;
         }
         return null;
