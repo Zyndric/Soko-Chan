@@ -71,6 +71,7 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
                 }
             }
         } else {
+            undo_box = []
             move_ban(tx, ty)
         }
     }
