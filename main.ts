@@ -16,13 +16,6 @@ namespace SpriteKind {
 /**
  * Determine if a box is on a specific tile by comparing their absolute x and y pixel coordiates. Use pixels, because the MakeCoder lacks a mechanism to calculate the tileset coordinates of an ordinary Sprite.
  */
-/**
- * tx, ty are tileset coordinates
- * 
- * dtx, dty are relative deviations of tileset coordinates
- * 
- * x, y are pixel screen coordinates
- */
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
     pressed_down = 0
 })
@@ -68,15 +61,36 @@ function show_menu () {
         }
     }
 }
+function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
+    if (!(tiles.tileIsWall(tiles.getTileLocation(tx, ty)))) {
+        if (box_on_tile(tx, ty)) {
+            if (!(tiles.tileIsWall(tiles.getTileLocation(push_tx, push_ty)))) {
+                if (!(box_on_tile(push_tx, push_ty))) {
+                    move_box(tx, ty, push_tx, push_ty)
+                    move_ban(tx, ty)
+                }
+            }
+        } else {
+            move_ban(tx, ty)
+        }
+    }
+}
+/**
+ * tx, ty are tileset coordinates
+ * 
+ * dtx, dty are relative deviations of tileset coordinates
+ * 
+ * x, y are pixel screen coordinates
+ */
 function walk (dtx: number, dty: number) {
-    move_ban_to(tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + dty, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + 2 * dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + 2 * dty)
+    move_to(tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + dty, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + 2 * dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + 2 * dty)
 }
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
 function all_boxes_fit () {
     for (let c of sprites.allOfKind(SpriteKind.Crate)) {
-        if (!(target_on_tile(c.x, c.y))) {
+        if (!(target_tile(c.x, c.y))) {
             return 0
         }
     }
@@ -140,17 +154,17 @@ function init_level_by_tilemap () {
             . . f f f . f f f f . f f f . . 
             . f f f f f c c c c f f f f f . 
             . f f f f b c c c c b f f f f . 
-            . f f f c 3 c c c c 3 c f f f . 
-            . . f 3 3 c c c c c c 3 3 f . . 
+            . f f f b a c c c c a b f f f . 
+            . . f a a c c c c c c a a f . . 
             . . f c c c c 4 4 c c c c f . . 
             . . f f c c 4 4 4 4 c c f f . . 
             . . f f f b f 4 4 f b f f f . . 
             . . f f 4 1 f d d f 1 4 f f . . 
             . . . f f d d d d d d f f . . . 
             . . . e f e 4 4 4 4 e f e . . . 
-            . . e 4 f b 3 3 3 3 b f 4 e . . 
-            . . 4 d f 3 3 3 3 3 3 c d 4 . . 
-            . . 4 4 f 6 6 6 6 6 6 f 4 4 . . 
+            . . e 4 f b a a a a b f 4 e . . 
+            . . 4 d f a a a a a a c d 4 . . 
+            . . 4 4 f 8 8 8 8 8 8 f 4 4 . . 
             . . . . . f f f f f f . . . . . 
             . . . . . f f . . f f . . . . . 
             `, SpriteKind.Player)
@@ -256,7 +270,7 @@ function init_level_by_tilemap () {
 function undo_move () {
     if (undo_ban.length == 2) {
         tiles.placeOnTile(ban, tiles.getTileLocation(undo_ban[0], undo_ban[1]))
-        info.changeScoreBy(-1)
+        info.changeScoreBy(1)
     }
     if (undo_box.length == 4) {
         move_box(undo_box[2], undo_box[3], undo_box[0], undo_box[1])
@@ -267,21 +281,49 @@ function undo_move () {
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
     pressed_B = 0
 })
-function move_ban_to (tx: number, ty: number, push_tx: number, push_ty: number) {
-    if (!(tiles.tileIsWall(tiles.getTileLocation(tx, ty)))) {
-        if (box_on_tile(tx, ty)) {
-            if (!(tiles.tileIsWall(tiles.getTileLocation(push_tx, push_ty)))) {
-                if (!(box_on_tile(push_tx, push_ty))) {
-                    move_box(tx, ty, push_tx, push_ty)
-                    record_move()
-                    tiles.placeOnTile(ban, tiles.getTileLocation(tx, ty))
-                }
-            }
-        } else {
-            record_move()
-            tiles.placeOnTile(ban, tiles.getTileLocation(tx, ty))
-        }
+function move_ban (to_tx: number, to_ty: number) {
+    undo_ban = [tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column), tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row)]
+    tiles.placeOnTile(ban, tiles.getTileLocation(to_tx, to_ty))
+    if (target_tile(tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.x), tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.y))) {
+        ban.setImage(img`
+            . . f f f . f f f f . f f f . . 
+            . f f f f f c c c c f f f f f . 
+            . f f f f b c c c c b f f f f . 
+            . f f f b a c c c c a b f f f . 
+            . . f a a c c c c c c a a f . . 
+            . . f c c c c 4 4 c c c c f . . 
+            . . f f c c 4 4 4 4 c c f f . . 
+            . . f f f b f 4 4 f b f f f . . 
+            . . f f 4 1 f d d f 1 4 f f . . 
+            . . . f f d d d d d d f f . . . 
+            . . . e f e 4 4 4 4 e f e . . . 
+            . . e 4 f b a a a a b f 4 e . . 
+            . . 4 d f a a a a a a c d 4 . . 
+            . . 4 4 f 8 8 8 8 8 8 f 4 4 . . 
+            . . . . . f f f f f f . . . . . 
+            . . . . . f f . . f f . . . . . 
+            `)
+    } else {
+        ban.setImage(img`
+            . . f f f . f f f f . f f f . . 
+            . f f f f f c c c c f f f f f . 
+            . f f f f b c c c c b f f f f . 
+            . f f f c 3 c c c c 3 c f f f . 
+            . . f 3 3 c c c c c c 3 3 f . . 
+            . . f c c c c 4 4 c c c c f . . 
+            . . f f c c 4 4 4 4 c c f f . . 
+            . . f f f b f 4 4 f b f f f . . 
+            . . f f 4 1 f d d f 1 4 f f . . 
+            . . . f f d d d d d d f f . . . 
+            . . . e f e 4 4 4 4 e f e . . . 
+            . . e 4 f b 3 3 3 3 b f 4 e . . 
+            . . 4 d f 3 3 3 3 3 3 c d 4 . . 
+            . . 4 4 f 6 6 6 6 6 6 f 4 4 . . 
+            . . . . . f f f f f f . . . . . 
+            . . . . . f f . . f f . . . . . 
+            `)
     }
+    info.changeScoreBy(-1)
 }
 function box_on_tile (tx: number, ty: number) {
     for (let c of sprites.allOfKind(SpriteKind.Crate)) {
@@ -303,7 +345,7 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
         }
     }
 }
-function target_on_tile (x: number, y: number) {
+function target_tile (x: number, y: number) {
     for (let t of scene.getTilesByType(3)) {
         if (x == t.x) {
             if (y == t.y) {
@@ -312,10 +354,6 @@ function target_on_tile (x: number, y: number) {
         }
     }
     return 0
-}
-function record_move () {
-    undo_ban = [tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column), tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row)]
-    info.changeScoreBy(1)
 }
 let pressed_B = 0
 let box: Sprite = null
