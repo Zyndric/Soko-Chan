@@ -14,7 +14,7 @@ namespace SpriteKind {
  * Set up
  */
 /**
- * Determine if a box is on a specific tile by comparing their absolute x and y pixel coordiates. Use pixels, because the MakeCoder lacks a mechanism to calculate the tileset coordinates of an ordinary Sprite.
+ * Determine if a box is on a specific tile by comparing their absolute x and y pixel coordiates. Use pixels, because the color-coded Tile object lacks a mechanism to get its tileset coordinates.
  */
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
     pressed_down = 0
@@ -68,11 +68,13 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
                 if (!(box_on_tile(push_tx, push_ty))) {
                     move_box(tx, ty, push_tx, push_ty)
                     move_ban(tx, ty)
+                    info.changeScoreBy(-1)
                 }
             }
         } else {
             undo_box = []
             move_ban(tx, ty)
+            info.changeScoreBy(-1)
         }
     }
 }
@@ -109,44 +111,44 @@ function init_level_by_tilemap () {
         `)
     for (let t of scene.getTilesByType(2)) {
         box = sprites.create(img`
-            4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-            4 4 f e e e e e e e e e e e 4 f 
-            4 e 4 f e e e e e e e e e 4 f f 
-            4 e e 4 f e e e e e e e 4 f e f 
-            4 e e e 4 f e e e e e 4 f e e f 
-            4 e e e e 4 f e e e 4 f e e e f 
-            4 e e e e e 4 f e 4 f e e e e f 
-            4 e e e e e e 4 4 f e e e e e f 
-            4 e e e e e e 4 4 f e e e e e f 
-            4 e e e e e 4 f e 4 f e e e e f 
-            4 e e e e 4 f e e e 4 f e e e f 
-            4 e e e 4 f e e e e e 4 f e e f 
-            4 e e 4 f e e e e e e e 4 f e f 
-            4 e 4 f e e e e e e e e e 4 f f 
-            4 4 f e e e e e e e e e e e 4 f 
-            4 f f f f f f f f f f f f f f f 
+            . f f f f f f f f f f f f f f . 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f f f f f f f f f f f f f f f f 
+            f e e f 4 4 4 4 4 f e e f e e f 
+            f e e f 4 4 4 4 f e e e f e e f 
+            f e e f 4 4 4 f e e e f f e e f 
+            f e e f 4 4 f e e e f 4 f e e f 
+            f e e f 4 f e e e f 4 4 f e e f 
+            f e e f f e e e f 4 4 4 f e e f 
+            f e e f e e e f 4 4 4 4 f e e f 
+            f e e f e e f 4 4 4 4 4 f e e f 
+            f f f f f f f f f f f f f f f f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            . f f f f f f f f f f f f f f . 
             `, SpriteKind.Crate)
         scene.place(t, box)
         scene.setTileAt(t, 3)
     }
     for (let t of scene.getTilesByType(4)) {
         box = sprites.create(img`
-            4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-            4 4 f e e e e e e e e e e e 4 f 
-            4 e 4 f e e e e e e e e e 4 f f 
-            4 e e 4 f e e e e e e e 4 f e f 
-            4 e e e 4 f e e e e e 4 f e e f 
-            4 e e e e 4 f e e e 4 f e e e f 
-            4 e e e e e 4 f e 4 f e e e e f 
-            4 e e e e e e 4 4 f e e e e e f 
-            4 e e e e e e 4 4 f e e e e e f 
-            4 e e e e e 4 f e 4 f e e e e f 
-            4 e e e e 4 f e e e 4 f e e e f 
-            4 e e e 4 f e e e e e 4 f e e f 
-            4 e e 4 f e e e e e e e 4 f e f 
-            4 e 4 f e e e e e e e e e 4 f f 
-            4 4 f e e e e e e e e e e e 4 f 
-            4 f f f f f f f f f f f f f f f 
+            . f f f f f f f f f f f f f f . 
+            f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+            f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+            f e e e e e e e e e e e e e e f 
+            f 4 4 e 4 4 4 4 4 e 4 4 e 4 4 f 
+            f 4 4 e 4 4 4 4 e 4 4 4 e 4 4 f 
+            f 4 4 e 4 4 4 e 4 4 4 e e 4 4 f 
+            f 4 4 e 4 4 e 4 4 4 e 4 e 4 4 f 
+            f 4 4 e 4 e 4 4 4 e 4 4 e 4 4 f 
+            f 4 4 e e 4 4 4 e 4 4 4 e 4 4 f 
+            f 4 4 e 4 4 4 e 4 4 4 4 e 4 4 f 
+            f 4 4 e 4 4 e 4 4 4 4 4 e 4 4 f 
+            f e e e e e e e e e e e e e e f 
+            f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+            f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+            . f f f f f f f f f f f f f f . 
             `, SpriteKind.Crate)
         scene.place(t, box)
     }
@@ -270,7 +272,7 @@ function init_level_by_tilemap () {
 }
 function undo_move () {
     if (undo_ban.length == 2) {
-        tiles.placeOnTile(ban, tiles.getTileLocation(undo_ban[0], undo_ban[1]))
+        move_ban(undo_ban[0], undo_ban[1])
         info.changeScoreBy(1)
     }
     if (undo_box.length == 4) {
@@ -324,11 +326,10 @@ function move_ban (to_tx: number, to_ty: number) {
             . . . . . f f . . f f . . . . . 
             `)
     }
-    info.changeScoreBy(-1)
 }
 function box_on_tile (tx: number, ty: number) {
     for (let c of sprites.allOfKind(SpriteKind.Crate)) {
-        if (c.x == tiles.locationXY(tiles.getTileLocation(tx, ty), tiles.XY.x) && c.y == tiles.locationXY(tiles.getTileLocation(tx, ty), tiles.XY.y)) {
+        if (tiles.locationXY(tiles.locationOfSprite(c), tiles.XY.column) == tx && tiles.locationXY(tiles.locationOfSprite(c), tiles.XY.row) == ty) {
             return 1
         }
     }
@@ -342,6 +343,45 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
         if (c.x == tiles.locationXY(tiles.getTileLocation(from_tx, from_ty), tiles.XY.x) && c.y == tiles.locationXY(tiles.getTileLocation(from_tx, from_ty), tiles.XY.y)) {
             undo_box = [from_tx, from_ty, to_tx, to_ty]
             tiles.placeOnTile(c, tiles.getTileLocation(to_tx, to_ty))
+            if (target_tile(tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.x), tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.y))) {
+                c.setImage(img`
+                    . f f f f f f f f f f f f f f . 
+                    f e e e e e e e e e e e e e e f 
+                    f e e e e e e e e e e e e e e f 
+                    f f f f f f f f f f f f f f f f 
+                    f e e f 4 4 4 4 4 f e e f e e f 
+                    f e e f 4 4 4 4 f e e e f e e f 
+                    f e e f 4 4 4 f e e e f f e e f 
+                    f e e f 4 4 f e e e f 4 f e e f 
+                    f e e f 4 f e e e f 4 4 f e e f 
+                    f e e f f e e e f 4 4 4 f e e f 
+                    f e e f e e e f 4 4 4 4 f e e f 
+                    f e e f e e f 4 4 4 4 4 f e e f 
+                    f f f f f f f f f f f f f f f f 
+                    f e e e e e e e e e e e e e e f 
+                    f e e e e e e e e e e e e e e f 
+                    . f f f f f f f f f f f f f f . 
+                    `)
+            } else {
+                c.setImage(img`
+                    . f f f f f f f f f f f f f f . 
+                    f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+                    f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+                    f e e e e e e e e e e e e e e f 
+                    f 4 4 e 4 4 4 4 4 e 4 4 e 4 4 f 
+                    f 4 4 e 4 4 4 4 e 4 4 4 e 4 4 f 
+                    f 4 4 e 4 4 4 e 4 4 4 e e 4 4 f 
+                    f 4 4 e 4 4 e 4 4 4 e 4 e 4 4 f 
+                    f 4 4 e 4 e 4 4 4 e 4 4 e 4 4 f 
+                    f 4 4 e e 4 4 4 e 4 4 4 e 4 4 f 
+                    f 4 4 e 4 4 4 e 4 4 4 4 e 4 4 f 
+                    f 4 4 e 4 4 e 4 4 4 4 4 e 4 4 f 
+                    f e e e e e e e e e e e e e e f 
+                    f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+                    f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+                    . f f f f f f f f f f f f f f . 
+                    `)
+            }
             return
         }
     }
