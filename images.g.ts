@@ -196,6 +196,15 @@ d d d d d d d d d d d d d d d d
 . . . . . . . . . . 
 . . . . . . . . . . 
 `;
+            case "image11":return img`
+. . e e e e . . . . 
+. . e d 3 e . . . . 
+. . e d d e e e . . 
+. . e 2 7 d d e . . 
+. . e d d 4 d e . . 
+. . e d d e e e . . 
+. . e e e e . . . . 
+`;
         }
         return null;
     })

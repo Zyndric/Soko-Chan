@@ -2,10 +2,19 @@ namespace SpriteKind {
     export const Crate = SpriteKind.create()
 }
 /**
+ * Check win condition and manage buttons in a continuous loop.
+ * 
+ * A win is when all boxes stand on a target tile (pink).
+ * 
+ * Direction buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Meowban continues to move, but not too fast.
+ * 
+ * Button B must be blocked during menu, otherwise a B press during menu will be handled as undo action when the menu returns.
+ */
+/**
  * Set up
  */
 /**
- * We determine if a box is on a specific tile by comparing their absolute x and y pixel coordiates. We do so, because the MakeCoder lacks a mechanism to calculate the tileset coordinates of a ordinary Sprite.
+ * Determine if a box is on a specific tile by comparing their absolute x and y pixel coordiates. Use pixels, because the MakeCoder lacks a mechanism to calculate the tileset coordinates of an ordinary Sprite.
  */
 /**
  * tx, ty are tileset coordinates
@@ -45,6 +54,20 @@ function init_states () {
     undo_ban = []
     undo_box = []
 }
+function show_menu () {
+    game.splash("A - Menu", "B - Undo")
+    if (game.ask("Menu", "Reset this level?")) {
+    	
+    } else {
+        if (game.ask("Menu", "Go to level selection?")) {
+        	
+        } else {
+            if (game.ask("Menu", "See credits?")) {
+            	
+            }
+        }
+    }
+}
 function walk (dtx: number, dty: number) {
     move_ban_to(tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + dty, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + 2 * dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + 2 * dty)
 }
@@ -61,14 +84,13 @@ function all_boxes_fit () {
 }
 function init_level_by_tilemap () {
     scene.setTileMap(img`
-        . . . . . . . . . . 
-        . . . . . . . . . . 
-        . . . . . . . . . . 
-        . . . . . . . . . . 
-        . . . . . . . . . . 
-        . . . . . . . . . . 
-        . . . . . . . . . . 
-        . . . . . . . . . . 
+        . . e e e e . . . . 
+        . . e d 3 e . . . . 
+        . . e d d e e e . . 
+        . . e 2 7 d d e . . 
+        . . e d d 4 d e . . 
+        . . e d d e e e . . 
+        . . e e e e . . . . 
         `)
     for (let t of scene.getTilesByType(2)) {
         box = sprites.create(img`
@@ -236,16 +258,22 @@ function undo_move () {
         tiles.placeOnTile(ban, tiles.getTileLocation(undo_ban[0], undo_ban[1]))
         info.changeScoreBy(-1)
     }
+    if (undo_box.length == 4) {
+        move_box(undo_box[2], undo_box[3], undo_box[0], undo_box[1])
+    }
     undo_ban = []
     undo_box = []
 }
+controller.B.onEvent(ControllerButtonEvent.Released, function () {
+    pressed_B = 0
+})
 function move_ban_to (tx: number, ty: number, push_tx: number, push_ty: number) {
     if (!(tiles.tileIsWall(tiles.getTileLocation(tx, ty)))) {
         if (box_on_tile(tx, ty)) {
             if (!(tiles.tileIsWall(tiles.getTileLocation(push_tx, push_ty)))) {
                 if (!(box_on_tile(push_tx, push_ty))) {
-                    record_move()
                     move_box(tx, ty, push_tx, push_ty)
+                    record_move()
                     tiles.placeOnTile(ban, tiles.getTileLocation(tx, ty))
                 }
             }
@@ -269,6 +297,7 @@ controller.right.onEvent(ControllerButtonEvent.Released, function () {
 function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: number) {
     for (let c of sprites.allOfKind(SpriteKind.Crate)) {
         if (c.x == tiles.locationXY(tiles.getTileLocation(from_tx, from_ty), tiles.XY.x) && c.y == tiles.locationXY(tiles.getTileLocation(from_tx, from_ty), tiles.XY.y)) {
+            undo_box = [from_tx, from_ty, to_tx, to_ty]
             tiles.placeOnTile(c, tiles.getTileLocation(to_tx, to_ty))
             return
         }
@@ -288,23 +317,17 @@ function record_move () {
     undo_ban = [tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column), tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row)]
     info.changeScoreBy(1)
 }
+let pressed_B = 0
 let box: Sprite = null
 let ban: Sprite = null
 let undo_box: number[] = []
 let undo_ban: number[] = []
-let pressed_right: number = []
-let pressed_left: number = []
-let pressed_up: number = []
-let pressed_down: number = []
+let pressed_right = 0
+let pressed_left = 0
+let pressed_up = 0
+let pressed_down = 0
 init_states()
 init_level_by_tilemap()
-/**
- * Check win condition and manage buttons in a continuous loop.
- * 
- * A win is when all boxes stand on a target tile (pink).
- * 
- * Direction buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Meowban continues to move, but not too fast.
- */
 forever(function () {
     if (all_boxes_fit()) {
         game.over(true)
@@ -342,20 +365,14 @@ forever(function () {
         }
     }
     if (controller.A.isPressed()) {
-        game.splash("A - Menu", "B - Undo")
-        if (game.ask("Menu", "Reset this level?")) {
-        	
-        } else {
-            if (game.ask("Menu", "Go to level selection?")) {
-            	
-            } else {
-                if (game.ask("Menu", "See credits?")) {
-                	
-                }
-            }
-        }
+        show_menu()
+        pressed_B = 10
     }
     if (controller.B.isPressed()) {
-        undo_move()
+        if (!(pressed_B)) {
+            undo_move()
+        } else {
+            pressed_B += -1
+        }
     }
 })
