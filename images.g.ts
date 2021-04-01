@@ -543,24 +543,6 @@ c c c c c c c c c c c c c c c c
 c c c c c c c c c c c c c c c c 
 c c c c c c c c c c c c c c c c 
 `;
-            case "image43":return img`
-6 6 6 c c 6 6 6 6 6 6 c c 6 6 6 
-7 7 7 7 c 7 7 7 7 7 7 7 c 7 7 7 
-7 7 7 7 6 7 7 7 7 7 7 7 6 7 7 7 
-6 6 7 7 6 7 7 7 7 7 7 7 6 c 6 6 
-c 6 6 6 c c c 7 7 7 6 6 6 6 c c 
-c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
-c c 7 7 7 7 7 7 7 7 7 7 7 6 6 6 
-c c c 6 7 c c c c c 7 7 6 c c c 
-6 6 7 7 7 7 6 6 6 6 6 6 6 6 6 6 
-6 6 6 7 7 7 6 6 6 6 6 6 6 6 6 6 
-c c c c 7 6 c c c c c 6 6 c c c 
-c 6 6 6 6 6 6 6 6 6 6 6 6 6 6 c 
-c c c c c c c c c c c c c c c c 
-6 6 c c 6 6 6 6 6 6 c c 6 6 6 6 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
             case "image47":return img`
 . . . . . . 6 6 6 6 . . . . . . 
 . . . . . c 6 7 7 6 c . . . . . 
@@ -669,24 +651,6 @@ f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f
 f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
 . f f f f f f f f f f f f f f . 
 `;
-            case "image110":return img`
-b b b b b b b b b b b b b b b b 
-b c b b b b b b b b b b b b c b 
-b b b e 4 4 4 4 4 4 4 4 e b b b 
-b b e 4 4 4 4 4 4 4 4 4 4 e b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b d 4 4 4 4 4 4 4 4 4 4 d b b 
-b b d 4 4 4 4 4 4 4 4 4 4 d b b 
-b b 4 d 4 4 4 4 4 4 4 4 d 4 b b 
-b b c 4 d d d d d d d d 4 c b b 
-b b b c c c c c c c c c c b b b 
-b c b b b b b b b b b b b b c b 
-b b b b b b b b b b b b b b b b 
-`;
             case "image111":return img`
 c c c c c c c c c c c c c c c c 
 c c c c c c c c c b c c c c b c 
@@ -700,96 +664,6 @@ c c c c c b c c c c b c c c c c
 c c c c c b c c c c b c c c c c 
 c c c c b b b b b b b b c c c c 
 c c c c b b c c c c b b c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image112":return img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c b b c c c c b b c c c c 
-c c c c b b b b b b b b c c c c 
-c c c c c b c c c c b c c b c c 
-c b c c c b c c c c b c c c c c 
-c c c c c b c c c c b c c c c c 
-c c c c c b c c c c b c c c c c 
-c c c c b b b b b b b b c c c c 
-c c c c b b c c c c b b c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image113":return img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c b b c c c c b b c c c c 
-c c c c b b b b b b b b c c c c 
-c c c c c b c c c c b c c b c c 
-c b c c c b c c c c b c c c c c 
-c c c c c b c c c c b c c c c c 
-c c c c c b c c c c b c c c c c 
-c c c c b b b b b b b b c c c c 
-c c c c b b c c c c b b c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image114":return img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c b c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c b c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c b c c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image115":return img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c b c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c b c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c b c c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image116":return img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c b c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c b c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c b c c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
 c c c c c c c c c c c c c c c c 
 c c b c c c c c c c c c c b c c 
 c c c c c c c b c c c c c c c c 
@@ -813,42 +687,6 @@ c c b c c c c c c c c c c b c c
 c c c c c c c b c c c c c c c c 
 c c c c c c c c c c c c c c c c 
 `;
-            case "image118":return img`
-6 6 6 c c 6 6 6 6 6 6 c c 6 6 6 
-7 7 7 7 c 7 7 7 7 7 7 7 c 7 7 7 
-7 7 7 7 6 7 7 7 7 7 7 7 6 7 7 7 
-6 6 7 7 6 7 7 7 7 7 7 7 6 c 6 6 
-c 6 6 6 c c c 7 7 7 6 6 6 6 c c 
-c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
-c c 7 7 7 7 7 7 7 7 7 7 7 6 6 6 
-c c c 6 7 c c c c c 7 7 6 c c c 
-6 6 7 7 7 7 6 6 6 6 6 6 6 6 6 6 
-6 6 6 7 7 7 6 6 6 6 6 6 6 6 6 6 
-c c c c 7 6 c c c c c 6 6 c c c 
-c 6 6 6 6 6 6 6 6 6 6 6 6 6 6 c 
-c c c c c c c c c c c c c c c c 
-6 6 c c 6 6 6 6 6 6 c c 6 6 6 6 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image119":return img`
-6 6 6 c c 6 6 6 6 6 6 c c 6 6 6 
-7 7 7 7 c 7 7 7 7 7 7 7 c 7 7 7 
-7 7 7 7 6 7 7 7 7 7 7 7 6 7 7 7 
-6 6 7 7 6 7 7 7 7 7 7 7 6 c 6 6 
-c 6 6 6 c c c 7 7 7 6 6 6 6 c c 
-c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
-c c 7 7 7 7 7 7 7 7 7 7 7 6 6 6 
-c c c 6 7 c c c c c 7 7 6 c c c 
-6 6 7 7 7 7 6 6 6 6 6 6 6 6 6 6 
-6 6 6 7 7 7 6 6 6 6 6 6 6 6 6 6 
-c c c c 7 6 c c c c c 6 6 c c c 
-c 6 6 6 6 6 6 6 6 6 6 6 6 6 6 c 
-c c c c c c c c c c c c c c c c 
-6 6 c c 6 6 6 6 6 6 c c 6 6 6 6 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
             case "image21":return img`
 . . . . . . . . . . 
 . . e e e e . . . . 
@@ -862,211 +700,175 @@ c c c c c c c c c c c c c c c c
 `;
             case "image11":return img`
 . . . . . . . . . . 
-. . e e e . . . . . 
-. e e 7 e e . . . . 
-. e d d d e e e e . 
+. e e e e e . . . . 
+. e d 7 d e e . . . 
+. e d d d d e e e . 
 . e d d 4 d d 3 e . 
 . e d d d e e e e . 
 . e e e e e . . . . 
 . . . . . . . . . . 
 `;
-            case "image27":return img`
-. f f f f f f f f f f f f f f . 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f e e e e e e e e e e e e e e f 
-f 4 4 e 4 4 4 4 4 e 4 4 e 4 4 f 
-f 4 4 e 4 4 4 4 e 4 4 4 e 4 4 f 
-f 4 4 e 4 4 4 e 4 4 4 e e 4 4 f 
-f 4 4 e 4 4 e 4 4 4 e 4 e 4 4 f 
-f 4 4 e 4 e 4 4 4 e 4 4 e 4 4 f 
-f 4 4 e e 4 4 4 e 4 4 4 e 4 4 f 
-f 4 4 e 4 4 4 e 4 4 4 4 e 4 4 f 
-f 4 4 e 4 4 e 4 4 4 4 4 e 4 4 f 
-f e e e e e e e e e e e e e e f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-. f f f f f f f f f f f f f f . 
+            case "image110":return img`
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d 2 2 2 2 d d d d d d 
+d d d d d d 2 d d 2 d d d d d d 
+d d d d d d 2 d d 2 d d d d d d 
+d d d d d d 2 2 2 2 d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
 `;
-            case "image34":return img`
+            case "image114":return img`
+d d d d d d d d d d d d d d d d 
+d d d 1 1 d d d d d d d d b d d 
+d d d 1 1 d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d b d d d d d d b b d d d d d 
+d d d d d d d d d b b d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d b d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+1 1 d d d d d d d d d d d d d d 
+1 1 d d d d d d d d d d b d d d 
+d d d d d d 1 d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d b d 
+`;
+            case "image118":return img`
+. . . 6 6 6 6 6 6 6 6 6 6 . . . 
+. 6 6 6 7 7 7 7 7 7 7 7 6 6 6 . 
+. 6 7 7 7 7 7 7 7 7 7 7 7 7 6 . 
+6 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
+6 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
+6 7 6 7 7 7 7 7 7 7 7 7 7 6 7 6 
+8 6 7 7 7 7 7 7 7 7 7 7 7 7 6 8 
+8 7 7 7 7 7 7 7 7 7 7 7 7 7 7 8 
+6 7 6 7 7 7 6 7 7 7 7 6 7 7 7 6 
+6 8 6 7 7 6 7 7 7 6 7 7 6 6 8 6 
+8 6 6 7 6 6 7 7 6 6 6 7 6 6 6 8 
+8 6 8 6 6 6 7 6 6 6 6 6 8 6 6 8 
+8 8 6 6 8 6 6 6 8 6 6 6 8 8 8 8 
+8 e 6 e e 8 6 6 8 8 6 8 8 8 e 8 
+8 e e e e e 6 e 8 8 e e 8 e e f 
+f e e e e f 8 e e 8 e e e e e f 
+`;
+            case "image119":return img`
+. . . . b b b b 3 3 3 b . . . . 
+. . 3 b d d 3 3 3 d d d b 3 . . 
+. 3 3 d d d d d d d d d d 3 3 . 
+3 3 d d d d d d d d d d d d 3 3 
+3 d d d d d d d d d d d d d d b 
+b d d d d d d d d 1 d d d d d b 
+b d d d d d 3 d d d d d d d 3 b 
+b d 3 3 3 d d d 3 d 3 3 3 d d b 
+b 3 d 3 b 3 d d d 3 d 3 b 3 d b 
+c 3 3 3 3 3 3 b 3 3 3 3 3 3 3 c 
+c 3 3 3 3 d 3 3 3 3 3 3 3 d 3 c 
+c 3 c c c 3 3 d d 3 c c c 3 3 c 
+c b b b b c 3 d d b b b b c 3 c 
+c b b b b b c c b b b b b b c c 
+c b b b b b b b b b b b b b b b 
+c b b b b b b b b b b b b b b b 
+`;
+            case "image43":return img`
+. . e e b b b b b b b b e e . . 
+. e b b b b b b b b b b b b e . 
+e b b b b b b b b b b b b b b e 
 b b b b b b b b b b b b b b b b 
-b c b b b b b b b b b b b b c b 
-b b b e 4 4 4 4 4 4 4 4 e b b b 
-b b e 4 4 4 4 4 4 4 4 4 4 e b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b d 4 4 4 4 4 4 4 4 4 4 d b b 
-b b d 4 4 4 4 4 4 4 4 4 4 d b b 
-b b 4 d 4 4 4 4 4 4 4 4 d 4 b b 
-b b c 4 d d d d d d d d 4 c b b 
-b b b c c c c c c c c c c b b b 
-b c b b b b b b b b b b b b c b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b e e e b b b b b b b b 
+e e b e e e e b b b e e b b b e 
+b b e e b b e b b b e e e e e b 
+b e e e b b e e e f f b b e b b 
+f e b b e f f e f e e f e e e f 
+f f e e e e e f f e e f f f f f 
+f f f f e e f f f f f f f f f f 
+`;
+            case "image115":return img`
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+`;
+            case "image116":return img`
+d 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+1 d d d d d d d d d d d d d d b 
+1 d d d d d d d d d d d d d d b 
+1 d d d d d d d d d d d d d d b 
+1 d d d d d d d d d d d d d d b 
+1 d d d d d d d d d d d d d d b 
+1 d d d d d d d d d d d d d d b 
+1 d d d d d d d d d d d d d d b 
+1 d d d d d d d d d d d d d d b 
+1 d d d d d d d d d d d d d d b 
+1 d d d d d d d d d d d d d d b 
+1 d d d d d d d d d d d d d d b 
+1 d d d d d d d d d d d d d d b 
+1 d d d d d d d d d d d d d d b 
+1 d d d d d d d d d d d d d d b 
 b b b b b b b b b b b b b b b b 
 `;
-            case "image35":return img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c b b c c c c b b c c c c 
-c c c c b b b b b b b b c c c c 
-c c c c c b c c c c b c c b c c 
-c b c c c b c c c c b c c c c c 
-c c c c c b c c c c b c c c c c 
-c c c c c b c c c c b c c c c c 
-c c c c b b b b b b b b c c c c 
-c c c c b b c c c c b b c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
+            case "image112":return img`
+d d d d d d d d d d d d d d d d 
+d d d 1 1 d d d d d d d d b d d 
+d d d 1 1 d d d d d d d d d d d 
+d d d d 6 6 6 d d 6 d 6 d d d d 
+d d b d 7 7 7 7 7 6 7 6 d d d d 
+d d d d 6 7 7 7 7 6 7 7 7 d d d 
+d d d d 6 7 7 7 7 7 7 7 6 6 d d 
+d d d 6 7 7 7 7 7 7 7 7 7 7 d d 
+d d d 7 7 7 7 7 7 7 7 7 7 6 d d 
+d d d 6 6 7 7 7 7 7 7 7 7 6 d d 
+d d d d 6 7 7 7 7 6 7 7 6 d d d 
+1 1 d d 6 7 7 7 7 6 7 6 6 d d d 
+1 1 d d d 7 6 7 6 6 7 d b d d d 
+d d d d d d 1 d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d b d 
 `;
-            case "image36":return img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c b b c c c c b b c c c c 
-c c c c b b b b b b b b c c c c 
-c c c c c b c c c c b c c b c c 
-c b c c c b c c c c b c c c c c 
-c c c c c b c c c c b c c c c c 
-c c c c c b c c c c b c c c c c 
-c c c c b b b b b b b b c c c c 
-c c c c b b c c c c b b c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image37":return img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c b b c c c c b b c c c c 
-c c c c b b b b b b b b c c c c 
-c c c c c b c c c c b c c b c c 
-c b c c c b c c c c b c c c c c 
-c c c c c b c c c c b c c c c c 
-c c c c c b c c c c b c c c c c 
-c c c c b b b b b b b b c c c c 
-c c c c b b c c c c b b c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image38":return img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c b c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c b c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c b c c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image40":return img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c b c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c b c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c b c c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image42":return img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c b c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c b c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c b c c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image44":return img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c b c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c b c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c b c c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image45":return img`
-6 6 6 c c 6 6 6 6 6 6 c c 6 6 6 
-7 7 7 7 c 7 7 7 7 7 7 7 c 7 7 7 
-7 7 7 7 6 7 7 7 7 7 7 7 6 7 7 7 
-6 6 7 7 6 7 7 7 7 7 7 7 6 c 6 6 
-c 6 6 6 c c c 7 7 7 6 6 6 6 c c 
-c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
-c c 7 7 7 7 7 7 7 7 7 7 7 6 6 6 
-c c c 6 7 c c c c c 7 7 6 c c c 
-6 6 7 7 7 7 6 6 6 6 6 6 6 6 6 6 
-6 6 6 7 7 7 6 6 6 6 6 6 6 6 6 6 
-c c c c 7 6 c c c c c 6 6 c c c 
-c 6 6 6 6 6 6 6 6 6 6 6 6 6 6 c 
-c c c c c c c c c c c c c c c c 
-6 6 c c 6 6 6 6 6 6 c c 6 6 6 6 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image46":return img`
-6 6 6 c c 6 6 6 6 6 6 c c 6 6 6 
-7 7 7 7 c 7 7 7 7 7 7 7 c 7 7 7 
-7 7 7 7 6 7 7 7 7 7 7 7 6 7 7 7 
-6 6 7 7 6 7 7 7 7 7 7 7 6 c 6 6 
-c 6 6 6 c c c 7 7 7 6 6 6 6 c c 
-c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
-c c 7 7 7 7 7 7 7 7 7 7 7 6 6 6 
-c c c 6 7 c c c c c 7 7 6 c c c 
-6 6 7 7 7 7 6 6 6 6 6 6 6 6 6 6 
-6 6 6 7 7 7 6 6 6 6 6 6 6 6 6 6 
-c c c c 7 6 c c c c c 6 6 c c c 
-c 6 6 6 6 6 6 6 6 6 6 6 6 6 6 c 
-c c c c c c c c c c c c c c c c 
-6 6 c c 6 6 6 6 6 6 c c 6 6 6 6 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
+            case "image113":return img`
+d 1 1 1 1 1 d b b d 1 1 1 1 1 b 
+1 d d d d d b e d b d d d d d b 
+1 d d d d b e d d d b d d d d b 
+1 d d d b e d d d d d b d d d b 
+1 d d b e d d d d d d d b d d b 
+1 d b e d d d d d d d d d b d b 
+d b e d d d d d d d d d d d b b 
+b e d d d d d d d d d d d d 1 b 
+b d d d d d d d d d d d d 1 1 b 
+d b d d d d d d d d d d 1 1 b b 
+1 d b d d d d d d d d 1 1 b d b 
+1 d d b d d d d d d 1 1 b d d b 
+1 d d d b d d d d 1 1 b d d d b 
+1 d d d d b d d 1 1 b d d d d b 
+1 d d d d d b 1 1 b d d d d d b 
+b b b b b b b b b b b b b b b e 
 `;
         }
         return null;
