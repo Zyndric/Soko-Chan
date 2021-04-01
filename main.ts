@@ -2,39 +2,88 @@ namespace SpriteKind {
     export const Crate = SpriteKind.create()
 }
 /**
- * Check win condition and manage buttons in a continuous loop.
+ * Tile coding:
  * 
- * A win is when all boxes stand on a target tile (pink).
+ * 14 brown  -- wall (#)
  * 
- * Direction buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Meowban continues to move, but not too fast.
+ *   3 pink     -- target (.)
  * 
- * Button B must be blocked during menu, otherwise a B press during menu will be handled as undo action when the menu returns.
+ *   7 green   -- player (@)
+ * 
+ *   6 teal      -- player on target (+)
+ * 
+ *   4 orange -- crate ($)
+ * 
+ *   2 red       -- crate on target (*)
+ * 
+ * 13 tan       -- floor
  */
-/**
- * Set up
- * 
- * Variables ban, "undo ban" and "undo box" are unique and used by name.
- * 
- * Variables box, c and t are loop and temporary variables.
- */
-/**
- * Determine if a box is on a specific tile by comparing their absolute x and y pixel coordiates. Use pixels, because the color-coded Tile object lacks a mechanism to get its tileset coordinates.
- */
+function reset_states () {
+    pressed_up = 0
+    pressed_down = 0
+    pressed_left = 0
+    pressed_right = 0
+    pressed_A = 0
+    pressed_B = 0
+    undo_ban = []
+    undo_box = []
+    for (let c of sprites.allOfKind(SpriteKind.Player)) {
+        c.destroy()
+    }
+    for (let c of sprites.allOfKind(SpriteKind.Crate)) {
+        c.destroy()
+    }
+    info.setScore(0)
+}
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    pressed_A = 0
+})
+function set_up_level () {
+    reset_states()
+    if (level == 1) {
+        scene.setTileMap(img`
+            . . . . . . . . . . 
+            . . e e e . . . . . 
+            . e e 7 e e . . . . 
+            . e d d d e e e e . 
+            . e d d 4 d d 3 e . 
+            . e d d d e e e e . 
+            . e e e e e . . . . 
+            . . . . . . . . . . 
+            `)
+        center_camera()
+    } else if (level == 2) {
+        scene.setTileMap(img`
+            . . . . . . . . . . 
+            . . e e e e . . . . 
+            . . e d 3 e . . . . 
+            . . e d d e e e . . 
+            . . e 2 7 d d e . . 
+            . . e d d 4 d e . . 
+            . . e d d e e e . . 
+            . . e e e e . . . . 
+            . . . . . . . . . . 
+            `)
+        center_camera()
+    } else {
+        game.over(true)
+    }
+    realize_tilemap()
+    reset_buttons()
+}
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
     pressed_down = 0
 })
 controller.up.onEvent(ControllerButtonEvent.Released, function () {
     pressed_up = 0
 })
-function init_states () {
-    pressed_up = 0
-    pressed_down = 0
-    pressed_left = 0
-    pressed_right = 0
-    pressed_B = 0
-    undo_ban = []
-    undo_box = []
-    info.setScore(0)
+function reset_buttons () {
+    pressed_up = button_lag
+    pressed_down = button_lag
+    pressed_left = button_lag
+    pressed_right = button_lag
+    pressed_A = button_lag
+    pressed_B = button_lag
 }
 function sprite_cache () {
     box = sprites.create(img`
@@ -308,22 +357,22 @@ function sprite_cache () {
         . . . 6 6 c . 6 6 6 . c 6 . . . 
         `, SpriteKind.Crate)
     scene.setTile(3, img`
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d 2 2 2 2 d d d d d d 
-        d d d d d d 2 d d 2 d d d d d d 
-        d d d d d d 2 d d 2 d d d d d d 
-        d d d d d d 2 2 2 2 d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
+        b b b b b b b b b b b b b b b b 
+        b c b b b b b b b b b b b b c b 
+        b b b e 4 4 4 4 4 4 4 4 e b b b 
+        b b e 4 4 4 4 4 4 4 4 4 4 e b b 
+        b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
+        b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
+        b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
+        b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
+        b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
+        b b d 4 4 4 4 4 4 4 4 4 4 d b b 
+        b b d 4 4 4 4 4 4 4 4 4 4 d b b 
+        b b 4 d 4 4 4 4 4 4 4 4 d 4 b b 
+        b b c 4 d d d d d d d d 4 c b b 
+        b b b c c c c c c c c c c b b b 
+        b c b b b b b b b b b b b b c b 
+        b b b b b b b b b b b b b b b b 
         `, false)
     scene.setTile(3, img`
         b b b b b b b b b b b b b b b b 
@@ -344,40 +393,40 @@ function sprite_cache () {
         b b b b b b b b b b b b b b b b 
         `, false)
     scene.setTile(3, img`
-        d 1 1 1 1 1 1 b b 1 1 1 1 1 1 b 
-        1 d d d d d b d d b d d d d d b 
-        1 d d d d b d b b b b d d d d b 
-        1 d d d b d b b b b b b d d d b 
-        1 d d b d b b b b b b b b d d b 
-        1 d b d b b b b b b b b b b d b 
-        1 b d b b b b b b b b b b b b b 
-        b d b b b b b b b b b b b b b b 
-        b d b b b b b b b b b b b b b c 
-        1 b b b b b b b b b b b b b c b 
-        1 d b b b b b b b b b b b c d b 
-        1 d d b b b b b b b b b c d d b 
-        1 d d d b b b b b b b c d d d b 
-        1 d d d d b b b b b c d d d d b 
-        1 d d d d d b b b c d d d d d b 
-        b b b b b b b b c b b b b b b b 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c b c c c c b c 
+        c c b c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c b b c c c c b b c c c c 
+        c c c c b b b b b b b b c c c c 
+        c c c c c b c c c c b c c b c c 
+        c b c c c b c c c c b c c c c c 
+        c c c c c b c c c c b c c c c c 
+        c c c c c b c c c c b c c c c c 
+        c c c c b b b b b b b b c c c c 
+        c c c c b b c c c c b b c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c b c c c c c c c c c c b c c 
+        c c c c c c c b c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
         `, false)
     scene.setTile(3, img`
-        d d d d d d d d d d d d d d d d 
-        d d d 1 1 d d d d d d d d b d d 
-        d d d 1 1 d d d d d d d d d d d 
-        d d d d d d 6 d d 6 d d d d d d 
-        d d b d 6 d 6 6 7 6 7 d d d d d 
-        d d d d 6 6 7 7 7 7 7 6 d d d d 
-        d d d d 7 7 7 7 7 7 7 6 6 d d d 
-        d d d 6 7 7 7 7 7 7 7 7 7 d d d 
-        d d d 6 6 7 7 7 7 7 7 7 6 6 d d 
-        d d d d d 7 7 7 7 7 7 7 6 d d d 
-        d d d d 6 7 7 7 7 7 7 7 d d d d 
-        1 1 d d 6 6 7 7 7 6 6 6 d d d d 
-        1 1 d d d d d 6 7 6 d d b d d d 
-        d d d d d d 1 6 d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d b d 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c b c c c c b c 
+        c c b c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c b b c c c c b b c c c c 
+        c c c c b b b b b b b b c c c c 
+        c c c c c b c c c c b c c b c c 
+        c b c c c b c c c c b c c c c c 
+        c c c c c b c c c c b c c c c c 
+        c c c c c b c c c c b c c c c c 
+        c c c c b b b b b b b b c c c c 
+        c c c c b b c c c c b b c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c b c c c c c c c c c c b c c 
+        c c c c c c c b c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
         `, false)
     scene.setTile(3, img`
         c c c c c c c c c c c c c c c c 
@@ -416,58 +465,58 @@ function sprite_cache () {
         c c c c c c c c c c c c c c c c 
         `, false)
     scene.setTile(13, img`
-        d 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
-        1 d d d d d d d d d d d d d d b 
-        1 d d d d d d d d d d d d d d b 
-        1 d d d d d d d d d d d d d d b 
-        1 d d d d d d d d d d d d d d b 
-        1 d d d d d d d d d d d d d d b 
-        1 d d d d d d d d d d d d d d b 
-        1 d d d d d d d d d d d d d d b 
-        1 d d d d d d d d d d d d d d b 
-        1 d d d d d d d d d d d d d d b 
-        1 d d d d d d d d d d d d d d b 
-        1 d d d d d d d d d d d d d d b 
-        1 d d d d d d d d d d d d d d b 
-        1 d d d d d d d d d d d d d d b 
-        1 d d d d d d d d d d d d d d b 
-        b b b b b b b b b b b b b b b b 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c b c c c c b c 
+        c c b c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c b c c c c b c c c c 
+        c c c c c c c c c c c c c c c c 
+        c b c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c b c c c c c b c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c b c c c c c c c c c c b c c 
+        c c c c c c c b c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
         `, false)
     scene.setTile(13, img`
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c b c c c c b c 
+        c c b c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c b c c c c b c c c c 
+        c c c c c c c c c c c c c c c c 
+        c b c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c b c c c c c b c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c b c c c c c c c c c c b c c 
+        c c c c c c c b c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
         `, false)
     scene.setTile(13, img`
-        d d d d d d d d d d d d d d d d 
-        d d d 1 1 d d d d d d d d b d d 
-        d d d 1 1 d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d b d d d d d d b b d d d d d 
-        d d d d d d d d d b b d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d b d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        1 1 d d d d d d d d d d d d d d 
-        1 1 d d d d d d d d d d b d d d 
-        d d d d d d 1 d d d d d d d d d 
-        d d d d d d d d d d d d d d d d 
-        d d d d d d d d d d d d d d b d 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c b c c c c b c 
+        c c b c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c b c c c c b c c c c 
+        c c c c c c c c c c c c c c c c 
+        c b c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c b c c c c c b c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
+        c c b c c c c c c c c c c b c c 
+        c c c c c c c b c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
         `, false)
     scene.setTile(14, img`
         e e e e e e 4 e e e e e e e 4 e 
@@ -614,58 +663,58 @@ function sprite_cache () {
         6 6 6 6 6 6 7 6 6 6 6 6 6 6 7 6 
         `, true)
     scene.setTile(14, img`
-        d 1 d d d d d d d 1 d d d d d d 
-        d 1 d d d d d d d 1 d d d d d d 
-        d 1 d d d d d d d 1 d d d d d d 
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-        d d d d d 1 d d d d d d d 1 d d 
-        d d d d d 1 d d d d d d d 1 d d 
-        d d d d d 1 d d d d d d d 1 d d 
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-        d 1 d d d d d d d 1 d d d d d d 
-        d 1 d d d d d d d 1 d d d d d d 
-        d 1 d d d d d d d 1 d d d d d d 
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-        d d d d d 1 d d d d d d d 1 d d 
-        d d d d d 1 d d d d d d d 1 d d 
-        d d d d d 1 d d d d d d d 1 d d 
-        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+        6 6 6 c c 6 6 6 6 6 6 c c 6 6 6 
+        7 7 7 7 c 7 7 7 7 7 7 7 c 7 7 7 
+        7 7 7 7 6 7 7 7 7 7 7 7 6 7 7 7 
+        6 6 7 7 6 7 7 7 7 7 7 7 6 c 6 6 
+        c 6 6 6 c c c 7 7 7 6 6 6 6 c c 
+        c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
+        c c 7 7 7 7 7 7 7 7 7 7 7 6 6 6 
+        c c c 6 7 c c c c c 7 7 6 c c c 
+        6 6 7 7 7 7 6 6 6 6 6 6 6 6 6 6 
+        6 6 6 7 7 7 6 6 6 6 6 6 6 6 6 6 
+        c c c c 7 6 c c c c c 6 6 c c c 
+        c 6 6 6 6 6 6 6 6 6 6 6 6 6 6 c 
+        c c c c c c c c c c c c c c c c 
+        6 6 c c 6 6 6 6 6 6 c c 6 6 6 6 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
         `, true)
     scene.setTile(14, img`
-        . . . 6 6 6 6 6 6 6 6 6 6 . . . 
-        . 6 6 6 7 7 7 7 7 7 7 7 6 6 6 . 
-        . 6 7 7 7 7 7 7 7 7 7 7 7 7 6 . 
-        6 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
-        6 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
-        6 7 6 7 7 7 7 7 7 7 7 7 7 6 7 6 
-        8 6 7 7 7 7 7 7 7 7 7 7 7 7 6 8 
-        8 7 7 7 7 7 7 7 7 7 7 7 7 7 7 8 
-        6 7 6 7 7 7 6 7 7 7 7 6 7 7 7 6 
-        6 8 6 7 7 6 7 7 7 6 7 7 6 6 8 6 
-        8 6 6 7 6 6 7 7 6 6 6 7 6 6 6 8 
-        8 6 8 6 6 6 7 6 6 6 6 6 8 6 6 8 
-        8 8 6 6 8 6 6 6 8 6 6 6 8 8 8 8 
-        8 e 6 e e 8 6 6 8 8 6 8 8 8 e 8 
-        8 e e e e e 6 e 8 8 e e 8 e e f 
-        f e e e e f 8 e e 8 e e e e e f 
+        6 6 6 c c 6 6 6 6 6 6 c c 6 6 6 
+        7 7 7 7 c 7 7 7 7 7 7 7 c 7 7 7 
+        7 7 7 7 6 7 7 7 7 7 7 7 6 7 7 7 
+        6 6 7 7 6 7 7 7 7 7 7 7 6 c 6 6 
+        c 6 6 6 c c c 7 7 7 6 6 6 6 c c 
+        c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
+        c c 7 7 7 7 7 7 7 7 7 7 7 6 6 6 
+        c c c 6 7 c c c c c 7 7 6 c c c 
+        6 6 7 7 7 7 6 6 6 6 6 6 6 6 6 6 
+        6 6 6 7 7 7 6 6 6 6 6 6 6 6 6 6 
+        c c c c 7 6 c c c c c 6 6 c c c 
+        c 6 6 6 6 6 6 6 6 6 6 6 6 6 6 c 
+        c c c c c c c c c c c c c c c c 
+        6 6 c c 6 6 6 6 6 6 c c 6 6 6 6 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
         `, true)
     scene.setTile(14, img`
-        . c c b b b c c c b b b b c c . 
-        c c b b b b b c b b b b b b c c 
-        c b b b b b b b b b b b b b b c 
-        b b b b b b b b b b b b b b b b 
-        b b b b b b b b b b b b b b b b 
-        b b b b b b b b b b b b b b b b 
-        b b b b b b b b b b b b b b b b 
-        b b b b b b b b b b b b b b b b 
-        b b b b b b b b b b b b b b b b 
-        b b b c c c b b c c b b b b b c 
-        b b b b c c c b b c c b b b c c 
-        c c c b b c c c c c b b b c c b 
-        c c c c c c c f f c c b b b b c 
-        c c f f f c c f f f f f c c f f 
-        f c f f f f c c f f f f c c f f 
-        f f f f f f f f f f f f f f f f 
+        6 6 6 c c 6 6 6 6 6 6 c c 6 6 6 
+        7 7 7 7 c 7 7 7 7 7 7 7 c 7 7 7 
+        7 7 7 7 6 7 7 7 7 7 7 7 6 7 7 7 
+        6 6 7 7 6 7 7 7 7 7 7 7 6 c 6 6 
+        c 6 6 6 c c c 7 7 7 6 6 6 6 c c 
+        c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
+        c c 7 7 7 7 7 7 7 7 7 7 7 6 6 6 
+        c c c 6 7 c c c c c 7 7 6 c c c 
+        6 6 7 7 7 7 6 6 6 6 6 6 6 6 6 6 
+        6 6 6 7 7 7 6 6 6 6 6 6 6 6 6 6 
+        c c c c 7 6 c c c c c 6 6 c c c 
+        c 6 6 6 6 6 6 6 6 6 6 6 6 6 6 c 
+        c c c c c c c c c c c c c c c c 
+        6 6 c c 6 6 6 6 6 6 c c 6 6 6 6 
+        c c c c c c c c c c c c c c c c 
+        c c c c c c c c c c c c c c c c 
         `, true)
     scene.setTile(14, img`
         6 6 6 c c 6 6 6 6 6 6 c c 6 6 6 
@@ -689,7 +738,7 @@ function sprite_cache () {
 function show_menu () {
     game.splash("A - Menu", "B - Undo")
     if (game.ask("Menu", "Reset this level?")) {
-    	
+        set_up_level()
     } else {
         if (game.ask("Menu", "Go to level selection?")) {
         	
@@ -699,20 +748,6 @@ function show_menu () {
             }
         }
     }
-}
-function prepare_level () {
-    init_states()
-    scene.setTileMap(img`
-        . . e e e e . . . . 
-        . . e d 3 e . . . . 
-        . . e d d e e e . . 
-        . . e 2 7 d d e . . 
-        . . e d d 4 d e . . 
-        . . e d d e e e . . 
-        . . e e e e . . . . 
-        `)
-    scene.cameraFollowSprite(ban)
-    realize_tilemap()
 }
 function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
     if (!(tiles.tileIsWall(tiles.getTileLocation(tx, ty)))) {
@@ -744,10 +779,20 @@ function walk (dtx: number, dty: number) {
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
+/**
+ * Set up
+ * 
+ * Variables ban, level, "undo ban" and "undo box" are unique and used by name.
+ * 
+ * Variables box, c and t are loop and temporary variables.
+ */
 function next_level () {
     level += 1
-    prepare_level()
+    set_up_level()
 }
+/**
+ * Determine if a box is on a specific tile by comparing their absolute x and y pixel coordiates. Use pixels, because the color-coded Tile object lacks a mechanism to get its tileset coordinates.
+ */
 function all_boxes_fit () {
     for (let c of sprites.allOfKind(SpriteKind.Crate)) {
         if (!(target_tile(c.x, c.y))) {
@@ -766,6 +811,9 @@ function undo_move () {
     }
     undo_ban = []
     undo_box = []
+}
+function center_camera () {
+    scene.centerCameraAt(tiles.tilemapColumns() * tiles.tileWidth() / 2, tiles.tilemapRows() * tiles.tileWidth() / 2)
 }
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
     pressed_B = 0
@@ -815,8 +863,10 @@ function move_ban (to_tx: number, to_ty: number) {
 }
 function box_on_tile (tx: number, ty: number) {
     for (let c of sprites.allOfKind(SpriteKind.Crate)) {
-        if (tiles.locationXY(tiles.locationOfSprite(c), tiles.XY.column) == tx && tiles.locationXY(tiles.locationOfSprite(c), tiles.XY.row) == ty) {
-            return 1
+        if (tiles.locationXY(tiles.locationOfSprite(c), tiles.XY.column) == tx) {
+            if (tiles.locationXY(tiles.locationOfSprite(c), tiles.XY.row) == ty) {
+                return 1
+            }
         }
     }
     return 0
@@ -872,23 +922,6 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
         }
     }
 }
-/**
- * Tile coding:
- * 
- * 14 brown  -- wall (#)
- * 
- *   3 pink     -- target (.)
- * 
- *   7 green   -- player (@)
- * 
- *   6 teal      -- player on target (+)
- * 
- *   4 orange -- crate ($)
- * 
- *   2 red       -- crate on target (*)
- * 
- * 13 tan       -- floor
- */
 function realize_tilemap () {
     for (let t of scene.getTilesByType(2)) {
         box = sprites.create(img`
@@ -1048,57 +1081,69 @@ let box: Sprite = null
 let undo_box: number[] = []
 let undo_ban: number[] = []
 let pressed_B = 0
+let pressed_A = 0
 let pressed_right = 0
 let pressed_left = 0
-let pressed_up = 0
 let pressed_down = 0
+let pressed_up = 0
 let level = 0
+let button_lag = 0
+button_lag = 10
+level = 0
 next_level()
+/**
+ * Check win condition and manage buttons in a continuous loop.
+ * 
+ * A win is when all boxes stand on a target tile (pink).
+ * 
+ * Direction buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Meowban continues to move, but not too fast.
+ * 
+ * Button B must be blocked during menu, otherwise a B press during menu will be handled as undo action when the menu returns.
+ */
 forever(function () {
     if (all_boxes_fit()) {
-        game.over(true)
+        next_level()
     }
-    if (controller.up.isPressed()) {
-        if (!(pressed_up)) {
-            walk(0, -1)
-            pressed_up = 10
-        } else {
-            pressed_up += -1
-        }
+    if (controller.up.isPressed() && !(pressed_up)) {
+        walk(0, -1)
+        pressed_up = button_lag
     }
-    if (controller.down.isPressed()) {
-        if (!(pressed_down)) {
-            walk(0, 1)
-            pressed_down = 10
-        } else {
-            pressed_down += -1
-        }
+    if (controller.down.isPressed() && !(pressed_down)) {
+        walk(0, 1)
+        pressed_down = button_lag
     }
-    if (controller.left.isPressed()) {
-        if (!(pressed_left)) {
-            walk(-1, 0)
-            pressed_left = 10
-        } else {
-            pressed_left += -1
-        }
+    if (controller.left.isPressed() && !(pressed_left)) {
+        walk(-1, 0)
+        pressed_left = button_lag
     }
-    if (controller.right.isPressed()) {
-        if (!(pressed_right)) {
-            walk(1, 0)
-            pressed_right = 10
-        } else {
-            pressed_right += -1
-        }
+    if (controller.right.isPressed() && !(pressed_right)) {
+        walk(1, 0)
+        pressed_right = button_lag
     }
-    if (controller.A.isPressed()) {
+    if (controller.A.isPressed() && !(pressed_A)) {
         show_menu()
-        pressed_B = 10
+        reset_buttons()
     }
-    if (controller.B.isPressed()) {
-        if (!(pressed_B)) {
-            undo_move()
-        } else {
-            pressed_B += -1
-        }
+    if (controller.B.isPressed() && !(pressed_B)) {
+        undo_move()
+        pressed_B = button_lag
+    }
+    if (pressed_up) {
+        pressed_up += -1
+    }
+    if (pressed_down) {
+        pressed_down += -1
+    }
+    if (pressed_left) {
+        pressed_left += -1
+    }
+    if (pressed_right) {
+        pressed_right += -1
+    }
+    if (pressed_A) {
+        pressed_A += -1
+    }
+    if (pressed_B) {
+        pressed_B += -1
     }
 })
