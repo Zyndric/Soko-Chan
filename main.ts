@@ -141,6 +141,24 @@ function sprite_cache () {
         e e e e e e e e e e e e e e e e 
         `, SpriteKind.Crate)
     box = sprites.create(img`
+        e 2 2 2 2 2 2 2 2 2 2 2 2 2 2 e 
+        e 4 4 4 4 4 4 4 4 4 4 4 4 4 4 e 
+        e e e e e e e e e e e e e e e e 
+        e 4 e 4 4 4 4 4 4 4 4 4 4 e 4 e 
+        e 4 e e e e e e e e e e e e 4 e 
+        e 4 e 2 2 2 2 2 2 2 2 2 2 e 4 e 
+        e 4 e 4 4 4 4 4 4 4 4 4 4 e 4 e 
+        e 4 e e e e e e e e e e e e 4 e 
+        e 4 e 2 2 2 2 2 2 2 2 2 2 e 4 e 
+        e 4 e 4 4 4 4 4 4 4 4 4 4 e 4 e 
+        e 2 2 2 2 2 2 2 2 2 2 2 2 2 2 e 
+        e 4 4 4 4 4 4 4 4 4 4 4 4 4 4 e 
+        e e e e e e e e e e e e e e e e 
+        e e 7 7 7 7 7 7 7 7 7 7 7 7 e e 
+        e e 7 7 7 7 7 7 7 7 7 7 7 7 e e 
+        e e e e e e e e e e e e e e e e 
+        `, SpriteKind.Crate)
+    box = sprites.create(img`
         . . b b b b b b b b b b b b . . 
         . b e 4 4 4 4 4 4 4 4 4 4 e b . 
         b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
@@ -733,6 +751,24 @@ function sprite_cache () {
         f e b b e f f e f e e f e e e f 
         f f e e e e e f f e e f f f f f 
         f f f f e e f f f f f f f f f f 
+        `, true)
+    scene.setTile(14, img`
+        4 4 4 4 4 d 7 7 7 7 7 7 7 d 4 4 
+        4 4 4 4 d 2 d 7 7 7 7 7 d 4 4 4 
+        4 4 4 d 2 2 2 d d d d d 2 d 4 4 
+        4 4 d 2 2 2 2 2 2 2 2 2 2 2 d 4 
+        d d d d d d 2 2 2 2 2 2 2 2 2 d 
+        3 3 3 3 3 3 d 2 2 2 2 2 2 2 d 3 
+        3 3 3 3 3 3 3 d 2 2 2 2 2 d 3 3 
+        3 3 3 3 3 3 3 3 d d d d d 3 3 3 
+        3 3 3 3 3 3 3 d 6 6 6 6 6 d 3 3 
+        3 3 3 3 3 3 d 6 6 6 6 6 6 6 d 3 
+        d d d d d d 6 6 6 6 6 6 6 6 6 d 
+        8 8 8 8 d 7 d d d d d d d 6 d 8 
+        8 8 8 d 7 7 7 7 7 7 7 7 7 d 8 8 
+        8 8 d 7 7 7 7 7 7 7 7 7 7 7 d 8 
+        d d 4 d 7 7 7 7 7 7 7 7 7 7 7 d 
+        4 4 4 4 d 7 7 7 7 7 7 7 7 7 d 4 
         `, true)
 }
 function show_menu () {

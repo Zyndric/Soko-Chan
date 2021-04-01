@@ -870,6 +870,42 @@ d b d d d d d d d d d d 1 1 b b
 1 d d d d d b 1 1 b d d d d d b 
 b b b b b b b b b b b b b b b e 
 `;
+            case "image27":return img`
+e 2 2 2 2 2 2 2 2 2 2 2 2 2 2 e 
+e 4 4 4 4 4 4 4 4 4 4 4 4 4 4 e 
+e e e e e e e e e e e e e e e e 
+e 4 e 4 4 4 4 4 4 4 4 4 4 e 4 e 
+e 4 e e e e e e e e e e e e 4 e 
+e 4 e 2 2 2 2 2 2 2 2 2 2 e 4 e 
+e 4 e 4 4 4 4 4 4 4 4 4 4 e 4 e 
+e 4 e e e e e e e e e e e e 4 e 
+e 4 e 2 2 2 2 2 2 2 2 2 2 e 4 e 
+e 4 e 4 4 4 4 4 4 4 4 4 4 e 4 e 
+e 2 2 2 2 2 2 2 2 2 2 2 2 2 2 e 
+e 4 4 4 4 4 4 4 4 4 4 4 4 4 4 e 
+e e e e e e e e e e e e e e e e 
+e e 7 7 7 7 7 7 7 7 7 7 7 7 e e 
+e e 7 7 7 7 7 7 7 7 7 7 7 7 e e 
+e e e e e e e e e e e e e e e e 
+`;
+            case "image34":return img`
+4 4 4 4 4 d 7 7 7 7 7 7 7 d 4 4 
+4 4 4 4 d 2 d 7 7 7 7 7 d 4 4 4 
+4 4 4 d 2 2 2 d d d d d 2 d 4 4 
+4 4 d 2 2 2 2 2 2 2 2 2 2 2 d 4 
+d d d d d d 2 2 2 2 2 2 2 2 2 d 
+3 3 3 3 3 3 d 2 2 2 2 2 2 2 d 3 
+3 3 3 3 3 3 3 d 2 2 2 2 2 d 3 3 
+3 3 3 3 3 3 3 3 d d d d d 3 3 3 
+3 3 3 3 3 3 3 d 6 6 6 6 6 d 3 3 
+3 3 3 3 3 3 d 6 6 6 6 6 6 6 d 3 
+d d d d d d 6 6 6 6 6 6 6 6 6 d 
+8 8 8 8 d 7 d d d d d d d 6 d 8 
+8 8 8 d 7 7 7 7 7 7 7 7 7 d 8 8 
+8 8 d 7 7 7 7 7 7 7 7 7 7 7 d 8 
+d d 4 d 7 7 7 7 7 7 7 7 7 7 7 d 
+4 4 4 4 d 7 7 7 7 7 7 7 7 7 d 4 
+`;
         }
         return null;
     })
