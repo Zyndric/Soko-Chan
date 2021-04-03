@@ -100,28 +100,13 @@ function sprite_cache () {
     scene.setTile(14, assets.image`wall red bricks`, true)
     scene.setTile(14, assets.image`wall yellow bricks`, true)
     scene.setTile(14, assets.image`wall teal bricks`, true)
-    scene.setTile(14, img`
-        6 6 6 c c 6 6 6 6 6 6 c c 6 6 6 
-        7 7 7 7 c 7 7 7 7 7 7 7 c 7 7 7 
-        7 7 7 7 6 7 7 7 7 7 7 7 6 7 7 7 
-        6 6 7 7 6 7 7 7 7 7 7 7 6 c 6 6 
-        c 6 6 6 c c c 7 7 7 6 6 6 6 c c 
-        c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
-        c c 7 7 7 7 7 7 7 7 7 7 7 6 6 6 
-        c c c 6 7 c c c c c 7 7 6 c c c 
-        6 6 7 7 7 7 6 6 6 6 6 6 6 6 6 6 
-        6 6 6 7 7 7 6 6 6 6 6 6 6 6 6 6 
-        c c c c 7 6 c c c c c 6 6 c c c 
-        c 6 6 6 6 6 6 6 6 6 6 6 6 6 6 c 
-        c c c c c c c c c c c c c c c c 
-        6 6 c c 6 6 6 6 6 6 c c 6 6 6 6 
-        c c c c c c c c c c c c c c c c 
-        c c c c c c c c c c c c c c c c 
-        `, true)
+    scene.setTile(14, assets.image`wall overgrown bricks`, true)
     scene.setTile(14, assets.image`wall plant`, true)
     scene.setTile(14, assets.image`wall sand`, true)
     scene.setTile(14, assets.image`wall reef`, true)
     scene.setTile(14, assets.image`wall colored`, true)
+    scene.setTile(14, assets.image`wall old teal bricks`, true)
+    scene.setTile(14, assets.image`wall large teal bricks`, true)
 }
 function show_menu () {
     game.splash("A - Menu", "B - Undo")

@@ -1,5 +1,4 @@
 {
-    "image9": "hwQQABAAAAB2Z8zMZsxszHZndsxmbGzMdnd2x2dszMx8d3Znd2zMzMxmfHd3Z2zMdnd8x3dmbMx2d3zHZmxszHZ3d8dmbGzMdnd3x2ZsbMx2d3fHZmxszHZ3dndmbMzMfHd2d2ZmzMzMZnZnZmZszHbHdsZmbGzMdmd8xmZsbMx2Z2zGZsxszA==",
     "image19": {
         "data": "hwQQABAAAAAAAAAAAAAAAPD/AAAAAAAA/////w/gRAD//8P//05NAP/Pw/z0//8A8DvMvNG+Y//PzMz03zRj/8/MTETdNGMPz8xMRN00Yw/PzMz03zRj//A7zLzRvmP//8/D/PT//AD//8P//05NAP////8P4EQA8P8AAAAAAAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
@@ -190,11 +189,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "wall reef"
     },
-    "image34": {
-        "data": "hwQQABAAAABERD0zM42ITUREPTMzjYhNRNQ9MzON2ERELT0zM419TdQiPTMz3XfXLSI9MzN9d3fXItIz09Z3d3ctIj1t1nd3dy0i0mbWd3d3LSLSZtZ3d3ctItJm1nd3dy0i0mbWd3fXIiLSZtZ3d00tIj1tZn13RNTSM9PW2NdERD0zM42ITQ==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "wall colored"
-    },
     "image41": {
         "data": "hwQQABAAAADu7u7u7u7u7kNOREREQ+7uQ+7u7u5DzuxDTj7kQ0PO7ENOPuRDQ87sQ04+5ENDzuxDTj7kQ0PO7ENOPuRDQ87sQ04+5ENDzuxDTj7kQ0PO7ENOPuRDQ87sQ04+5ENDzuxDTj7kQ0PO7EPu7u7uQ87sQ05ERERD7u7u7u7u7u7u7g==",
         "mimeType": "image/x-mkcd-f4",
@@ -205,15 +199,31 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "crate wood2 on target"
     },
-    "image12": "hwQQABAAAADw////////D+/+7u7u7u/+7/7u7u7u7/7v/v/////v/u/+RET07u/+7/5ERO/u7/7v/kT07v7v/u/+RO/uT+/+7/707v5E7/7v/u/uT0Tv/u/+7v5ERO/+7/7uT0RE7/7v/v/////v/u/+7u7u7u/+7/7u7u7u7/7w////////Dw==",
-    "image14": "hwQQABAAAADw////////D+/+7u7u7u/+7/7u7u7u7/7v/v/////v/u/+RET07u/+7/5ERO/u7/7v/kT07v7v/u/+RO/uT+/+7/707v5E7/7v/u/uT0Tv/u/+7v5ERO/+7/7uT0RE7/7v/v/////v/u/+7u7u7u/+7/7u7u7u7/7w////////Dw==",
-    "image16": "hwQQABAAAADw////////D+/+7u7u7u/+7/7u7u7u7/7v/v/////v/u/+RET07u/+7/5ERO/u7/7v/kT07v7v/u/+RO/uT+/+7/707v5E7/7v/u/uT0Tv/u/+7v5ERO/+7/7uT0RE7/7v/v/////v/u/+7u7u7u/+7/7u7u7u7/7w////////Dw==",
-    "image17": "hwQQABAAAADw////////D0/kRERERE70T+RERERETvRP5O7u7u5O9E/kRETkRE70T+RERE5ETvRP5ETkRORO9E/kRE5ETk70T+TkRORETvRP5E5ETkRO9E/kRORERE70T+RETkRETvRP5O7u7u5O9E/kRERERE70T+RERERETvTw////////Dw==",
-    "image20": "hwQQABAAAADw////////D+/+7u7u7u/+7/7u7u7u7/7v/v/////v/u/+RET07u/+7/5ERO/u7/7v/kT07v7v/u/+RO/uT+/+7/707v5E7/7v/u/uT0Tv/u/+7v5ERO/+7/7uT0RE7/7v/v/////v/u/+7u7u7u/+7/7u7u7u7/7w////////Dw==",
-    "image24": "hwQQABAAAADw////////D0/kRERERE70T+RERERETvRP5O7u7u5O9E/kRETkRE70T+RERE5ETvRP5ETkRORO9E/kRE5ETk70T+TkRORETvRP5E5ETkRO9E/kRORERE70T+RETkRETvRP5O7u7u5O9E/kRERERE70T+RERERETvTw////////Dw==",
-    "image35": "hwQQABAAAADMzMzMzMzMzMzMzLzMzMzMzMvMzMzMvMzMzMzMzMzMzMzMu8zMu8zMzMy7u7u7zMzMzLzMzMvMzMzMvMzMy8zLzMy8zMzLzMy8zLzMzMvMzMzMu7u7u8zMzMy7zMy7zMzMzMzMzMzMzMzMzMvMzLzMvMzMzMzMzMzMzMzMzMzMzA==",
-    "image36": "hwQQABAAAADMzMzMzMzMzMzMzLzMzMzMzMvMzMzMvMzMzMzMzMzMzMzMzMzMzMzMzMzMzLzMzMzMzLzMzMzMzMzMzMzMzMzLzMzMzMzMzMy8zMzMzMzMzMzMzMzMzMzMzMy8zLzMzMzMzMzMzMzMzMzMzMzMzLzMvMzMzMzMzMzMzMzMzMzMzA==",
-    "image37": "hwQQABAAAADw////////D+/+7u7u7u/+7/7u7u7u7/7v/v/////v/u/+RET07u/+7/5ERO/u7/7v/kT07v7v/u/+RO/uT+/+7/707v5E7/7v/u/uT0Tv/u/+7v5ERO/+7/7uT0RE7/7v/v/////v/u/+7u7u7u/+7/7u7u7u7/7w////////Dw==",
+    "image34": {
+        "data": "hwQQABAAAABERD0zM42ITUREPTMzjYhNRNQ9MzON2ERELT0zM419TdQiPTMz3XfXLSI9MzN9d3fXItIz09Z3d3ctIj1t1nd3dy0i0mbWd3d3LSLSZtZ3d3ctItJm1nd3dy0i0mbWd3fXIiLSZtZ3d00tIj1tZn13RNTSM9PW2NdERD0zM42ITQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "wall colored"
+    },
+    "image12": {
+        "data": "hwQQABAAAAB8ZszMZsx8ZnxmfMxmfHxmbGZ8xmZszGxsZmzGzGzMzMzMzMzMzHxmfGdszGbMzMZ8ZnzGZ2zMzHxmfMZnbHxmfGZsxmZsfGZ8ZmzGZ2xsxnxmzMZmzMzMbGbMzMzMzGfMzHzGzHx8ZnzGfMZnbHxmfGZ8xmdsbGZ8ZmzGZ8zMzA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "wall old teal bricks"
+    },
+    "image14": {
+        "data": "hwQQABAAAADGzMz8xszM/GlmZvxpZmb8aWZm9mlmZvxmZmb2aWZm/GlmZvxpZsb8aWZm/GlmxvyZZmb2aWZm/P////9pZmb8xszM/GlmZvxpZmb8aWZm/GlmZvxpZmb2mWbG/GlmZvxpZmb8aWZm/GlmZvaZZmb8mWZm9pmWZvb//////////w==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "wall large teal bricks"
+    },
+    "image9": {
+        "data": "hwQQABAAAAB2Z8zMZsxszHZndsxmbGzMdnd2x2dszMx8d3Znd2zMzMxmfHd3Z2zMdnd8x3dmbMx2d3zHZmxszHZ3d8dmbGzMdnd3x2ZsbMx2d3fHZmxszHZ3dndmbMzMfHd2d2ZmzMzMZnZnZmZszHbHdsZmbGzMdmd8xmZsbMx2Z2zGZsxszA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "wall overgrown bricks"
+    },
+    "image16": {
+        "data": "hwQQABAAAADb3d3d3d3d3f3MzM/MzM/M/cy8PzO8f8f9Ztw/M9x/x/3M3M/M3M/M/TPcb2bcP8P9M9zPzNw/w/3M3E9E3M/M/UTcT0TcT8T9RNzPzNzPzP3M3G9m3M/M/TPcb2bcf8f9zNzPzNzPzP13vD8zvG/G/czMz8zMz8zb3d3d3d3d3Q==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "wall shelf"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

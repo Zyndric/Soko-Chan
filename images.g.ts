@@ -3,24 +3,6 @@ namespace myImages {
 
     helpers._registerFactory("image", function(name: string) {
         switch(helpers.stringTrim(name)) {
-            case "image9":return img`
-6 6 6 c c 6 6 6 6 6 6 c c 6 6 6 
-7 7 7 7 c 7 7 7 7 7 7 7 c 7 7 7 
-7 7 7 7 6 7 7 7 7 7 7 7 6 7 7 7 
-6 6 7 7 6 7 7 7 7 7 7 7 6 c 6 6 
-c 6 6 6 c c c 7 7 7 6 6 6 6 c c 
-c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
-c c 7 7 7 7 7 7 7 7 7 7 7 6 6 6 
-c c c 6 7 c c c c c 7 7 6 c c c 
-6 6 7 7 7 7 6 6 6 6 6 6 6 6 6 6 
-6 6 6 7 7 7 6 6 6 6 6 6 6 6 6 6 
-c c c c 7 6 c c c c c 6 6 c c c 
-c 6 6 6 6 6 6 6 6 6 6 6 6 6 6 c 
-c c c c c c c c c c c c c c c c 
-6 6 c c 6 6 6 6 6 6 c c 6 6 6 6 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
             case "image19":
             case "sokochan":return img`
 . . f f f . f f f f . f f f . . 
@@ -728,25 +710,6 @@ f e b b e f f e f e e f e e e f
 f f e e e e e f f e e f f f f f 
 f f f f e e f f f f f f f f f f 
 `;
-            case "image34":
-            case "wall colored":return img`
-4 4 4 4 4 d 7 7 7 7 7 7 7 d 4 4 
-4 4 4 4 d 2 d 7 7 7 7 7 d 4 4 4 
-4 4 4 d 2 2 2 d d d d d 2 d 4 4 
-4 4 d 2 2 2 2 2 2 2 2 2 2 2 d 4 
-d d d d d d 2 2 2 2 2 2 2 2 2 d 
-3 3 3 3 3 3 d 2 2 2 2 2 2 2 d 3 
-3 3 3 3 3 3 3 d 2 2 2 2 2 d 3 3 
-3 3 3 3 3 3 3 3 d d d d d 3 3 3 
-3 3 3 3 3 3 3 d 6 6 6 6 6 d 3 3 
-3 3 3 3 3 3 d 6 6 6 6 6 6 6 d 3 
-d d d d d d 6 6 6 6 6 6 6 6 6 d 
-8 8 8 8 d 7 d d d d d d d 6 d 8 
-8 8 8 d 7 7 7 7 7 7 7 7 7 d 8 8 
-8 8 d 7 7 7 7 7 7 7 7 7 7 7 d 8 
-d d 4 d 7 7 7 7 7 7 7 7 7 7 7 d 
-4 4 4 4 d 7 7 7 7 7 7 7 7 7 d 4 
-`;
             case "image41":
             case "crate wood2":return img`
 e 3 3 3 3 3 3 3 3 3 3 3 3 3 3 e 
@@ -785,167 +748,100 @@ e e 7 7 7 7 7 7 7 7 7 7 7 7 e e
 e e 7 7 7 7 7 7 7 7 7 7 7 7 e e 
 e e e e e e e e e e e e e e e e 
 `;
-            case "image12":return img`
-. f f f f f f f f f f f f f f . 
-f e e e e e e e e e e e e e e f 
-f e e e e e e e e e e e e e e f 
-f f f f f f f f f f f f f f f f 
-f e e f 4 4 4 4 4 f e e f e e f 
-f e e f 4 4 4 4 f e e e f e e f 
-f e e f 4 4 4 f e e e f f e e f 
-f e e f 4 4 f e e e f 4 f e e f 
-f e e f 4 f e e e f 4 4 f e e f 
-f e e f f e e e f 4 4 4 f e e f 
-f e e f e e e f 4 4 4 4 f e e f 
-f e e f e e f 4 4 4 4 4 f e e f 
-f f f f f f f f f f f f f f f f 
-f e e e e e e e e e e e e e e f 
-f e e e e e e e e e e e e e e f 
-. f f f f f f f f f f f f f f . 
+            case "image34":
+            case "wall colored":return img`
+4 4 4 4 4 d 7 7 7 7 7 7 7 d 4 4 
+4 4 4 4 d 2 d 7 7 7 7 7 d 4 4 4 
+4 4 4 d 2 2 2 d d d d d 2 d 4 4 
+4 4 d 2 2 2 2 2 2 2 2 2 2 2 d 4 
+d d d d d d 2 2 2 2 2 2 2 2 2 d 
+3 3 3 3 3 3 d 2 2 2 2 2 2 2 d 3 
+3 3 3 3 3 3 3 d 2 2 2 2 2 d 3 3 
+3 3 3 3 3 3 3 3 d d d d d 3 3 3 
+3 3 3 3 3 3 3 d 6 6 6 6 6 d 3 3 
+3 3 3 3 3 3 d 6 6 6 6 6 6 6 d 3 
+d d d d d d 6 6 6 6 6 6 6 6 6 d 
+8 8 8 8 d 7 d d d d d d d 6 d 8 
+8 8 8 d 7 7 7 7 7 7 7 7 7 d 8 8 
+8 8 d 7 7 7 7 7 7 7 7 7 7 7 d 8 
+d d 4 d 7 7 7 7 7 7 7 7 7 7 7 d 
+4 4 4 4 d 7 7 7 7 7 7 7 7 7 d 4 
 `;
-            case "image14":return img`
-. f f f f f f f f f f f f f f . 
-f e e e e e e e e e e e e e e f 
-f e e e e e e e e e e e e e e f 
-f f f f f f f f f f f f f f f f 
-f e e f 4 4 4 4 4 f e e f e e f 
-f e e f 4 4 4 4 f e e e f e e f 
-f e e f 4 4 4 f e e e f f e e f 
-f e e f 4 4 f e e e f 4 f e e f 
-f e e f 4 f e e e f 4 4 f e e f 
-f e e f f e e e f 4 4 4 f e e f 
-f e e f e e e f 4 4 4 4 f e e f 
-f e e f e e f 4 4 4 4 4 f e e f 
-f f f f f f f f f f f f f f f f 
-f e e e e e e e e e e e e e e f 
-f e e e e e e e e e e e e e e f 
-. f f f f f f f f f f f f f f . 
-`;
-            case "image16":return img`
-. f f f f f f f f f f f f f f . 
-f e e e e e e e e e e e e e e f 
-f e e e e e e e e e e e e e e f 
-f f f f f f f f f f f f f f f f 
-f e e f 4 4 4 4 4 f e e f e e f 
-f e e f 4 4 4 4 f e e e f e e f 
-f e e f 4 4 4 f e e e f f e e f 
-f e e f 4 4 f e e e f 4 f e e f 
-f e e f 4 f e e e f 4 4 f e e f 
-f e e f f e e e f 4 4 4 f e e f 
-f e e f e e e f 4 4 4 4 f e e f 
-f e e f e e f 4 4 4 4 4 f e e f 
-f f f f f f f f f f f f f f f f 
-f e e e e e e e e e e e e e e f 
-f e e e e e e e e e e e e e e f 
-. f f f f f f f f f f f f f f . 
-`;
-            case "image17":return img`
-. f f f f f f f f f f f f f f . 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f e e e e e e e e e e e e e e f 
-f 4 4 e 4 4 4 4 4 e 4 4 e 4 4 f 
-f 4 4 e 4 4 4 4 e 4 4 4 e 4 4 f 
-f 4 4 e 4 4 4 e 4 4 4 e e 4 4 f 
-f 4 4 e 4 4 e 4 4 4 e 4 e 4 4 f 
-f 4 4 e 4 e 4 4 4 e 4 4 e 4 4 f 
-f 4 4 e e 4 4 4 e 4 4 4 e 4 4 f 
-f 4 4 e 4 4 4 e 4 4 4 4 e 4 4 f 
-f 4 4 e 4 4 e 4 4 4 4 4 e 4 4 f 
-f e e e e e e e e e e e e e e f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-. f f f f f f f f f f f f f f . 
-`;
-            case "image20":return img`
-. f f f f f f f f f f f f f f . 
-f e e e e e e e e e e e e e e f 
-f e e e e e e e e e e e e e e f 
-f f f f f f f f f f f f f f f f 
-f e e f 4 4 4 4 4 f e e f e e f 
-f e e f 4 4 4 4 f e e e f e e f 
-f e e f 4 4 4 f e e e f f e e f 
-f e e f 4 4 f e e e f 4 f e e f 
-f e e f 4 f e e e f 4 4 f e e f 
-f e e f f e e e f 4 4 4 f e e f 
-f e e f e e e f 4 4 4 4 f e e f 
-f e e f e e f 4 4 4 4 4 f e e f 
-f f f f f f f f f f f f f f f f 
-f e e e e e e e e e e e e e e f 
-f e e e e e e e e e e e e e e f 
-. f f f f f f f f f f f f f f . 
-`;
-            case "image24":return img`
-. f f f f f f f f f f f f f f . 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f e e e e e e e e e e e e e e f 
-f 4 4 e 4 4 4 4 4 e 4 4 e 4 4 f 
-f 4 4 e 4 4 4 4 e 4 4 4 e 4 4 f 
-f 4 4 e 4 4 4 e 4 4 4 e e 4 4 f 
-f 4 4 e 4 4 e 4 4 4 e 4 e 4 4 f 
-f 4 4 e 4 e 4 4 4 e 4 4 e 4 4 f 
-f 4 4 e e 4 4 4 e 4 4 4 e 4 4 f 
-f 4 4 e 4 4 4 e 4 4 4 4 e 4 4 f 
-f 4 4 e 4 4 e 4 4 4 4 4 e 4 4 f 
-f e e e e e e e e e e e e e e f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-. f f f f f f f f f f f f f f . 
-`;
-            case "image35":return img`
+            case "image12":
+            case "wall old teal bricks":return img`
 c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
+7 7 6 6 c 7 7 7 7 7 7 6 c 7 7 7 
+6 6 6 6 c 7 6 6 6 6 6 6 c 6 6 6 
+6 6 6 6 c 6 6 6 6 6 6 6 c c 6 6 
 c c c c c c c c c c c c c c c c 
-c c c c b b c c c c b b c c c c 
-c c c c b b b b b b b b c c c c 
-c c c c c b c c c c b c c b c c 
-c b c c c b c c c c b c c c c c 
-c c c c c b c c c c b c c c c c 
-c c c c c b c c c c b c c c c c 
-c c c c b b b b b b b b c c c c 
-c c c c b b c c c c b b c c c c 
+c 7 7 6 c 6 7 7 6 6 c c 7 7 7 6 
+c c 6 6 c c 6 6 6 6 6 c 6 6 6 6 
 c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
+6 6 6 c c 6 7 7 6 7 6 c c 7 7 7 
+6 6 6 c c 6 6 6 6 6 6 c c 6 6 6 
+c c c c c c c c c c c c c c c c 
+c 7 6 6 c c 6 6 6 6 c c 7 6 6 c 
+c c c c c c c c c c c c c c c c 
+7 7 c c 7 c c 7 7 6 c c 7 7 6 c 
+6 6 c c 6 6 c 6 6 6 c 7 6 6 6 c 
+6 6 6 c 6 c c 6 6 c c 6 6 6 6 c 
+`;
+            case "image14":
+            case "wall large teal bricks":return img`
+6 9 9 6 9 9 9 f 6 9 9 9 9 9 9 f 
+c 6 6 6 6 6 9 f c 6 6 9 6 6 9 f 
+c 6 6 6 6 6 6 f c 6 6 6 6 6 6 f 
+c 6 6 6 6 6 6 f c 6 6 6 6 6 6 f 
+c 6 6 6 6 6 6 f c 6 6 6 6 6 6 f 
+c 6 6 6 6 6 6 f c 6 6 c 6 6 6 f 
+c c 6 6 c c 6 f c c c c c 6 6 f 
+f f f f f f f f f f f f f f f f 
+6 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+c 6 6 6 6 6 6 6 6 6 6 6 6 9 9 f 
+c 6 6 6 6 6 6 6 6 6 6 6 6 6 6 f 
+c 6 6 6 6 6 6 6 6 6 6 6 6 6 9 f 
+c 6 6 6 6 6 6 6 6 6 6 6 6 6 6 f 
+c 6 6 6 c c 6 6 6 6 6 6 6 6 6 f 
+c c c c c c c c c c 6 c c c 6 f 
+f f f f f f f f f f f f f f f f 
+`;
+            case "image9":
+            case "wall overgrown bricks":return img`
+6 6 6 c c 6 6 6 6 6 6 c c 6 6 6 
+7 7 7 7 c 7 7 7 7 7 7 7 c 7 7 7 
+7 7 7 7 6 7 7 7 7 7 7 7 6 7 7 7 
+6 6 7 7 6 7 7 7 7 7 7 7 6 c 6 6 
+c 6 6 6 c c c 7 7 7 6 6 6 6 c c 
+c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 
+c c 7 7 7 7 7 7 7 7 7 7 7 6 6 6 
+c c c 6 7 c c c c c 7 7 6 c c c 
+6 6 7 7 7 7 6 6 6 6 6 6 6 6 6 6 
+6 6 6 7 7 7 6 6 6 6 6 6 6 6 6 6 
+c c c c 7 6 c c c c c 6 6 c c c 
+c 6 6 6 6 6 6 6 6 6 6 6 6 6 6 c 
+c c c c c c c c c c c c c c c c 
+6 6 c c 6 6 6 6 6 6 c c 6 6 6 6 
+c c c c c c c c c c c c c c c c 
 c c c c c c c c c c c c c c c c 
 `;
-            case "image36":return img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c b c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c b c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c b c c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-`;
-            case "image37":return img`
-. f f f f f f f f f f f f f f . 
-f e e e e e e e e e e e e e e f 
-f e e e e e e e e e e e e e e f 
-f f f f f f f f f f f f f f f f 
-f e e f 4 4 4 4 4 f e e f e e f 
-f e e f 4 4 4 4 f e e e f e e f 
-f e e f 4 4 4 f e e e f f e e f 
-f e e f 4 4 f e e e f 4 f e e f 
-f e e f 4 f e e e f 4 4 f e e f 
-f e e f f e e e f 4 4 4 f e e f 
-f e e f e e e f 4 4 4 4 f e e f 
-f e e f e e f 4 4 4 4 4 f e e f 
-f f f f f f f f f f f f f f f f 
-f e e e e e e e e e e e e e e f 
-f e e e e e e e e e e e e e e f 
-. f f f f f f f f f f f f f f . 
+            case "image16":
+            case "wall shelf":return img`
+b d d d d d d d d d d d d d d b 
+d f f f f f f f f f f f f f f d 
+d c c 6 c 3 3 c 4 4 c 3 c 7 c d 
+d c c 6 c 3 3 c 4 4 c 3 c 7 c d 
+d c c c c c c c c c c c c c c d 
+d c b d d d d d d d d d d b c d 
+d f f f f f f f f f f f f f f d 
+d c 3 3 c 6 c 4 4 c 6 6 c 3 c d 
+d c 3 3 c 6 c 4 4 c 6 6 c 3 c d 
+d c 3 3 c 6 c 4 4 c 6 6 c 3 c d 
+d c c c c c c c c c c c c c c d 
+d c b d d d d d d d d d d b c d 
+d f f f f f f f f f f f f f f d 
+d c 7 7 c 3 3 c 4 c c 7 c 6 c d 
+d c 7 7 c 3 3 c 4 c c 7 c 6 c d 
+d c c c c c c c c c c c c c c d 
 `;
         }
         return null;
