@@ -224,6 +224,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "wall shelf"
     },
+    "image17": {
+        "data": "hwQQABAAAADd3d3d3R3R3d3d3d3dHdHd3d3b3d3d3d0d0d3d3d3d3R3R3d293d3d3d0t0i3S3d3d3S0iItId3d3d3dIt3d3d3d3d0i3d3d3dvSsiItLd3d29K9It0t3d3d3d3d3d3d3d3d3d3d3b3b3d3d3d3d3d3d3d3d3d3b3d3d3d3d3d3Q==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "target tan dotted"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

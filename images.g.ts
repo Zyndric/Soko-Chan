@@ -843,6 +843,25 @@ d c 7 7 c 3 3 c 4 c c 7 c 6 c d
 d c 7 7 c 3 3 c 4 c c 7 c 6 c d 
 d c c c c c c c c c c c c c c d 
 `;
+            case "image17":
+            case "target tan dotted":return img`
+d d d d d d d d d d d d d d d d 
+d d d 1 1 d d d d d d d d b d d 
+d d d 1 1 d d d d d d d d d d d 
+d d d d d d d d d b b d d d d d 
+d d b d d d d d d b b d d d d d 
+d d d d d 2 2 d d 2 2 d d d d d 
+d d d d d 2 2 2 2 2 2 d d d d d 
+d d d d d d 2 d d 2 d d d d d d 
+d d d d d d 2 d d 2 d d d d d d 
+d d d d b 2 2 2 2 2 2 d d d d d 
+d d d d d 2 2 d d 2 2 d d d d d 
+1 1 d d d d d d d d d d d d d d 
+1 1 d d d d d d d d d d b d d d 
+d d d d d d 1 d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d b d 
+`;
         }
         return null;
     })

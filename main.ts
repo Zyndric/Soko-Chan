@@ -88,6 +88,7 @@ function sprite_cache () {
     scene.setTile(3, assets.image`target dark purple`, false)
     scene.setTile(3, assets.image`target patch`, false)
     scene.setTile(3, assets.image`target tiled`, false)
+    scene.setTile(3, assets.image`target tan dotted`, false)
     scene.setTile(13, assets.image`floor tan dotted`, false)
     scene.setTile(13, assets.image`floor tan`, false)
     scene.setTile(13, assets.image`floor tiled`, false)
@@ -219,9 +220,9 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
             undo_box = [from_tx, from_ty, to_tx, to_ty]
             tiles.placeOnTile(c, tiles.getTileLocation(to_tx, to_ty))
             if (target_tile(tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.x), tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.y))) {
-                c.setImage(assets.image`crate wood on target`)
+                c.setImage(assets.image`crate shrub on target`)
             } else {
-                c.setImage(assets.image`crate wood`)
+                c.setImage(assets.image`crate shrub`)
             }
             return
         }
@@ -229,12 +230,12 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
 }
 function realize_tilemap () {
     for (let t of scene.getTilesByType(2)) {
-        box = sprites.create(assets.image`crate wood on target`, SpriteKind.Crate)
+        box = sprites.create(assets.image`crate drawer on target`, SpriteKind.Crate)
         scene.place(t, box)
         scene.setTileAt(t, 3)
     }
     for (let t of scene.getTilesByType(4)) {
-        box = sprites.create(assets.image`crate wood`, SpriteKind.Crate)
+        box = sprites.create(assets.image`crate drawer`, SpriteKind.Crate)
         scene.place(t, box)
         scene.setTileAt(t, 13)
     }
@@ -248,9 +249,9 @@ function realize_tilemap () {
         scene.place(t, ban)
         scene.setTileAt(t, 13)
     }
-    scene.setTile(3, assets.image`target dark purple`, false)
-    scene.setTile(13, assets.image`floor dark purple`, false)
-    scene.setTile(14, assets.image`wall purple bricks`, true)
+    scene.setTile(3, assets.image`target tan dotted`, false)
+    scene.setTile(13, assets.image`floor tan dotted`, false)
+    scene.setTile(14, assets.image`wall steel`, true)
 }
 function target_tile (x: number, y: number) {
     for (let t of scene.getTilesByType(3)) {
