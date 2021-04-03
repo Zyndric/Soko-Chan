@@ -27,19 +27,41 @@ function reset_states () {
     pressed_B = 0
     undo_ban = []
     undo_box = []
-    for (let c of sprites.allOfKind(SpriteKind.Player)) {
-        c.destroy()
-    }
-    for (let c of sprites.allOfKind(SpriteKind.Crate)) {
-        c.destroy()
-    }
+    tiles.destroySpritesOfKind(SpriteKind.Player)
+    tiles.destroySpritesOfKind(SpriteKind.Crate)
+    tiles.destroySpritesOfKind(SpriteKind.Text)
     info.setScore(0)
 }
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
     pressed_A = 0
 })
+function set_up_selection () {
+    reset_states()
+    state_selection = 1
+    state_level = 0
+    button_lag = 8
+    text_levelset = textsprite.create(list_levelsets[levelset])
+    text_levelset.setPosition(36, 42)
+    text_levelset.setMaxFontHeight(8)
+    text_level = textsprite.create(convertToText(level))
+    text_level.setPosition(28, 85)
+    text_level.setMaxFontHeight(8)
+    scene.setTileMap(img`
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        . . . . . . . . . . 
+        `)
+}
 function set_up_level () {
     reset_states()
+    state_selection = 0
+    state_level = 1
+    button_lag = 10
     if (level == 1) {
         scene.setTileMap(assets.image`level tutorial 01`)
         center_camera()
@@ -115,7 +137,7 @@ function show_menu () {
         set_up_level()
     } else {
         if (game.ask("Menu", "Go to level selection?")) {
-        	
+            set_up_selection()
         } else {
             if (game.ask("Menu", "See credits?")) {
             	
@@ -179,12 +201,42 @@ function undo_move () {
     if (undo_ban.length == 2) {
         move_ban(undo_ban[0], undo_ban[1])
         info.changeScoreBy(1)
+        music.sonar.play()
     }
     if (undo_box.length == 4) {
         move_box(undo_box[2], undo_box[3], undo_box[0], undo_box[1])
     }
     undo_ban = []
     undo_box = []
+}
+function control_level () {
+    if (all_boxes_fit()) {
+        next_level()
+    }
+    if (controller.up.isPressed() && !(pressed_up)) {
+        walk(0, -1)
+        pressed_up = button_lag
+    }
+    if (controller.down.isPressed() && !(pressed_down)) {
+        walk(0, 1)
+        pressed_down = button_lag
+    }
+    if (controller.left.isPressed() && !(pressed_left)) {
+        walk(-1, 0)
+        pressed_left = button_lag
+    }
+    if (controller.right.isPressed() && !(pressed_right)) {
+        walk(1, 0)
+        pressed_right = button_lag
+    }
+    if (controller.A.isPressed() && !(pressed_A)) {
+        show_menu()
+        reset_buttons()
+    }
+    if (controller.B.isPressed() && !(pressed_B)) {
+        undo_move()
+        pressed_B = button_lag
+    }
 }
 function center_camera () {
     scene.centerCameraAt(tiles.tilemapColumns() * tiles.tileWidth() / 2, tiles.tilemapRows() * tiles.tileWidth() / 2)
@@ -220,12 +272,58 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
             undo_box = [from_tx, from_ty, to_tx, to_ty]
             tiles.placeOnTile(c, tiles.getTileLocation(to_tx, to_ty))
             if (target_tile(tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.x), tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.y))) {
-                c.setImage(assets.image`crate shrub on target`)
+                c.setImage(assets.image`crate drawer on target`)
             } else {
-                c.setImage(assets.image`crate shrub`)
+                c.setImage(assets.image`crate drawer`)
             }
+            music.knock.play()
             return
         }
+    }
+}
+function control_selection () {
+    if (controller.up.isPressed() && !(pressed_up)) {
+        levelset += -1
+        pressed_up = button_lag
+    }
+    if (controller.down.isPressed() && !(pressed_down)) {
+        levelset += 1
+        pressed_down = button_lag
+    }
+    levelset = (levelset + list_levelsets.length) % list_levelsets.length
+    text_levelset.setText(list_levelsets[levelset])
+    if (controller.left.isPressed() && !(pressed_left)) {
+        level += -1
+        pressed_left = button_lag
+    }
+    if (controller.right.isPressed() && !(pressed_right)) {
+        level += 1
+        pressed_right = button_lag
+    }
+    level = (level - 1 + 20) % 20 + 1
+    text_level.setText(convertToText(level))
+    if (controller.A.isPressed() && !(pressed_A)) {
+        set_up_level()
+    }
+}
+function decay_button_lag () {
+    if (pressed_up) {
+        pressed_up += -1
+    }
+    if (pressed_down) {
+        pressed_down += -1
+    }
+    if (pressed_left) {
+        pressed_left += -1
+    }
+    if (pressed_right) {
+        pressed_right += -1
+    }
+    if (pressed_A) {
+        pressed_A += -1
+    }
+    if (pressed_B) {
+        pressed_B += -1
     }
 }
 function realize_tilemap () {
@@ -265,6 +363,11 @@ function target_tile (x: number, y: number) {
 }
 let ban: Sprite = null
 let box: Sprite = null
+let text_level: TextSprite = null
+let text_levelset: TextSprite = null
+let button_lag = 0
+let state_level = 0
+let state_selection = 0
 let undo_box: number[] = []
 let undo_ban: number[] = []
 let pressed_B = 0
@@ -274,10 +377,12 @@ let pressed_left = 0
 let pressed_down = 0
 let pressed_up = 0
 let level = 0
-let button_lag = 0
-button_lag = 10
-level = 0
-next_level()
+let levelset = 0
+let list_levelsets: string[] = []
+list_levelsets = ["Easy", "Microban"]
+levelset = 0
+level = 1
+set_up_selection()
 /**
  * Check win condition and manage buttons in a continuous loop.
  * 
@@ -288,49 +393,11 @@ next_level()
  * Button B must be blocked during menu, otherwise a B press during menu will be handled as undo action when the menu returns.
  */
 forever(function () {
-    if (all_boxes_fit()) {
-        next_level()
+    if (state_selection) {
+        control_selection()
     }
-    if (controller.up.isPressed() && !(pressed_up)) {
-        walk(0, -1)
-        pressed_up = button_lag
+    if (state_level) {
+        control_level()
     }
-    if (controller.down.isPressed() && !(pressed_down)) {
-        walk(0, 1)
-        pressed_down = button_lag
-    }
-    if (controller.left.isPressed() && !(pressed_left)) {
-        walk(-1, 0)
-        pressed_left = button_lag
-    }
-    if (controller.right.isPressed() && !(pressed_right)) {
-        walk(1, 0)
-        pressed_right = button_lag
-    }
-    if (controller.A.isPressed() && !(pressed_A)) {
-        show_menu()
-        reset_buttons()
-    }
-    if (controller.B.isPressed() && !(pressed_B)) {
-        undo_move()
-        pressed_B = button_lag
-    }
-    if (pressed_up) {
-        pressed_up += -1
-    }
-    if (pressed_down) {
-        pressed_down += -1
-    }
-    if (pressed_left) {
-        pressed_left += -1
-    }
-    if (pressed_right) {
-        pressed_right += -1
-    }
-    if (pressed_A) {
-        pressed_A += -1
-    }
-    if (pressed_B) {
-        pressed_B += -1
-    }
+    decay_button_lag()
 })

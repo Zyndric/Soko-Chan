@@ -6,7 +6,8 @@
         "color-coded-tilemap": "*",
         "tilemaps": "github:microsoft/pxt-tilemaps#v1.11.0",
         "Timers": "github:microsoft/arcade-timers#v1.1.0",
-        "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.1.0"
+        "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.1.0",
+        "arcade-text": "github:microsoft/arcade-text#v1.3.0"
     },
     "files": [
         "main.blocks",
