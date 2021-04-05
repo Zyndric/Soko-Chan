@@ -1,6 +1,23 @@
 namespace SpriteKind {
     export const Crate = SpriteKind.create()
 }
+/**
+ * Tile coding:
+ * 
+ * 14 brown  -- wall (#)
+ * 
+ *   3 pink     -- target (.)
+ * 
+ *   7 green   -- player (@)
+ * 
+ *   6 teal      -- player on target (+)
+ * 
+ *   4 orange -- crate ($)
+ * 
+ *   2 red       -- crate on target (*)
+ * 
+ * 13 tan       -- floor
+ */
 function reset_states () {
     pressed_up = 0
     pressed_down = 0
@@ -8,6 +25,7 @@ function reset_states () {
     pressed_right = 0
     pressed_A = 0
     pressed_B = 0
+    scroll_level = 0
     undo_ban = []
     undo_box = []
     tiles.destroySpritesOfKind(SpriteKind.Player)
@@ -42,6 +60,11 @@ function set_up_level () {
         define_level_microban()
     }
     realize_tilemap()
+    if (scroll_level) {
+        scene.cameraFollowSprite(ban)
+    } else {
+        scene.centerCameraAt(screen_center_x(), screen_center_y())
+    }
     introduce_level()
     reset_buttons()
 }
@@ -116,39 +139,28 @@ function show_menu () {
         }
     }
 }
-/**
- * Tile coding:
- * 
- * 14 brown  -- wall (#)
- * 
- *   3 pink     -- target (.)
- * 
- *   7 green   -- player (@)
- * 
- *   6 teal      -- player on target (+)
- * 
- *   4 orange -- crate ($)
- * 
- *   2 red       -- crate on target (*)
- * 
- * 13 tan       -- floor
- */
 function define_level_microban () {
     if (level == 1) {
         scene.setTileMap(assets.image`level microban 01`)
-        center_camera()
     } else if (level == 2) {
         scene.setTileMap(assets.image`level microban 02`)
-        center_camera()
     } else if (level == 3) {
         scene.setTileMap(assets.image`level microban 03`)
-        center_camera()
     } else if (level == 4) {
         scene.setTileMap(assets.image`level microban 04`)
-        center_camera()
     } else if (level == 5) {
         scene.setTileMap(assets.image`level microban 05`)
-        center_camera()
+    } else if (level == 6) {
+        scene.setTileMap(assets.image`level microban 06`)
+    } else if (level == 7) {
+        scene.setTileMap(assets.image`level microban 07`)
+    } else if (level == 8) {
+        scene.setTileMap(assets.image`level microban 08`)
+        scroll_level = 1
+    } else if (level == 9) {
+        scene.setTileMap(assets.image`level microban 09`)
+    } else if (level == 10) {
+        scene.setTileMap(assets.image`level microban 10`)
     } else {
         game.over(true)
     }
@@ -184,19 +196,24 @@ function walk (dtx: number, dty: number) {
 function define_level_easy () {
     if (level == 1) {
         scene.setTileMap(assets.image`level easy 01`)
-        center_camera()
     } else if (level == 2) {
         scene.setTileMap(assets.image`level easy 02`)
-        center_camera()
     } else if (level == 3) {
         scene.setTileMap(assets.image`level easy 03`)
-        center_camera()
     } else if (level == 4) {
         scene.setTileMap(assets.image`level easy 04`)
-        center_camera()
     } else if (level == 5) {
         scene.setTileMap(assets.image`level easy 05`)
-        center_camera()
+    } else if (level == 6) {
+        scene.setTileMap(assets.image`level easy 06`)
+    } else if (level == 7) {
+        scene.setTileMap(assets.image`level easy 07`)
+    } else if (level == 8) {
+        scene.setTileMap(assets.image`level easy 08`)
+    } else if (level == 9) {
+        scene.setTileMap(assets.image`level easy 09`)
+    } else if (level == 10) {
+        scene.setTileMap(assets.image`level easy 10`)
     } else {
         game.over(true)
     }
@@ -274,15 +291,17 @@ function introduce_level () {
     text_introduction.setMaxFontHeight(10)
     text_frame.setMaxFontHeight(20)
     text_frame.setBorder(1, 12)
-    text_introduction.setPosition(80, 60)
-    text_frame.setPosition(80, 60)
+    if (scroll_level) {
+        text_introduction.setPosition(scene.cameraProperty(CameraProperty.X), scene.cameraProperty(CameraProperty.Y))
+        text_frame.setPosition(scene.cameraProperty(CameraProperty.X), scene.cameraProperty(CameraProperty.Y))
+    } else {
+        text_introduction.setPosition(screen_center_x(), screen_center_y())
+        text_frame.setPosition(screen_center_x(), screen_center_y())
+    }
     music.bigCrash.play()
     pause(1000)
     text_introduction.destroy()
     text_frame.destroy()
-}
-function center_camera () {
-    scene.centerCameraAt(tiles.tilemapColumns() * tiles.tileWidth() / 2, tiles.tilemapRows() * tiles.tileWidth() / 2)
 }
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
     pressed_B = 0
@@ -306,6 +325,9 @@ function box_on_tile (tx: number, ty: number) {
     }
     return 0
 }
+function screen_center_x () {
+    return tiles.tilemapColumns() * tiles.tileWidth() / 2
+}
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
     pressed_right = 0
 })
@@ -324,6 +346,9 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
             return
         }
     }
+}
+function screen_center_y () {
+    return tiles.tilemapRows() * tiles.tileWidth() / 2
 }
 function control_selection () {
     if (controller.up.isPressed() && !(pressed_up)) {
@@ -344,7 +369,7 @@ function control_selection () {
         level += 1
         pressed_right = button_lag
     }
-    level = (level - 1 + 5) % 5 + 1
+    level = (level - 1 + 10) % 10 + 1
     text_level.setText(convertToText(level))
     if (controller.A.isPressed() && !(pressed_A)) {
         set_up_level()
@@ -407,8 +432,8 @@ function target_tile (x: number, y: number) {
 }
 let text_introduction: TextSprite = null
 let text_frame: TextSprite = null
-let ban: Sprite = null
 let box: Sprite = null
+let ban: Sprite = null
 let text_level: TextSprite = null
 let text_levelset: TextSprite = null
 let button_lag = 0
@@ -416,6 +441,7 @@ let state_level = 0
 let state_selection = 0
 let undo_box: number[] = []
 let undo_ban: number[] = []
+let scroll_level = 0
 let pressed_B = 0
 let pressed_A = 0
 let pressed_right = 0

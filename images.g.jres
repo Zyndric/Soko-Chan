@@ -239,21 +239,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level easy 02"
     },
-    "image35": {
-        "data": "hwQLAAkAAAAAAAAAAAAAAO7uDgAAAAAA3t3u7g4AAADeRO7dDgAAAN5H3d0OAAAA7u7e3Q4AAAAAAN7uDgAAAADu3u0AAAAAAD4z7QAAAAAA7u7uAAAAAAAAAAAAAAAA",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "level easy 03"
-    },
-    "image36": {
-        "data": "hwQKAAgAAAAAAAAAAAAAAODu7u7u7T7j3kdN497U1OLu7t3jAODu7gAAAAAAAAAA",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "level easy 04"
-    },
-    "image37": {
-        "data": "hwQKAAgAAAAAAAAAAODu7u7uM+N+7U7t3tTd7e7t3u3g3e3k4O7d7QDg7u4AAAAA",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "level easy 05"
-    },
     "image38": {
         "data": "hwQKAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg3d3tAAAAAODtNO0AAAAA4H0i7QAAAADg3d3tAAAAAODu7u4AAAAAAAAAAAAAAAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
@@ -273,6 +258,71 @@
         "data": "hwQLAAgAAAAAAAAAAO7uDgDe3Q7g3j4O4N3dDuDdPQ7g3u4OAE50DgDe3Q4A7u4OAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level microban 03"
+    },
+    "image37": {
+        "data": "hwQKAAgAAAAAAAAAAODu7u7uM+N+7U7t3tTd7e7t3u3g3e3k4O7d7QDg7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level easy 07"
+    },
+    "image35": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAO7uDgAAAAAA3t3u7g4AAADeRO7dDgAAAN5H3d0OAAAA7u7e3Q4AAAAAAN7uDgAAAADu3u0AAAAAAD4z7QAAAAAA7u7uAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level easy 03"
+    },
+    "image36": {
+        "data": "hwQKAAgAAAAAAAAAAAAAAODu7u7u7T7j3kdN497U1OLu7t3jAODu7gAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level easy 04"
+    },
+    "image45": {
+        "data": "hwQLAAgAAAAAAAAAAAAAAAAAAADg7u4O4H09DuDt5A7g3e0A4O7uAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level easy 05"
+    },
+    "image46": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAADg7g4AAAAAAO7dDgAAAAAA3t0OAAAAAAB+PQ4AAAAAAO7kDgAAAAAA4N0OAAAAAADg3Q4AAAAAAODdDgAAAAAA4O4OAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level easy 06"
+    },
+    "image48": {
+        "data": "hwQKAAgAAADg3d0O4E3UDuBN3Q7g3e4O4N7jAADe4wDg3uMA4N3tAODt7QDgfe0A",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 06"
+    },
+    "image50": {
+        "data": "hwQLAAgAAAAAAAAAAAAAAO7u7u7e3d3t3kND7d40NOfeQ0Pt3t3d7e7u7u4AAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 07"
+    },
+    "image54": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAADg7g4AAAAAAODXDgAAAADg7k0OAAAAAOBNNO4AAAAA4E0z7QAAAADgTTPtAAAAAODd7e4AAAAA4O7uAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level easy 08"
+    },
+    "image57": {
+        "data": "hwQKAAgAAAAAAAAAAADu7gDu3u3u3t3tPt3k5z5DTe3uPk3tAO7e7QAA7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level easy 10"
+    },
+    "image55": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAADu7gAAAAAAAN7tAAAAAADg3u3uAAAAAOBN0+0AAAAA4D0k7QAAAADg10PtAAAAAODu3e4AAAAAAODuDgAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level easy 09"
+    },
+    "image51": {
+        "data": "hwQKAAoAAAAAAAAAAAAAAAAA4O7uAAAAAADg3e0AAADuDuDt7QAAAN3u7t3dAAAAQ93d3d4AAABD7u7e3QAAANcOAO7uAAAA7g4AAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 08"
+    },
+    "image52": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O4OAAAAAADgc+4AAAAAAOBN7Q4AAAAA4E3d7gAAAADg3t3jAAAAAADu7u4AAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 09"
+    },
+    "image53": {
+        "data": "hwQLAAgAAAAA4O7uAODd7QDg5+0A4N3tAODk7QDg3e3u7uTtPjPd7d7u5O7e3e0A7u7uAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 10"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
