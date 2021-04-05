@@ -1,23 +1,6 @@
 namespace SpriteKind {
     export const Crate = SpriteKind.create()
 }
-/**
- * Tile coding:
- * 
- * 14 brown  -- wall (#)
- * 
- *   3 pink     -- target (.)
- * 
- *   7 green   -- player (@)
- * 
- *   6 teal      -- player on target (+)
- * 
- *   4 orange -- crate ($)
- * 
- *   2 red       -- crate on target (*)
- * 
- * 13 tan       -- floor
- */
 function reset_states () {
     pressed_up = 0
     pressed_down = 0
@@ -53,14 +36,10 @@ function set_up_level () {
     state_selection = 0
     state_level = 1
     button_lag = 10
-    if (level == 1) {
-        scene.setTileMap(assets.image`level tutorial 01`)
-        center_camera()
-    } else if (level == 2) {
-        scene.setTileMap(assets.image`level microban 01`)
-        center_camera()
-    } else {
-        game.over(true)
+    if (levelset == 0) {
+        define_level_easy()
+    } else if (levelset == 1) {
+        define_level_microban()
     }
     realize_tilemap()
     introduce_level()
@@ -137,6 +116,43 @@ function show_menu () {
         }
     }
 }
+/**
+ * Tile coding:
+ * 
+ * 14 brown  -- wall (#)
+ * 
+ *   3 pink     -- target (.)
+ * 
+ *   7 green   -- player (@)
+ * 
+ *   6 teal      -- player on target (+)
+ * 
+ *   4 orange -- crate ($)
+ * 
+ *   2 red       -- crate on target (*)
+ * 
+ * 13 tan       -- floor
+ */
+function define_level_microban () {
+    if (level == 1) {
+        scene.setTileMap(assets.image`level microban 01`)
+        center_camera()
+    } else if (level == 2) {
+        scene.setTileMap(assets.image`level microban 02`)
+        center_camera()
+    } else if (level == 3) {
+        scene.setTileMap(assets.image`level microban 03`)
+        center_camera()
+    } else if (level == 4) {
+        scene.setTileMap(assets.image`level microban 04`)
+        center_camera()
+    } else if (level == 5) {
+        scene.setTileMap(assets.image`level microban 05`)
+        center_camera()
+    } else {
+        game.over(true)
+    }
+}
 function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
     if (!(tiles.tileIsWall(tiles.getTileLocation(tx, ty)))) {
         if (box_on_tile(tx, ty)) {
@@ -164,6 +180,26 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
  */
 function walk (dtx: number, dty: number) {
     move_to(tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + dty, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + 2 * dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + 2 * dty)
+}
+function define_level_easy () {
+    if (level == 1) {
+        scene.setTileMap(assets.image`level easy 01`)
+        center_camera()
+    } else if (level == 2) {
+        scene.setTileMap(assets.image`level easy 02`)
+        center_camera()
+    } else if (level == 3) {
+        scene.setTileMap(assets.image`level easy 03`)
+        center_camera()
+    } else if (level == 4) {
+        scene.setTileMap(assets.image`level easy 04`)
+        center_camera()
+    } else if (level == 5) {
+        scene.setTileMap(assets.image`level easy 05`)
+        center_camera()
+    } else {
+        game.over(true)
+    }
 }
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
@@ -308,7 +344,7 @@ function control_selection () {
         level += 1
         pressed_right = button_lag
     }
-    level = (level - 1 + 20) % 20 + 1
+    level = (level - 1 + 5) % 5 + 1
     text_level.setText(convertToText(level))
     if (controller.A.isPressed() && !(pressed_A)) {
         set_up_level()

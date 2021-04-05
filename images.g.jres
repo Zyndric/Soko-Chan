@@ -24,16 +24,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "wall purple bricks"
     },
-    "image11": {
-        "data": "hwQKAAgAAAAAAAAA4O7uDuDd3Q7g190O4N3UDuDe7Q4A7u0AAODjAADg7gAAAAAA",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "level tutorial 01"
-    },
-    "image21": {
-        "data": "hwQKAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg3dLtAAAAAODT1+0AAAAA4O5N7gAAAAAA4N0OAAAAAADg7g4AAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "level microban 01"
-    },
     "image13": {
         "data": "hwQQABAAAAAAu7u7y7y7C7Du7u677M6760Tk7rvs7rtLRETuu+zuC0tERO677O4LS0RE7rvs7gtLRETuu8vuC0tERO7NvO4LS0RE7s287gtLRETuu8vuC0tERO677O4LS0RE7rvs7gtLRETuu+zuC+tE5O677O67sO7u7rvszrsAu7u7y7y7Cw==",
         "mimeType": "image/x-mkcd-f4",
@@ -233,6 +223,56 @@
         "data": "hwQKAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level selection"
+    },
+    "image21": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg3dLtAAAAAODT1+0AAAAA4O5N7gAAAAAA4N0OAAAAAADg7g4AAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 01"
+    },
+    "image11": {
+        "data": "hwQKAAgAAAAAAAAA4O7uDuDd3Q7g190O4N3UDuDe7Q4A7u0AAODjAADg7gAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level easy 01"
+    },
+    "image24": {
+        "data": "hwQKAAgAAAAAAAAAAODuAADg4wDu7u0APk3k7u7eR+MATu7uAD4OAADuDgAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level easy 02"
+    },
+    "image35": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAO7uDgAAAAAA3t3u7g4AAADeRO7dDgAAAN5H3d0OAAAA7u7e3Q4AAAAAAN7uDgAAAADu3u0AAAAAAD4z7QAAAAAA7u7uAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level easy 03"
+    },
+    "image36": {
+        "data": "hwQKAAgAAAAAAAAAAAAAAODu7u7u7T7j3kdN497U1OLu7t3jAODu7gAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level easy 04"
+    },
+    "image37": {
+        "data": "hwQKAAgAAAAAAAAAAODu7u7uM+N+7U7t3tTd7e7t3u3g3e3k4O7d7QDg7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level easy 05"
+    },
+    "image38": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg3d3tAAAAAODtNO0AAAAA4H0i7QAAAADg3d3tAAAAAODu7u4AAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 02"
+    },
+    "image44": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAAAA7u4AAAAA4O7e7QAAAADg3d3tAAAAAOA9NO0AAAAA4E1H7QAAAADgPTTtAAAAAODd3e0AAAAA4O7u7gAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 05"
+    },
+    "image42": {
+        "data": "hwQKAAgAAAAAAAAA4O7uAODd7QDgPe0A4C3tAOAt7Q7gTd0O4H3dDuDu7g4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 04"
+    },
+    "image40": {
+        "data": "hwQLAAgAAAAAAAAAAO7uDgDe3Q7g3j4O4N3dDuDdPQ7g3u4OAE50DgDe3Q4A7u4OAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 03"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
