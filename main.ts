@@ -46,16 +46,7 @@ function set_up_selection () {
     text_level = textsprite.create(convertToText(level))
     text_level.setPosition(28, 85)
     text_level.setMaxFontHeight(8)
-    scene.setTileMap(img`
-        . . . . . . . . . . 
-        . . . . . . . . . . 
-        . . . . . . . . . . 
-        . . . . . . . . . . 
-        . . . . . . . . . . 
-        . . . . . . . . . . 
-        . . . . . . . . . . 
-        . . . . . . . . . . 
-        `)
+    scene.setTileMap(assets.image`level selection`)
 }
 function set_up_level () {
     reset_states()
@@ -72,6 +63,7 @@ function set_up_level () {
         game.over(true)
     }
     realize_tilemap()
+    introduce_level()
     reset_buttons()
 }
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
@@ -157,6 +149,7 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
             }
         } else {
             undo_box = []
+            music.footstep.play()
             move_ban(tx, ty)
             info.changeScoreBy(-1)
         }
@@ -201,7 +194,7 @@ function undo_move () {
     if (undo_ban.length == 2) {
         move_ban(undo_ban[0], undo_ban[1])
         info.changeScoreBy(1)
-        music.sonar.play()
+        music.footstep.play()
     }
     if (undo_box.length == 4) {
         move_box(undo_box[2], undo_box[3], undo_box[0], undo_box[1])
@@ -211,6 +204,7 @@ function undo_move () {
 }
 function control_level () {
     if (all_boxes_fit()) {
+        pause(500)
         next_level()
     }
     if (controller.up.isPressed() && !(pressed_up)) {
@@ -237,6 +231,19 @@ function control_level () {
         undo_move()
         pressed_B = button_lag
     }
+}
+function introduce_level () {
+    text_frame = textsprite.create("      ", 13, 13)
+    text_introduction = textsprite.create("" + list_levelsets[levelset] + " " + convertToText(level), 0, 12)
+    text_introduction.setMaxFontHeight(10)
+    text_frame.setMaxFontHeight(20)
+    text_frame.setBorder(1, 12)
+    text_introduction.setPosition(80, 60)
+    text_frame.setPosition(80, 60)
+    music.bigCrash.play()
+    pause(1000)
+    text_introduction.destroy()
+    text_frame.destroy()
 }
 function center_camera () {
     scene.centerCameraAt(tiles.tilemapColumns() * tiles.tileWidth() / 2, tiles.tilemapRows() * tiles.tileWidth() / 2)
@@ -272,11 +279,12 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
             undo_box = [from_tx, from_ty, to_tx, to_ty]
             tiles.placeOnTile(c, tiles.getTileLocation(to_tx, to_ty))
             if (target_tile(tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.x), tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.y))) {
+                music.knock.play()
                 c.setImage(assets.image`crate drawer on target`)
             } else {
+                music.thump.play()
                 c.setImage(assets.image`crate drawer`)
             }
-            music.knock.play()
             return
         }
     }
@@ -361,6 +369,8 @@ function target_tile (x: number, y: number) {
     }
     return 0
 }
+let text_introduction: TextSprite = null
+let text_frame: TextSprite = null
 let ban: Sprite = null
 let box: Sprite = null
 let text_level: TextSprite = null

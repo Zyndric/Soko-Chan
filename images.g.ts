@@ -862,7 +862,8 @@ d d d d d d 1 d d d d d d d d d
 d d d d d d d d d d d d d d d d 
 d d d d d d d d d d d d d d b d 
 `;
-            case "image20":return img`
+            case "image20":
+            case "level selection":return img`
 . . . . . . . . . . 
 . . . . . . . . . . 
 . . . . . . . . . . 
