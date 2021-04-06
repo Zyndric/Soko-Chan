@@ -58,6 +58,8 @@ function set_up_level () {
         define_level_easy()
     } else if (levelset == 1) {
         define_level_microban()
+    } else if (levelset == 2) {
+        define_level_murase()
     }
     realize_tilemap()
     if (scroll_level) {
@@ -161,6 +163,31 @@ function define_level_microban () {
         scene.setTileMap(assets.image`level microban 09`)
     } else if (level == 10) {
         scene.setTileMap(assets.image`level microban 10`)
+    } else {
+        game.over(true)
+    }
+}
+function define_level_murase () {
+    if (level == 1) {
+        scene.setTileMap(assets.image`level murase 01`)
+    } else if (level == 2) {
+        scene.setTileMap(assets.image`level murase 02`)
+    } else if (level == 3) {
+        scene.setTileMap(assets.image`level murase 03`)
+    } else if (level == 4) {
+        scene.setTileMap(assets.image`level murase 04`)
+    } else if (level == 5) {
+        scene.setTileMap(assets.image`level murase 05`)
+    } else if (level == 6) {
+        scene.setTileMap(assets.image`level murase 06`)
+    } else if (level == 7) {
+        scene.setTileMap(assets.image`level murase 07`)
+    } else if (level == 8) {
+        scene.setTileMap(assets.image`level murase 08`)
+    } else if (level == 9) {
+        scene.setTileMap(assets.image`level murase 09`)
+    } else if (level == 10) {
+        scene.setTileMap(assets.image`level murase 10`)
     } else {
         game.over(true)
     }
@@ -451,7 +478,7 @@ let pressed_up = 0
 let level = 0
 let levelset = 0
 let list_levelsets: string[] = []
-list_levelsets = ["Easy", "Microban"]
+list_levelsets = ["Easy", "Microban", "Yoshio Murase"]
 levelset = 0
 level = 1
 set_up_selection()

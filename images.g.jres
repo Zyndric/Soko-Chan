@@ -324,6 +324,56 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level microban 10"
     },
+    "image58": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u7u7u7u3e3u3jLd7t5Nfu4+3tTu3t3u7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 01"
+    },
+    "image59": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u7u7u7e3dPu3t7U7j7T5O5+Tu3u3t3t7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 02"
+    },
+    "image60": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u7d7u7u3U3t7tLT497U7u5+3e7u7u7u7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 03"
+    },
+    "image61": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u7u7u4+3d3t7k7d7e5N5O7u3d3uPnPd7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 04"
+    },
+    "image62": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u4+Pe7u3t3j7u7d7d5NTe1+Te3u7t3u7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 05"
+    },
+    "image63": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7t7d7e4+1OfuPu3t7u5N4+7u7eTu7t3t7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 06"
+    },
+    "image64": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u7d3e3uJNPt3k3e7d7e1+4+3e3u7u7u7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 07"
+    },
+    "image65": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u7T3e7u3d7u7k3d7u7nRO3u0+Pt7u7d7e7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 08"
+    },
+    "image66": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7j7T7e7e3tTuPtTe7u503e7u3e3u7u7u7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 09"
+    },
+    "image67": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7j7d7e7ePnTt3t3S7e7t5O7u3e3u7u7u7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 10"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

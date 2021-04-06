@@ -1080,6 +1080,116 @@ e d e d e d e d e e e
 e d d d d d d d e . . 
 e e e e e e e e e . . 
 `;
+            case "image58":
+            case "level murase 01":return img`
+. e e e e e e e e . 
+. e e e d d 3 d e . 
+. e e d 2 d e d e . 
+. e e d 3 4 d d e . 
+. e e d d e 4 e e . 
+. e e e d 7 d e e . 
+. e e e e e e e e . 
+. e e e e e e e e . 
+`;
+            case "image59":
+            case "level murase 02":return img`
+. e e e e e e e e . 
+. e e d d 3 7 d e . 
+. e e d e 3 e d e . 
+. e e d d d 4 d e . 
+. e e 3 4 4 d d e . 
+. e e d d e e e e . 
+. e e e e e e e e . 
+. e e e e e e e e . 
+`;
+            case "image60":
+            case "level murase 03":return img`
+. e e e e e e e e . 
+. e e e e d 7 e e . 
+. e d d 2 4 d e e . 
+. e d d d d d e e . 
+. e e d 3 e e e e . 
+. e e 4 d e e e e . 
+. e e d 3 e e e e . 
+. e e e e e e e e . 
+`;
+            case "image61":
+            case "level murase 04":return img`
+. e e e e e e e e . 
+. e e 3 e e e 3 e . 
+. e e d e d d 3 e . 
+. e e d 4 4 d 7 e . 
+. e e d d 4 d d e . 
+. e e d d e d d e . 
+. e e d d e e e e . 
+. e e e e e e e e . 
+`;
+            case "image62":
+            case "level murase 05":return img`
+. e e e e e e e e . 
+. e e e e d 7 e e . 
+. e e e e d d d e . 
+. e 3 d e 4 4 d e . 
+. e d d d d d e e . 
+. e 3 d d 4 e e e . 
+. e e 3 d d e e e . 
+. e e e e e e e e . 
+`;
+            case "image63":
+            case "level murase 06":return img`
+. e e e e e e e e . 
+. e d 3 3 e e e e . 
+. e d 4 d d d d e . 
+. e d d e 4 e d e . 
+. e d 7 d 3 4 d e . 
+. e e e e e e e e . 
+. e e e e e e e e . 
+. e e e e e e e e . 
+`;
+            case "image64":
+            case "level murase 07":return img`
+. e e e e e e e e . 
+. e e e d d 3 e e . 
+. e d 4 d e d e e . 
+. e d 2 4 d d e e . 
+. e d 3 e 7 d e e . 
+. e d d d d e e e . 
+. e d d d e e e e . 
+. e e e e e e e e . 
+`;
+            case "image65":
+            case "level murase 08":return img`
+. e e e e e e e e . 
+. e e e e e e e e . 
+. e 3 d d 7 3 e e . 
+. e d d 4 e d e e . 
+. e d e d 4 3 d e . 
+. e d d d 4 e d e . 
+. e e e e d d d e . 
+. e e e e e e e e . 
+`;
+            case "image66":
+            case "level murase 09":return img`
+. e e e e e e e e . 
+. e 3 d 3 e e e e . 
+. e 3 e 4 4 d e e . 
+. e d d d 7 d e e . 
+. e d 4 e d d e e . 
+. e e d d d e e e . 
+. e e e e e e e e . 
+. e e e e e e e e . 
+`;
+            case "image67":
+            case "level murase 10":return img`
+. e e e e e e e e . 
+. e 3 d d e e e e . 
+. e d e d d d e e . 
+. e d 3 d e d e e . 
+. e d 4 2 4 d e e . 
+. e e 7 d e e e e . 
+. e e d d e e e e . 
+. e e e e e e e e . 
+`;
         }
         return null;
     })
