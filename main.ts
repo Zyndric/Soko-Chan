@@ -31,6 +31,7 @@ function reset_states () {
     tiles.destroySpritesOfKind(SpriteKind.Player)
     tiles.destroySpritesOfKind(SpriteKind.Crate)
     tiles.destroySpritesOfKind(SpriteKind.Text)
+    scene.centerCameraAt(80, 60)
     info.setScore(0)
 }
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
@@ -41,12 +42,36 @@ function set_up_selection () {
     state_selection = 1
     state_level = 0
     button_lag = 8
-    text_levelset = textsprite.create(list_levelsets[levelset])
-    text_levelset.setPosition(36, 42)
+    text_title = textsprite.create(" ", 0, 7)
+    text_title.setMaxFontHeight(8)
+    text_title.setPosition(24, 15)
+    text_title.setBorder(1, 0, 2)
+    text_title.setText("Menu")
+    text_levelset = textsprite.create(" ", 0, 6)
     text_levelset.setMaxFontHeight(8)
-    text_level = textsprite.create(convertToText(level))
-    text_level.setPosition(28, 85)
+    text_levelset.setPosition(24, 35)
+    text_levelset.setIcon(assets.image`icon arrows leftright`)
+    text_levelset.setBorder(1, 0, 2)
+    text_level = textsprite.create(" ", 0, 9)
     text_level.setMaxFontHeight(8)
+    text_level.setPosition(24, 50)
+    text_level.setIcon(assets.image`icon arrows leftright`)
+    text_level.setBorder(1, 9, 2)
+    text_help = textsprite.create(" ", 0, 6)
+    text_help.setMaxFontHeight(8)
+    text_help.setPosition(24, 65)
+    text_help.setBorder(1, 0, 2)
+    text_help.setText("Help")
+    text_credits = textsprite.create(" ", 0, 6)
+    text_credits.setMaxFontHeight(8)
+    text_credits.setPosition(24, 80)
+    text_credits.setBorder(1, 0, 2)
+    text_credits.setText("Credits")
+    text_footer = textsprite.create("=Choose  A=OK  B=Back", 0, 13)
+    text_footer.setMaxFontHeight(8)
+    text_footer.setIcon(assets.image`icon arrows updown`)
+    text_footer.setPosition(80, 110)
+    scale_thumbnail(assets.image`level microban 01`)
     scene.setTileMap(assets.image`level selection`)
 }
 function set_up_level () {
@@ -62,10 +87,9 @@ function set_up_level () {
         define_level_murase()
     }
     realize_tilemap()
+    scene.centerCameraAt(screen_center_x(), screen_center_y())
     if (scroll_level) {
         scene.cameraFollowSprite(ban)
-    } else {
-        scene.centerCameraAt(screen_center_x(), screen_center_y())
     }
     introduce_level()
     reset_buttons()
@@ -84,6 +108,53 @@ function reset_buttons () {
     pressed_A = button_lag
     pressed_B = button_lag
 }
+/**
+ * Soko-Chan/Meowban
+ * 
+ * TODO
+ * 
+ * - infinite undo
+ * 
+ * - rename to sokochan
+ * 
+ * - help
+ * 
+ * - credits
+ * 
+ * - title screen
+ * 
+ * - more levels (from sets "Yoshio Murase", "Sokogen-990602", Microban, Microcosmos, Nabokosmos, "Classic Thinking Rabbit", Boxxle)
+ * 
+ * - better in-game menu
+ * 
+ * - nicer level selection menu
+ * 
+ * - sort MakeCode blocks
+ * 
+ * Included Features
+ * 
+ * - one step undo
+ * 
+ * - reset level
+ * 
+ * - level selection
+ * 
+ * - push/move counter
+ * 
+ * - different sprites when on target tile
+ * 
+ * - different level sets (names with up to 8 characters)
+ * 
+ * - levels of up to 11x9 tiles show without scrolling (up to 10x7 tiles of walkable area)
+ * 
+ * - continuous movement when button is being held down
+ * 
+ * Nice to Have
+ * 
+ * - different tile sets for different level sets
+ * 
+ * - a way to handle large levels without scrolling, maybe through smaller 8x8 sprite tilemaps
+ */
 function sprite_cache () {
     box = sprites.create(assets.image`crate wood`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate wood on target`, SpriteKind.Crate)
@@ -126,6 +197,17 @@ function sprite_cache () {
     scene.setTile(14, assets.image`wall colored`, true)
     scene.setTile(14, assets.image`wall old teal bricks`, true)
     scene.setTile(14, assets.image`wall large teal bricks`, true)
+}
+function scale_thumbnail (src: Image) {
+    thumbnail = image.create(30, 20)
+    thumbnail.fillRect(0, 0, 2, 2, 3)
+    mySprite = sprites.create(thumbnail, SpriteKind.Player)
+    mySprite.setPosition(122, 69)
+    for (let x = 0; x <= 11; x++) {
+        for (let y = 0; y <= 8; y++) {
+            thumbnail.fillRect(x * 2, y * 2, 2, 2, src.getPixel(x, y))
+        }
+    }
 }
 function show_menu () {
     game.splash("A - Menu", "B - Undo")
@@ -313,9 +395,9 @@ function control_level () {
     }
 }
 function introduce_level () {
-    text_frame = textsprite.create("      ", 13, 13)
+    text_frame = textsprite.create("       ", 13, 13)
     text_introduction = textsprite.create("" + list_levelsets[levelset] + " " + convertToText(level), 0, 12)
-    text_introduction.setMaxFontHeight(10)
+    text_introduction.setMaxFontHeight(16)
     text_frame.setMaxFontHeight(20)
     text_frame.setBorder(1, 12)
     if (scroll_level) {
@@ -323,6 +405,8 @@ function introduce_level () {
         text_frame.setPosition(scene.cameraProperty(CameraProperty.X), scene.cameraProperty(CameraProperty.Y))
     } else {
         text_introduction.setPosition(screen_center_x(), screen_center_y())
+        console.logValue("xmid calulated", screen_center_x())
+        console.logValue("xmid reported", scene.cameraProperty(CameraProperty.X))
         text_frame.setPosition(screen_center_x(), screen_center_y())
     }
     music.bigCrash.play()
@@ -387,7 +471,7 @@ function control_selection () {
         pressed_down = button_lag
     }
     levelset = (levelset + list_levelsets.length) % list_levelsets.length
-    text_levelset.setText(list_levelsets[levelset])
+    text_levelset.setText("Group: " + list_levelsets[levelset])
     if (controller.left.isPressed() && !(pressed_left)) {
         level += -1
         pressed_left = button_lag
@@ -397,7 +481,7 @@ function control_selection () {
         pressed_right = button_lag
     }
     level = (level - 1 + 10) % 10 + 1
-    text_level.setText(convertToText(level))
+    text_level.setText("Level: " + convertToText(level))
     if (controller.A.isPressed() && !(pressed_A)) {
         set_up_level()
     }
@@ -459,10 +543,16 @@ function target_tile (x: number, y: number) {
 }
 let text_introduction: TextSprite = null
 let text_frame: TextSprite = null
+let mySprite: Sprite = null
+let thumbnail: Image = null
 let box: Sprite = null
 let ban: Sprite = null
+let text_footer: TextSprite = null
+let text_credits: TextSprite = null
+let text_help: TextSprite = null
 let text_level: TextSprite = null
 let text_levelset: TextSprite = null
+let text_title: TextSprite = null
 let button_lag = 0
 let state_level = 0
 let state_selection = 0
@@ -478,7 +568,7 @@ let pressed_up = 0
 let level = 0
 let levelset = 0
 let list_levelsets: string[] = []
-list_levelsets = ["Easy", "Microban", "Yoshio Murase"]
+list_levelsets = ["Easy", "Microban", "Y. Murase"]
 levelset = 0
 level = 1
 set_up_selection()

@@ -219,11 +219,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "target tan dotted"
     },
-    "image20": {
-        "data": "hwQKAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "level selection"
-    },
     "image21": {
         "data": "hwQKAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg3dLtAAAAAODT1+0AAAAA4O5N7gAAAAAA4N0OAAAAAADg7g4AAAAAAAAAAAAAAAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
@@ -373,6 +368,26 @@
         "data": "hwQKAAgAAAAAAAAA7u7u7j7d7e7ePnTt3t3S7e7t5O7u3e3u7u7u7u7u7u4AAAAA",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level murase 10"
+    },
+    "image68": {
+        "data": "hwQQABAAAADAzMz8/////7zNvLvd3d3d3L3PzMzPzMzcvU9EvM/MvNy9T0S8T8S83L3PzNzPzNzcvX933E9E3Ny9z8zcT0Tc3L1vZtzPzNzcvW9m3D/D3Ny9z8zcz8zc3L0/M9x/d9zcvc/MvM/MvNy9z8y8b8a83L3PzMzPzMy8zby73d3d3Q==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "wall shelf 2"
+    },
+    "0J$K$$kHTDb4#?EiXe*d": {
+        "data": "hwQIAAgAAAAAAAAAANDQAADd0A3Q3dDdAN3QDQDQ0AAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "icon arrows updown"
+    },
+    "image69": {
+        "data": "hwQIAAgAAAAAAA0AANDdAADd3Q0AAAAAAN3dDQDQ3QAAAA0AAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "icon arrows leftright"
+    },
+    "image20": {
+        "data": "hwQKAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level selection"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",

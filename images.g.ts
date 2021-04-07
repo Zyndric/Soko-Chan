@@ -839,17 +839,6 @@ d d d d d d 1 d d d d d d d d d
 d d d d d d d d d d d d d d d d 
 d d d d d d d d d d d d d d b d 
 `;
-            case "image20":
-            case "level selection":return img`
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-`;
             case "image21":
             case "level microban 01":return img`
 . . . . . . . . . . 
@@ -1189,6 +1178,58 @@ e e e e e e e e e . .
 . e e 7 d e e e e . 
 . e e d d e e e e . 
 . e e e e e e e e . 
+`;
+            case "image68":
+            case "wall shelf 2":return img`
+. c c c c c c c c c c c c c c c 
+c b d d d d d d d d d d d d d b 
+c d d d d d d d d d d d d d d d 
+c c b b b b b b b b b b b b b c 
+c c f f f f f f f f f f f f f c 
+c b c 4 4 c 7 c 6 6 c 3 c c c b 
+c b c 4 4 c 7 c 6 6 c 3 c c c b 
+f b c 4 4 c 7 c 6 6 c 3 c c c b 
+f d c c c c c c c c c c c c c d 
+f d c b b d d d d d d d b b c d 
+f d f f f f f f f f f f f f f d 
+f d c c 4 c 4 4 c 3 c 7 c 6 c d 
+f d c c 4 c 4 4 c 3 c 7 c 6 c d 
+f d c c c c 4 4 c c c 7 c c c d 
+f d c c c c c c c c c c c c c d 
+f d c b b d d d d d d d b b c d 
+`;
+            case "0J$K$$kHTDb4#?EiXe*d":
+            case "icon arrows updown":return img`
+. . . . . . . . 
+. . . d . . . . 
+. . d d d . . . 
+. d d d d d . . 
+. . . . . . . . 
+. d d d d d . . 
+. . d d d . . . 
+. . . d . . . . 
+`;
+            case "image69":
+            case "icon arrows leftright":return img`
+. . . . . . . . 
+. . . . . . . . 
+. . d . d . . . 
+. d d . d d . . 
+d d d . d d d . 
+. d d . d d . . 
+. . d . d . . . 
+. . . . . . . . 
+`;
+            case "image20":
+            case "level selection":return img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
 `;
         }
         return null;
