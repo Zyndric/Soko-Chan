@@ -71,7 +71,8 @@ function set_up_selection () {
     text_footer.setMaxFontHeight(8)
     text_footer.setIcon(assets.image`icon arrows updown`)
     text_footer.setPosition(80, 110)
-    scale_thumbnail(assets.image`level microban 01`)
+    mySprite = sprites.create(scale_thumbnail(assets.image`level microban 01`), SpriteKind.Player)
+    mySprite.setPosition(122, 69)
     scene.setTileMap(assets.image`level selection`)
 }
 function set_up_level () {
@@ -127,9 +128,11 @@ function reset_buttons () {
  * 
  * - better in-game menu
  * 
- * - nicer level selection menu
+ * - nicer level selection menu with minimap
  * 
  * - sort MakeCode blocks
+ * 
+ * - 
  * 
  * Included Features
  * 
@@ -199,15 +202,17 @@ function sprite_cache () {
     scene.setTile(14, assets.image`wall large teal bricks`, true)
 }
 function scale_thumbnail (src: Image) {
-    thumbnail = image.create(30, 20)
-    thumbnail.fillRect(0, 0, 2, 2, 3)
-    mySprite = sprites.create(thumbnail, SpriteKind.Player)
-    mySprite.setPosition(122, 69)
-    for (let x = 0; x <= 11; x++) {
-        for (let y = 0; y <= 8; y++) {
-            thumbnail.fillRect(x * 2, y * 2, 2, 2, src.getPixel(x, y))
+    thumbnail = image.create(45, 36)
+    for (let x = 0; x <= 15; x++) {
+        for (let y = 0; y <= 12; y++) {
+            thumbnail.fillRect(x * 3, y * 3, 3, 3, src.getPixel(x, y))
         }
     }
+    thumbnail.drawLine(0, 0, 44, 0, 6)
+    thumbnail.drawLine(0, 35, 44, 35, 6)
+    thumbnail.drawLine(0, 0, 0, 35, 6)
+    thumbnail.drawLine(44, 0, 44, 35, 6)
+    return thumbnail
 }
 function show_menu () {
     game.splash("A - Menu", "B - Undo")
@@ -543,10 +548,10 @@ function target_tile (x: number, y: number) {
 }
 let text_introduction: TextSprite = null
 let text_frame: TextSprite = null
-let mySprite: Sprite = null
 let thumbnail: Image = null
 let box: Sprite = null
 let ban: Sprite = null
+let mySprite: Sprite = null
 let text_footer: TextSprite = null
 let text_credits: TextSprite = null
 let text_help: TextSprite = null
