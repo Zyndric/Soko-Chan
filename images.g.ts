@@ -851,17 +851,6 @@ d d d d d d d d d d d d d d b d
 . . e e e e . . . . 
 . . . . . . . . . . 
 `;
-            case "image11":
-            case "level easy 01":return img`
-. . . . . . . . . . 
-. e e e e e . . . . 
-. e d 7 d e e . . . 
-. e d d d d e e e . 
-. e d d 4 d d 3 e . 
-. e d d d e e e e . 
-. e e e e e . . . . 
-. . . . . . . . . . 
-`;
             case "image24":
             case "level easy 02":return img`
 . . . e e e . . . . 
@@ -1229,6 +1218,17 @@ d d d . d d d .
 . . . . . . . . . . 
 . . . . . . . . . . 
 . . . . . . . . . . 
+. . . . . . . . . . 
+`;
+            case "image11":
+            case "level easy 01":return img`
+. . . . . . . . . . 
+. e e e e e . . . . 
+. e d 7 d e e . . . 
+. e d d d d e e e . 
+. e d d 4 d d 3 e . 
+. e d d d e e e e . 
+. e e e e e . . . . 
 . . . . . . . . . . 
 `;
         }

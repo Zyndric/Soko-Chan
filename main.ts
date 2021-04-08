@@ -80,13 +80,7 @@ function set_up_level () {
     state_selection = 0
     state_level = 1
     button_lag = 10
-    if (levelset == 0) {
-        define_level_easy()
-    } else if (levelset == 1) {
-        define_level_microban()
-    } else if (levelset == 2) {
-        define_level_murase()
-    }
+    scene.setTileMap(get_level_asset())
     realize_tilemap()
     scene.centerCameraAt(screen_center_x(), screen_center_y())
     if (scroll_level) {
@@ -228,57 +222,6 @@ function show_menu () {
         }
     }
 }
-function define_level_microban () {
-    if (level == 1) {
-        scene.setTileMap(assets.image`level microban 01`)
-    } else if (level == 2) {
-        scene.setTileMap(assets.image`level microban 02`)
-    } else if (level == 3) {
-        scene.setTileMap(assets.image`level microban 03`)
-    } else if (level == 4) {
-        scene.setTileMap(assets.image`level microban 04`)
-    } else if (level == 5) {
-        scene.setTileMap(assets.image`level microban 05`)
-    } else if (level == 6) {
-        scene.setTileMap(assets.image`level microban 06`)
-    } else if (level == 7) {
-        scene.setTileMap(assets.image`level microban 07`)
-    } else if (level == 8) {
-        scene.setTileMap(assets.image`level microban 08`)
-        scroll_level = 1
-    } else if (level == 9) {
-        scene.setTileMap(assets.image`level microban 09`)
-    } else if (level == 10) {
-        scene.setTileMap(assets.image`level microban 10`)
-    } else {
-        game.over(true)
-    }
-}
-function define_level_murase () {
-    if (level == 1) {
-        scene.setTileMap(assets.image`level murase 01`)
-    } else if (level == 2) {
-        scene.setTileMap(assets.image`level murase 02`)
-    } else if (level == 3) {
-        scene.setTileMap(assets.image`level murase 03`)
-    } else if (level == 4) {
-        scene.setTileMap(assets.image`level murase 04`)
-    } else if (level == 5) {
-        scene.setTileMap(assets.image`level murase 05`)
-    } else if (level == 6) {
-        scene.setTileMap(assets.image`level murase 06`)
-    } else if (level == 7) {
-        scene.setTileMap(assets.image`level murase 07`)
-    } else if (level == 8) {
-        scene.setTileMap(assets.image`level murase 08`)
-    } else if (level == 9) {
-        scene.setTileMap(assets.image`level murase 09`)
-    } else if (level == 10) {
-        scene.setTileMap(assets.image`level murase 10`)
-    } else {
-        game.over(true)
-    }
-}
 function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
     if (!(tiles.tileIsWall(tiles.getTileLocation(tx, ty)))) {
         if (box_on_tile(tx, ty)) {
@@ -307,31 +250,6 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
 function walk (dtx: number, dty: number) {
     move_to(tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + dty, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + 2 * dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + 2 * dty)
 }
-function define_level_easy () {
-    if (level == 1) {
-        scene.setTileMap(assets.image`level easy 01`)
-    } else if (level == 2) {
-        scene.setTileMap(assets.image`level easy 02`)
-    } else if (level == 3) {
-        scene.setTileMap(assets.image`level easy 03`)
-    } else if (level == 4) {
-        scene.setTileMap(assets.image`level easy 04`)
-    } else if (level == 5) {
-        scene.setTileMap(assets.image`level easy 05`)
-    } else if (level == 6) {
-        scene.setTileMap(assets.image`level easy 06`)
-    } else if (level == 7) {
-        scene.setTileMap(assets.image`level easy 07`)
-    } else if (level == 8) {
-        scene.setTileMap(assets.image`level easy 08`)
-    } else if (level == 9) {
-        scene.setTileMap(assets.image`level easy 09`)
-    } else if (level == 10) {
-        scene.setTileMap(assets.image`level easy 10`)
-    } else {
-        game.over(true)
-    }
-}
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
@@ -356,6 +274,30 @@ function all_boxes_fit () {
         }
     }
     return 1
+}
+function get_level_asset_easy (lv: number) {
+    if (lv == 1) {
+        return assets.image`level easy 01`
+    } else if (lv == 2) {
+        return assets.image`level easy 02`
+    } else if (lv == 3) {
+        return assets.image`level easy 03`
+    } else if (lv == 4) {
+        return assets.image`level easy 04`
+    } else if (lv == 5) {
+        return assets.image`level easy 05`
+    } else if (lv == 6) {
+        return assets.image`level easy 06`
+    } else if (lv == 7) {
+        return assets.image`level easy 07`
+    } else if (lv == 8) {
+        return assets.image`level easy 08`
+    } else if (lv == 9) {
+        return assets.image`level easy 09`
+    } else if (lv == 10) {
+        return assets.image`level easy 10`
+    }
+    return assets.image`level easy 01`
 }
 function undo_move () {
     if (undo_ban.length == 2) {
@@ -444,9 +386,43 @@ function box_on_tile (tx: number, ty: number) {
 function screen_center_x () {
     return tiles.tilemapColumns() * tiles.tileWidth() / 2
 }
+function get_level_asset_microban (lv: number) {
+    if (lv == 1) {
+        return assets.image`level microban 01`
+    } else if (lv == 2) {
+        return assets.image`level microban 02`
+    } else if (lv == 3) {
+        return assets.image`level microban 03`
+    } else if (lv == 4) {
+        return assets.image`level microban 04`
+    } else if (lv == 5) {
+        return assets.image`level microban 05`
+    } else if (lv == 6) {
+        return assets.image`level microban 06`
+    } else if (lv == 7) {
+        return assets.image`level microban 07`
+    } else if (lv == 8) {
+        scroll_level = 1
+        return assets.image`level microban 08`
+    } else if (lv == 9) {
+        return assets.image`level microban 09`
+    } else if (lv == 10) {
+        return assets.image`level microban 10`
+    }
+    return assets.image`level microban 01`
+}
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
     pressed_right = 0
 })
+function get_level_asset () {
+    if (levelset == 1) {
+        return get_level_asset_microban(level)
+    } else if (levelset == 2) {
+        return get_level_asset_murase(level)
+    } else {
+        return get_level_asset_easy(level)
+    }
+}
 function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: number) {
     for (let c of sprites.allOfKind(SpriteKind.Crate)) {
         if (c.x == tiles.locationXY(tiles.getTileLocation(from_tx, from_ty), tiles.XY.x) && c.y == tiles.locationXY(tiles.getTileLocation(from_tx, from_ty), tiles.XY.y)) {
@@ -510,6 +486,30 @@ function decay_button_lag () {
     if (pressed_B) {
         pressed_B += -1
     }
+}
+function get_level_asset_murase (lv: number) {
+    if (lv == 1) {
+        return assets.image`level murase 01`
+    } else if (lv == 2) {
+        return assets.image`level murase 02`
+    } else if (lv == 3) {
+        return assets.image`level murase 03`
+    } else if (lv == 4) {
+        return assets.image`level murase 04`
+    } else if (lv == 5) {
+        return assets.image`level murase 05`
+    } else if (lv == 6) {
+        return assets.image`level murase 06`
+    } else if (lv == 7) {
+        return assets.image`level murase 07`
+    } else if (lv == 8) {
+        return assets.image`level murase 08`
+    } else if (lv == 9) {
+        return assets.image`level murase 09`
+    } else if (lv == 10) {
+        return assets.image`level murase 10`
+    }
+    return assets.image`level murase 01`
 }
 function realize_tilemap () {
     for (let t of scene.getTilesByType(2)) {
