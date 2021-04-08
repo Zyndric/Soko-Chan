@@ -18,8 +18,7 @@
         "tilemap.g.ts",
         "images.g.jres",
         "images.g.ts",
-        "main.py",
-        null
+        "main.py"
     ],
     "testFiles": [
         "test.ts"
