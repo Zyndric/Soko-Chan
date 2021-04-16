@@ -78,6 +78,8 @@ function set_up_selection () {
     text_footer.setPosition(80, 110)
     minimap = sprites.create(scale_thumbnail(get_level_asset(select_levelset, select_level)), SpriteKind.Text)
     minimap.setPosition(122, 69)
+    hilight_menu_item()
+    draw_selection()
     state_selection = 1
     reset_buttons()
 }
@@ -471,46 +473,53 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
 function screen_center_y () {
     return tiles.tilemapRows() * tiles.tileWidth() / 2
 }
-/**
- * Menu is shifted in some levels, e.g. Easy 3
- */
 function control_selection () {
     if (controller.up.isPressed() && !(pressed_up)) {
         menu_selection += -1
+        menu_selection = (menu_selection + 4) % 4
+        hilight_menu_item()
         pressed_up = button_lag
     }
     if (controller.down.isPressed() && !(pressed_down)) {
         menu_selection += 1
+        menu_selection = (menu_selection + 4) % 4
+        hilight_menu_item()
         pressed_down = button_lag
     }
-    menu_selection = (menu_selection + 4) % 4
-    hilight_menu_item()
     if (menu_selection == 0) {
         if (controller.left.isPressed() && !(pressed_left)) {
             select_levelset += -1
+            select_levelset = (select_levelset + list_levelsets.length) % list_levelsets.length
+            draw_selection()
             pressed_left = button_lag
         }
         if (controller.right.isPressed() && !(pressed_right)) {
             select_levelset += 1
+            select_levelset = (select_levelset + list_levelsets.length) % list_levelsets.length
+            draw_selection()
             pressed_right = button_lag
         }
-        select_levelset = (select_levelset + list_levelsets.length) % list_levelsets.length
     }
     if (menu_selection == 1) {
         if (controller.left.isPressed() && !(pressed_left)) {
             select_level += -1
+            select_level = (select_level - 1 + 10) % 10 + 1
+            draw_selection()
             pressed_left = button_lag
         }
         if (controller.right.isPressed() && !(pressed_right)) {
             select_level += 1
+            select_level = (select_level - 1 + 10) % 10 + 1
+            draw_selection()
             pressed_right = button_lag
         }
-        select_level = (select_level - 1 + 10) % 10 + 1
     }
     if (controller.A.isPressed() && !(pressed_A)) {
-        level = select_level
-        levelset = select_levelset
-        set_up_level()
+        if (menu_selection <= 1) {
+            level = select_level
+            levelset = select_levelset
+            set_up_level()
+        }
     }
     if (controller.B.isPressed() && !(pressed_B)) {
         return_to_level()
