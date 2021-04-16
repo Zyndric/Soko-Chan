@@ -55,7 +55,6 @@ function reset_states () {
     info.setScore(0)
 }
 function set_up_selection () {
-    reset_states()
     state_selection = 1
     state_level = 0
     button_lag = 8
@@ -67,7 +66,7 @@ function set_up_selection () {
     text_title.setMaxFontHeight(8)
     text_title.setPosition(24, 15)
     text_title.setBorder(1, 0, 2)
-    text_title.setText("Menu")
+    text_title.setText("Soko-Chan Menu")
     menu_items = []
     add_menu_item(35, "Group", true)
     add_menu_item(50, "Level", true)
@@ -352,6 +351,17 @@ function control_level () {
         pressed_B = button_lag
     }
 }
+function return_to_level () {
+    state_selection = 0
+    state_level = 1
+    button_lag = 10
+    tiles.destroySpritesOfKind(SpriteKind.Text)
+    scene.centerCameraAt(screen_center_x(), screen_center_y())
+    if (scroll_level) {
+        scene.cameraFollowSprite(ban)
+    }
+    reset_buttons()
+}
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
     pressed_A = 0
 })
@@ -457,9 +467,7 @@ function screen_center_y () {
     return tiles.tilemapRows() * tiles.tileWidth() / 2
 }
 /**
- * Return to level
- * 
- * t must not be used in parallel
+ * Menu is shifted in some levels, e.g. Easy 3
  */
 function control_selection () {
     if (controller.up.isPressed() && !(pressed_up)) {
@@ -502,7 +510,7 @@ function control_selection () {
         set_up_level()
     }
     if (controller.B.isPressed() && !(pressed_B)) {
-    	
+        return_to_level()
     }
 }
 function decay_button_lag () {
