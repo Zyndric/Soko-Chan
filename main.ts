@@ -79,6 +79,7 @@ function set_up_selection () {
     minimap = sprites.create(scale_thumbnail(get_level_asset(select_levelset, select_level)), SpriteKind.Text)
     minimap.setPosition(122, 69)
     state_selection = 1
+    reset_buttons()
 }
 function set_up_level () {
     reset_states()
@@ -258,6 +259,11 @@ function hilight_menu_item () {
 function walk (dtx: number, dty: number) {
     move_to(tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + dty, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + 2 * dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + 2 * dty)
 }
+function draw_selection () {
+    menu_items[0].setText("Group: " + list_levelsets[select_levelset])
+    menu_items[1].setText("Level: " + convertToText(select_level))
+    minimap.setImage(scale_thumbnail(get_level_asset(select_levelset, select_level)))
+}
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
     pressed_right = 0
 })
@@ -377,8 +383,6 @@ function introduce_level () {
         text_frame.setPosition(scene.cameraProperty(CameraProperty.X), scene.cameraProperty(CameraProperty.Y))
     } else {
         text_introduction.setPosition(screen_center_x(), screen_center_y())
-        console.logValue("xmid calulated", screen_center_x())
-        console.logValue("xmid reported", scene.cameraProperty(CameraProperty.X))
         text_frame.setPosition(screen_center_x(), screen_center_y())
     }
     music.bigCrash.play()
@@ -490,6 +494,7 @@ function control_selection () {
             select_levelset += 1
             pressed_right = button_lag
         }
+        select_levelset = (select_levelset + list_levelsets.length) % list_levelsets.length
     }
     if (menu_selection == 1) {
         if (controller.left.isPressed() && !(pressed_left)) {
@@ -500,12 +505,8 @@ function control_selection () {
             select_level += 1
             pressed_right = button_lag
         }
+        select_level = (select_level - 1 + 10) % 10 + 1
     }
-    select_levelset = (select_levelset + list_levelsets.length) % list_levelsets.length
-    menu_items[0].setText("Group: " + list_levelsets[select_levelset])
-    select_level = (select_level - 1 + 10) % 10 + 1
-    menu_items[1].setText("Level: " + convertToText(select_level))
-    minimap.setImage(scale_thumbnail(get_level_asset(select_levelset, select_level)))
     if (controller.A.isPressed() && !(pressed_A)) {
         level = select_level
         levelset = select_levelset
@@ -626,7 +627,7 @@ let list_levelsets: string[] = []
 list_levelsets = ["Easy", "Microban", "Y. Murase"]
 levelset = 0
 level = 1
-set_up_selection()
+set_up_level()
 forever(function () {
     if (state_selection) {
         control_selection()
