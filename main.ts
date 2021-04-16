@@ -2,6 +2,17 @@ namespace SpriteKind {
     export const Crate = SpriteKind.create()
 }
 /**
+ * Variables
+ * 
+ * setup scope
+ * 
+ * e
+ * 
+ * control scope
+ * 
+ * c, t, x, y
+ */
+/**
  * Check win condition and manage buttons in a continuous loop.
  * 
  * A win is when all boxes stand on a target tile (pink).
@@ -539,25 +550,25 @@ function get_level_asset_murase (lv: number) {
     return assets.image`level murase 01`
 }
 function realize_tilemap () {
-    for (let t of scene.getTilesByType(2)) {
+    for (let e of scene.getTilesByType(2)) {
         box = sprites.create(assets.image`crate drawer on target`, SpriteKind.Crate)
-        scene.place(t, box)
-        scene.setTileAt(t, 3)
+        scene.place(e, box)
+        scene.setTileAt(e, 3)
     }
-    for (let t of scene.getTilesByType(4)) {
+    for (let e of scene.getTilesByType(4)) {
         box = sprites.create(assets.image`crate drawer`, SpriteKind.Crate)
-        scene.place(t, box)
-        scene.setTileAt(t, 13)
+        scene.place(e, box)
+        scene.setTileAt(e, 13)
     }
-    for (let t of scene.getTilesByType(6)) {
+    for (let e of scene.getTilesByType(6)) {
         ban = sprites.create(assets.image`sokochan on target`, SpriteKind.Player)
-        scene.place(t, ban)
-        scene.setTileAt(t, 3)
+        scene.place(e, ban)
+        scene.setTileAt(e, 3)
     }
-    for (let t of scene.getTilesByType(7)) {
+    for (let e of scene.getTilesByType(7)) {
         ban = sprites.create(assets.image`sokochan`, SpriteKind.Player)
-        scene.place(t, ban)
-        scene.setTileAt(t, 13)
+        scene.place(e, ban)
+        scene.setTileAt(e, 13)
     }
     scene.setTile(3, assets.image`target tan dotted`, false)
     scene.setTile(13, assets.image`floor tan dotted`, false)
