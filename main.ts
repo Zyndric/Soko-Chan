@@ -55,12 +55,12 @@ function reset_states () {
     info.setScore(0)
 }
 function set_up_selection () {
-    state_selection = 1
     state_level = 0
     button_lag = 8
     menu_selection = 1
     select_level = level
     select_levelset = levelset
+    scene.centerCameraAt(80, 60)
     mySprite2 = sprites.create(assets.image`bg selection`, SpriteKind.Text)
     text_title = textsprite.create(" ", 0, 7)
     text_title.setMaxFontHeight(8)
@@ -76,15 +76,15 @@ function set_up_selection () {
     text_footer.setMaxFontHeight(8)
     text_footer.setIcon(assets.image`icon arrows updown`)
     text_footer.setPosition(80, 110)
-    mySprite = sprites.create(scale_thumbnail(assets.image`level microban 01`), SpriteKind.Text)
-    mySprite.setPosition(122, 69)
+    minimap = sprites.create(scale_thumbnail(get_level_asset(select_levelset, select_level)), SpriteKind.Text)
+    minimap.setPosition(122, 69)
+    state_selection = 1
 }
 function set_up_level () {
     reset_states()
     state_selection = 0
-    state_level = 1
     button_lag = 10
-    scene.setTileMap(get_level_asset())
+    scene.setTileMap(get_level_asset(levelset, level))
     realize_tilemap()
     scene.centerCameraAt(screen_center_x(), screen_center_y())
     if (scroll_level) {
@@ -92,6 +92,7 @@ function set_up_level () {
     }
     introduce_level()
     reset_buttons()
+    state_level = 1
 }
 function reset_buttons () {
     pressed_up = button_lag
@@ -205,9 +206,9 @@ function add_menu_item (y: number, text: string, changeable: boolean) {
     menu_items[menu_items.length] = t
 }
 function scale_thumbnail (src: Image) {
-    thumbnail = image.create(45, 0)
-    for (let x = 0; x <= 15; x++) {
-        for (let y = 0; y <= 12; y++) {
+    thumbnail = image.create(45, 36)
+    for (let x = 0; x <= 14; x++) {
+        for (let y = 0; y <= 11; y++) {
             thumbnail.fillRect(x * 3, y * 3, 3, 3, src.getPixel(x, y))
         }
     }
@@ -353,7 +354,6 @@ function control_level () {
 }
 function return_to_level () {
     state_selection = 0
-    state_level = 1
     button_lag = 10
     tiles.destroySpritesOfKind(SpriteKind.Text)
     scene.centerCameraAt(screen_center_x(), screen_center_y())
@@ -361,6 +361,7 @@ function return_to_level () {
         scene.cameraFollowSprite(ban)
     }
     reset_buttons()
+    state_level = 1
 }
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
     pressed_A = 0
@@ -438,13 +439,13 @@ function get_level_asset_microban (lv: number) {
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
     pressed_B = 0
 })
-function get_level_asset () {
-    if (levelset == 1) {
-        return get_level_asset_microban(level)
-    } else if (levelset == 2) {
-        return get_level_asset_murase(level)
+function get_level_asset (group: number, lv: number) {
+    if (group == 1) {
+        return get_level_asset_microban(lv)
+    } else if (group == 2) {
+        return get_level_asset_murase(lv)
     } else {
-        return get_level_asset_easy(level)
+        return get_level_asset_easy(lv)
     }
 }
 function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: number) {
@@ -504,6 +505,7 @@ function control_selection () {
     menu_items[0].setText("Group: " + list_levelsets[select_levelset])
     select_level = (select_level - 1 + 10) % 10 + 1
     menu_items[1].setText("Level: " + convertToText(select_level))
+    minimap.setImage(scale_thumbnail(get_level_asset(select_levelset, select_level)))
     if (controller.A.isPressed() && !(pressed_A)) {
         level = select_level
         levelset = select_levelset
@@ -598,7 +600,8 @@ let thumbnail: Image = null
 let t: TextSprite = null
 let box: Sprite = null
 let ban: Sprite = null
-let mySprite: Sprite = null
+let state_selection = 0
+let minimap: Sprite = null
 let text_footer: TextSprite = null
 let menu_items: TextSprite[] = []
 let text_title: TextSprite = null
@@ -608,7 +611,6 @@ let select_level = 0
 let menu_selection = 0
 let button_lag = 0
 let state_level = 0
-let state_selection = 0
 let undo_box: number[] = []
 let undo_ban: number[] = []
 let scroll_level = 0
