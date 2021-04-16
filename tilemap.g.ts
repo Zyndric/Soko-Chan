@@ -1,4 +1,4 @@
-// Automatisch generierter Code. Nicht bearbeiten.
+// Auto-generated code. Do not edit.
 namespace myTiles {
     //% fixedInstance jres blockIdentity=images._tile
     export const transparency16 = image.ofBuffer(hex``);
@@ -55,4 +55,4 @@ namespace myTiles {
     })
 
 }
-// Automatisch generierter Code. Nicht bearbeiten.
+// Auto-generated code. Do not edit.

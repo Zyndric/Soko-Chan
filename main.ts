@@ -2,6 +2,15 @@ namespace SpriteKind {
     export const Crate = SpriteKind.create()
 }
 /**
+ * Check win condition and manage buttons in a continuous loop.
+ * 
+ * A win is when all boxes stand on a target tile (pink).
+ * 
+ * Direction buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Meowban continues to move, but not too fast.
+ * 
+ * Button B must be blocked during menu, otherwise a B press during menu will be handled as undo action when the menu returns.
+ */
+/**
  * Tile coding:
  * 
  * 14 brown  -- wall (#)
@@ -34,46 +43,31 @@ function reset_states () {
     scene.centerCameraAt(80, 60)
     info.setScore(0)
 }
-controller.A.onEvent(ControllerButtonEvent.Released, function () {
-    pressed_A = 0
-})
 function set_up_selection () {
     reset_states()
     state_selection = 1
     state_level = 0
     button_lag = 8
+    menu_selection = 1
+    select_level = level
+    select_levelset = levelset
+    mySprite2 = sprites.create(assets.image`bg selection`, SpriteKind.Text)
     text_title = textsprite.create(" ", 0, 7)
     text_title.setMaxFontHeight(8)
     text_title.setPosition(24, 15)
     text_title.setBorder(1, 0, 2)
     text_title.setText("Menu")
-    text_levelset = textsprite.create(" ", 0, 6)
-    text_levelset.setMaxFontHeight(8)
-    text_levelset.setPosition(24, 35)
-    text_levelset.setIcon(assets.image`icon arrows leftright`)
-    text_levelset.setBorder(1, 0, 2)
-    text_level = textsprite.create(" ", 0, 9)
-    text_level.setMaxFontHeight(8)
-    text_level.setPosition(24, 50)
-    text_level.setIcon(assets.image`icon arrows leftright`)
-    text_level.setBorder(1, 9, 2)
-    text_help = textsprite.create(" ", 0, 6)
-    text_help.setMaxFontHeight(8)
-    text_help.setPosition(24, 65)
-    text_help.setBorder(1, 0, 2)
-    text_help.setText("Help")
-    text_credits = textsprite.create(" ", 0, 6)
-    text_credits.setMaxFontHeight(8)
-    text_credits.setPosition(24, 80)
-    text_credits.setBorder(1, 0, 2)
-    text_credits.setText("Credits")
+    menu_items = []
+    add_menu_item(35, "Group", true)
+    add_menu_item(50, "Level", true)
+    add_menu_item(65, "Help", false)
+    add_menu_item(80, "Credits", false)
     text_footer = textsprite.create("=Choose  A=OK  B=Back", 0, 13)
     text_footer.setMaxFontHeight(8)
     text_footer.setIcon(assets.image`icon arrows updown`)
     text_footer.setPosition(80, 110)
-    mySprite = sprites.create(scale_thumbnail(assets.image`level microban 01`), SpriteKind.Player)
+    mySprite = sprites.create(scale_thumbnail(assets.image`level microban 01`), SpriteKind.Text)
     mySprite.setPosition(122, 69)
-    scene.setTileMap(assets.image`level selection`)
 }
 function set_up_level () {
     reset_states()
@@ -89,12 +83,6 @@ function set_up_level () {
     introduce_level()
     reset_buttons()
 }
-controller.down.onEvent(ControllerButtonEvent.Released, function () {
-    pressed_down = 0
-})
-controller.up.onEvent(ControllerButtonEvent.Released, function () {
-    pressed_up = 0
-})
 function reset_buttons () {
     pressed_up = button_lag
     pressed_down = button_lag
@@ -195,8 +183,19 @@ function sprite_cache () {
     scene.setTile(14, assets.image`wall old teal bricks`, true)
     scene.setTile(14, assets.image`wall large teal bricks`, true)
 }
+function add_menu_item (y: number, text: string, changeable: boolean) {
+    t = textsprite.create(" ", 0, 6)
+    t.setMaxFontHeight(8)
+    t.setPosition(24, y)
+    if (changeable) {
+        t.setIcon(assets.image`icon arrows leftright`)
+    }
+    t.setBorder(1, 0, 2)
+    t.setText(text)
+    menu_items[menu_items.length] = t
+}
 function scale_thumbnail (src: Image) {
-    thumbnail = image.create(45, 36)
+    thumbnail = image.create(45, 0)
     for (let x = 0; x <= 15; x++) {
         for (let y = 0; y <= 12; y++) {
             thumbnail.fillRect(x * 3, y * 3, 3, 3, src.getPixel(x, y))
@@ -208,20 +207,9 @@ function scale_thumbnail (src: Image) {
     thumbnail.drawLine(44, 0, 44, 35, 6)
     return thumbnail
 }
-function show_menu () {
-    game.splash("A - Menu", "B - Undo")
-    if (game.ask("Menu", "Reset this level?")) {
-        set_up_level()
-    } else {
-        if (game.ask("Menu", "Go to level selection?")) {
-            set_up_selection()
-        } else {
-            if (game.ask("Menu", "See credits?")) {
-            	
-            }
-        }
-    }
-}
+controller.down.onEvent(ControllerButtonEvent.Released, function () {
+    pressed_down = 0
+})
 function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
     if (!(tiles.tileIsWall(tiles.getTileLocation(tx, ty)))) {
         if (box_on_tile(tx, ty)) {
@@ -240,6 +228,15 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
         }
     }
 }
+function hilight_menu_item () {
+    for (let t = 0; t <= 3; t++) {
+        if (t == menu_selection) {
+            menu_items[t].setBorder(1, 9, 2)
+        } else {
+            menu_items[t].setBorder(1, 0, 2)
+        }
+    }
+}
 /**
  * tx, ty are tileset coordinates
  * 
@@ -250,6 +247,9 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
 function walk (dtx: number, dty: number) {
     move_to(tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + dty, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column) + 2 * dtx, tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row) + 2 * dty)
 }
+controller.right.onEvent(ControllerButtonEvent.Released, function () {
+    pressed_right = 0
+})
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
@@ -333,7 +333,7 @@ function control_level () {
         pressed_right = button_lag
     }
     if (controller.A.isPressed() && !(pressed_A)) {
-        show_menu()
+        set_up_selection()
         reset_buttons()
     }
     if (controller.B.isPressed() && !(pressed_B)) {
@@ -341,6 +341,9 @@ function control_level () {
         pressed_B = button_lag
     }
 }
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    pressed_A = 0
+})
 function introduce_level () {
     text_frame = textsprite.create("       ", 13, 13)
     text_introduction = textsprite.create("" + list_levelsets[levelset] + " " + convertToText(level), 0, 12)
@@ -361,8 +364,8 @@ function introduce_level () {
     text_introduction.destroy()
     text_frame.destroy()
 }
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-    pressed_B = 0
+controller.up.onEvent(ControllerButtonEvent.Released, function () {
+    pressed_up = 0
 })
 function move_ban (to_tx: number, to_ty: number) {
     undo_ban = [tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column), tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row)]
@@ -411,8 +414,8 @@ function get_level_asset_microban (lv: number) {
     }
     return assets.image`level microban 01`
 }
-controller.right.onEvent(ControllerButtonEvent.Released, function () {
-    pressed_right = 0
+controller.B.onEvent(ControllerButtonEvent.Released, function () {
+    pressed_B = 0
 })
 function get_level_asset () {
     if (levelset == 1) {
@@ -442,29 +445,57 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
 function screen_center_y () {
     return tiles.tilemapRows() * tiles.tileWidth() / 2
 }
+/**
+ * Selection control
+ * 
+ * ok Selection integration
+ * 
+ * Return to level
+ * 
+ * t must not be used in parallel
+ */
 function control_selection () {
     if (controller.up.isPressed() && !(pressed_up)) {
-        levelset += -1
+        menu_selection += -1
         pressed_up = button_lag
     }
     if (controller.down.isPressed() && !(pressed_down)) {
-        levelset += 1
+        menu_selection += 1
         pressed_down = button_lag
     }
-    levelset = (levelset + list_levelsets.length) % list_levelsets.length
-    text_levelset.setText("Group: " + list_levelsets[levelset])
-    if (controller.left.isPressed() && !(pressed_left)) {
-        level += -1
-        pressed_left = button_lag
+    menu_selection = (menu_selection + 4) % 4
+    hilight_menu_item()
+    if (menu_selection == 0) {
+        if (controller.left.isPressed() && !(pressed_left)) {
+            select_levelset += -1
+            pressed_left = button_lag
+        }
+        if (controller.right.isPressed() && !(pressed_right)) {
+            select_levelset += 1
+            pressed_right = button_lag
+        }
     }
-    if (controller.right.isPressed() && !(pressed_right)) {
-        level += 1
-        pressed_right = button_lag
+    if (menu_selection == 1) {
+        if (controller.left.isPressed() && !(pressed_left)) {
+            select_level += -1
+            pressed_left = button_lag
+        }
+        if (controller.right.isPressed() && !(pressed_right)) {
+            select_level += 1
+            pressed_right = button_lag
+        }
     }
-    level = (level - 1 + 10) % 10 + 1
-    text_level.setText("Level: " + convertToText(level))
+    select_levelset = (select_levelset + list_levelsets.length) % list_levelsets.length
+    menu_items[0].setText("Group: " + list_levelsets[select_levelset])
+    select_level = (select_level - 1 + 10) % 10 + 1
+    menu_items[1].setText("Level: " + convertToText(select_level))
     if (controller.A.isPressed() && !(pressed_A)) {
+        level = select_level
+        levelset = select_levelset
         set_up_level()
+    }
+    if (controller.B.isPressed() && !(pressed_B)) {
+    	
     }
 }
 function decay_button_lag () {
@@ -549,15 +580,17 @@ function target_tile (x: number, y: number) {
 let text_introduction: TextSprite = null
 let text_frame: TextSprite = null
 let thumbnail: Image = null
+let t: TextSprite = null
 let box: Sprite = null
 let ban: Sprite = null
 let mySprite: Sprite = null
 let text_footer: TextSprite = null
-let text_credits: TextSprite = null
-let text_help: TextSprite = null
-let text_level: TextSprite = null
-let text_levelset: TextSprite = null
+let menu_items: TextSprite[] = []
 let text_title: TextSprite = null
+let mySprite2: Sprite = null
+let select_levelset = 0
+let select_level = 0
+let menu_selection = 0
 let button_lag = 0
 let state_level = 0
 let state_selection = 0
@@ -577,15 +610,6 @@ list_levelsets = ["Easy", "Microban", "Y. Murase"]
 levelset = 0
 level = 1
 set_up_selection()
-/**
- * Check win condition and manage buttons in a continuous loop.
- * 
- * A win is when all boxes stand on a target tile (pink).
- * 
- * Direction buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Meowban continues to move, but not too fast.
- * 
- * Button B must be blocked during menu, otherwise a B press during menu will be handled as undo action when the menu returns.
- */
 forever(function () {
     if (state_selection) {
         control_selection()
