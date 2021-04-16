@@ -446,10 +446,6 @@ function screen_center_y () {
     return tiles.tilemapRows() * tiles.tileWidth() / 2
 }
 /**
- * Selection control
- * 
- * ok Selection integration
- * 
  * Return to level
  * 
  * t must not be used in parallel
