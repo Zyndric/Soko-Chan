@@ -13,13 +13,6 @@ namespace SpriteKind {
  * c, t, x, y
  */
 /**
- * Set up
- * 
- * Variables ban, level, "undo ban" and "undo box" are unique and used by name.
- * 
- * Variables box, c and t are loop and temporary variables.
- */
-/**
  * Check win condition and manage buttons in a continuous loop.
  * 
  * A win is when all boxes stand on a target tile (pink).
@@ -121,17 +114,9 @@ function reset_buttons () {
  * 
  * - rename to sokochan
  * 
- * - help
- * 
- * - credits
- * 
  * - title screen
  * 
  * - more levels (from sets "Yoshio Murase", "Sokogen-990602", Microban, Microcosmos, Nabokosmos, "Classic Thinking Rabbit", Boxxle)
- * 
- * - better in-game menu
- * 
- * - nicer level selection menu with minimap
  * 
  * - sort MakeCode blocks
  * 
@@ -143,7 +128,7 @@ function reset_buttons () {
  * 
  * - reset level
  * 
- * - level selection
+ * - level selection with minimap
  * 
  * - push/move counter
  * 
@@ -154,6 +139,10 @@ function reset_buttons () {
  * - levels of up to 11x9 tiles show without scrolling (up to 10x7 tiles of walkable area)
  * 
  * - continuous movement when button is being held down
+ * 
+ * - nice in-game menu
+ * 
+ * - help and credits
  * 
  * Nice to Have
  * 
@@ -228,6 +217,10 @@ function scale_thumbnail (src: Image) {
     thumbnail.drawLine(44, 0, 44, 35, 6)
     return thumbnail
 }
+function show_help () {
+    game.showLongText("---  Soko-Chan Help  --- " + "                         " + "Push the crates onto " + "the targets. You win " + "when all targets are " + "occupied by crates." + "              " + "                         " + "-  Arrow keys - Move      " + "-  B button   - Undo      " + "-  A button   - Menu      ", DialogLayout.Full)
+    game.showLongText("---  Soko-Chan Help  --- " + "                         " + "When in menu, press A immediately to " + "reset the current level, or choose a different level, then press A." + "                                        " + "When in menu, press B to " + "return to the level as you left it.", DialogLayout.Full)
+}
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
     pressed_down = 0
 })
@@ -279,6 +272,9 @@ controller.right.onEvent(ControllerButtonEvent.Released, function () {
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
+function show_credits () {
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban:                " + "-     by David Skinner   " + "Y. Murase:               " + "-     by Yoshio Murase   " + "Easy:                    " + "-     some by A. Röhnsch ", DialogLayout.Full)
+}
 function next_level () {
     level += 1
     if (level > 10) {
@@ -477,6 +473,13 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
         }
     }
 }
+/**
+ * Set up
+ * 
+ * Variables ban, level, "undo ban" and "undo box" are unique and used by name.
+ * 
+ * Variables box, c and t are loop and temporary variables.
+ */
 function screen_center_y () {
     return tiles.tilemapRows() * tiles.tileWidth() / 2
 }
@@ -526,6 +529,12 @@ function control_selection () {
             level = select_level
             levelset = select_levelset
             set_up_level()
+        } else if (menu_selection == 2) {
+            show_help()
+            pressed_A = button_lag
+        } else {
+            show_credits()
+            pressed_A = button_lag
         }
     }
     if (controller.B.isPressed() && !(pressed_B)) {
