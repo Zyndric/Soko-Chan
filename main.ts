@@ -13,6 +13,13 @@ namespace SpriteKind {
  * c, t, x, y
  */
 /**
+ * Set up
+ * 
+ * Variables ban, level, "undo ban" and "undo box" are unique and used by name.
+ * 
+ * Variables box, c and t are loop and temporary variables.
+ */
+/**
  * Check win condition and manage buttons in a continuous loop.
  * 
  * A win is when all boxes stand on a target tile (pink).
@@ -128,7 +135,7 @@ function reset_buttons () {
  * 
  * - sort MakeCode blocks
  * 
- * - 
+ * - win screen
  * 
  * Included Features
  * 
@@ -272,15 +279,15 @@ controller.right.onEvent(ControllerButtonEvent.Released, function () {
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
-/**
- * Set up
- * 
- * Variables ban, level, "undo ban" and "undo box" are unique and used by name.
- * 
- * Variables box, c and t are loop and temporary variables.
- */
 function next_level () {
     level += 1
+    if (level > 10) {
+        level = 1
+        levelset += 1
+        if (levelset > 2) {
+            levelset = 0
+        }
+    }
     set_up_level()
 }
 /**
