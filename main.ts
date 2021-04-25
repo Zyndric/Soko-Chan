@@ -341,7 +341,12 @@ function undo_move () {
 function control_level () {
     if (all_boxes_fit()) {
         pause(500)
-        next_level()
+        if (game.ask("Moves: " + convertToText(Math.abs(info.score())), "Next Level?")) {
+            next_level()
+        } else {
+            undo_move()
+            pressed_B = button_lag
+        }
     }
     if (controller.up.isPressed() && !(pressed_up)) {
         walk(0, -1)
