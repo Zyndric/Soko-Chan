@@ -1209,17 +1209,6 @@ d d d . d d d .
 . . d . d . . . 
 . . . . . . . . 
 `;
-            case "image20":
-            case "level selection":return img`
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-`;
             case "image11":
             case "level easy 01":return img`
 . . . . . . . . . . 

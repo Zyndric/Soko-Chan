@@ -46,8 +46,7 @@ function reset_states () {
     pressed_A = 0
     pressed_B = 0
     scroll_level = 0
-    undo_ban = []
-    undo_box = []
+    undo = []
     tiles.destroySpritesOfKind(SpriteKind.Player)
     tiles.destroySpritesOfKind(SpriteKind.Crate)
     tiles.destroySpritesOfKind(SpriteKind.Text)
@@ -110,8 +109,6 @@ function reset_buttons () {
  * 
  * TODO
  * 
- * - infinite undo
- * 
  * - rename to sokochan
  * 
  * - title screen
@@ -124,7 +121,7 @@ function reset_buttons () {
  * 
  * Included Features
  * 
- * - one step undo
+ * - unlimited undo
  * 
  * - reset level
  * 
@@ -229,13 +226,21 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
         if (box_on_tile(tx, ty)) {
             if (!(tiles.tileIsWall(tiles.getTileLocation(push_tx, push_ty)))) {
                 if (!(box_on_tile(push_tx, push_ty))) {
+                    undo.push([
+                    tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column),
+                    tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row),
+                    tx,
+                    ty,
+                    push_tx,
+                    push_ty
+                    ])
                     move_box(tx, ty, push_tx, push_ty)
                     move_ban(tx, ty)
                     info.changeScoreBy(-1)
                 }
             }
         } else {
-            undo_box = []
+            undo.push([tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column), tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row)])
             music.footstep.play()
             move_ban(tx, ty)
             info.changeScoreBy(-1)
@@ -322,16 +327,16 @@ function get_level_asset_easy (lv: number) {
     return assets.image`level easy 01`
 }
 function undo_move () {
-    if (undo_ban.length == 2) {
-        move_ban(undo_ban[0], undo_ban[1])
+    if (undo.length > 0) {
+        undo_step = undo.pop()
+        move_ban(undo_step[0], undo_step[1])
         info.changeScoreBy(1)
-        music.footstep.play()
+        if (undo_step.length == 6) {
+            move_box(undo_step[4], undo_step[5], undo_step[2], undo_step[3])
+        } else {
+            music.footstep.play()
+        }
     }
-    if (undo_box.length == 4) {
-        move_box(undo_box[2], undo_box[3], undo_box[0], undo_box[1])
-    }
-    undo_ban = []
-    undo_box = []
 }
 function control_level () {
     if (all_boxes_fit()) {
@@ -399,7 +404,6 @@ controller.up.onEvent(ControllerButtonEvent.Released, function () {
     pressed_up = 0
 })
 function move_ban (to_tx: number, to_ty: number) {
-    undo_ban = [tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column), tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row)]
     tiles.placeOnTile(ban, tiles.getTileLocation(to_tx, to_ty))
     if (target_tile(tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.x), tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.y))) {
         ban.setImage(assets.image`sokochan on target`)
@@ -460,7 +464,6 @@ function get_level_asset (group: number, lv: number) {
 function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: number) {
     for (let c of sprites.allOfKind(SpriteKind.Crate)) {
         if (c.x == tiles.locationXY(tiles.getTileLocation(from_tx, from_ty), tiles.XY.x) && c.y == tiles.locationXY(tiles.getTileLocation(from_tx, from_ty), tiles.XY.y)) {
-            undo_box = [from_tx, from_ty, to_tx, to_ty]
             tiles.placeOnTile(c, tiles.getTileLocation(to_tx, to_ty))
             if (target_tile(tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.x), tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.y))) {
                 music.knock.play()
@@ -622,6 +625,7 @@ function target_tile (x: number, y: number) {
 }
 let text_introduction: TextSprite = null
 let text_frame: TextSprite = null
+let undo_step: number[] = []
 let thumbnail: Image = null
 let t: TextSprite = null
 let box: Sprite = null
@@ -637,8 +641,7 @@ let select_level = 0
 let menu_selection = 0
 let button_lag = 0
 let state_level = 0
-let undo_box: number[] = []
-let undo_ban: number[] = []
+let undo: number[][] = []
 let scroll_level = 0
 let pressed_B = 0
 let pressed_A = 0
