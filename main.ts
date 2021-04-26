@@ -21,23 +21,6 @@ namespace SpriteKind {
  * 
  * Button B must be blocked during menu, otherwise a B press during menu will be handled as undo action when the menu returns.
  */
-/**
- * Tile coding:
- * 
- * 14 brown  -- wall (#)
- * 
- *   3 pink     -- target (.)
- * 
- *   7 green   -- player (@)
- * 
- *   6 teal      -- player on target (+)
- * 
- *   4 orange -- crate ($)
- * 
- *   2 red       -- crate on target (*)
- * 
- * 13 tan       -- floor
- */
 function reset_states () {
     pressed_up = 0
     pressed_down = 0
@@ -47,11 +30,12 @@ function reset_states () {
     pressed_B = 0
     scroll_level = 0
     undo = []
+    count_moves = 0
+    count_pushes = 0
     tiles.destroySpritesOfKind(SpriteKind.Player)
     tiles.destroySpritesOfKind(SpriteKind.Crate)
     tiles.destroySpritesOfKind(SpriteKind.Text)
     scene.centerCameraAt(80, 60)
-    info.setScore(0)
 }
 function set_up_selection () {
     state_level = 0
@@ -93,6 +77,11 @@ function set_up_level () {
         scene.cameraFollowSprite(ban)
     }
     introduce_level()
+    text_moves = textsprite.create("0/0", 0, 13)
+    text_moves.setOutline(1, 15)
+    text_moves.setBorder(1, 15)
+    text_moves.setMaxFontHeight(8)
+    update_moves()
     reset_buttons()
     state_level = 1
 }
@@ -201,6 +190,27 @@ function add_menu_item (y: number, text: string, changeable: boolean) {
     t.setText(text)
     menu_items[menu_items.length] = t
 }
+/**
+ * Tile coding:
+ * 
+ * 14 brown  -- wall (#)
+ * 
+ *   3 pink     -- target (.)
+ * 
+ *   7 green   -- player (@)
+ * 
+ *   6 teal      -- player on target (+)
+ * 
+ *   4 orange -- crate ($)
+ * 
+ *   2 red       -- crate on target (*)
+ * 
+ * 13 tan       -- floor
+ */
+function update_moves () {
+    text_moves.setText("" + convertToText(count_moves) + "/" + convertToText(count_pushes))
+    text_moves.setPosition(161 - text_moves.width / 2, 8)
+}
 function scale_thumbnail (src: Image) {
     thumbnail = image.create(45, 36)
     for (let x = 0; x <= 14; x++) {
@@ -236,15 +246,17 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
                     ])
                     move_box(tx, ty, push_tx, push_ty)
                     move_ban(tx, ty)
-                    info.changeScoreBy(-1)
+                    count_moves += 1
+                    count_pushes += 1
                 }
             }
         } else {
             undo.push([tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.column), tiles.locationXY(tiles.locationOfSprite(ban), tiles.XY.row)])
             music.footstep.play()
             move_ban(tx, ty)
-            info.changeScoreBy(-1)
+            count_moves += 1
         }
+        update_moves()
     }
 }
 function hilight_menu_item () {
@@ -330,18 +342,20 @@ function undo_move () {
     if (undo.length > 0) {
         undo_step = undo.pop()
         move_ban(undo_step[0], undo_step[1])
-        info.changeScoreBy(1)
+        count_moves += -1
         if (undo_step.length == 6) {
             move_box(undo_step[4], undo_step[5], undo_step[2], undo_step[3])
+            count_pushes += -1
         } else {
             music.footstep.play()
         }
+        update_moves()
     }
 }
 function control_level () {
     if (all_boxes_fit()) {
         pause(500)
-        if (game.ask("Moves: " + convertToText(Math.abs(info.score())), "Next Level?")) {
+        if (game.ask("Moves: " + convertToText(Math.abs(count_moves)) + " Pushes: " + convertToText(Math.abs(count_pushes)), "Next Level?")) {
             next_level()
         } else {
             undo_move()
@@ -634,6 +648,7 @@ let undo_step: number[] = []
 let thumbnail: Image = null
 let t: TextSprite = null
 let box: Sprite = null
+let text_moves: TextSprite = null
 let ban: Sprite = null
 let state_selection = 0
 let minimap: Sprite = null
@@ -646,6 +661,8 @@ let select_level = 0
 let menu_selection = 0
 let button_lag = 0
 let state_level = 0
+let count_pushes = 0
+let count_moves = 0
 let undo: number[][] = []
 let scroll_level = 0
 let pressed_B = 0
