@@ -77,9 +77,9 @@ function set_up_level () {
         scene.cameraFollowSprite(ban)
     }
     introduce_level()
-    text_moves = textsprite.create("0/0", 0, 13)
+    text_moves = textsprite.create("0/0", 0, 11)
     text_moves.setOutline(1, 15)
-    text_moves.setBorder(1, 15)
+    text_moves.setBorder(1, 0)
     text_moves.setMaxFontHeight(8)
     update_moves()
     reset_buttons()
@@ -98,13 +98,15 @@ function reset_buttons () {
  * 
  * TODO
  * 
+ * - more levels (from sets "Yoshio Murase", "Sokogen-990602", Microban, Microcosmos, Nabokosmos, "Classic Thinking Rabbit", Boxxle)
+ * 
+ * - either record best solution so far, or display optimal moves/pushes
+ * 
  * - rename to sokochan
  * 
  * - title screen
  * 
- * - more levels (from sets "Yoshio Murase", "Sokogen-990602", Microban, Microcosmos, Nabokosmos, "Classic Thinking Rabbit", Boxxle)
- * 
- * - sort MakeCode blocks
+ * - sort MakeCode blocks, which quickly end up in a mess
  * 
  * - win screen
  * 
@@ -190,26 +192,10 @@ function add_menu_item (y: number, text: string, changeable: boolean) {
     t.setText(text)
     menu_items[menu_items.length] = t
 }
-/**
- * Tile coding:
- * 
- * 14 brown  -- wall (#)
- * 
- *   3 pink     -- target (.)
- * 
- *   7 green   -- player (@)
- * 
- *   6 teal      -- player on target (+)
- * 
- *   4 orange -- crate ($)
- * 
- *   2 red       -- crate on target (*)
- * 
- * 13 tan       -- floor
- */
 function update_moves () {
     text_moves.setText("" + convertToText(count_moves) + "/" + convertToText(count_pushes))
-    text_moves.setPosition(161 - text_moves.width / 2, 8)
+    text_moves.setPosition(scene.cameraProperty(CameraProperty.X) + 81 - text_moves.width / 2, scene.cameraProperty(CameraProperty.Y) - 56)
+    console.logValue("cam x,y", "" + scene.cameraProperty(CameraProperty.X) + "," + scene.cameraProperty(CameraProperty.Y))
 }
 function scale_thumbnail (src: Image) {
     thumbnail = image.create(45, 36)
@@ -290,7 +276,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
 function show_credits () {
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban:                " + "-     by David Skinner   " + "Y. Murase:               " + "-     by Yoshio Murase   " + "Easy:                    " + "-     some by A. Röhnsch ", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban:                " + "-     by David Skinner   " + "Y. Murase:               " + "-     by Yoshio Murase   " + "Easy:                    " + "-     some by Moobot ", DialogLayout.Full)
 }
 function next_level () {
     level += 1
@@ -607,6 +593,23 @@ function get_level_asset_murase (lv: number) {
     }
     return assets.image`level murase 01`
 }
+/**
+ * Tile coding:
+ * 
+ * 14 brown  -- wall (#)
+ * 
+ *   3 pink     -- target (.)
+ * 
+ *   7 green   -- player (@)
+ * 
+ *   6 teal      -- player on target (+)
+ * 
+ *   4 orange -- crate ($)
+ * 
+ *   2 red       -- crate on target (*)
+ * 
+ * 13 tan       -- floor
+ */
 function realize_tilemap () {
     for (let e of scene.getTilesByType(2)) {
         box = sprites.create(assets.image`crate drawer on target`, SpriteKind.Crate)
