@@ -76,6 +76,7 @@ function set_up_level () {
     if (scroll_level) {
         scene.cameraFollowSprite(ban)
     }
+    update_camera()
     introduce_level()
     text_moves = textsprite.create("0/0", 0, 11)
     text_moves.setOutline(1, 15)
@@ -93,51 +94,6 @@ function reset_buttons () {
     pressed_A = button_lag
     pressed_B = button_lag
 }
-/**
- * Soko-Chan/Meowban
- * 
- * TODO
- * 
- * - more levels (from sets "Yoshio Murase", "Sokogen-990602", Microban, Microcosmos, Nabokosmos, "Classic Thinking Rabbit", Boxxle)
- * 
- * - either record best solution so far, or display optimal moves/pushes
- * 
- * - rename to sokochan
- * 
- * - title screen
- * 
- * - sort MakeCode blocks, which quickly end up in a mess
- * 
- * - win screen
- * 
- * Included Features
- * 
- * - unlimited undo
- * 
- * - reset level
- * 
- * - level selection with minimap
- * 
- * - push/move counter
- * 
- * - different sprites when on target tile
- * 
- * - different level sets (names with up to 8 characters)
- * 
- * - levels of up to 11x9 tiles show without scrolling (up to 10x7 tiles of walkable area)
- * 
- * - continuous movement when button is being held down
- * 
- * - nice in-game menu
- * 
- * - help and credits
- * 
- * Nice to Have
- * 
- * - different tile sets for different level sets
- * 
- * - a way to handle large levels without scrolling, maybe through smaller 8x8 sprite tilemaps
- */
 function sprite_cache () {
     box = sprites.create(assets.image`crate wood`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate wood on target`, SpriteKind.Crate)
@@ -194,8 +150,8 @@ function add_menu_item (y: number, text: string, changeable: boolean) {
 }
 function update_moves () {
     text_moves.setText("" + convertToText(count_moves) + "/" + convertToText(count_pushes))
+    update_camera()
     text_moves.setPosition(scene.cameraProperty(CameraProperty.X) + 81 - text_moves.width / 2, scene.cameraProperty(CameraProperty.Y) - 56)
-    console.logValue("cam x,y", "" + scene.cameraProperty(CameraProperty.X) + "," + scene.cameraProperty(CameraProperty.Y))
 }
 function scale_thumbnail (src: Image) {
     thumbnail = image.create(45, 36)
@@ -384,9 +340,57 @@ function return_to_level () {
     reset_buttons()
     state_level = 1
 }
+function update_camera () {
+	
+}
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
     pressed_A = 0
 })
+/**
+ * Soko-Chan/Meowban
+ * 
+ * TODO
+ * 
+ * - more levels (from sets "Yoshio Murase", "Sokogen-990602", Microban, Microcosmos, Nabokosmos, "Classic Thinking Rabbit", Boxxle)
+ * 
+ * - either record best solution so far, or display optimal moves/pushes
+ * 
+ * - rename to sokochan
+ * 
+ * - title screen
+ * 
+ * - sort MakeCode blocks, which quickly end up in a mess
+ * 
+ * - win screen
+ * 
+ * Included Features
+ * 
+ * - unlimited undo
+ * 
+ * - reset level
+ * 
+ * - level selection with minimap
+ * 
+ * - push/move counter
+ * 
+ * - different sprites when on target tile
+ * 
+ * - different level sets (names with up to 8 characters)
+ * 
+ * - levels of up to 11x9 tiles show without scrolling (up to 10x7 tiles of walkable area)
+ * 
+ * - continuous movement when button is being held down
+ * 
+ * - nice in-game menu
+ * 
+ * - help and credits
+ * 
+ * Nice to Have
+ * 
+ * - different tile sets for different level sets
+ * 
+ * - a way to handle large levels without scrolling, maybe through smaller 8x8 sprite tilemaps
+ */
 function introduce_level () {
     text_frame = textsprite.create("       ", 13, 13)
     text_introduction = textsprite.create("" + list_levelsets[levelset] + " " + convertToText(level), 0, 12)
