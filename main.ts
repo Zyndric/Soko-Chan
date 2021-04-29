@@ -284,10 +284,10 @@ function show_credits () {
 }
 function next_level () {
     level += 1
-    if (level > 10) {
+    if (level > list_groupsize[levelset]) {
         level = 1
         levelset += 1
-        if (levelset > 2) {
+        if (levelset >= list_levelsets.length) {
             levelset = 0
         }
     }
@@ -530,13 +530,13 @@ function control_selection () {
     if (menu_selection == 1) {
         if (controller.left.isPressed() && !(pressed_left)) {
             select_level += -1
-            select_level = (select_level - 1 + 10) % 10 + 1
+            select_level = (select_level - 1 + list_groupsize[select_levelset]) % list_groupsize[select_levelset] + 1
             draw_selection()
             pressed_left = button_lag
         }
         if (controller.right.isPressed() && !(pressed_right)) {
             select_level += 1
-            select_level = (select_level - 1 + 10) % 10 + 1
+            select_level = (select_level - 1 + list_groupsize[select_levelset]) % list_groupsize[select_levelset] + 1
             draw_selection()
             pressed_right = button_lag
         }
@@ -667,6 +667,28 @@ function get_level_asset_nabo (lv: number) {
         return assets.image`level nabo 09`
     } else if (lv == 10) {
         return assets.image`level nabo 10`
+    } else if (lv == 11) {
+        scroll_level = 1
+        return assets.image`level nabo 11`
+    } else if (lv == 12) {
+        return assets.image`level nabo 12`
+    } else if (lv == 13) {
+        return assets.image`level nabo 13`
+    } else if (lv == 14) {
+        return assets.image`level nabo 14`
+    } else if (lv == 15) {
+        return assets.image`level nabo 15`
+    } else if (lv == 16) {
+        scroll_level = 1
+        return assets.image`level nabo 16`
+    } else if (lv == 17) {
+        return assets.image`level nabo 17`
+    } else if (lv == 18) {
+        return assets.image`level nabo 18`
+    } else if (lv == 19) {
+        return assets.image`level nabo 19`
+    } else if (lv == 20) {
+        return assets.image`level nabo 20`
     }
     return assets.image`level nabo 01`
 }
@@ -711,8 +733,10 @@ let pressed_down = 0
 let pressed_up = 0
 let level = 0
 let levelset = 0
+let list_groupsize: number[] = []
 let list_levelsets: string[] = []
 list_levelsets = ["Easy", "Microban", "Y. Murase", "Nabokosmos"]
+list_groupsize = [10, 10, 10, 20]
 levelset = 0
 level = 1
 set_up_level()
