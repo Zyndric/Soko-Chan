@@ -246,6 +246,9 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
         update_moves()
     }
 }
+function ask_for_next_level () {
+    return game.ask("Moves: " + convertToText(Math.abs(count_moves)) + " Pushes: " + convertToText(Math.abs(count_pushes)), "Next Level?")
+}
 function hilight_menu_item () {
     for (let t = 0; t <= 3; t++) {
         if (t == menu_selection) {
@@ -277,7 +280,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
 function show_credits () {
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban:                " + "-     by David Skinner   " + "Y. Murase:               " + "-     by Yoshio Murase   " + "Easy:                    " + "-     some by Moobot ", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban:                " + "-     by David Skinner   " + "Y. Murase:               " + "-     by Yoshio Murase   " + "Nabokosmos:              " + "-   by Aymeric du Peloux " + "Easy:                    " + "-     some by Moobot ", DialogLayout.Full)
 }
 function next_level () {
     level += 1
@@ -342,7 +345,7 @@ function undo_move () {
 function control_level () {
     if (all_boxes_fit()) {
         pause(500)
-        if (game.ask("Moves: " + convertToText(Math.abs(count_moves)) + " Pushes: " + convertToText(Math.abs(count_pushes)), "Next Level?")) {
+        if (ask_for_next_level()) {
             next_level()
         } else {
             undo_move()
@@ -466,6 +469,8 @@ function get_level_asset (group: number, lv: number) {
         return get_level_asset_microban(lv)
     } else if (group == 2) {
         return get_level_asset_murase(lv)
+    } else if (group == 3) {
+        return get_level_asset_nabo(lv)
     } else {
         return get_level_asset_easy(lv)
     }
@@ -639,6 +644,32 @@ function realize_tilemap () {
     scene.setTile(13, assets.image`floor tan dotted`, false)
     scene.setTile(14, assets.image`wall steel`, true)
 }
+function get_level_asset_nabo (lv: number) {
+    if (lv == 1) {
+        return assets.image`level nabo 01`
+    } else if (lv == 2) {
+        scroll_level = 1
+        return assets.image`level nabo 02`
+    } else if (lv == 3) {
+        return assets.image`level nabo 03`
+    } else if (lv == 4) {
+        return assets.image`level nabo 04`
+    } else if (lv == 5) {
+        return assets.image`level nabo 05`
+    } else if (lv == 6) {
+        return assets.image`level nabo 06`
+    } else if (lv == 7) {
+        scroll_level = 1
+        return assets.image`level nabo 07`
+    } else if (lv == 8) {
+        return assets.image`level nabo 08`
+    } else if (lv == 9) {
+        return assets.image`level nabo 09`
+    } else if (lv == 10) {
+        return assets.image`level nabo 10`
+    }
+    return assets.image`level nabo 01`
+}
 function target_tile (x: number, y: number) {
     for (let t of scene.getTilesByType(3)) {
         if (x == t.x) {
@@ -681,7 +712,7 @@ let pressed_up = 0
 let level = 0
 let levelset = 0
 let list_levelsets: string[] = []
-list_levelsets = ["Easy", "Microban", "Y. Murase"]
+list_levelsets = ["Easy", "Microban", "Y. Murase", "Nabokosmos"]
 levelset = 0
 level = 1
 set_up_level()

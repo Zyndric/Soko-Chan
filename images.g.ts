@@ -1343,6 +1343,125 @@ ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 `;
+            case "image20":
+            case "level nabo 01":return img`
+. . . . . . . . . . 
+. . e e e e e . . . 
+. . e d d d e e . . 
+. e e d 2 d 3 e e . 
+. e d 4 4 2 d d e . 
+. e d d 2 d 3 d e . 
+. e e d 7 d e e e . 
+. . e e e e e . . . 
+. . . . . . . . . . 
+`;
+            case "image71":
+            case "level nabo 02":return img`
+. e e e d d e e e . 
+. e d d d 2 4 d e . 
+. e d e d d e d e . 
+. e d d d 2 2 d e . 
+. e e e d d e 7 e . 
+. . . e d 2 2 d e . 
+. . . e d d e d e . 
+. . . e d 2 3 d e . 
+. . . e d d e e e . 
+`;
+            case "image72":
+            case "level nabo 03":return img`
+. e e e e e e . . . 
+. e d d d d e . . . 
+. e d e e 4 e e e . 
+. e d 3 d 2 d d e . 
+. e e d d 2 d 6 e . 
+. . e d d 4 d d e . 
+. . e d e 2 e e e . 
+. . e d d d e . . . 
+. . e e e e e . . . 
+`;
+            case "image73":
+            case "level nabo 04":return img`
+e e e e e e e e e . 
+e d 3 7 3 4 3 d e . 
+e d e d 4 d d d e . 
+e d e e 4 e e e e . 
+e d d d 4 d d e e . 
+e e e d 3 d d d e e 
+. . e e e d d d d e 
+. . . . e e d d d e 
+. . . . . e e e e e 
+`;
+            case "image74":
+            case "level nabo 05":return img`
+. . . . . e e e e . . 
+. . . e e e d d e . . 
+. . . e d d d d e . . 
+. e e e d d e d e . . 
+. e d 2 4 d 2 2 e e . 
+. e d e d 6 e d d e . 
+. e d d e d d d d e . 
+. e e d d d d e e e . 
+. . e e e e e e . . . 
+`;
+            case "image75":
+            case "level nabo 06":return img`
+. . . e e e e e e . 
+. e e e d d d d e . 
+. e d d 2 e e 3 e . 
+. e d e 3 d d 3 e . 
+. e d 4 d 4 d d e . 
+. e e 4 e 4 e 7 e . 
+. . e d d d d 3 e . 
+. . e e e e e e e . 
+`;
+            case "image76":
+            case "level nabo 07":return img`
+. . . e d d e e e . . 
+. . . e d 2 4 d e . . 
+. . . e d d e d e . . 
+. . e e d 2 2 d e . . 
+. . e d d d e 7 e . . 
+. . e d d 2 2 d e . . 
+. . e d d d e d e . . 
+. . e e d 2 3 d e . . 
+. . . e d d e e e . . 
+`;
+            case "image77":
+            case "level nabo 08":return img`
+. . . . e e e e . . . 
+. . e e e d d e . . . 
+. . e d 3 2 d e e . . 
+. . e d e d d d e . . 
+. . e 7 2 2 d d e . . 
+. . e d e d d d e . . 
+. . e d 4 2 d e e . . 
+. . e e e d d e . . . 
+. . . . e e e e . . . 
+`;
+            case "image78":
+            case "level nabo 09":return img`
+. . . e e e e . . . . 
+. e e e d d e e e e . 
+. e d 4 d d d d d e . 
+. e d 3 d 2 e d d e . 
+. e e e 3 7 e 4 e e . 
+. e d 3 d 2 e d d e . 
+. e d 4 d d d d d e . 
+. e e e e e e d d e . 
+. . . . . . e e e e . 
+`;
+            case "image79":
+            case "level nabo 10":return img`
+. e e e e . . . . . 
+. e d d e e e e e e 
+. e d d d d d d d e 
+e e d e d e 3 4 d e 
+e d d 2 d e e d e e 
+e d 2 2 d e d 7 e . 
+e e e d d d 2 d e . 
+. . e e e e d d e . 
+. . . . . e e e e . 
+`;
         }
         return null;
     })

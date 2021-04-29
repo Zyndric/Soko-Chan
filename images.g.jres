@@ -389,6 +389,56 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "bg selection"
     },
+    "image20": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAADg7g4AAAAA4O7d7gAAAADg3dTtAAAAAOAtJOcAAAAA4N3S7QAAAADgPj3uAAAAAADu3Q4AAAAAAODuDgAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level nabo 01"
+    },
+    "image71": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAO7uDgAAAAAA3t0OAAAAAADe3u7uDgAAAN3d3d0NAAAALS0tLQ0AAABOLi4+DgAAAN7d190OAAAA7u7u7g4AAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level nabo 02"
+    },
+    "image72": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAO7uDgAAAAAA3t3u7g4AAADePt3dDgAAAN7e3d4OAAAA3iRC0g4AAADu3t3uDgAAAADe1g4AAAAAAO7uDgAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level nabo 03"
+    },
+    "image73": {
+        "data": "hwQKAAkAAADu7u4AAAAAAN7d7QAAAAAAPu7tDgAAAAB+7d0OAAAAAD5ENO4AAAAATu3d7Q4AAAA+7d3dDgAAAN7t3t0OAAAA7u7u3Q4AAAAAAODuDgAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level nabo 04"
+    },
+    "image74": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAADg7u4AAAAAAODd7Q4AAADg7uLdDgAAAODd1N4OAAAA7t1t3Q4AAADe7eLdDgAAAN7d0u0OAAAA7u7e7QAAAAAAAO7uAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level nabo 05"
+    },
+    "image75": {
+        "data": "hwQKAAgAAAAAAAAA4O7uAODd7e7u7UTt3jLt7d7eRO3e3u3t3jN94+7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level nabo 06"
+    },
+    "image76": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAAAODu7gAAAADu7t3tDgAAAN3d3d0NAAAALS0tLQ0AAABOLi4+DgAAAN7d190OAAAA7u7u7g4AAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level nabo 07"
+    },
+    "image77": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg3dftAAAAAO7j4uQOAAAA3tLS0g4AAADe3d3dDgAAAO7e3e4OAAAAAO7uDgAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level nabo 08"
+    },
+    "image78": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAODu7u4AAAAA4N3e7QAAAADuND7kAAAAAN7d0+0AAAAA3i0n7QAAAADu7e7tDgAAAODd1N0OAAAA4N3e3Q4AAADg7u7uDgAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level nabo 09"
+    },
+    "image79": {
+        "data": "hwQKAAkAAAAA4O4OAAAAAO7u3Q4AAAAA3t0t7gAAAADe7SLtAAAAAO7d3e0AAAAA4O3u7Q4AAADgPd7SDgAAAOBNfd0OAAAA4N3u7g4AAADg7g4AAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level nabo 10"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
