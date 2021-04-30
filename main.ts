@@ -60,7 +60,10 @@ function set_up_selection () {
     text_footer.setIcon(assets.image`icon arrows updown`)
     text_footer.setPosition(80, 110)
     minimap = sprites.create(scale_thumbnail(get_level_asset(select_levelset, select_level)), SpriteKind.Text)
-    minimap.setPosition(122, 69)
+    minimap.setPosition(122, 64)
+    text_best = textsprite.create("00/00", 0, 6)
+    text_best.setMaxFontHeight(8)
+    text_best.setPosition(120, 90)
     hilight_menu_item()
     draw_selection()
     state_selection = 1
@@ -143,8 +146,8 @@ function update_moves () {
     text_moves.setText("" + convertToText(count_moves) + "/" + convertToText(count_pushes))
     text_moves.setPosition(scene.cameraProperty(CameraProperty.X) + 81 - text_moves.width / 2, scene.cameraProperty(CameraProperty.Y) - 56)
 }
-function level_best_id () {
-    return "best-" + convertToText(levelset) + "-" + convertToText(level)
+function level_best_id (group: number, level: number) {
+    return "best-" + convertToText(group) + "-" + convertToText(level)
 }
 function scale_thumbnail (src: Image) {
     thumbnail = image.create(45, 36)
@@ -196,16 +199,16 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
 }
 function ask_for_next_level () {
     str_record = ""
-    if (blockSettings.exists(level_best_id())) {
-        record = blockSettings.readNumberArray(level_best_id())
+    if (blockSettings.exists(level_best_id(levelset, level))) {
+        record = blockSettings.readNumberArray(level_best_id(levelset, level))
         if (count_moves < record[0]) {
             str_record = "New best! "
-            blockSettings.writeNumberArray(level_best_id(), [count_moves, count_pushes])
+            blockSettings.writeNumberArray(level_best_id(levelset, level), [count_moves, count_pushes])
         } else {
             str_record = "Best: " + record[0] + "/" + record[1] + " "
         }
     } else {
-        blockSettings.writeNumberArray(level_best_id(), [count_moves, count_pushes])
+        blockSettings.writeNumberArray(level_best_id(levelset, level), [count_moves, count_pushes])
     }
     return game.ask("Moves: " + convertToText(Math.abs(count_moves)) + " Pushes: " + convertToText(Math.abs(count_pushes)), "" + str_record + "Next Level?")
 }
@@ -231,6 +234,11 @@ function walk (dtx: number, dty: number) {
 function draw_selection () {
     menu_items[0].setText("Group: " + list_levelsets[select_levelset])
     menu_items[1].setText("Level: " + convertToText(select_level))
+    if (blockSettings.exists(level_best_id(select_levelset, select_level))) {
+        text_best.setText("" + blockSettings.readNumberArray(level_best_id(select_levelset, select_level))[0] + "/" + blockSettings.readNumberArray(level_best_id(select_levelset, select_level))[1])
+    } else {
+        text_best.setText("")
+    }
     minimap.setImage(scale_thumbnail(get_level_asset(select_levelset, select_level)))
 }
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
@@ -679,8 +687,6 @@ function target_tile (x: number, y: number) {
  * 
  * - more levels (from sets "Yoshio Murase", "Sokogen-990602", Microban, Microcosmos, Nabokosmos, "Classic Thinking Rabbit", Boxxle)
  * 
- * - either record best solution so far, or display optimal moves/pushes
- * 
  * - rename to sokochan
  * 
  * - title screen
@@ -688,8 +694,6 @@ function target_tile (x: number, y: number) {
  * - sort MakeCode blocks, which quickly end up in a mess
  * 
  * - win screen
- * 
- * - remember recently opened level
  * 
  * Included Features
  * 
@@ -713,6 +717,10 @@ function target_tile (x: number, y: number) {
  * 
  * - help and credits
  * 
+ * - remember recently opened level
+ * 
+ * - remember best move/push scores
+ * 
  * Nice to Have
  * 
  * - different tile sets for different level sets
@@ -730,6 +738,7 @@ let text_moves: TextSprite = null
 let t: TextSprite = null
 let box: Sprite = null
 let state_selection = 0
+let text_best: TextSprite = null
 let minimap: Sprite = null
 let text_footer: TextSprite = null
 let menu_items: TextSprite[] = []
