@@ -69,11 +69,12 @@ function set_up_selection () {
 function set_up_level () {
     reset_states()
     state_selection = 0
+    blockSettings.writeNumber("recent group", levelset)
+    blockSettings.writeNumber("recent level", level)
     scene.setTileMap(get_level_asset(levelset, level))
     realize_tilemap()
     return_to_level()
     introduce_level()
-    state_level = 1
 }
 function reset_buttons () {
     pressed_up = button_lag
@@ -83,53 +84,6 @@ function reset_buttons () {
     pressed_A = button_lag
     pressed_B = button_lag
 }
-/**
- * Soko-Chan/Meowban
- * 
- * TODO
- * 
- * - more levels (from sets "Yoshio Murase", "Sokogen-990602", Microban, Microcosmos, Nabokosmos, "Classic Thinking Rabbit", Boxxle)
- * 
- * - either record best solution so far, or display optimal moves/pushes
- * 
- * - rename to sokochan
- * 
- * - title screen
- * 
- * - sort MakeCode blocks, which quickly end up in a mess
- * 
- * - win screen
- * 
- * - remember recently opened level
- * 
- * Included Features
- * 
- * - unlimited undo
- * 
- * - reset level
- * 
- * - level selection with minimap
- * 
- * - push/move counter
- * 
- * - different sprites when on target tile
- * 
- * - different level sets (names with up to 10 characters)
- * 
- * - levels of up to 11x9 tiles show without scrolling (up to 10x7 tiles of walkable area)
- * 
- * - continuous movement when button is being held down
- * 
- * - nice in-game menu
- * 
- * - help and credits
- * 
- * Nice to Have
- * 
- * - different tile sets for different level sets
- * 
- * - a way to handle large levels without scrolling, maybe through smaller 8x8 sprite tilemaps
- */
 function sprite_cache () {
     box = sprites.create(assets.image`crate wood`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate wood on target`, SpriteKind.Crate)
@@ -703,6 +657,53 @@ function target_tile (x: number, y: number) {
     }
     return 0
 }
+/**
+ * Soko-Chan/Meowban
+ * 
+ * TODO
+ * 
+ * - more levels (from sets "Yoshio Murase", "Sokogen-990602", Microban, Microcosmos, Nabokosmos, "Classic Thinking Rabbit", Boxxle)
+ * 
+ * - either record best solution so far, or display optimal moves/pushes
+ * 
+ * - rename to sokochan
+ * 
+ * - title screen
+ * 
+ * - sort MakeCode blocks, which quickly end up in a mess
+ * 
+ * - win screen
+ * 
+ * - remember recently opened level
+ * 
+ * Included Features
+ * 
+ * - unlimited undo
+ * 
+ * - reset level
+ * 
+ * - level selection with minimap
+ * 
+ * - push/move counter
+ * 
+ * - different sprites when on target tile
+ * 
+ * - different level sets (names with up to 10 characters)
+ * 
+ * - levels of up to 11x9 tiles show without scrolling (up to 10x7 tiles of walkable area)
+ * 
+ * - continuous movement when button is being held down
+ * 
+ * - nice in-game menu
+ * 
+ * - help and credits
+ * 
+ * Nice to Have
+ * 
+ * - different tile sets for different level sets
+ * 
+ * - a way to handle large levels without scrolling, maybe through smaller 8x8 sprite tilemaps
+ */
 let text_introduction: TextSprite = null
 let text_frame: TextSprite = null
 let undo_step: number[] = []
@@ -740,6 +741,10 @@ list_levelsets = ["Easy", "Microban", "Y. Murase", "Nabokosmos"]
 list_groupsize = [10, 10, 10, 20]
 levelset = 0
 level = 1
+if (blockSettings.exists("recent group") && blockSettings.exists("recent level")) {
+    levelset = blockSettings.readNumber("recent group")
+    level = blockSettings.readNumber("recent level")
+}
 set_up_level()
 forever(function () {
     if (state_selection) {
