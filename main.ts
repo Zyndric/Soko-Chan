@@ -69,21 +69,10 @@ function set_up_selection () {
 function set_up_level () {
     reset_states()
     state_selection = 0
-    button_lag = 10
     scene.setTileMap(get_level_asset(levelset, level))
     realize_tilemap()
-    scene.centerCameraAt(screen_center_x(), screen_center_y())
-    if (scroll_level) {
-        scene.cameraFollowSprite(ban)
-    }
-    update_camera()
+    return_to_level()
     introduce_level()
-    text_moves = textsprite.create("0/0", 0, 11)
-    text_moves.setOutline(1, 15)
-    text_moves.setBorder(1, 0)
-    text_moves.setMaxFontHeight(8)
-    update_moves()
-    reset_buttons()
     state_level = 1
 }
 function reset_buttons () {
@@ -111,6 +100,8 @@ function reset_buttons () {
  * 
  * - win screen
  * 
+ * - remember recently opened level
+ * 
  * Included Features
  * 
  * - unlimited undo
@@ -123,7 +114,7 @@ function reset_buttons () {
  * 
  * - different sprites when on target tile
  * 
- * - different level sets (names with up to 8 characters)
+ * - different level sets (names with up to 10 characters)
  * 
  * - levels of up to 11x9 tiles show without scrolling (up to 10x7 tiles of walkable area)
  * 
@@ -280,7 +271,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
 function show_credits () {
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban:                " + "-     by David Skinner   " + "Y. Murase:               " + "-     by Yoshio Murase   " + "Nabokosmos:              " + "-   by Aymeric du Peloux " + "Easy:                    " + "-     some by Moobot ", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban (easy)          " + ":   by David Skinner     " + "Y. Murase (tricky)       " + ":   by Yoshio Murase     " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Easy                     " + ":   some by Moobot   ", DialogLayout.Full)
 }
 function next_level () {
     level += 1
@@ -385,6 +376,12 @@ function return_to_level () {
     if (scroll_level) {
         scene.cameraFollowSprite(ban)
     }
+    update_camera()
+    text_moves = textsprite.create("0/0", 0, 11)
+    text_moves.setOutline(1, 15)
+    text_moves.setBorder(1, 0)
+    text_moves.setMaxFontHeight(8)
+    update_moves()
     reset_buttons()
     state_level = 1
 }
@@ -705,11 +702,11 @@ function target_tile (x: number, y: number) {
 let text_introduction: TextSprite = null
 let text_frame: TextSprite = null
 let undo_step: number[] = []
+let ban: Sprite = null
 let thumbnail: Image = null
+let text_moves: TextSprite = null
 let t: TextSprite = null
 let box: Sprite = null
-let text_moves: TextSprite = null
-let ban: Sprite = null
 let state_selection = 0
 let minimap: Sprite = null
 let text_footer: TextSprite = null
