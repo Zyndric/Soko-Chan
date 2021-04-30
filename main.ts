@@ -523,6 +523,10 @@ function control_selection () {
             draw_selection()
             pressed_right = button_lag
         }
+        if (select_level > list_groupsize[select_levelset]) {
+            select_level = list_groupsize[select_levelset]
+            draw_selection()
+        }
     }
     if (menu_selection == 1) {
         if (controller.left.isPressed() && !(pressed_left)) {
