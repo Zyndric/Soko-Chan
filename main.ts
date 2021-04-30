@@ -143,6 +143,9 @@ function update_moves () {
     text_moves.setText("" + convertToText(count_moves) + "/" + convertToText(count_pushes))
     text_moves.setPosition(scene.cameraProperty(CameraProperty.X) + 81 - text_moves.width / 2, scene.cameraProperty(CameraProperty.Y) - 56)
 }
+function level_best_id () {
+    return "best-" + convertToText(levelset) + "-" + convertToText(level)
+}
 function scale_thumbnail (src: Image) {
     thumbnail = image.create(45, 36)
     for (let x = 0; x <= 14; x++) {
@@ -192,7 +195,19 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
     }
 }
 function ask_for_next_level () {
-    return game.ask("Moves: " + convertToText(Math.abs(count_moves)) + " Pushes: " + convertToText(Math.abs(count_pushes)), "Next Level?")
+    str_record = ""
+    if (blockSettings.exists(level_best_id())) {
+        record = blockSettings.readNumberArray(level_best_id())
+        if (count_moves < record[0]) {
+            str_record = "New best! "
+            blockSettings.writeNumberArray(level_best_id(), [count_moves, count_pushes])
+        } else {
+            str_record = "Best: " + record[0] + "/" + record[1] + " "
+        }
+    } else {
+        blockSettings.writeNumberArray(level_best_id(), [count_moves, count_pushes])
+    }
+    return game.ask("Moves: " + convertToText(Math.abs(count_moves)) + " Pushes: " + convertToText(Math.abs(count_pushes)), "" + str_record + "Next Level?")
 }
 function hilight_menu_item () {
     for (let t = 0; t <= 3; t++) {
@@ -707,6 +722,8 @@ function target_tile (x: number, y: number) {
 let text_introduction: TextSprite = null
 let text_frame: TextSprite = null
 let undo_step: number[] = []
+let record: number[] = []
+let str_record = ""
 let ban: Sprite = null
 let thumbnail: Image = null
 let text_moves: TextSprite = null
