@@ -198,7 +198,7 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
     }
 }
 function ask_for_next_level () {
-    str_record = ""
+    str_record = "New score! "
     if (blockSettings.exists(level_best_id(levelset, level))) {
         record = blockSettings.readNumberArray(level_best_id(levelset, level))
         if (count_moves < record[0]) {
@@ -255,6 +255,7 @@ function next_level () {
     if (level > list_groupsize[levelset]) {
         level = 1
         levelset += 1
+        game.splash("You finished this group.", "Next group: " + list_levelsets[levelset])
         if (levelset >= list_levelsets.length) {
             levelset = 0
         }
@@ -693,9 +694,9 @@ function target_tile (x: number, y: number) {
  * 
  * - sort MakeCode blocks, which quickly end up in a mess
  * 
- * - win screen
- * 
  * Included Features
+ * 
+ * - 50 puzzles
  * 
  * - unlimited undo
  * 
@@ -719,7 +720,7 @@ function target_tile (x: number, y: number) {
  * 
  * - remember recently opened level
  * 
- * - remember best move/push scores
+ * - remember personal best move/push scores
  * 
  * Nice to Have
  * 
