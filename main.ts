@@ -363,7 +363,7 @@ function return_to_level () {
     state_level = 1
 }
 function update_camera () {
-	
+    game.currentScene().camera.update()
 }
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
     pressed_A = 0
