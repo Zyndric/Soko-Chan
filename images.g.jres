@@ -544,6 +544,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "sokochan win"
     },
+    "image101": {
+        "data": "hwQLAAgAAAAAAAAAAAAAAAAA7g4AAN0NAABNDQAAcwMAAE0NAADdDQAA7g4AAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "game intro"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

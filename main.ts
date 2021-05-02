@@ -2,17 +2,6 @@ namespace SpriteKind {
     export const Crate = SpriteKind.create()
 }
 /**
- * Variables
- * 
- * setup scope
- * 
- * e
- * 
- * control scope
- * 
- * c, t, x, y
- */
-/**
  * Check win condition and manage buttons in a continuous loop.
  * 
  * A win is when all boxes stand on a target tile (pink).
@@ -378,13 +367,8 @@ function introduce_level () {
     text_introduction.setMaxFontHeight(16)
     text_frame.setMaxFontHeight(20)
     text_frame.setBorder(1, 12)
-    if (scroll_level) {
-        text_introduction.setPosition(scene.cameraProperty(CameraProperty.X), scene.cameraProperty(CameraProperty.Y))
-        text_frame.setPosition(scene.cameraProperty(CameraProperty.X), scene.cameraProperty(CameraProperty.Y))
-    } else {
-        text_introduction.setPosition(screen_center_x(), screen_center_y())
-        text_frame.setPosition(screen_center_x(), screen_center_y())
-    }
+    text_introduction.setPosition(scene.cameraProperty(CameraProperty.X), scene.cameraProperty(CameraProperty.Y))
+    text_frame.setPosition(scene.cameraProperty(CameraProperty.X), scene.cameraProperty(CameraProperty.Y))
     music.bigCrash.play()
     pause(1000)
     text_introduction.destroy()
@@ -479,10 +463,10 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
             tiles.placeOnTile(c, tiles.getTileLocation(to_tx, to_ty))
             if (target_tile(tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.x), tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.y))) {
                 music.knock.play()
-                c.setImage(assets.image`crate drawer on target`)
+                c.setImage(assets.image`crate wood on target`)
             } else {
                 music.thump.play()
-                c.setImage(assets.image`crate drawer`)
+                c.setImage(assets.image`crate wood`)
             }
             return
         }
@@ -623,12 +607,12 @@ function get_level_asset_murase (lv: number) {
  */
 function realize_tilemap () {
     for (let e of scene.getTilesByType(2)) {
-        box = sprites.create(assets.image`crate drawer on target`, SpriteKind.Crate)
+        box = sprites.create(assets.image`crate wood on target`, SpriteKind.Crate)
         scene.place(e, box)
         scene.setTileAt(e, 3)
     }
     for (let e of scene.getTilesByType(4)) {
-        box = sprites.create(assets.image`crate drawer`, SpriteKind.Crate)
+        box = sprites.create(assets.image`crate wood`, SpriteKind.Crate)
         scene.place(e, box)
         scene.setTileAt(e, 13)
     }
@@ -645,6 +629,39 @@ function realize_tilemap () {
     scene.setTile(3, assets.image`target tan dotted`, false)
     scene.setTile(13, assets.image`floor tan dotted`, false)
     scene.setTile(14, assets.image`wall steel`, true)
+}
+/**
+ * Variables
+ * 
+ * setup scope
+ * 
+ * e
+ * 
+ * control scope
+ * 
+ * c, t, x, y
+ */
+function introduce_game () {
+    scene.setTileMap(assets.image`game intro`)
+    realize_tilemap()
+    scene.centerCameraAt(screen_center_x(), screen_center_y())
+    update_camera()
+    text_frame = textsprite.create("       ", 13, 13)
+    text_introduction = textsprite.create("SOKOCHAN", 0, 12)
+    text_introduction.setMaxFontHeight(16)
+    text_frame.setMaxFontHeight(20)
+    text_frame.setBorder(1, 12)
+    text_introduction.setPosition(scene.cameraProperty(CameraProperty.X), 40)
+    text_frame.setPosition(scene.cameraProperty(CameraProperty.X), 40)
+    music.playTone(440, music.beat(BeatFraction.Half))
+    music.playTone(349, music.beat(BeatFraction.Whole))
+    ban.setImage(assets.image`sokochan win`)
+    music.playTone(392, music.beat(BeatFraction.Half))
+    music.playTone(523, music.beat(BeatFraction.Whole))
+    pause(1500)
+    ban.destroy()
+    text_introduction.destroy()
+    text_frame.destroy()
 }
 function get_level_asset_nabo (lv: number) {
     if (lv == 1) {
@@ -712,8 +729,6 @@ function target_tile (x: number, y: number) {
  * - more levels (from sets "Yoshio Murase", "Sokogen-990602", Microban, Microcosmos, Nabokosmos, "Classic Thinking Rabbit", Boxxle)
  * 
  * - rename to sokochan
- * 
- * - title screen
  * 
  * - sort MakeCode blocks, which quickly end up in a mess
  * 
@@ -788,6 +803,7 @@ let level = 0
 let levelset = 0
 let list_groupsize: number[] = []
 let list_levelsets: string[] = []
+introduce_game()
 list_levelsets = ["Easy", "Microban", "Y. Murase", "Nabokosmos"]
 list_groupsize = [10, 20, 10, 20]
 levelset = 0

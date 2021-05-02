@@ -1712,6 +1712,17 @@ e e e e e e e e e e
 . . . . . f f f f f f . . . . . 
 . . . . . f f . . f f . . . . . 
 `;
+            case "image101":
+            case "game intro":return img`
+. . . . . . . . . . . 
+. . . . . . . . . . . 
+. . . . . . . . . . . 
+. . . . . . . . . . . 
+. . e d d 3 d d e . . 
+. . e d 4 7 4 d e . . 
+. . e d d 3 d d e . . 
+. . . . . . . . . . . 
+`;
         }
         return null;
     })
