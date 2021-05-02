@@ -198,19 +198,20 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
     }
 }
 function ask_for_next_level () {
-    str_record = "New score! "
+    str_record = "(no previously recorded score)"
+    str_score_action = ""
     if (blockSettings.exists(level_best_id(levelset, level))) {
         record = blockSettings.readNumberArray(level_best_id(levelset, level))
+        str_record = "Your best:    " + record[0] + "/" + record[1]
         if (count_moves < record[0]) {
-            str_record = "New best! "
+            str_score_action = "New best! "
             blockSettings.writeNumberArray(level_best_id(levelset, level), [count_moves, count_pushes])
-        } else {
-            str_record = "Best: " + record[0] + "/" + record[1] + " "
         }
     } else {
         blockSettings.writeNumberArray(level_best_id(levelset, level), [count_moves, count_pushes])
+        str_score_action = "New score. "
     }
-    return game.ask("Moves: " + convertToText(Math.abs(count_moves)) + " Pushes: " + convertToText(Math.abs(count_pushes)), "" + str_record + "Next Level?")
+    return game.askNextLevel("Moves/Pushes: " + count_moves + "/" + count_pushes, str_record, "" + str_score_action + "Next level?")
 }
 function hilight_menu_item () {
     for (let t = 0; t <= 3; t++) {
@@ -732,6 +733,7 @@ let text_introduction: TextSprite = null
 let text_frame: TextSprite = null
 let undo_step: number[] = []
 let record: number[] = []
+let str_score_action = ""
 let str_record = ""
 let ban: Sprite = null
 let thumbnail: Image = null
