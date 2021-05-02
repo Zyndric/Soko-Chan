@@ -193,25 +193,6 @@ f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f
 f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
 . f f f f f f f f f f f f f f . 
 `;
-            case "image10":
-            case "crate wood on target":return img`
-. f f f f f f f f f f f f f f . 
-f e e e e e e e e e e e e e e f 
-f e e e e e e e e e e e e e e f 
-f f f f f f f f f f f f f f f f 
-f e e f 4 4 4 4 4 f e e f e e f 
-f e e f 4 4 4 4 f e e e f e e f 
-f e e f 4 4 4 f e e e f f e e f 
-f e e f 4 4 f e e e f 4 f e e f 
-f e e f 4 f e e e f 4 4 f e e f 
-f e e f f e e e f 4 4 4 f e e f 
-f e e f e e e f 4 4 4 4 f e e f 
-f e e f e e f 4 4 4 4 4 f e e f 
-f f f f f f f f f f f f f f f f 
-f e e e e e e e e e e e e e e f 
-f e e e e e e e e e e e e e e f 
-. f f f f f f f f f f f f f f . 
-`;
             case "image28":
             case "crate marble":return img`
 . . . . . . . . . . . . . . . . 
@@ -1722,6 +1703,25 @@ e e e e e e e e e e
 . . e d 4 7 4 d e . . 
 . . e d d 3 d d e . . 
 . . . . . . . . . . . 
+`;
+            case "image10":
+            case "crate wood on target":return img`
+. f f f f f f f f f f f f f f . 
+f e e e e e e e e e e e e e e f 
+f e e e e e e e e e e e e e e f 
+f f f f f f f f f f f f f f f f 
+f e e f e e e e e f e e f e e f 
+f e e f e e e e f e e e f e e f 
+f e e f e e e f e e e f f e e f 
+f e e f e e f e e e f e f e e f 
+f e e f e f e e e f e e f e e f 
+f e e f f e e e f e e e f e e f 
+f e e f e e e f e e e e f e e f 
+f e e f e e f e e e e e f e e f 
+f f f f f f f f f f f f f f f f 
+f e e e e e e e e e e e e e e f 
+f e e e e e e e e e e e e e e f 
+. f f f f f f f f f f f f f f . 
 `;
         }
         return null;
