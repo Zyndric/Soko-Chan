@@ -1,15 +1,6 @@
 namespace SpriteKind {
     export const Crate = SpriteKind.create()
 }
-/**
- * Check win condition and manage buttons in a continuous loop.
- * 
- * A win is when all boxes stand on a target tile (pink).
- * 
- * Direction buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Soko-Chan continues to move, but not too fast.
- * 
- * Button B must be blocked during menu, otherwise a B press during menu will be handled as undo action when the menu returns.
- */
 function reset_states () {
     pressed_up = 0
     pressed_down = 0
@@ -81,19 +72,12 @@ function sprite_cache () {
     box = sprites.create(assets.image`crate wood on target`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate wood2`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate wood2 on target`, SpriteKind.Crate)
-    box = sprites.create(assets.image`create chest`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate chest on target`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate drawer`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate drawer on target`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate marble`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate marble on target`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate car`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate car on target`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate clam`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate clam on target`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate shrub`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate shrub on target`, SpriteKind.Crate)
-    scene.setTile(3, assets.image`target switch`, false)
     scene.setTile(3, assets.image`target tan`, false)
     scene.setTile(3, assets.image`target dark purple`, false)
     scene.setTile(3, assets.image`target patch`, false)
@@ -115,7 +99,6 @@ function sprite_cache () {
     scene.setTile(14, assets.image`wall plant`, true)
     scene.setTile(14, assets.image`wall sand`, true)
     scene.setTile(14, assets.image`wall reef`, true)
-    scene.setTile(14, assets.image`wall colored`, true)
     scene.setTile(14, assets.image`wall old teal bricks`, true)
     scene.setTile(14, assets.image`wall large teal bricks`, true)
 }
@@ -239,6 +222,15 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
 function show_credits () {
     game.showLongText("---  Level  Credits  --- " + "                         " + "Microban (easy)          " + ":   by David Skinner     " + "Y. Murase (tricky)       " + ":   by Yoshio Murase     " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Easy                     " + ":   some by Moobot   ", DialogLayout.Full)
 }
+/**
+ * Check win condition and manage buttons in a continuous loop.
+ * 
+ * A win is when all boxes stand on a target tile.
+ * 
+ * Direction buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Soko-Chan continues to move, but not too fast.
+ * 
+ * Button B must be blocked during menu, otherwise a B press during menu will be handled as undo action when the menu returns.
+ */
 function next_level () {
     level += 1
     if (level > list_groupsize[levelset]) {
@@ -384,6 +376,30 @@ function move_ban (to_tx: number, to_ty: number) {
     } else {
         ban.setImage(assets.image`sokochan`)
     }
+}
+function get_level_asset_sokogen (lv: number) {
+    if (lv == 1) {
+        return assets.image`level murase 01`
+    } else if (lv == 2) {
+        return assets.image`level murase 02`
+    } else if (lv == 3) {
+        return assets.image`level murase 03`
+    } else if (lv == 4) {
+        return assets.image`level murase 04`
+    } else if (lv == 5) {
+        return assets.image`level murase 05`
+    } else if (lv == 6) {
+        return assets.image`level murase 06`
+    } else if (lv == 7) {
+        return assets.image`level murase 07`
+    } else if (lv == 8) {
+        return assets.image`level murase 08`
+    } else if (lv == 9) {
+        return assets.image`level murase 09`
+    } else if (lv == 10) {
+        return assets.image`level murase 10`
+    }
+    return assets.image`level murase 01`
 }
 function box_on_tile (tx: number, ty: number) {
     for (let c of sprites.allOfKind(SpriteKind.Crate)) {
@@ -726,37 +742,31 @@ function target_tile (x: number, y: number) {
  * 
  * TODO
  * 
- * - more levels (from sets "Yoshio Murase", "Sokogen-990602", Microban, Microcosmos, Nabokosmos, "Classic Thinking Rabbit", Boxxle)
- * 
- * - sort MakeCode blocks, which quickly end up in a mess
+ * - more levels (Jacques Duthen's Sokogen, Microban, maybe Microcosmos, Nabokosmos, Boxxle)
  * 
  * Included Features
  * 
- * - 50 puzzles
+ * * many puzzles from different puzzle sets
  * 
- * - unlimited undo
+ * * unlimited undo
  * 
- * - reset level
+ * * push/move counter
  * 
- * - level selection with minimap
+ * * remember personal best move scores between power-offs
  * 
- * - push/move counter
+ * * remember recently opened puzzle between power-offs
  * 
- * - different sprites when on target tile
+ * * continuous movement when button is being held down
  * 
- * - different level sets (names with up to 10 characters)
+ * * different sprites when on target tile
  * 
- * - levels of up to 11x9 tiles show without scrolling (up to 10x7 tiles of walkable area)
+ * * puzzle selection menu with minimap
  * 
- * - continuous movement when button is being held down
+ * * help and credits
  * 
- * - nice in-game menu
+ * * puzzle reset
  * 
- * - help and credits
- * 
- * - remember recently opened level
- * 
- * - remember personal best move/push scores
+ * * puzzles of up to 11x9 tiles show without scrolling (up to 10x7 tiles of walkable area)
  * 
  * Nice to Have
  * 
