@@ -1723,6 +1723,177 @@ f e e e e e e e e e e e e e e f
 f e e e e e e e e e e e e e e f 
 . f f f f f f f f f f f f f f . 
 `;
+            case "image102":
+            case "level sokogen 01":return img`
+. . . . . . . . . . 
+. . e e e e e . . . 
+. . e 7 d d e e . . 
+. . e 3 4 2 d e . . 
+. . e d d e d e . . 
+. . e d d d d e . . 
+. . e e e e e e . . 
+. . . . . . . . . . 
+`;
+            case "image103":
+            case "level sokogen 02":return img`
+. . . . . . . . . . . 
+. . e e e e e e . . . 
+. . e 7 d d d e e . . 
+. . e d 4 4 d d e . . 
+. . e d e 3 d 3 e . . 
+. . e d d d d d e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image104":
+            case "level sokogen 03":return img`
+. . . . . . . . . . . 
+. . . . e e e e . . . 
+. . e e e d d e . . . 
+. . e 7 d 3 4 e e . . 
+. . e d d d 4 d e . . 
+. . e d e 3 d d e . . 
+. . e d d d d d e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image105":
+            case "level sokogen 04":return img`
+. . . . . . . . . . . 
+. . . e e e e e . . . 
+. . e e 7 d d e e . . 
+. . e d d e d d e . . 
+. . e d 4 2 4 d e . . 
+. . e d d 3 d d e . . 
+. . e e d 3 d e e . . 
+. . . e e e e e . . . 
+. . . . . . . . . . . 
+`;
+            case "image106":
+            case "level sokogen 05":return img`
+. . . . . . . . . . 
+. e e e e e e . . . 
+. e d d d d e e e . 
+. e d d d 3 3 d e . 
+. e d 4 4 4 7 d e . 
+. e d d e d 3 d e . 
+. e e e e e e e e . 
+. . . . . . . . . . 
+`;
+            case "image107":
+            case "level sokogen 06":return img`
+. . . . . . . . . . 
+. . e e e e e . . . 
+. e e d d d e e e . 
+. e d 3 e d 4 7 e . 
+. e d d e d e d e . 
+. e d 2 d d 4 3 e . 
+. e d d d d e e e . 
+. e e e e e e . . . 
+. . . . . . . . . . 
+`;
+            case "image108":
+            case "level sokogen 07":return img`
+. . . . . . . . . . . 
+. . e e e e e e . . . 
+. . e 7 2 d d e e . . 
+. . e d 4 e d d e . . 
+. . e d 4 d 3 d e . . 
+. . e 3 d d d e e . . 
+. . e e e e e e . . . 
+. . . . . . . . . . . 
+`;
+            case "image109":
+            case "level sokogen 08":return img`
+. . . . . . . . . . 
+. . e e e e e e . . 
+. e e d d d d e e . 
+. e d 3 3 d d d e . 
+. e d e d 4 4 4 e . 
+. e d d d e 7 3 e . 
+. e e e e e e e e . 
+. . . . . . . . . . 
+`;
+            case "image111":
+            case "level sokogen 09":return img`
+. . . . . . . . . . . 
+. . e e e e e e . . . 
+. . e 3 7 2 d e e . . 
+. . e 4 d d 4 d e . . 
+. . e d d d e d e . . 
+. . e d d 3 d d e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image117":
+            case "level sokogen 10":return img`
+. . . . . . . . . . . 
+. . e e e e e e e . . 
+. . e 7 d 3 3 e e . . 
+. . e d e 4 d e e . . 
+. . e d e d d d e . . 
+. . e d d 4 e d e . . 
+. . e d d 2 d d e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image120":
+            case "level sokogen 11":return img`
+. . . . . . . . . . . 
+. . e e e e e . . . . 
+. . e d d d e . . . . 
+. . e d e d e e e . . 
+. . e 2 3 4 d d e . . 
+. . e d d e 4 d e . . 
+. . e 7 d d d 3 e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image121":
+            case "level sokogen 12":return img`
+. . . . . . . . . . . 
+. . e e e e e e e . . 
+. . e e e d d 7 e . . 
+. . e 3 d 2 e d e . . 
+. . e d d d 4 d e . . 
+. . e d 4 3 d e e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image122":
+            case "level sokogen 13":return img`
+. . . . . . . . . . 
+. e e e e e e . . . 
+. e 7 d d d e e . . 
+. e d 3 4 2 d e e . 
+. e d e 4 3 d d e . 
+. e d d d d d d e . 
+. e e e e e e e e . 
+. . . . . . . . . . 
+`;
+            case "image123":
+            case "level sokogen 14":return img`
+. . . . . . . . . . . 
+. . e e e e e e . . . 
+. . e d d 3 d e . . . 
+. . e d e 3 d e e . . 
+. . e d d 3 d d e . . 
+. . e d 4 4 4 d e . . 
+. . e d d e d 7 e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image124":
+            case "level sokogen 15":return img`
+. . . . . . . . . . . 
+. . e e e e e e e . . 
+. . e d d e e e e . . 
+. . e d d d 2 3 e . . 
+. . e d d 4 e d e . . 
+. . e d d 3 4 7 e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
         }
         return null;
     })

@@ -549,6 +549,81 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "crate wood on target"
     },
+    "image102": {
+        "data": "hwQKAAgAAAAAAAAAAAAAAODu7g7gN90O4E3dDuAt3g7g3t0OAO7uDgAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 01"
+    },
+    "image103": {
+        "data": "hwQLAAgAAAAAAAAAAAAAAODu7g7g190O4E3eDuBN0w7g3d0O4N7TDgDu7g4AAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 02"
+    },
+    "image104": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAAAO7u7gAAAAAAft3tAAAAAODe7e0AAAAA4D097QAAAADgTdTtAAAAAODu3e0AAAAAAODu7gAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 03"
+    },
+    "image105": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAAAO7uDgAAAADg3t3uAAAAAODX1O0AAAAA4O0y4wAAAADg3dTtAAAAAODe3e4AAAAAAO7uDgAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 04"
+    },
+    "image106": {
+        "data": "hwQKAAgAAAAAAAAA4O7uDuDd3Q7g3dQO4N3kDuA91A7gPjcOAN7dDgDu7g4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 05"
+    },
+    "image107": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAADu7u4AAAAA4N7d7QAAAADgPS3tAAAAAODt3u0AAAAA4N3d7QAAAADgTk7uAAAAAAB+PQ4AAAAAAO7uDgAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 06"
+    },
+    "image108": {
+        "data": "hwQLAAgAAAAAAAAAAAAAAODu7g7g1z0O4ELUDuDt3Q7g3dMO4N7tDgDu7gAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 07"
+    },
+    "image109": {
+        "data": "hwQKAAgAAAAAAAAAAO7uDuDe3Q7gPd4O4D3dDuDd5A7g3XQO4N40DgDu7g4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 08"
+    },
+    "image111": {
+        "data": "hwQLAAgAAAAAAAAAAAAAAODu7g7gQ90O4NfdDuDSPQ7gTd4O4N7dDgDu7g4AAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 09"
+    },
+    "image117": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg193tAAAAAODt3u0AAAAA4ENN4gAAAADg0+3tAAAAAODu3e0AAAAA4O7u7gAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 10"
+    },
+    "image120": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg3dLnAAAAAODt0+0AAAAA4N3k7QAAAADg7k3tAAAAAADg3eMAAAAAAODu7gAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 11"
+    },
+    "image121": {
+        "data": "hwQLAAgAAAAAAAAAAAAAAODu7g7gPt0O4N5NDuAtPQ7g7dQO4NftDuDu7g4AAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 12"
+    },
+    "image122": {
+        "data": "hwQKAAgAAAAAAAAA4O7uDuDX3Q7gPd4O4E3UDuAt0w7g3t0OAO7dDgDg7g4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 13"
+    },
+    "image123": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg3d3tAAAAAODtTe0AAAAA4DND7gAAAADg3U3tAAAAAODu3ecAAAAAAODu7gAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 14"
+    },
+    "image124": {
+        "data": "hwQLAAgAAAAAAAAAAAAAAODu7g7g3d0O4N3dDuDeNA7gLk4O4D59DuDu7g4AAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 15"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
