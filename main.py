@@ -130,7 +130,7 @@ def reset_buttons():
     pressed_B = button_lag
 """
 
-Soko-Chan/Meowban
+Soko-Chan
 
 TODO
 
@@ -745,7 +745,7 @@ Check win condition and manage buttons in a continuous loop.
 
 A win is when all boxes stand on a target tile (pink).
 
-Direction buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Meowban continues to move, but not too fast.
+Direction buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Soko-Chan continues to move, but not too fast.
 
 Button B must be blocked during menu, otherwise a B press during menu will be handled as undo action when the menu returns.
 

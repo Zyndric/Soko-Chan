@@ -4,7 +4,7 @@ setup scope
 e
 
 control scope
-c, t, x, y</comment><comment id="a`^C}EaIt.$8oTksZ8C?" x="-1824" y="-677" h="815" w="555">Soko-Chan/Meowban
+c, t, x, y</comment><comment id="a`^C}EaIt.$8oTksZ8C?" x="-1824" y="-677" h="815" w="555">Soko-Chan
 
 TODO
 - more levels (from sets "Yoshio Murase", "Sokogen-990602", Microban, Microcosmos, Nabokosmos, "Classic Thinking Rabbit", Boxxle)
@@ -32,7 +32,7 @@ Nice to Have
 
 A win is when all boxes stand on a target tile (pink).
 
-Direction buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Meowban continues to move, but not too fast.
+Direction buttons can be pressed repeatedly without delay. They can be pressed continuously, in which case Soko-Chan continues to move, but not too fast.
 
 Button B must be blocked during menu, otherwise a B press during menu will be handled as undo action when the menu returns.</comment><comment id="d64i,-Q8HJN{~^aZUn,U" x="-879" y="-293" h="269" w="675">Set up
 
