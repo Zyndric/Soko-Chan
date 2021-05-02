@@ -434,6 +434,26 @@ function get_level_asset_microban (lv: number) {
         return assets.image`level microban 09`
     } else if (lv == 10) {
         return assets.image`level microban 10`
+    } else if (lv == 11) {
+        return assets.image`level microban 11`
+    } else if (lv == 12) {
+        return assets.image`level microban 12`
+    } else if (lv == 13) {
+        return assets.image`level microban 13`
+    } else if (lv == 14) {
+        return assets.image`level microban 14`
+    } else if (lv == 15) {
+        return assets.image`level microban 15`
+    } else if (lv == 16) {
+        return assets.image`level microban 16`
+    } else if (lv == 17) {
+        return assets.image`level microban 17`
+    } else if (lv == 18) {
+        return assets.image`level microban 18`
+    } else if (lv == 19) {
+        return assets.image`level microban 19`
+    } else if (lv == 20) {
+        return assets.image`level microban 20`
     }
     return assets.image`level microban 01`
 }
@@ -767,7 +787,7 @@ let levelset = 0
 let list_groupsize: number[] = []
 let list_levelsets: string[] = []
 list_levelsets = ["Easy", "Microban", "Y. Murase", "Nabokosmos"]
-list_groupsize = [10, 10, 10, 20]
+list_groupsize = [10, 20, 10, 20]
 levelset = 0
 level = 1
 if (blockSettings.exists("recent group") && blockSettings.exists("recent level")) {

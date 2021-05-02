@@ -489,6 +489,56 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level nabo 20"
     },
+    "image90": {
+        "data": "hwQLAAgAAAAAAAAAAODu7gDg3e3u7tPt3t3T7t7u3g7e3t0O3kfUDu7e3Q4A7u4OAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 11"
+    },
+    "image91": {
+        "data": "hwQLAAgAAAAAAAAA7u4AAN7tDgDe1O7u3k3e7e7d1+3g7jPtAODt7QDg3e0A4O7uAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 12"
+    },
+    "image92": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAA7u4OAAAAAAA+M+7uDgAAAN7X1N0OAAAA7k1N3Q4AAADg7t7tDgAAAAAA3u0AAAAAAADu7gAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 13"
+    },
+    "image93": {
+        "data": "hwQLAAgAAAAAAAAAAAAAAODu7g7g3dMO4O3dDuDd1A7g7eIO4N3nAODu7gAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 14"
+    },
+    "image94": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAADu7gAAAAAAAN7tAAAAAAAA3u0AAAAAAADe7QAAAAAAAN7u7gAAAADgPk3tAAAAAOAn7e0AAAAA4N7d7QAAAAAA7u7uAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 15"
+    },
+    "image95": {
+        "data": "hwQKAAgAAAAA4O7u7u7T7d7d3e3e7dPj7u3u7uDd3e3g3Uft4N5E7QDu3u0AAO7u",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 16"
+    },
+    "image96": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADgPdTtAAAAAOA31O0AAAAA4D3U7QAAAADg7t7tAAAAAAAA7u4AAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 17"
+    },
+    "image97": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAA7u7uAAAAAADe0+0AAAAAAN7t7e4OAAAA3uNE1w4AAADe3d3dDgAAAN7t7u4OAAAA7u4AAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 18"
+    },
+    "image98": {
+        "data": "hwQKAAgAAAAAAAAA7u4AAN7tAADe7QAA3ufu7j7k3e0+1N3t3u3u7u7uAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 19"
+    },
+    "image99": {
+        "data": "hwQLAAgAAAAAAAAA7u4AAN7tAADe7e7u3ufd7d7U3e3e5O3u7uPtAODT7QDg7u4AAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microban 20"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
