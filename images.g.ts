@@ -1693,6 +1693,25 @@ e e e e e e e e e e
 . . . e d d e . . . . 
 . . . e e e e . . . . 
 `;
+            case "image100":
+            case "sokochan win":return img`
+. . f f f . f f f f . f f f . . 
+. f f f f f c c c c f f f f f . 
+. f f f f b c c c c b f f f f . 
+. f f f c 3 c c c c 3 c f f f . 
+. . f 3 3 c c c c c c 3 3 f . . 
+. . f c c c c 4 4 c c c c f . . 
+. . f f c c 4 4 4 4 c c f f 4 . 
+. . f f f b f 4 4 f b f f 4 4 . 
+. . f f 2 1 f d d f 1 2 f d 4 . 
+. . . f f d d d d d d 4 f 4 4 . 
+. . . e f e 4 4 4 4 e f f e . . 
+. . e 4 f b 3 3 3 3 b f e . . . 
+. . 4 d f 3 3 3 3 3 3 c . . . . 
+. . 4 4 f 6 6 6 6 6 6 f . . . . 
+. . . . . f f f f f f . . . . . 
+. . . . . f f . . f f . . . . . 
+`;
         }
         return null;
     })

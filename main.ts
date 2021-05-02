@@ -313,7 +313,9 @@ function undo_move () {
 }
 function control_level () {
     if (all_boxes_fit()) {
-        pause(500)
+        ban.setImage(assets.image`sokochan win`)
+        music.playTone(392, music.beat(BeatFraction.Quarter))
+        music.playTone(523, music.beat(BeatFraction.Whole))
         if (ask_for_next_level()) {
             next_level()
         } else {

@@ -539,6 +539,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level microban 20"
     },
+    "image100": {
+        "data": "hwQQABAAAAAAAAAAAAAAAPD/AAAAAAAA/////w/gRAD//8P//05NAP/Pw/zy//8A8DvMvNG+Y//PzMz03zRj/8/MTETdNGMPz8xMRN00Yw/PzMz03zRj//A7zLzRvmP//8/D/EL//AD//8P//+8AAP///09NDgAA8P8AREQAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "sokochan win"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
