@@ -19,7 +19,8 @@
         "tilemap.g.ts",
         "images.g.jres",
         "images.g.ts",
-        "main.py"
+        "main.py",
+        "askNext.ts"
     ],
     "testFiles": [
         "test.ts"
