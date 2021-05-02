@@ -13,7 +13,7 @@ namespace game {
         controller._setUserEventsEnabled(false);
         game.eventContext(); // initialize the game
         control.pushEventContext();
-        showHighDialog(title, subtitle, subsubtitle, "A = OK, B = UNDO");
+        showHighDialog(title, subtitle, subsubtitle + "Next level?", "A = OK, B = UNDO");
         // short pause so that players don't skip through prompt
         pause(500);
 
@@ -67,7 +67,7 @@ namespace game {
             y += titleFont.charHeight + 2;
         }
         if (subtitle) {
-            screen.print(subtitle, 8, y, screen.isMono ? 1 : 6, subFont);
+            screen.print(subtitle, 8, y, screen.isMono ? 1 : 7, subFont);
             y += subFont.charHeight + 2;
         }
         if (subsubtitle) {

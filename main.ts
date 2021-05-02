@@ -198,7 +198,7 @@ function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
     }
 }
 function ask_for_next_level () {
-    str_record = "(no previously recorded score)"
+    str_record = "New best solution."
     str_score_action = ""
     if (blockSettings.exists(level_best_id(levelset, level))) {
         record = blockSettings.readNumberArray(level_best_id(levelset, level))
@@ -209,9 +209,8 @@ function ask_for_next_level () {
         }
     } else {
         blockSettings.writeNumberArray(level_best_id(levelset, level), [count_moves, count_pushes])
-        str_score_action = "New score. "
     }
-    return game.askNextLevel("Moves/Pushes: " + count_moves + "/" + count_pushes, str_record, "" + str_score_action + "Next level?")
+    return game.askNextLevel("Moves/Pushes: " + count_moves + "/" + count_pushes, str_record, str_score_action)
 }
 function hilight_menu_item () {
     for (let t = 0; t <= 3; t++) {
@@ -364,6 +363,7 @@ function return_to_level () {
     reset_buttons()
     state_level = 1
 }
+// Force camera to update its position right now, following the moved sprite. Otherwise, the fixed text (e.g. move counter) shuffles around, because it renders either too early, or too late.
 function update_camera () {
     game.currentScene().camera.update()
 }
