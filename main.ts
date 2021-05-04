@@ -1,6 +1,29 @@
 namespace SpriteKind {
     export const Crate = SpriteKind.create()
 }
+/**
+ * Skins
+ * 
+ * {
+ * 
+ * floor tan dotted
+ * 
+ * wall steel / teal bricks / dark purple bricks / purple bricks
+ * 
+ * crate wood
+ * 
+ * }
+ * 
+ * {
+ * 
+ * floor tan dotted
+ * 
+ * wall dark brown bricks / brown bricks
+ * 
+ * crate drawer
+ * 
+ * }
+ */
 function reset_states () {
     pressed_up = 0
     pressed_down = 0
@@ -74,32 +97,21 @@ function sprite_cache () {
     box = sprites.create(assets.image`crate wood2 on target`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate drawer`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate drawer on target`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate clam`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate clam on target`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate shrub`, SpriteKind.Crate)
     box = sprites.create(assets.image`crate shrub on target`, SpriteKind.Crate)
-    scene.setTile(3, assets.image`target tan`, false)
     scene.setTile(3, assets.image`target dark purple`, false)
     scene.setTile(3, assets.image`target patch`, false)
     scene.setTile(3, assets.image`target tiled`, false)
     scene.setTile(3, assets.image`target tan dotted`, false)
     scene.setTile(13, assets.image`floor tan dotted`, false)
-    scene.setTile(13, assets.image`floor tan`, false)
-    scene.setTile(13, assets.image`floor tiled`, false)
     scene.setTile(13, assets.image`floor dark purple`, false)
     scene.setTile(14, assets.image`wall brown bricks`, true)
     scene.setTile(14, assets.image`wall purple bricks`, true)
     scene.setTile(14, assets.image`wall dark purple bricks`, true)
     scene.setTile(14, assets.image`wall dark brown bricks`, true)
     scene.setTile(14, assets.image`wall steel`, true)
-    scene.setTile(14, assets.image`wall red bricks`, true)
-    scene.setTile(14, assets.image`wall yellow bricks`, true)
     scene.setTile(14, assets.image`wall teal bricks`, true)
-    scene.setTile(14, assets.image`wall overgrown bricks`, true)
     scene.setTile(14, assets.image`wall plant`, true)
-    scene.setTile(14, assets.image`wall sand`, true)
-    scene.setTile(14, assets.image`wall reef`, true)
-    scene.setTile(14, assets.image`wall old teal bricks`, true)
     scene.setTile(14, assets.image`wall large teal bricks`, true)
 }
 function add_menu_item (y: number, text: string, changeable: boolean) {
@@ -378,28 +390,23 @@ function move_ban (to_tx: number, to_ty: number) {
     }
 }
 function get_level_asset_sokogen (lv: number) {
-    if (lv == 1) {
-        return assets.image`level murase 01`
-    } else if (lv == 2) {
-        return assets.image`level murase 02`
-    } else if (lv == 3) {
-        return assets.image`level murase 03`
-    } else if (lv == 4) {
-        return assets.image`level murase 04`
-    } else if (lv == 5) {
-        return assets.image`level murase 05`
-    } else if (lv == 6) {
-        return assets.image`level murase 06`
-    } else if (lv == 7) {
-        return assets.image`level murase 07`
-    } else if (lv == 8) {
-        return assets.image`level murase 08`
-    } else if (lv == 9) {
-        return assets.image`level murase 09`
-    } else if (lv == 10) {
-        return assets.image`level murase 10`
-    }
-    return assets.image`level murase 01`
+    return [
+    assets.image`level sokogen 01`,
+    assets.image`level sokogen 02`,
+    assets.image`level sokogen 03`,
+    assets.image`level sokogen 04`,
+    assets.image`level sokogen 05`,
+    assets.image`level sokogen 06`,
+    assets.image`level sokogen 07`,
+    assets.image`level sokogen 08`,
+    assets.image`level sokogen 09`,
+    assets.image`level sokogen 10`,
+    assets.image`level sokogen 11`,
+    assets.image`level sokogen 12`,
+    assets.image`level sokogen 13`,
+    assets.image`level sokogen 14`,
+    assets.image`level sokogen 15`
+    ][lv - 1]
 }
 function box_on_tile (tx: number, ty: number) {
     for (let c of sprites.allOfKind(SpriteKind.Crate)) {
@@ -469,6 +476,8 @@ function get_level_asset (group: number, lv: number) {
         return get_level_asset_murase(lv)
     } else if (group == 3) {
         return get_level_asset_nabo(lv)
+    } else if (group == 4) {
+        return get_level_asset_sokogen(lv)
     } else {
         return get_level_asset_easy(lv)
     }
@@ -487,6 +496,16 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
             return
         }
     }
+}
+function get_skin_assets (nr: number) {
+    if (nr == 1) {
+        list_sprites = [assets.image`wall dark brown bricks`, assets.image`crate drawer`, assets.image`crate drawer on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
+    } else if (nr == 2) {
+    	
+    } else if (nr == 99) {
+        list_sprites = [assets.image`wall steel`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
+    }
+    list_sprites = [assets.image`wall steel`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
 }
 /**
  * Set up
@@ -628,7 +647,7 @@ function realize_tilemap () {
         scene.setTileAt(e, 3)
     }
     for (let e of scene.getTilesByType(4)) {
-        box = sprites.create(assets.image`crate wood`, SpriteKind.Crate)
+        box = sprites.create(assets.image`crate drawer`, SpriteKind.Crate)
         scene.place(e, box)
         scene.setTileAt(e, 13)
     }
@@ -644,7 +663,7 @@ function realize_tilemap () {
     }
     scene.setTile(3, assets.image`target tan dotted`, false)
     scene.setTile(13, assets.image`floor tan dotted`, false)
-    scene.setTile(14, assets.image`wall steel`, true)
+    scene.setTile(14, assets.image`wall dark brown bricks`, true)
 }
 /**
  * Variables
@@ -774,6 +793,7 @@ function target_tile (x: number, y: number) {
  * 
  * - a way to handle large levels without scrolling, maybe through smaller 8x8 sprite tilemaps
  */
+let list_sprites: Image[] = []
 let text_introduction: TextSprite = null
 let text_frame: TextSprite = null
 let undo_step: number[] = []
@@ -812,8 +832,8 @@ let levelset = 0
 let list_groupsize: number[] = []
 let list_levelsets: string[] = []
 introduce_game()
-list_levelsets = ["Easy", "Microban", "Y. Murase", "Nabokosmos"]
-list_groupsize = [10, 20, 10, 20]
+list_levelsets = ["Easy", "Microban", "Y. Murase", "Nabokosmos", "Sokogen"]
+list_groupsize = [10, 20, 10, 20, 15]
 levelset = 0
 level = 1
 if (blockSettings.exists("recent group") && blockSettings.exists("recent level")) {

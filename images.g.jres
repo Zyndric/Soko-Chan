@@ -24,16 +24,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "wall purple bricks"
     },
-    "image13": {
-        "data": "hwQQABAAAAAAu7u7y7y7C7Du7u677M6760Tk7rvs7rtLRETuu+zuC0tERO677O4LS0RE7rvs7gtLRETuu8vuC0tERO7NvO4LS0RE7s287gtLRETuu8vuC0tERO677O4LS0RE7rvs7gtLRETuu+zuC+tE5O677O67sO7u7rvszrsAu7u7y7y7Cw==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "create chest"
-    },
-    "image6": {
-        "data": "hwQQABAAAACwuwu7u7u7C+vuu8zM6867S+S7zMzr7rtLRLvMzOvuC0tEu8zM6+4LS0S7zMzr7gtLRLvLzOvuC0tEzbzM6+4LS0TNvMzr7gtLRLvLzOvuC0tEu8zM6+4LS0S7zMzr7gtLRLvMzOvuC0vku8zM6+67S+67zMzrzruwuwu7u7u7Cw==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "crate chest on target"
-    },
     "image15": {
         "data": "hwQQABAAAADAzMzMzPz//7zd3d27u7u73N3dvdvMzPvc3d2927vL+9zd3b3bu8v73N3dvdu7y/vc3d2928zL+9zd3b3b28z73N3dvdvbzPvc3d2928zL+9zd3b3bu8v73N3dvdu7y/vc3d2927vL+9zd3b3bzMz7vN3d3bu7u7vAzMzMzPz//w==",
         "mimeType": "image/x-mkcd-f4",
@@ -49,36 +39,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "crate wood"
     },
-    "image28": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAAAGZmAAAAAAB2d4ZmAAAAcHd3d4gGAAB2d3d3h2gAAHZ3h4h3aABgdneIiIiIBmBliIhmhogGYGWIaGZmiAZgZohoZmaIBgBmEWhmZmgAAGYRZWaGaAAAYFZVZmgGAAAAZmZmZgAAAAAAZmYAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "crate marble"
-    },
-    "image29": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAAAEREAAAAAAA0MyREAAAAMDMzMyIEAAA0MzMzI0IAADQzIyIzQgBANDMiIiIiBEBFIiJEJCIEQEUiQkREIgRARCJCREQiBABEEUJEREIAAEQRRUQkQgAAQFRVREIEAAAARERERAAAAAAAREQAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "crate marble on target"
-    },
-    "image30": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAA0GZmjQgAAABtZtaNCAAAAGZm1oaIAABgmWlmiPgPAMbMa4iI/w9gzLyI9oj/D2BmhriGj/8PYGaJu4b4+ABgZom7hviIAGBmibv2/4gAYGaJiIiI+ABgZom7hoj/D2CZibuGiP8PAMZsuIaI/w8AYMyGiIj/AA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "crate car"
-    },
-    "image31": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAA0CIi7Q4AAAAtItLtDgAAACIi0uLuAAAgRCQi7v4PAMLMK+7u/w8gzLzu8u7/DyAi4r7i7/8PICLku+L+/gAgIuS74v7uACAi5Lvy/+4AICLk7u7u/gAgIuS74u7/DyBE5Lvi7v8PAMIsvuLu/w8AIMzi7u7/AA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "crate car on target"
-    },
-    "image32": {
-        "data": "hwQQABAAAAAAAAAAAMD/AAAAAADA3LwMDAAAwDzTPPvMAMA8M7PM+9wMPDOzO83z3MMzu7szzfO8yzMzM7O8+9zLs7u7O83z3MMzMzMzzfO8yzMzM7u8+9zDM7u7M83z3Aw8M7M7zfPMAMA8M7PM+wwAAMA80zz7AAAAAMDcvAwAAAAAAMD/AA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "crate clam"
-    },
-    "image33": {
-        "data": "hwQQABAAAAAAAM8MAMD/AAD8PPMAPLMMwDvLvM/zPPvAw8u8y//M+/DDvMzL/7/zv8vMzPz/v/O8u8vMmIn/+zzMzMw5k7/zPMzMzBmTv/O8u8vMmIn/+7/LzMz8/7/z8MO8zMv/v/PAw8u8y//M+8A7y7zP8zz7APw88wA8swwAAM8MAMD/AA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "crate clam on target"
-    },
     "image49": {
         "data": "hwQQABAAAAAAAADMAAAAAAAAYMfMDAAAAABsx3wMAAAAYGxndwwAAMDMx2ZmzAAOwMZnbGZ35g7AfHfHdsfvAGxVd2xm9u7uXFV3Zmb/7u7AfHVnd8fuAGDHZ2Z3d+wOYGbHd2fMAA4AYMx3dwwAAAAAZmd8DAAAAABgZ8YMAAAAAABmAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
@@ -89,11 +49,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "crate shrub on target"
     },
-    "image115": {
-        "data": "hwQQABAAAADd3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3Q==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "floor tan"
-    },
     "image114": {
         "data": "hwQQABAAAADd3d3d3R3R3d3d3d3dHdHd3d3b3d3d3d0d0d3d3d3d3R3R3d3d3d3d3d3d3dvd3d3d3d3d3d0d3d3d3d3d3d3d3d3d3d3d3d3d3bvd3d3d3d3du93d3d3d3d3d3d3d3d3d3d3d3d3b3b3d3d3d3d3d3d3d3d3d3b3d3d3d3d3d3Q==",
         "mimeType": "image/x-mkcd-f4",
@@ -103,16 +58,6 @@
         "data": "hwQQABAAAAAdERERERERsdHd3d3d3d290d3d3d3d3b3R3d3d3d3dvdHd3d3d3d290d3d3d3d3b3R3d3d3d3dvdHd3d3d3d290d3d3d3d3b3R3d3d3d3dvdHd3d3d3d290d3d3d3d3b3R3d3d3d3dvdHd3d3d3d290d3d3d3d3b27u7u7u7u7uw==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "floor tiled"
-    },
-    "image110": {
-        "data": "hwQQABAAAADd3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d0iIt3d3d3d3dIt3d3d3d3d0i3d3d3d3d0iIt3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3Q==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "target tan"
-    },
-    "image2": {
-        "data": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8u+tERNRNvLu7TkRERNTEu7tERERERM27u0REREREzbu7RERERETNu7tERERERM27u0REREREzbu7RERERETNu7tERERERM27u0REREREzbu7TkRERNTEu7vrRETUTby7y7u7u7u7u7y7u7u7u7u7uw==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "target switch"
     },
     "image112": {
         "data": "hwQQABAAAADd3d3d3R3R3d3d3d3dHdHd3d3b3d3d3d0d0d1tZ93d3R1hZ3ZnZt3d3W13d3d3193dbXd3d3cW3d3dd3d3d9fd3d13d3d31t3dbWZ3d2bW3d3dd3d3d9fd3W12d3dn3d3d3X12d2bb3b3d3XZm3d3d3d3d3d3d3b3d3d3d3d3d3Q==",
@@ -144,16 +89,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "wall steel"
     },
-    "image5": {
-        "data": "hwQQABAAAAAu4u8i/i4i/i7i/+7/LiL+LuL///8uIv4u4v/u/y4i/i7i7yL+LiL+LuLvIv4uIv4u4u8i/i4i/i7i7yL+7+7/LuLvIv7///8u4u8i/u/u/y7i7yL+LiL+7/7vIv4uIv7//+8i/i4i/u/+7yL+LiL+LuLvIv4uIv4u4u8i/i4i/g==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "wall red bricks"
-    },
-    "image7": {
-        "data": "hwQQABAAAABFVUVVRVVFVUVVRVVFVUVVRUREVUVERFVFVUVVRVVFVUVVRVVFVUVVRVVFVUVVRVVEVUVERFVFREVVRVVFVUVVRVVFVUVVRVVFVUVVRVVFVUVERFVFRERVRVVFVUVVRVVFVUVVRVVFVUVVRVVFVUVVRFVFRERVRURFVUVVRVVFVQ==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "wall yellow bricks"
-    },
     "image25": {
         "data": "hwQQABAAAAB2ZnZmdmZ2ZnZmdmZ2ZnZmdnd3ZnZ3d2Z2ZnZmdmZ2ZnZmdmZ2ZnZmdmZ2ZnZmdmZ3ZnZ3d2Z2d3ZmdmZ2ZnZmdmZ2ZnZmdmZ2ZnZmdmZ2ZnZ3d2Z2d3dmdmZ2ZnZmdmZ2ZnZmdmZ2ZnZmdmZ2ZnZmd2Z2d3dmdnd2ZnZmdmZ2Zg==",
         "mimeType": "image/x-mkcd-f4",
@@ -163,16 +98,6 @@
         "data": "hwQQABAAAAAAYGaIZoiI+GB2d3aHZujuYHdnd2aGZu5md3d3d2fm7nZ3d3d3Zujudnd3d2dmhv52d3d3dndmhnZ3d3d3Z2budnd3d3dmiOh2d3d3Z2aGiHZ3d3d3Zmbudnd3d3Znhu5md3d3Z4aI6GB3Z3dnZojuYHZ3dodm6O4AYGaIZoiI/w==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "wall plant"
-    },
-    "image119": {
-        "data": "hwQQABAAAAAAMLO7y8zMzAAz3d0zM7u7MNPdPT3Du7uw3d09M8O7u9vd3T07w7u7293d3TM9vLs73d3TPTPDuzvd3d290827M93dPT3TvbvT3R3dMzO7u9Pd3T09w7u7293dPTPDu7uw3d09O8O7uzDT3d0zPby7ADPd0z0zw7sAMLu7y8zMuw==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "wall sand"
-    },
-    "image43": {
-        "data": "hwQQABAAAAAAvru7u777/+C7u7u7vu7/vru7u7vrvv6+u7u7u+6+/ru7u7u7vuvuu7u7u+u+++67u7u76+7+/ru7u7vru+7/u7u7u7u7/v+7u7u7u7vv/ru7u7u77u/+u7u7u7vu+/++u7u7u+vr/767u7u76+7/4Lu7u7vr6/8Avru7u777/w==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "wall reef"
     },
     "image41": {
         "data": "hwQQABAAAADu7u7u7u7u7kNOREREQ+7uQ+7u7u5DzuxDTj7kQ0PO7ENOPuRDQ87sQ04+5ENDzuxDTj7kQ0PO7ENOPuRDQ87sQ04+5ENDzuxDTj7kQ0PO7ENOPuRDQ87sQ04+5ENDzuxDTj7kQ0PO7EPu7u7uQ87sQ05ERERD7u7u7u7u7u7u7g==",
@@ -184,35 +109,15 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "crate wood2 on target"
     },
-    "image34": {
-        "data": "hwQQABAAAABERD0zM42ITUREPTMzjYhNRNQ9MzON2ERELT0zM419TdQiPTMz3XfXLSI9MzN9d3fXItIz09Z3d3ctIj1t1nd3dy0i0mbWd3d3LSLSZtZ3d3ctItJm1nd3dy0i0mbWd3fXIiLSZtZ3d00tIj1tZn13RNTSM9PW2NdERD0zM42ITQ==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "wall colored"
-    },
-    "image12": {
-        "data": "hwQQABAAAAB8ZszMZsx8ZnxmfMxmfHxmbGZ8xmZszGxsZmzGzGzMzMzMzMzMzHxmfGdszGbMzMZ8ZnzGZ2zMzHxmfMZnbHxmfGZsxmZsfGZ8ZmzGZ2xsxnxmzMZmzMzMbGbMzMzMzGfMzHzGzHx8ZnzGfMZnbHxmfGZ8xmdsbGZ8ZmzGZ8zMzA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "wall old teal bricks"
-    },
     "image14": {
         "data": "hwQQABAAAADGzMz8xszM/GlmZvxpZmb8aWZm9mlmZvxmZmb2aWZm/GlmZvxpZsb8aWZm/GlmxvyZZmb2aWZm/P////9pZmb8xszM/GlmZvxpZmb8aWZm/GlmZvxpZmb2mWbG/GlmZvxpZmb8aWZm/GlmZvaZZmb8mWZm9pmWZvb//////////w==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "wall large teal bricks"
     },
-    "image9": {
-        "data": "hwQQABAAAAB2Z8zMZsxszHZndsxmbGzMdnd2x2dszMx8d3Znd2zMzMxmfHd3Z2zMdnd8x3dmbMx2d3zHZmxszHZ3d8dmbGzMdnd3x2ZsbMx2d3fHZmxszHZ3dndmbMzMfHd2d2ZmzMzMZnZnZmZszHbHdsZmbGzMdmd8xmZsbMx2Z2zGZsxszA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "wall overgrown bricks"
-    },
     "image16": {
         "data": "hwQQABAAAADb3d3d3d3d3f3MzM/MzM/M/cy8PzO8f8f9Ztw/M9x/x/3M3M/M3M/M/TPcb2bcP8P9M9zPzNw/w/3M3E9E3M/M/UTcT0TcT8T9RNzPzNzPzP3M3G9m3M/M/TPcb2bcf8f9zNzPzNzPzP13vD8zvG/G/czMz8zMz8zb3d3d3d3d3Q==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "wall shelf"
-    },
-    "image17": {
-        "data": "hwQQABAAAADd3d3d3R3R3d3d3d3dHdHd3d3b3d3d3d0d0d3d3d3d3R3R3d293d3d3d0t0i3S3d3d3S0iItId3d3d3dIt3d3d3d3d0i3d3d3dvSsiItLd3d29K9It0t3d3d3d3d3d3d3d3d3d3d3b3b3d3d3d3d3d3d3d3d3d3b3d3d3d3d3d3Q==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "target tan dotted"
     },
     "image21": {
         "data": "hwQKAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg3dLtAAAAAODT1+0AAAAA4O5N7gAAAAAA4N0OAAAAAADg7g4AAAAAAAAAAAAAAAAAAAAAAAAAAA==",
@@ -623,6 +528,16 @@
         "data": "hwQLAAgAAAAAAAAAAAAAAODu7g7g3d0O4N3dDuDeNA7gLk4O4D59DuDu7g4AAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level sokogen 15"
+    },
+    "image17": {
+        "data": "hwQQABAAAADd3d3d3R3R3d3d3d3dHdHd3d3b3d3d3d0d0d3dvd3d3R3R3d3d3d3d3d3dIiLd3d3d3S0iItId3d3dLdIt0t3d3d0t0i3S3d3dvSsiItLd3d292yIi3d3d3d3d3d3d3d3d3d3d3d3b3b3d3d3d3d3d3d3d3d3d3b3d3d3d3d3d3Q==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "target tan dotted"
+    },
+    "image115": {
+        "data": "hwQQABAAAADd3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3Q==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "floor tan"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
