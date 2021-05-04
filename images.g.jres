@@ -209,11 +209,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "wall shelf"
     },
-    "image17": {
-        "data": "hwQQABAAAADd3d3d3R3R3d3d3d3dHdHd3d3b3d3d3d0d0d3d3d3d3R3R3d293d3d3d0t0i3S3d3d3S0iItId3d3d3dIt3d3d3d3d0i3d3d3dvSsiItLd3d29K9It0t3d3d3d3d3d3d3d3d3d3d3b3b3d3d3d3d3d3d3d3d3d3b3d3d3d3d3d3Q==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "target tan dotted"
-    },
     "image21": {
         "data": "hwQKAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg3dLtAAAAAODT1+0AAAAA4O5N7gAAAAAA4N0OAAAAAADg7g4AAAAAAAAAAAAAAAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
@@ -623,6 +618,11 @@
         "data": "hwQLAAgAAAAAAAAAAAAAAODu7g7g3d0O4N3dDuDeNA7gLk4O4D59DuDu7g4AAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level sokogen 15"
+    },
+    "image17": {
+        "data": "hwQQABAAAADd3d3d3R3R3d3d3d3dHdHd3d3b3d3d3d0d0d3d3d3d3R3R3d3dvd3d3d3dIiLd3d3d3S0iItId3d3dLdIt0t3d3d0t0i3S3d3duy0iItLd3d273SIi3d3d3d3d3d3d3d3d3d3d3d3b3b3d3d3d3d3d3d3d3d3d3b3d3d3d3d3d3Q==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "target tan dotted"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
