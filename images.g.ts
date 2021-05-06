@@ -193,82 +193,6 @@ f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f
 f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
 . f f f f f f f f f f f f f f . 
 `;
-            case "image28":
-            case "crate marble":return img`
-. . . . . . . . . . . . . . . . 
-. . . . . . 6 6 6 6 . . . . . . 
-. . . . 6 6 6 5 5 6 6 6 . . . . 
-. . . 7 7 7 7 6 6 6 6 6 6 . . . 
-. . 6 7 7 7 7 8 8 8 1 1 6 6 . . 
-. . 7 7 7 7 7 8 8 8 1 1 5 6 . . 
-. 6 7 7 7 7 8 8 8 8 8 5 5 6 6 . 
-. 6 7 7 7 8 8 8 6 6 6 6 5 6 6 . 
-. 6 6 7 7 8 8 6 6 6 6 6 6 6 6 . 
-. 6 8 7 7 8 8 6 6 6 6 6 6 6 6 . 
-. . 6 8 7 7 8 6 6 6 6 6 8 6 . . 
-. . 6 8 8 7 8 8 6 6 6 8 6 6 . . 
-. . . 6 8 8 8 8 8 8 8 8 6 . . . 
-. . . . 6 6 8 8 8 8 6 6 . . . . 
-. . . . . . 6 6 6 6 . . . . . . 
-. . . . . . . . . . . . . . . . 
-`;
-            case "image29":
-            case "crate marble on target":return img`
-. . . . . . . . . . . . . . . . 
-. . . . . . 4 4 4 4 . . . . . . 
-. . . . 4 4 4 5 5 4 4 4 . . . . 
-. . . 3 3 3 3 4 4 4 4 4 4 . . . 
-. . 4 3 3 3 3 2 2 2 1 1 4 4 . . 
-. . 3 3 3 3 3 2 2 2 1 1 5 4 . . 
-. 4 3 3 3 3 2 2 2 2 2 5 5 4 4 . 
-. 4 3 3 3 2 2 2 4 4 4 4 5 4 4 . 
-. 4 4 3 3 2 2 4 4 4 4 4 4 4 4 . 
-. 4 2 3 3 2 2 4 4 4 4 4 4 4 4 . 
-. . 4 2 3 3 2 4 4 4 4 4 2 4 . . 
-. . 4 2 2 3 2 2 4 4 4 2 4 4 . . 
-. . . 4 2 2 2 2 2 2 2 2 4 . . . 
-. . . . 4 4 2 2 2 2 4 4 . . . . 
-. . . . . . 4 4 4 4 . . . . . . 
-. . . . . . . . . . . . . . . . 
-`;
-            case "image30":
-            case "crate car":return img`
-. . . . . . . . . . . . . . . . 
-. . . . . . 6 6 6 6 6 6 6 6 . . 
-. . . . . 6 c 6 6 6 6 6 6 9 6 . 
-. . . . 6 c c 6 6 6 6 6 6 9 c 6 
-. . d 6 9 c c 6 9 9 9 9 9 9 c c 
-. d 6 6 9 c b 8 8 8 8 8 8 8 6 c 
-. 6 6 6 9 b 8 8 b b b 8 b b 8 6 
-. 6 6 6 6 6 8 b b b b 8 b b b 8 
-. 6 6 6 6 8 6 6 6 6 6 8 6 6 6 8 
-. 6 d d 6 8 f 8 8 8 f 8 8 8 8 8 
-. d d 6 8 8 8 f 8 8 f 8 8 8 8 8 
-. 8 8 8 8 8 8 8 f f f 8 8 8 8 8 
-. 8 8 8 8 f f f 8 8 8 8 f f f f 
-. . . 8 f f f f f 8 8 f f f f f 
-. . . . f f f f . . . . f f f . 
-. . . . . . . . . . . . . . . . 
-`;
-            case "image31":
-            case "crate car on target":return img`
-. . . . . . . . . . . . . . . . 
-. . . . . . 2 2 2 2 2 2 2 2 . . 
-. . . . . 2 c 2 2 2 2 2 2 4 2 . 
-. . . . 2 c c 2 2 2 2 2 2 4 c 2 
-. . d 2 4 c c 2 4 4 4 4 4 4 c c 
-. d 2 2 4 c b e e e e e e e 2 c 
-. 2 2 2 4 b e e b b b e b b e 2 
-. 2 2 2 2 2 e b b b b e b b b e 
-. 2 2 2 2 e 2 2 2 2 2 e 2 2 2 e 
-. 2 d d 2 e f e e e f e e e e e 
-. d d 2 e e e f e e f e e e e e 
-. e e e e e e e f f f e e e e e 
-. e e e e f f f e e e e f f f f 
-. . . e f f f f f e e f f f f f 
-. . . . f f f f . . . . f f f . 
-. . . . . . . . . . . . . . . . 
-`;
             case "image32":
             case "crate clam":return img`
 . . c c c c c c c c c c c c . . 
@@ -420,25 +344,6 @@ d d d d d d d d d d d d d d d d
 d d d d d d d d d d d d d d d d 
 d d d d d d d d d d d d d d d d 
 d d d d d d d d d d d d d d d d 
-`;
-            case "image2":
-            case "target switch":return img`
-b b b b b b b b b b b b b b b b 
-b c b b b b b b b b b b b b c b 
-b b b e 4 4 4 4 4 4 4 4 e b b b 
-b b e 4 4 4 4 4 4 4 4 4 4 e b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b 4 4 4 4 4 4 4 4 4 4 4 4 b b 
-b b d 4 4 4 4 4 4 4 4 4 4 d b b 
-b b d 4 4 4 4 4 4 4 4 4 4 d b b 
-b b 4 d 4 4 4 4 4 4 4 4 d 4 b b 
-b b c 4 d d d d d d d d 4 c b b 
-b b b c c c c c c c c c c b b b 
-b c b b b b b b b b b b b b c b 
-b b b b b b b b b b b b b b b b 
 `;
             case "image112":
             case "target patch":return img`
@@ -705,25 +610,6 @@ e e e e e e e e e e e e e e e e
 e e 7 7 7 7 7 7 7 7 7 7 7 7 e e 
 e e 7 7 7 7 7 7 7 7 7 7 7 7 e e 
 e e e e e e e e e e e e e e e e 
-`;
-            case "image34":
-            case "wall colored":return img`
-4 4 4 4 4 d 7 7 7 7 7 7 7 d 4 4 
-4 4 4 4 d 2 d 7 7 7 7 7 d 4 4 4 
-4 4 4 d 2 2 2 d d d d d 2 d 4 4 
-4 4 d 2 2 2 2 2 2 2 2 2 2 2 d 4 
-d d d d d d 2 2 2 2 2 2 2 2 2 d 
-3 3 3 3 3 3 d 2 2 2 2 2 2 2 d 3 
-3 3 3 3 3 3 3 d 2 2 2 2 2 d 3 3 
-3 3 3 3 3 3 3 3 d d d d d 3 3 3 
-3 3 3 3 3 3 3 d 6 6 6 6 6 d 3 3 
-3 3 3 3 3 3 d 6 6 6 6 6 6 6 d 3 
-d d d d d d 6 6 6 6 6 6 6 6 6 d 
-8 8 8 8 d 7 d d d d d d d 6 d 8 
-8 8 8 d 7 7 7 7 7 7 7 7 7 d 8 8 
-8 8 d 7 7 7 7 7 7 7 7 7 7 7 d 8 
-d d 4 d 7 7 7 7 7 7 7 7 7 7 7 d 
-4 4 4 4 d 7 7 7 7 7 7 7 7 7 d 4 
 `;
             case "image12":
             case "wall old teal bricks":return img`

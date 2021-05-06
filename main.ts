@@ -220,7 +220,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
 function show_credits () {
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban (easy)          " + ":   by David Skinner     " + "Y. Murase (tricky)       " + ":   by Yoshio Murase     " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Easy                     " + ":   some by Moobot   ", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban (easy)          " + ":   by David Skinner     " + "Y. Murase (tricky)       " + ":   by Yoshio Murase     " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Sokogen (tricky)         " + ":   by Jacques Duthen    " + "Easy                     " + ":   some by Moobot   ", DialogLayout.Full)
 }
 /**
  * Check win condition and manage buttons in a continuous loop.
@@ -378,28 +378,23 @@ function move_ban (to_tx: number, to_ty: number) {
     }
 }
 function get_level_asset_sokogen (lv: number) {
-    if (lv == 1) {
-        return assets.image`level murase 01`
-    } else if (lv == 2) {
-        return assets.image`level murase 02`
-    } else if (lv == 3) {
-        return assets.image`level murase 03`
-    } else if (lv == 4) {
-        return assets.image`level murase 04`
-    } else if (lv == 5) {
-        return assets.image`level murase 05`
-    } else if (lv == 6) {
-        return assets.image`level murase 06`
-    } else if (lv == 7) {
-        return assets.image`level murase 07`
-    } else if (lv == 8) {
-        return assets.image`level murase 08`
-    } else if (lv == 9) {
-        return assets.image`level murase 09`
-    } else if (lv == 10) {
-        return assets.image`level murase 10`
-    }
-    return assets.image`level murase 01`
+    return [
+    assets.image`level sokogen 01`,
+    assets.image`level sokogen 02`,
+    assets.image`level sokogen 03`,
+    assets.image`level sokogen 04`,
+    assets.image`level sokogen 05`,
+    assets.image`level sokogen 06`,
+    assets.image`level sokogen 07`,
+    assets.image`level sokogen 08`,
+    assets.image`level sokogen 09`,
+    assets.image`level sokogen 10`,
+    assets.image`level sokogen 11`,
+    assets.image`level sokogen 12`,
+    assets.image`level sokogen 13`,
+    assets.image`level sokogen 14`,
+    assets.image`level sokogen 15`
+    ][lv - 1]
 }
 function box_on_tile (tx: number, ty: number) {
     for (let c of sprites.allOfKind(SpriteKind.Crate)) {
@@ -469,6 +464,8 @@ function get_level_asset (group: number, lv: number) {
         return get_level_asset_murase(lv)
     } else if (group == 3) {
         return get_level_asset_nabo(lv)
+    } else if (group == 4) {
+        return get_level_asset_sokogen(lv)
     } else {
         return get_level_asset_easy(lv)
     }
@@ -812,8 +809,8 @@ let levelset = 0
 let list_groupsize: number[] = []
 let list_levelsets: string[] = []
 introduce_game()
-list_levelsets = ["Easy", "Microban", "Y. Murase", "Nabokosmos"]
-list_groupsize = [10, 20, 10, 20]
+list_levelsets = ["Easy", "Microban", "Y. Murase", "Nabokosmos", "Sokogen"]
+list_groupsize = [10, 20, 10, 20, 15]
 levelset = 0
 level = 1
 if (blockSettings.exists("recent group") && blockSettings.exists("recent level")) {

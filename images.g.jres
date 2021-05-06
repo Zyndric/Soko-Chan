@@ -49,26 +49,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "crate wood"
     },
-    "image28": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAAAGZmAAAAAAB2d4ZmAAAAcHd3d4gGAAB2d3d3h2gAAHZ3h4h3aABgdneIiIiIBmBliIhmhogGYGWIaGZmiAZgZohoZmaIBgBmEWhmZmgAAGYRZWaGaAAAYFZVZmgGAAAAZmZmZgAAAAAAZmYAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "crate marble"
-    },
-    "image29": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAAAEREAAAAAAA0MyREAAAAMDMzMyIEAAA0MzMzI0IAADQzIyIzQgBANDMiIiIiBEBFIiJEJCIEQEUiQkREIgRARCJCREQiBABEEUJEREIAAEQRRUQkQgAAQFRVREIEAAAARERERAAAAAAAREQAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "crate marble on target"
-    },
-    "image30": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAA0GZmjQgAAABtZtaNCAAAAGZm1oaIAABgmWlmiPgPAMbMa4iI/w9gzLyI9oj/D2BmhriGj/8PYGaJu4b4+ABgZom7hviIAGBmibv2/4gAYGaJiIiI+ABgZom7hoj/D2CZibuGiP8PAMZsuIaI/w8AYMyGiIj/AA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "crate car"
-    },
-    "image31": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAA0CIi7Q4AAAAtItLtDgAAACIi0uLuAAAgRCQi7v4PAMLMK+7u/w8gzLzu8u7/DyAi4r7i7/8PICLku+L+/gAgIuS74v7uACAi5Lvy/+4AICLk7u7u/gAgIuS74u7/DyBE5Lvi7v8PAMIsvuLu/w8AIMzi7u7/AA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "crate car on target"
-    },
     "image32": {
         "data": "hwQQABAAAAAAAAAAAMD/AAAAAADA3LwMDAAAwDzTPPvMAMA8M7PM+9wMPDOzO83z3MMzu7szzfO8yzMzM7O8+9zLs7u7O83z3MMzMzMzzfO8yzMzM7u8+9zDM7u7M83z3Aw8M7M7zfPMAMA8M7PM+wwAAMA80zz7AAAAAMDcvAwAAAAAAMD/AA==",
         "mimeType": "image/x-mkcd-f4",
@@ -108,11 +88,6 @@
         "data": "hwQQABAAAADd3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d0iIt3d3d3d3dIt3d3d3d3d0i3d3d3d3d0iIt3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3Q==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "target tan"
-    },
-    "image2": {
-        "data": "hwQQABAAAAC7u7u7u7u7u8u7u7u7u7u8u+tERNRNvLu7TkRERNTEu7tERERERM27u0REREREzbu7RERERETNu7tERERERM27u0REREREzbu7RERERETNu7tERERERM27u0REREREzbu7TkRERNTEu7vrRETUTby7y7u7u7u7u7y7u7u7u7u7uw==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "target switch"
     },
     "image112": {
         "data": "hwQQABAAAADd3d3d3R3R3d3d3d3dHdHd3d3b3d3d3d0d0d1tZ93d3R1hZ3ZnZt3d3W13d3d3193dbXd3d3cW3d3dd3d3d9fd3d13d3d31t3dbWZ3d2bW3d3dd3d3d9fd3W12d3dn3d3d3X12d2bb3b3d3XZm3d3d3d3d3d3d3b3d3d3d3d3d3Q==",
@@ -183,11 +158,6 @@
         "data": "hwQQABAAAADu7u7u7u7u7kJOREREQu7uQu7u7u5CfudCTi7kQkJ+50JOLuRCQn7nQk4u5EJCfudCTi7kQkJ+50JOLuRCQn7nQk4u5EJCfudCTi7kQkJ+50JOLuRCQn7nQk4u5EJCfudCTi7kQkJ+50Lu7u7uQn7nQk5ERERC7u7u7u7u7u7u7g==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "crate wood2 on target"
-    },
-    "image34": {
-        "data": "hwQQABAAAABERD0zM42ITUREPTMzjYhNRNQ9MzON2ERELT0zM419TdQiPTMz3XfXLSI9MzN9d3fXItIz09Z3d3ctIj1t1nd3dy0i0mbWd3d3LSLSZtZ3d3ctItJm1nd3dy0i0mbWd3fXIiLSZtZ3d00tIj1tZn13RNTSM9PW2NdERD0zM42ITQ==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "wall colored"
     },
     "image12": {
         "data": "hwQQABAAAAB8ZszMZsx8ZnxmfMxmfHxmbGZ8xmZszGxsZmzGzGzMzMzMzMzMzHxmfGdszGbMzMZ8ZnzGZ2zMzHxmfMZnbHxmfGZsxmZsfGZ8ZmzGZ2xsxnxmzMZmzMzMbGbMzMzMzGfMzHzGzHx8ZnzGfMZnbHxmfGZ8xmdsbGZ8ZmzGZ8zMzA==",
