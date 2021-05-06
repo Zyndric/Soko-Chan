@@ -67,41 +67,6 @@ function reset_buttons () {
     pressed_A = button_lag
     pressed_B = button_lag
 }
-function sprite_cache () {
-    box = sprites.create(assets.image`crate wood`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate wood on target`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate wood2`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate wood2 on target`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate drawer`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate drawer on target`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate clam`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate clam on target`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate shrub`, SpriteKind.Crate)
-    box = sprites.create(assets.image`crate shrub on target`, SpriteKind.Crate)
-    scene.setTile(3, assets.image`target tan`, false)
-    scene.setTile(3, assets.image`target dark purple`, false)
-    scene.setTile(3, assets.image`target patch`, false)
-    scene.setTile(3, assets.image`target tiled`, false)
-    scene.setTile(3, assets.image`target tan dotted`, false)
-    scene.setTile(13, assets.image`floor tan dotted`, false)
-    scene.setTile(13, assets.image`floor tan`, false)
-    scene.setTile(13, assets.image`floor tiled`, false)
-    scene.setTile(13, assets.image`floor dark purple`, false)
-    scene.setTile(14, assets.image`wall brown bricks`, true)
-    scene.setTile(14, assets.image`wall purple bricks`, true)
-    scene.setTile(14, assets.image`wall dark purple bricks`, true)
-    scene.setTile(14, assets.image`wall dark brown bricks`, true)
-    scene.setTile(14, assets.image`wall steel`, true)
-    scene.setTile(14, assets.image`wall red bricks`, true)
-    scene.setTile(14, assets.image`wall yellow bricks`, true)
-    scene.setTile(14, assets.image`wall teal bricks`, true)
-    scene.setTile(14, assets.image`wall overgrown bricks`, true)
-    scene.setTile(14, assets.image`wall plant`, true)
-    scene.setTile(14, assets.image`wall sand`, true)
-    scene.setTile(14, assets.image`wall reef`, true)
-    scene.setTile(14, assets.image`wall old teal bricks`, true)
-    scene.setTile(14, assets.image`wall large teal bricks`, true)
-}
 function add_menu_item (y: number, text: string, changeable: boolean) {
     t = textsprite.create(" ", 0, 6)
     t.setMaxFontHeight(8)
@@ -119,12 +84,24 @@ function update_moves () {
     text_moves.setPosition(scene.cameraProperty(CameraProperty.X) + 81 - text_moves.width / 2, scene.cameraProperty(CameraProperty.Y) - 56)
 }
 function set_level_skin (random: boolean) {
-    level_skin = 0
+    level_skin = levelset
     if (random) {
-    	
+        level_skin = randint(1, 7)
     }
     if (level_skin == 1) {
+        list_skin_sprites = [assets.image`wall purple bricks`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor dark purple`, assets.image`target dark purple`]
+    } else if (level_skin == 2) {
+        list_skin_sprites = [assets.image`wall dark purple bricks`, assets.image`crate shrub`, assets.image`crate shrub on target`, assets.image`floor tan dotted`, assets.image`target patch`]
+    } else if (level_skin == 3) {
         list_skin_sprites = [assets.image`wall dark brown bricks`, assets.image`crate drawer`, assets.image`crate drawer on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
+    } else if (level_skin == 4) {
+        list_skin_sprites = [assets.image`wall teal bricks`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
+    } else if (level_skin == 5) {
+        list_skin_sprites = [assets.image`wall steel`, assets.image`crate wood2`, assets.image`crate wood2 on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
+    } else if (level_skin == 6) {
+        list_skin_sprites = [assets.image`wall steel`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
+    } else if (level_skin == 7) {
+        list_skin_sprites = [assets.image`wall dark steel`, assets.image`create chest`, assets.image`crate chest on target`, assets.image`floor light purple dotted`, assets.image`target light purple dotted`]
     } else {
         list_skin_sprites = [assets.image`wall steel`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
     }
@@ -770,7 +747,7 @@ function target_tile (x: number, y: number) {
  * 
  * - more levels (Jacques Duthen's Sokogen, Microban, maybe Microcosmos, Nabokosmos, Boxxle)
  * 
- * - fix scroll level to not trigger when selecting a level
+ * - fix: sometimes the move counter seems to shift about 4 pixels
  * 
  * Included Features
  * 
@@ -796,12 +773,13 @@ function target_tile (x: number, y: number) {
  * 
  * * puzzles of up to 11x9 tiles show without scrolling (up to 10x7 tiles of walkable area)
  * 
- * Nice to Have
+ * * different tile sets for different puzzle sets
  * 
- * - different tile sets for different level sets
+ * Nice to Have
  * 
  * - a way to handle large levels without scrolling, maybe through smaller 8x8 sprite tilemaps
  */
+let box: Sprite = null
 let text_introduction: TextSprite = null
 let text_frame: TextSprite = null
 let undo_step: number[] = []
@@ -814,7 +792,6 @@ let list_skin_sprites: Image[] = []
 let level_skin = 0
 let text_moves: TextSprite = null
 let t: TextSprite = null
-let box: Sprite = null
 let state_selection = 0
 let text_best: TextSprite = null
 let minimap: Sprite = null
