@@ -101,7 +101,7 @@ function set_level_skin (random: boolean) {
     } else if (level_skin == 6) {
         list_skin_sprites = [assets.image`wall steel`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
     } else if (level_skin == 7) {
-        list_skin_sprites = [assets.image`wall dark steel`, assets.image`create chest`, assets.image`crate chest on target`, assets.image`floor light purple dotted`, assets.image`target light purple dotted`]
+        list_skin_sprites = [assets.image`wall dark steel`, assets.image`crate chest`, assets.image`crate chest on target`, assets.image`floor light purple dotted`, assets.image`target light purple dotted`]
     } else {
         list_skin_sprites = [assets.image`wall steel`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
     }
@@ -336,23 +336,10 @@ function return_to_level () {
 }
 function scroll_level () {
     if (levelset == 1) {
-        if (level == 8) {
-            return true
-        }
+        return [8, 35, 36].indexOf(level) >= 0
     }
     if (levelset == 3) {
-        if (level == 2) {
-            return true
-        }
-        if (level == 7) {
-            return true
-        }
-        if (level == 11) {
-            return true
-        }
-        if (level == 16) {
-            return true
-        }
+        return [2, 7, 11, 16].indexOf(level) >= 0
     }
     return false
 }
@@ -460,6 +447,46 @@ function get_level_asset_microban (lv: number) {
         return assets.image`level microban 19`
     } else if (lv == 20) {
         return assets.image`level microban 20`
+    } else if (lv == 21) {
+        return assets.image`level microban 21`
+    } else if (lv == 22) {
+        return assets.image`level microban 22`
+    } else if (lv == 23) {
+        return assets.image`level microban 23`
+    } else if (lv == 24) {
+        return assets.image`level microban 24`
+    } else if (lv == 25) {
+        return assets.image`level microban 25`
+    } else if (lv == 26) {
+        return assets.image`level microban 26`
+    } else if (lv == 27) {
+        return assets.image`level microban 27`
+    } else if (lv == 28) {
+        return assets.image`level microban 28`
+    } else if (lv == 29) {
+        return assets.image`level microban 29`
+    } else if (lv == 30) {
+        return assets.image`level microban 30`
+    } else if (lv == 31) {
+        return assets.image`level microban 31`
+    } else if (lv == 32) {
+        return assets.image`level microban 32`
+    } else if (lv == 33) {
+        return assets.image`level microban 33`
+    } else if (lv == 34) {
+        return assets.image`level microban 34`
+    } else if (lv == 35) {
+        return assets.image`level microban 35`
+    } else if (lv == 36) {
+        return assets.image`level microban 36`
+    } else if (lv == 37) {
+        return assets.image`level microban 37`
+    } else if (lv == 38) {
+        return assets.image`level microban 38`
+    } else if (lv == 39) {
+        return assets.image`level microban 39`
+    } else if (lv == 40) {
+        return assets.image`level microban 40`
     }
     return assets.image`level microban 01`
 }
@@ -819,7 +846,7 @@ let list_groupsize: number[] = []
 let list_levelsets: string[] = []
 introduce_game()
 list_levelsets = ["Easy", "Microban", "Y. Murase", "Nabokosmos", "Sokogen"]
-list_groupsize = [10, 20, 10, 20, 15]
+list_groupsize = [10, 40, 10, 20, 15]
 levelset = 0
 level = 1
 if (blockSettings.exists("recent group") && blockSettings.exists("recent level")) {
