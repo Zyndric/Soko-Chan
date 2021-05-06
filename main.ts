@@ -81,7 +81,7 @@ function add_menu_item (y: number, text: string, changeable: boolean) {
 function update_moves () {
     update_camera()
     text_moves.setText("" + convertToText(count_moves) + "/" + convertToText(count_pushes))
-    text_moves.setPosition(scene.cameraProperty(CameraProperty.X) + 81 - text_moves.width / 2, scene.cameraProperty(CameraProperty.Y) - 56)
+    text_moves.setPosition(scene.cameraProperty(CameraProperty.X) + 81 - text_moves.width / 2, scene.cameraProperty(CameraProperty.Y) - 55)
 }
 function set_level_skin (random: boolean) {
     level_skin = levelset
@@ -747,7 +747,7 @@ function target_tile (x: number, y: number) {
  * 
  * - more levels (Jacques Duthen's Sokogen, Microban, maybe Microcosmos, Nabokosmos, Boxxle)
  * 
- * - fix: sometimes the move counter seems to shift about 4 pixels
+ * - fix: on scrolling levels that have a width of 11 tiles, the move counter jumps around a bit (Nabokosmos 7)
  * 
  * Included Features
  * 

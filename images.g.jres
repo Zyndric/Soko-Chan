@@ -264,11 +264,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level nabo 06"
     },
-    "image76": {
-        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAAAODu7gAAAADu7t3tDgAAAN3d3d0NAAAALS0tLQ0AAABOLi4+DgAAAN7d190OAAAA7u7u7g4AAAAAAAAAAAAAAAAAAAAAAAAA",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "level nabo 07"
-    },
     "image77": {
         "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg3dftAAAAAO7j4uQOAAAA3tLS0g4AAADe3d3dDgAAAO7e3e4OAAAAAO7uDgAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "mimeType": "image/x-mkcd-f4",
@@ -523,6 +518,11 @@
         "data": "hwQQABAAAAC7u7u7u7u7u8vMzMzMzMz8y8zMzMzMzPzLvMzMzMzL/Mv8zMzMzM/8y8zMzMzMzPzLzMzMzMzM/MvMzMzMzMz8y8zMzMzMzPzLzMzMzMzM/MvMzMzMzMz8y7zMzMzMy/zL/MzMzMzP/MvMzMzMzMz8y8zMzMzMzPz7/////////w==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "wall dark steel"
+    },
+    "image76": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAAAODu7gAAAADu7t3tDgAAAN3d3d0NAAAALS0tLQ0AAABOLi4+DgAAAN7d190OAAAA7u7u7g4AAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level nabo 07"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
