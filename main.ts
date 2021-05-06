@@ -1,28 +1,6 @@
 namespace SpriteKind {
     export const Crate = SpriteKind.create()
 }
-function scroll_level () {
-    if (levelset == 1) {
-        if (level == 8) {
-            return true
-        }
-    }
-    if (levelset == 3) {
-        if (level == 2) {
-            return true
-        }
-        if (level == 7) {
-            return true
-        }
-        if (level == 11) {
-            return true
-        }
-        if (level == 16) {
-            return true
-        }
-    }
-    return false
-}
 function reset_states () {
     pressed_up = 0
     pressed_down = 0
@@ -76,6 +54,7 @@ function set_up_level () {
     blockSettings.writeNumber("recent group", levelset)
     blockSettings.writeNumber("recent level", level)
     scene.setTileMap(get_level_asset(levelset, level))
+    set_level_skin(false)
     realize_tilemap()
     return_to_level()
     introduce_level()
@@ -138,6 +117,17 @@ function update_moves () {
     update_camera()
     text_moves.setText("" + convertToText(count_moves) + "/" + convertToText(count_pushes))
     text_moves.setPosition(scene.cameraProperty(CameraProperty.X) + 81 - text_moves.width / 2, scene.cameraProperty(CameraProperty.Y) - 56)
+}
+function set_level_skin (random: boolean) {
+    level_skin = 0
+    if (random) {
+    	
+    }
+    if (level_skin == 1) {
+        list_skin_sprites = [assets.image`wall dark brown bricks`, assets.image`crate drawer`, assets.image`crate drawer on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
+    } else {
+        list_skin_sprites = [assets.image`wall steel`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
+    }
 }
 function level_best_id (group: number, level: number) {
     return "best-" + convertToText(group) + "-" + convertToText(level)
@@ -367,6 +357,28 @@ function return_to_level () {
     reset_buttons()
     state_level = 1
 }
+function scroll_level () {
+    if (levelset == 1) {
+        if (level == 8) {
+            return true
+        }
+    }
+    if (levelset == 3) {
+        if (level == 2) {
+            return true
+        }
+        if (level == 7) {
+            return true
+        }
+        if (level == 11) {
+            return true
+        }
+        if (level == 16) {
+            return true
+        }
+    }
+    return false
+}
 // Force camera to update its position right now, following the moved sprite. Otherwise, the fixed text (e.g. move counter) shuffles around, because it renders either too early, or too late.
 function update_camera () {
     game.currentScene().camera.update()
@@ -496,10 +508,10 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
             tiles.placeOnTile(c, tiles.getTileLocation(to_tx, to_ty))
             if (target_tile(tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.x), tiles.locationXY(tiles.getTileLocation(to_tx, to_ty), tiles.XY.y))) {
                 music.knock.play()
-                c.setImage(assets.image`crate wood on target`)
+                c.setImage(list_skin_sprites[2])
             } else {
                 music.thump.play()
-                c.setImage(assets.image`crate wood`)
+                c.setImage(list_skin_sprites[1])
             }
             return
         }
@@ -640,12 +652,12 @@ function get_level_asset_murase (lv: number) {
  */
 function realize_tilemap () {
     for (let e of scene.getTilesByType(2)) {
-        box = sprites.create(assets.image`crate wood on target`, SpriteKind.Crate)
+        box = sprites.create(list_skin_sprites[2], SpriteKind.Crate)
         scene.place(e, box)
         scene.setTileAt(e, 3)
     }
     for (let e of scene.getTilesByType(4)) {
-        box = sprites.create(assets.image`crate wood`, SpriteKind.Crate)
+        box = sprites.create(list_skin_sprites[1], SpriteKind.Crate)
         scene.place(e, box)
         scene.setTileAt(e, 13)
     }
@@ -659,9 +671,9 @@ function realize_tilemap () {
         scene.place(e, ban)
         scene.setTileAt(e, 13)
     }
-    scene.setTile(3, assets.image`target tan dotted`, false)
-    scene.setTile(13, assets.image`floor tan dotted`, false)
-    scene.setTile(14, assets.image`wall steel`, true)
+    scene.setTile(3, list_skin_sprites[4], false)
+    scene.setTile(13, list_skin_sprites[3], false)
+    scene.setTile(14, list_skin_sprites[0], true)
 }
 /**
  * Variables
@@ -676,6 +688,7 @@ function realize_tilemap () {
  */
 function introduce_game () {
     scene.setTileMap(assets.image`game intro`)
+    set_level_skin(true)
     realize_tilemap()
     scene.centerCameraAt(screen_center_x(), screen_center_y())
     update_camera()
@@ -797,6 +810,8 @@ let str_score_action = ""
 let str_record = ""
 let ban: Sprite = null
 let thumbnail: Image = null
+let list_skin_sprites: Image[] = []
+let level_skin = 0
 let text_moves: TextSprite = null
 let t: TextSprite = null
 let box: Sprite = null
