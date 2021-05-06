@@ -1,6 +1,28 @@
 namespace SpriteKind {
     export const Crate = SpriteKind.create()
 }
+function scroll_level () {
+    if (levelset == 1) {
+        if (level == 8) {
+            return true
+        }
+    }
+    if (levelset == 3) {
+        if (level == 2) {
+            return true
+        }
+        if (level == 7) {
+            return true
+        }
+        if (level == 11) {
+            return true
+        }
+        if (level == 16) {
+            return true
+        }
+    }
+    return false
+}
 function reset_states () {
     pressed_up = 0
     pressed_down = 0
@@ -8,7 +30,6 @@ function reset_states () {
     pressed_right = 0
     pressed_A = 0
     pressed_B = 0
-    scroll_level = 0
     undo = []
     count_moves = 0
     count_pushes = 0
@@ -334,7 +355,7 @@ function return_to_level () {
     button_lag = 10
     tiles.destroySpritesOfKind(SpriteKind.Text)
     scene.centerCameraAt(screen_center_x(), screen_center_y())
-    if (scroll_level) {
+    if (scroll_level()) {
         scene.cameraFollowSprite(ban)
     }
     update_camera()
@@ -425,7 +446,6 @@ function get_level_asset_microban (lv: number) {
     } else if (lv == 7) {
         return assets.image`level microban 07`
     } else if (lv == 8) {
-        scroll_level = 1
         return assets.image`level microban 08`
     } else if (lv == 9) {
         return assets.image`level microban 09`
@@ -680,7 +700,6 @@ function get_level_asset_nabo (lv: number) {
     if (lv == 1) {
         return assets.image`level nabo 01`
     } else if (lv == 2) {
-        scroll_level = 1
         return assets.image`level nabo 02`
     } else if (lv == 3) {
         return assets.image`level nabo 03`
@@ -691,7 +710,6 @@ function get_level_asset_nabo (lv: number) {
     } else if (lv == 6) {
         return assets.image`level nabo 06`
     } else if (lv == 7) {
-        scroll_level = 1
         return assets.image`level nabo 07`
     } else if (lv == 8) {
         return assets.image`level nabo 08`
@@ -700,7 +718,6 @@ function get_level_asset_nabo (lv: number) {
     } else if (lv == 10) {
         return assets.image`level nabo 10`
     } else if (lv == 11) {
-        scroll_level = 1
         return assets.image`level nabo 11`
     } else if (lv == 12) {
         return assets.image`level nabo 12`
@@ -711,7 +728,6 @@ function get_level_asset_nabo (lv: number) {
     } else if (lv == 15) {
         return assets.image`level nabo 15`
     } else if (lv == 16) {
-        scroll_level = 1
         return assets.image`level nabo 16`
     } else if (lv == 17) {
         return assets.image`level nabo 17`
@@ -740,6 +756,8 @@ function target_tile (x: number, y: number) {
  * TODO
  * 
  * - more levels (Jacques Duthen's Sokogen, Microban, maybe Microcosmos, Nabokosmos, Boxxle)
+ * 
+ * - fix scroll level to not trigger when selecting a level
  * 
  * Included Features
  * 
@@ -797,7 +815,6 @@ let state_level = 0
 let count_pushes = 0
 let count_moves = 0
 let undo: number[][] = []
-let scroll_level = 0
 let pressed_B = 0
 let pressed_A = 0
 let pressed_right = 0
