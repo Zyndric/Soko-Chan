@@ -274,6 +274,8 @@ function get_level_asset_easy (lv: number) {
         return assets.image`level easy 09`
     } else if (lv == 10) {
         return assets.image`level easy 10`
+    } else if (lv == 11) {
+        return assets.image`level easy 11`
     }
     return assets.image`level easy 01`
 }
@@ -350,7 +352,14 @@ function scroll_level () {
         return [8, 35, 36].indexOf(level) >= 0
     }
     if (levelset == 3) {
-        return [2, 7, 11, 16].indexOf(level) >= 0
+        return [
+        2,
+        7,
+        11,
+        16,
+        34,
+        39
+        ].indexOf(level) >= 0
     }
     if (levelset == 5) {
         return [3, 7].indexOf(level) >= 0
@@ -770,6 +779,46 @@ function get_level_asset_nabo (lv: number) {
         return assets.image`level nabo 19`
     } else if (lv == 20) {
         return assets.image`level nabo 20`
+    } else if (lv == 21) {
+        return assets.image`level nabo 21`
+    } else if (lv == 22) {
+        return assets.image`level nabo 22`
+    } else if (lv == 23) {
+        return assets.image`level nabo 23`
+    } else if (lv == 24) {
+        return assets.image`level nabo 24`
+    } else if (lv == 25) {
+        return assets.image`level nabo 25`
+    } else if (lv == 26) {
+        return assets.image`level nabo 26`
+    } else if (lv == 27) {
+        return assets.image`level nabo 27`
+    } else if (lv == 28) {
+        return assets.image`level nabo 28`
+    } else if (lv == 29) {
+        return assets.image`level nabo 29`
+    } else if (lv == 30) {
+        return assets.image`level nabo 30`
+    } else if (lv == 31) {
+        return assets.image`level nabo 31`
+    } else if (lv == 32) {
+        return assets.image`level nabo 32`
+    } else if (lv == 33) {
+        return assets.image`level nabo 33`
+    } else if (lv == 34) {
+        return assets.image`level nabo 34`
+    } else if (lv == 35) {
+        return assets.image`level nabo 35`
+    } else if (lv == 36) {
+        return assets.image`level nabo 36`
+    } else if (lv == 37) {
+        return assets.image`level nabo 37`
+    } else if (lv == 38) {
+        return assets.image`level nabo 38`
+    } else if (lv == 39) {
+        return assets.image`level nabo 39`
+    } else if (lv == 40) {
+        return assets.image`level nabo 40`
     }
     return assets.image`level nabo 01`
 }
@@ -870,10 +919,10 @@ list_levelsets = [
 "Takaken"
 ]
 list_groupsize = [
-10,
+11,
 40,
 10,
-20,
+40,
 15,
 7
 ]
