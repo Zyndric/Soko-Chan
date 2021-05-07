@@ -624,6 +624,41 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level microban 40"
     },
+    "image125": {
+        "data": "hwQKAAgAAAAAAAAAAO7uAO7e7QDeLe3ufj7U7d7U5O3uPT3t4N3u7uDuDgAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level takaken 1"
+    },
+    "image126": {
+        "data": "hwQLAAgAAAAAAAAA7u7u7t7dM+PeTnPj3t1O7e7e1O3g3d7u4E3UDuDd7g7g7g4AAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level takaken 2"
+    },
+    "image127": {
+        "data": "hwQQAAoAAADg7gDg7gAAAN7jDuDtAAAA3uTu4O0AAADe7e7u7QAAAE7d3U3tAAAAPj3d7e0AAADe7e7u7QAAAODuAODtAAAAAAAA4OcAAAAA7g7g7QAAAOA97uDtAAAA4N3u7u0AAADg3d1D7QAAAOBNTe3tAAAA4NPu7u0AAAAA7g7g7gAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level takaken 3"
+    },
+    "image128": {
+        "data": "hwQKAAkAAAAA4N3tAAAAAADg5OMAAAAAAO7d4wAAAAAA3u3jAAAAAOBOROMAAAAA4N3t5wAAAADg3UTjAAAAAODu7eMAAAAAAN7d7QAAAAAA3t3uAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level takaken 4"
+    },
+    "image129": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7uAAAAAADg0+0AAAAAAODj7e4AAAAA4NNE7QAAAADgTd3nAAAAAODd7e4AAAAA4O7uAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level takaken 5"
+    },
+    "image130": {
+        "data": "hwQMAAgAAADg3d3u7t3e7d7URO3e3d3ufu3tDu7u7QAA4OMAAODjAADg4wAA4OPuAOBN7QDg3e0=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level takaken 6"
+    },
+    "image131": {
+        "data": "hwQZAA8AAAAAAO7u7g7uDgDg3t3dDt4O4O493T3u3g7u3d3dRN3dDt7d7e7d7t4Oft3u7t0O3g7e7d7t7g7eDu7uTd3t7t4OAODt1N3d3Q4A4DPd7u7eDgDu7t0OAN4OAN7t7g4A3g4A3t3t7gDeDgDeLdPt7t4OAO5O3t3d3Q4A4N3d7e7eDgDg3e3uAN4OAODt7g4A3g4A4O7dDgDeDgDu3U3uAN4OAN7tTe3u3g4A3u7t3d3dDgDe3j3j7t4OAN7d3u0A3g4A7u7u7gDuDg==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level takaken 7"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

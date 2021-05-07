@@ -129,6 +129,17 @@ function show_help () {
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
     pressed_down = 0
 })
+function get_level_asset_takaken (lv: number) {
+    return [
+    assets.image`level takaken 1`,
+    assets.image`level takaken 2`,
+    assets.image`level takaken 3`,
+    assets.image`level takaken 4`,
+    assets.image`level takaken 5`,
+    assets.image`level takaken 6`,
+    assets.image`level takaken 7`
+    ][lv - 1]
+}
 function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
     if (!(tiles.tileIsWall(tiles.getTileLocation(tx, ty)))) {
         if (box_on_tile(tx, ty)) {
@@ -341,6 +352,9 @@ function scroll_level () {
     if (levelset == 3) {
         return [2, 7, 11, 16].indexOf(level) >= 0
     }
+    if (levelset == 5) {
+        return [3, 7].indexOf(level) >= 0
+    }
     return false
 }
 // Force camera to update its position right now, following the moved sprite. Otherwise, the fixed text (e.g. move counter) shuffles around, because it renders either too early, or too late.
@@ -502,6 +516,8 @@ function get_level_asset (group: number, lv: number) {
         return get_level_asset_nabo(lv)
     } else if (group == 4) {
         return get_level_asset_sokogen(lv)
+    } else if (group == 5) {
+        return get_level_asset_takaken(lv)
     } else {
         return get_level_asset_easy(lv)
     }
@@ -845,8 +861,22 @@ let levelset = 0
 let list_groupsize: number[] = []
 let list_levelsets: string[] = []
 introduce_game()
-list_levelsets = ["Easy", "Microban", "Y. Murase", "Nabokosmos", "Sokogen"]
-list_groupsize = [10, 40, 10, 20, 15]
+list_levelsets = [
+"Easy",
+"Microban",
+"Y. Murase",
+"Nabokosmos",
+"Sokogen",
+"Takaken"
+]
+list_groupsize = [
+10,
+40,
+10,
+20,
+15,
+7
+]
 levelset = 0
 level = 1
 if (blockSettings.exists("recent group") && blockSettings.exists("recent level")) {

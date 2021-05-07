@@ -1748,6 +1748,94 @@ e e e e e . . . . .
 . . e e e e e e e . . 
 . . . . . . . . . . . 
 `;
+            case "image125":
+            case "level takaken 1":return img`
+. . e e e e e . . . 
+. . e d 7 d e e e . 
+. e e d e 4 d d e . 
+. e d 2 3 d 3 d e . 
+. e d d 4 4 d e e . 
+. e e e d e 3 e . . 
+. . . e d d d e . . 
+. . . e e e e e . . 
+`;
+            case "image126":
+            case "level takaken 2":return img`
+. e e e e e . . . . . 
+. e d d d e e e e e . 
+. e d e d e d d d e . 
+. e d 4 d d d 4 d e . 
+. e 3 3 e 4 e 4 e e . 
+. e 3 7 4 d d d e . . 
+. e 3 3 d d e e e . . 
+. e e e e e e . . . . 
+`;
+            case "image127":
+            case "level takaken 3":return img`
+. e e e e e e . . . . . . . . . 
+e d d d 4 3 d e . . e e e e e . 
+e 3 4 d d d d e . e d d d d 3 e 
+e e e e d 3 e e . e 3 d d 4 d e 
+. e e e d d e . . e e e d d e e 
+. . e e d d e . . . e e d 4 e . 
+. . . e d d e . . . . e 3 d e . 
+e e e e 4 e e e e e e e 4 e e e 
+e d d d d d d d 7 d d d d d d e 
+e e e e e e e e e e e e e e e e 
+`;
+            case "image128":
+            case "level takaken 4":return img`
+. . . . . . . . . . 
+. . . . e e e e . . 
+. . e e e d d e e e 
+e e e d 4 d d e d d 
+d 4 d d 4 d 4 d d d 
+d e d e 4 e 4 e d d 
+d 3 3 3 3 7 3 3 d e 
+e e e e e e e e e e 
+. . . . . . . . . . 
+`;
+            case "image129":
+            case "level takaken 5":return img`
+. . . . . . . . . . . 
+. . e e e e e e e . . 
+. . e 3 3 3 d d e . . 
+. . e d e d 4 d e . . 
+. . e d d 4 d d e . . 
+. . e e e 4 d e e . . 
+. . . . e d 7 e . . . 
+. . . . e e e e . . . 
+. . . . . . . . . . . 
+`;
+            case "image130":
+            case "level takaken 6":return img`
+. e e e e e . . . . . . 
+e e d d 7 e . . . . . . 
+d d 4 d d e . . . . . . 
+d d d d e e e e e e e e 
+d e 4 d d d 3 3 3 3 d d 
+d d 4 d e e e e e e 4 d 
+e d d e e . . . . e d d 
+e e e e . . . . . e e e 
+`;
+            case "image131":
+            case "level takaken 7":return img`
+...eeeee.................
+..eed7de.................
+..edddde..eeeee....eeeeee
+.eedddeeeeedddeeeeeedddde
+eedddeedd3edddedddeddeede
+ed3deed4e3eed24ddeedeedde
+edddeedd4dded3eddedddddee
+edddeeeddddeedddeed44e3de
+edd4ddeddeeeedddeeeedd3de
+ed34ddeede..eedee..eedeee
+eeedeeeede...ede....ede..
+..ede..ede...ede....ede..
+eeedeeeedeeeeedeeeeeedeee
+eddddddddddddddddddddddde
+eeeeeeeeeeeeeeeeeeeeeeeee
+`;
         }
         return null;
     })
