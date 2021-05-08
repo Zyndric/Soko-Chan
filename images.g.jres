@@ -864,6 +864,106 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level cantrip 04"
     },
+    "image173": {
+        "data": "hwQKAAgAAAAAAAAAAAAAAAAAAADg7u4O4Ec9DuBNPQ7g7u4OAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level blocks 01"
+    },
+    "image174": {
+        "data": "hwQKAAgAAAAAAAAAAAAAAODu7g7g1z0O4ETdDuBN7g7gMw4A4O4OAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level blocks 02"
+    },
+    "image175": {
+        "data": "hwQKAAgAAAAAAAAAAO7uAAA+4wAAPu0AAE7tAADe7QAATuQAAN7nAADu7gAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level blocks 03"
+    },
+    "image176": {
+        "data": "hwQKAAgAAAAAAAAAAODuDgDgPQ7g7t0O4NPUDuDUZA7g3e4O4N0OAODuDgAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level blocks 04"
+    },
+    "image177": {
+        "data": "hwQKAAgAAAAA7u4AAN7jAABO4wAA3u0AAN7kAADe5wAA3uQAAD7tAADe7QAA7u4A",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level blocks 05"
+    },
+    "image178": {
+        "data": "hwQKAAgAAAAAAAAA4O7uDuDdPQ7g3TQO4E3uDuDdDgDgQg4A4HMOAODuDgAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level blocks 06"
+    },
+    "image179": {
+        "data": "hwQKAAgAAAAAAAAAAODuDgDgPQ7g7t0O4N3dDuA91A7g7kQOAOBtDgDg7g4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level blocks 07"
+    },
+    "image180": {
+        "data": "hwQKAAgAAAAA3uMAAE7jAADe7QAA3u0AAN7tAADe5AAA3u0AAD7kAAAu7QAAfu0A",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level blocks 08"
+    },
+    "image181": {
+        "data": "hwQKAAgAAADg7u4O4N09DuDdNA7gTe4O4N0OAOBNDgDg0w4A4EIOAODWDgDg7g4A",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level blocks 09"
+    },
+    "image182": {
+        "data": "hwQKAAgAAADg7g4A4NMOAOBN7g7gQ9MO4N3dDuDd7g7gRA4A4H0OAODTDgDg7g4A",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level blocks 10"
+    },
+    "image183": {
+        "data": "hwQKAAgAAAAAAAAAAAAAAO7u7u7e3T3t3t1N5+7uNO4A4N0OAODuDgAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level various 01"
+    },
+    "image184": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAADg7g4AAAAA4O7X7gAAAADg3UTtAAAAAODdPe0AAAAA4D3k7gAAAADgPe0AAAAAAODd7gAAAAAA4O4OAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level various 02"
+    },
+    "image185": {
+        "data": "hwQKAAgAAAAAAAAAAAAAAO7u7u7e7d3t3tLU7W7UIuPu3d3u4O7uDgAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level various 03"
+    },
+    "image186": {
+        "data": "hwQKAAgAAAAAAAAAAAAAAO7u7u7efd7tTkJE7T7dM+Pe3d3u7u7uDgAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level various 04"
+    },
+    "image187": {
+        "data": "hwQKAAgAAAAAAAAAAAAAAO7u7u7e3d7t3kNN7T5EI+bu3d3u4O7uDgAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level various 05"
+    },
+    "image188": {
+        "data": "hwQKAAgAAAAAAAAA4O7uDuDd3Q7g3d0O4E1NDuDtMw7g1EQO4DM3DuDu7g4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level various 06"
+    },
+    "image189": {
+        "data": "hwQLAAgAAAAAAAAAAAAAAODu7gDgPe0A7i3t7t4t1O1+1N3t7j7u7gDuDgAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level various 07"
+    },
+    "image190": {
+        "data": "hwQLAAgAAAAAAAAAAAAAAODu7gDgPe0A7j3t7t5NM+3edETt7u7e7QAA7u4AAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level various 08"
+    },
+    "image191": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAODuDgAAAAAA4N3u7gAAAADg3d3tAAAAAOA9Pe0AAAAA4D4u4wAAAADg3U3kAAAAAODdROcAAAAA4N7t7gAAAAAA7u4AAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level various 09"
+    },
+    "image192": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAADg7g4AAAAA4O7d7gAAAADg3d3tAAAAAOAzTeQAAAAA4D4u4wAAAADg3dTtAAAAAODddO0AAAAA4N7t7gAAAAAA7u4AAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level various 10"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

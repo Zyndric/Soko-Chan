@@ -111,6 +111,30 @@ function get_level_asset_cantrip (lv: number) {
     }
     return assets.image`level cantrip 01`
 }
+function get_level_asset_declercq (lv: number) {
+    return [
+    assets.image`level blocks 01`,
+    assets.image`level blocks 02`,
+    assets.image`level blocks 03`,
+    assets.image`level blocks 04`,
+    assets.image`level blocks 05`,
+    assets.image`level blocks 06`,
+    assets.image`level blocks 07`,
+    assets.image`level blocks 08`,
+    assets.image`level blocks 09`,
+    assets.image`level blocks 10`,
+    assets.image`level various 01`,
+    assets.image`level various 02`,
+    assets.image`level various 03`,
+    assets.image`level various 04`,
+    assets.image`level various 05`,
+    assets.image`level various 06`,
+    assets.image`level various 07`,
+    assets.image`level various 08`,
+    assets.image`level various 09`,
+    assets.image`level various 10`
+    ][lv - 1]
+}
 function add_menu_item (y: number, text: string, changeable: boolean) {
     t = textsprite.create(" ", 0, 6)
     t.setMaxFontHeight(8)
@@ -264,6 +288,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
 })
 function show_credits () {
     game.showLongText("---  Level  Credits  --- " + "                         " + "Microban (easy)          " + ":   by David Skinner     " + "Y. Murase (tricky)       " + ":   by Yoshio Murase     " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Sokogen (tricky)         " + ":   by Jacques Duthen    " + "Easy                     " + ":   some by Moobot   ", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Takaken (hard)           " + ": by Kenichiro Takahashi " + "Cantrip (tricky)         " + ":   by David Holland     " + "De Clercq (easy-tricky)  " + ":   by Dries de Clercq   ", DialogLayout.Full)
 }
 /**
  * Check win condition and manage buttons in a continuous loop.
@@ -576,6 +601,8 @@ function get_level_asset (group: number, lv: number) {
         return get_level_asset_takaken(lv)
     } else if (group == 6) {
         return get_level_asset_cantrip(lv)
+    } else if (group == 7) {
+        return get_level_asset_declercq(lv)
     } else {
         return get_level_asset_easy(lv)
     }
@@ -881,8 +908,6 @@ function target_tile (x: number, y: number) {
  * 
  * TODO
  * 
- * - more levels (Jacques Duthen's Sokogen, Microban, maybe Microcosmos, Nabokosmos, Boxxle)
- * 
  * - fix: on scrolling levels that have a width of 11 tiles, the move counter jumps around a bit (Nabokosmos 7)
  * 
  * Included Features
@@ -968,7 +993,8 @@ list_levelsets = [
 "Nabokosmos",
 "Sokogen",
 "Takaken",
-"Cantrip"
+"Cantrip",
+"De Clercq"
 ]
 list_groupsize = [
 11,
@@ -977,6 +1003,7 @@ list_groupsize = [
 40,
 15,
 7,
+20,
 20
 ]
 levelset = 0

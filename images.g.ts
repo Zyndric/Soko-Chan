@@ -2312,6 +2312,229 @@ e e 3 e 3 d d 3 d d
 . e e d d 3 d 3 d e 
 . . e e d d d d d e 
 `;
+            case "image173":
+            case "level blocks 01":return img`
+. . . . . . . . . . 
+. . . e e e e . . . 
+. . . e 7 d e . . . 
+. . . e 4 4 e . . . 
+. . . e d d e . . . 
+. . . e 3 3 e . . . 
+. . . e e e e . . . 
+. . . . . . . . . . 
+`;
+            case "image174":
+            case "level blocks 02":return img`
+. . . . . . . . . . 
+. . e e e e e e . . 
+. . e 7 4 d 3 e . . 
+. . e d 4 4 3 e . . 
+. . e d d e e e . . 
+. . e 3 d e . . . . 
+. . e e e e . . . . 
+. . . . . . . . . . 
+`;
+            case "image175":
+            case "level blocks 03":return img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. e e e e e e e e . 
+. e 3 3 4 d 4 d e . 
+. e 3 d d d 4 7 e . 
+. e e e e e e e e . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`;
+            case "image176":
+            case "level blocks 04":return img`
+. . . . . . . . . . 
+. . . e e e e e e . 
+. . . e 3 4 d d e . 
+. e e e d d d d e . 
+. e d d 4 4 e e e . 
+. e 3 d d 6 e . . . 
+. e e e e e e . . . 
+. . . . . . . . . . 
+`;
+            case "image177":
+            case "level blocks 05":return img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+e e e e e e e e e e 
+e d 4 d d d d 3 d e 
+e 3 3 d 4 7 4 d d e 
+e e e e e e e e e e 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`;
+            case "image178":
+            case "level blocks 06":return img`
+. . . . . . . . . . 
+. e e e e e e e e . 
+. e d d d d 2 3 e . 
+. e d d 4 d 4 7 e . 
+. e d 4 e e e e e . 
+. e 3 3 e . . . . . 
+. e e e e . . . . . 
+. . . . . . . . . . 
+`;
+            case "image179":
+            case "level blocks 07":return img`
+. . . . . . . . . . 
+. . . e e e e . . . 
+. . . e d d e . . . 
+. e e e d 3 e e e . 
+. e d d d 4 4 d e . 
+. e 3 d d d 4 6 e . 
+. e e e e e e e e . 
+. . . . . . . . . . 
+`;
+            case "image180":
+            case "level blocks 08":return img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+e e e e e e e e e e 
+d 4 d d d d d 3 2 7 
+3 3 d d d 4 d 4 d d 
+e e e e e e e e e e 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`;
+            case "image181":
+            case "level blocks 09":return img`
+. . . . . . . . . . 
+e e e e e e e e e e 
+e d d d d d 3 2 6 e 
+e d d 4 d 4 d 4 d e 
+e d 4 e e e e e e e 
+e 3 3 e . . . . . . 
+e e e e . . . . . . 
+. . . . . . . . . . 
+`;
+            case "image182":
+            case "level blocks 10":return img`
+. . . . . . . . . . 
+e e e e e e e e e e 
+e 3 d 3 d d 4 d 3 e 
+e d 4 4 d d 4 7 d e 
+e e e 3 d e e e e e 
+. . e d d e . . . . 
+. . e e e e . . . . 
+. . . . . . . . . . 
+`;
+            case "image183":
+            case "level various 01":return img`
+. . e e e e . . . . 
+. . e d d e . . . . 
+. . e d d e . . . . 
+. . e d d e e e . . 
+. . e d d 4 d e . . 
+. . e 3 4 3 d e . . 
+. . e d 7 e e e . . 
+. . e e e e . . . . 
+`;
+            case "image184":
+            case "level various 02":return img`
+. . . . . . . . . . 
+. . e e e e e e e . 
+. . e d d d d d e . 
+. e e d d 3 3 d e . 
+. e 7 4 d 4 d e e . 
+. e d 4 3 e e e . . 
+. e e d d e . . . . 
+. . e e e e . . . . 
+. . . . . . . . . . 
+`;
+            case "image185":
+            case "level various 03":return img`
+. . e e e e e . . . 
+. . e d d 6 e e . . 
+. . e d 2 4 d e . . 
+. . e e d d d e . . 
+. . e d 4 2 d e . . 
+. . e d d 2 d e . . 
+. . e d d 3 e e . . 
+. . e e e e e . . . 
+`;
+            case "image186":
+            case "level various 04":return img`
+. . e e e e e e . . 
+. . e d 4 3 d e . . 
+. . e d 2 d d e . . 
+. . e 7 4 d d e . . 
+. . e e 4 3 d e . . 
+. . e d 4 3 d e . . 
+. . e d d 3 e e . . 
+. . e e e e e . . . 
+`;
+            case "image187":
+            case "level various 05":return img`
+. . e e e e e . . . 
+. . e d d 3 e e . . 
+. . e d 3 4 d e . . 
+. . e d 4 4 d e . . 
+. . e e d 3 d e . . 
+. . e d 4 2 d e . . 
+. . e d d 6 e e . . 
+. . e e e e e . . . 
+`;
+            case "image188":
+            case "level various 06":return img`
+. . . . . . . . . . 
+. e e e e e e e e . 
+. e d d d d 4 3 e . 
+. e d d 4 e d 3 e . 
+. e d d d 3 4 7 e . 
+. e d d 4 3 4 3 e . 
+. e e e e e e e e . 
+. . . . . . . . . . 
+`;
+            case "image189":
+            case "level various 07":return img`
+. . . . e e e e . . . 
+. . e e e d 7 e . . . 
+. . e d d d 4 e e . . 
+. . e 3 2 2 d 3 e . . 
+. . e d d 4 d e e . . 
+. . e e e d d e . . . 
+. . . . e d d e . . . 
+. . . . e e e e . . . 
+`;
+            case "image190":
+            case "level various 08":return img`
+. . . . e e e e . . . 
+. . e e e d d e . . . 
+. . e d d d 4 e . . . 
+. . e 3 3 4 7 e . . . 
+. . e d d 3 4 e e . . 
+. . e e e 3 4 d e . . 
+. . . . e d d d e . . 
+. . . . e e e e e . . 
+`;
+            case "image191":
+            case "level various 09":return img`
+. . . . . . . . . . . 
+. e e e e e e e e . . 
+. e d d d e d d e e . 
+. e d d 3 3 d d d e . 
+. e e d d e d 4 d e . 
+. . e d 3 2 4 4 e e . 
+. . e d d 3 4 7 e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image192":
+            case "level various 10":return img`
+. . . . . . . . . . . 
+. . e e e e e e e . . 
+. . e d 3 e d d e e . 
+. e e d 3 3 d d d e . 
+. e d d d e 4 4 d e . 
+. e d d 4 2 d 7 e e . 
+. e e d 4 3 d d e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
         }
         return null;
     })
