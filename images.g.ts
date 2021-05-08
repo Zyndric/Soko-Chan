@@ -2117,17 +2117,6 @@ e e e 2 3 3 e d d e
 . . e e e e d d e . 
 . . . . . e e e e . 
 `;
-            case "image156":
-            case "level cantrip 04":return img`
-. e d d d e e e e e . 
-. e d e d 4 d 4 d e . 
-. e d 4 4 3 d 2 7 e . 
-. e d e d d 2 2 d e . 
-. e d e e e d 2 e e . 
-. e d d e d 3 2 d e . 
-. e e d d 3 d 3 d e . 
-. . e e d d d d d e . 
-`;
             case "image157":
             case "level cantrip 05":return img`
 . . . . . e e e e . 
@@ -2198,17 +2187,6 @@ e d d d 3 d e 7 4 d e
 e d d e d e e 4 e e e 
 e e e e d d d d e . . 
 . . . e e e e e e . . 
-`;
-            case "image163":
-            case "level cantrip 11":return img`
-. . . . . e e e e e . 
-. . . e e e d d d e . 
-. e e e 3 3 4 3 d e . 
-. e d 4 d 4 3 4 e e . 
-. e d e 4 3 d 2 d e . 
-. e d d 3 d 2 4 d e . 
-. e e d d d e d 3 e . 
-. . e e e e e e e e . 
 `;
             case "image164":
             case "level cantrip 12":return img`
@@ -2311,6 +2289,28 @@ d 4 d 3 4 3 d 3 e d
 d d d 4 d e e 4 e d 
 e e 3 e 3 d d 3 d d 
 . e d d d e e e e e 
+`;
+            case "image163":
+            case "level cantrip 11":return img`
+. . . . . e e e e e . 
+. . . e e e d d d e . 
+. e e e 3 3 4 3 d e . 
+. e d 4 d 4 3 4 e e . 
+. e d e 4 3 d 2 d e . 
+. e d d 3 d 2 4 d e . 
+. e e d d d e d 7 e . 
+. . e e e e e e e e . 
+`;
+            case "image156":
+            case "level cantrip 04":return img`
+. e d d d e e e e e 
+. e d e d 4 d 4 d e 
+. e d 4 4 3 d 2 7 e 
+. e d e d d 2 2 d e 
+. e d e e e d 2 e e 
+. e d d e d 3 2 d e 
+. e e d d 3 d 3 d e 
+. . e e d d d d d e 
 `;
         }
         return null;

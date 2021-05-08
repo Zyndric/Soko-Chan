@@ -408,6 +408,9 @@ function scroll_level () {
     if (levelset == 5) {
         return [3, 7].indexOf(level) >= 0
     }
+    if (levelset == 6) {
+        return [4, 15, 16, 20].indexOf(level) >= 0
+    }
     return false
 }
 // Force camera to update its position right now, following the moved sprite. Otherwise, the fixed text (e.g. move counter) shuffles around, because it renders either too early, or too late.
