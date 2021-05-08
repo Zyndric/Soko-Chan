@@ -67,6 +67,50 @@ function reset_buttons () {
     pressed_A = button_lag
     pressed_B = button_lag
 }
+function get_level_asset_cantrip (lv: number) {
+    if (lv == 1) {
+        return assets.image`level cantrip 01`
+    } else if (lv == 2) {
+        return assets.image`level cantrip 02`
+    } else if (lv == 3) {
+        return assets.image`level cantrip 03`
+    } else if (lv == 4) {
+        return assets.image`level cantrip 04`
+    } else if (lv == 5) {
+        return assets.image`level cantrip 05`
+    } else if (lv == 6) {
+        return assets.image`level cantrip 06`
+    } else if (lv == 7) {
+        return assets.image`level cantrip 07`
+    } else if (lv == 8) {
+        return assets.image`level cantrip 08`
+    } else if (lv == 9) {
+        return assets.image`level cantrip 09`
+    } else if (lv == 10) {
+        return assets.image`level cantrip 10`
+    } else if (lv == 11) {
+        return assets.image`level cantrip 11`
+    } else if (lv == 12) {
+        return assets.image`level cantrip 12`
+    } else if (lv == 13) {
+        return assets.image`level cantrip 13`
+    } else if (lv == 14) {
+        return assets.image`level cantrip 14`
+    } else if (lv == 15) {
+        return assets.image`level cantrip 15`
+    } else if (lv == 16) {
+        return assets.image`level cantrip 16`
+    } else if (lv == 17) {
+        return assets.image`level cantrip 17`
+    } else if (lv == 18) {
+        return assets.image`level cantrip 18`
+    } else if (lv == 19) {
+        return assets.image`level cantrip 19`
+    } else if (lv == 20) {
+        return assets.image`level cantrip 20`
+    }
+    return assets.image`level cantrip 01`
+}
 function add_menu_item (y: number, text: string, changeable: boolean) {
     t = textsprite.create(" ", 0, 6)
     t.setMaxFontHeight(8)
@@ -527,6 +571,8 @@ function get_level_asset (group: number, lv: number) {
         return get_level_asset_sokogen(lv)
     } else if (group == 5) {
         return get_level_asset_takaken(lv)
+    } else if (group == 6) {
+        return get_level_asset_cantrip(lv)
     } else {
         return get_level_asset_easy(lv)
     }
@@ -546,13 +592,6 @@ function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: numbe
         }
     }
 }
-/**
- * Set up
- * 
- * Variables ban, level, "undo ban" and "undo box" are unique and used by name.
- * 
- * Variables box, c and t are loop and temporary variables.
- */
 function screen_center_y () {
     return tiles.tilemapRows() * tiles.tileWidth() / 2
 }
@@ -573,18 +612,20 @@ function control_selection () {
         if (controller.left.isPressed() && !(pressed_left)) {
             select_levelset += -1
             select_levelset = (select_levelset + list_levelsets.length) % list_levelsets.length
+            if (select_level > list_groupsize[select_levelset]) {
+                select_level = list_groupsize[select_levelset]
+            }
             draw_selection()
             pressed_left = button_lag
         }
         if (controller.right.isPressed() && !(pressed_right)) {
             select_levelset += 1
             select_levelset = (select_levelset + list_levelsets.length) % list_levelsets.length
+            if (select_level > list_groupsize[select_levelset]) {
+                select_level = list_groupsize[select_levelset]
+            }
             draw_selection()
             pressed_right = button_lag
-        }
-        if (select_level > list_groupsize[select_levelset]) {
-            select_level = list_groupsize[select_levelset]
-            draw_selection()
         }
     }
     if (menu_selection == 1) {
@@ -871,6 +912,13 @@ function target_tile (x: number, y: number) {
  * 
  * - a way to handle large levels without scrolling, maybe through smaller 8x8 sprite tilemaps
  */
+/**
+ * Set up
+ * 
+ * Variables ban, level, "undo ban" and "undo box" are unique and used by name.
+ * 
+ * Variables box, c and t are loop and temporary variables.
+ */
 let box: Sprite = null
 let text_introduction: TextSprite = null
 let text_frame: TextSprite = null
@@ -916,7 +964,8 @@ list_levelsets = [
 "Y. Murase",
 "Nabokosmos",
 "Sokogen",
-"Takaken"
+"Takaken",
+"Cantrip"
 ]
 list_groupsize = [
 11,
@@ -924,7 +973,8 @@ list_groupsize = [
 10,
 40,
 15,
-7
+7,
+20
 ]
 levelset = 0
 level = 1

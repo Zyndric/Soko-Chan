@@ -764,6 +764,106 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level nabo 40"
     },
+    "image153": {
+        "data": "hwQKAAkAAAAAAO7uAAAAAADu3ucAAAAAAN7d7QAAAADgTiTtAAAAAODd0u4AAAAA4O3TDgAAAADg3dLuAAAAAOAuPe0AAAAAAN7d7QAAAAAA7u7uAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 01"
+    },
+    "image154": {
+        "data": "hwQKAAkAAAAAAO7uAAAAAO7u3u0AAAAA3t3U7QAAAADeLTPtAAAAAO4t5O0AAAAA4OTd5A4AAADg5z3dDgAAAOA0I90OAAAA4N3t7g4AAADg7u4AAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 02"
+    },
+    "image155": {
+        "data": "hwQKAAkAAADu7gAAAAAAAH7tAAAAAAAA3uTu7gAAAAAuLd3tAAAAAD49PeQAAAAA7j3k7Q4AAADu5D3UDgAAAN7d3d0OAAAA3t3u7g4AAADu7g4AAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 03"
+    },
+    "image156": {
+        "data": "hwQLAAgAAAAAAAAA7u7uDt3d3e7t5N7t3dTu3U7T3tPeLT3dTiIi097X3t3u7u7uAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 04"
+    },
+    "image157": {
+        "data": "hwQKAAkAAAAA7u4AAAAAAOB+7e4OAAAA4E1E3Q4AAADgNDPdDgAAAODtJO0OAAAA7j3t7QAAAADeJDPtAAAAAN7d3e0AAAAA7u7d7gAAAAAA4O7uAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 05"
+    },
+    "image158": {
+        "data": "hwQLAAgAAADg7g4A4N3uAO5N7QDeI+Pu3nTU7e7t4u3gTd3t4CPT7uDd7Q7g3u0AAO7uAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 06"
+    },
+    "image159": {
+        "data": "hwQKAAkAAADu7u7uAAAAAN593e0AAAAA3u7u5AAAAADeNC3tDgAAAO7TQt0OAAAA3i0t3Q4AAADe00PtDgAAAN7u7u0AAAAA3t3d7QAAAADu7u7uAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 07"
+    },
+    "image160": {
+        "data": "hwQKAAkAAADg7u4AAAAAAO7d7e4AAAAA3u3d7QAAAADePkPkAAAAAN49Pe0AAAAA7uTt5A4AAADgJz3UDgAAAODUI94OAAAA4N3d3Q4AAADg7u7uDgAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 08"
+    },
+    "image161": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAODu7gAAAAAA7t3t7gAAAADeLdLtDgAAAN4t3d0OAAAA7t0+0w4AAADeLd3UDgAAAN4k0u4OAAAA7n3tDgAAAADg7u4AAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 09"
+    },
+    "image162": {
+        "data": "hwQLAAkAAAAA4O7uAAAAAADu3e0AAAAA7t7d7QAAAADeNNPuDgAAAN4uMt0OAAAA3t3d3g4AAADu7eLeDgAAAN7ddNQOAAAA3tNO7g4AAADu3t0OAAAAAADu7g4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 10"
+    },
+    "image163": {
+        "data": "hwQLAAgAAAAAAAAAAO7uDgDe3e7gTt7t4NM07e5D0+3eNC3u3kNC7d7t3ePu7u7uAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 11"
+    },
+    "image164": {
+        "data": "hwQKAAkAAADu7u4OAAAAAN7d3Q4AAAAA3u7e7gAAAADeND3tAAAAAO4t0+0AAAAA4E1C5A4AAADgLT3dDgAAAODe7t4OAAAAAN593Q4AAAAA7u7uDgAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 12"
+    },
+    "image165": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAODu7gAAAAAA4N3t7gAAAADuNN3tDgAAAN494tQOAAAA3j7TdA4AAADeNO3SDgAAAO4t1O0OAAAA4N3t7gAAAADg7u4AAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 13"
+    },
+    "image166": {
+        "data": "hwQLAAgAAAAAAAAA4O7uAO7d5w7eRNLu3j007e49NO3gNDTt4N3S7uDu3Q4A4O4OAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 14"
+    },
+    "image167": {
+        "data": "hwQKAAgAAADu7gAAfu3uDk7S3e7dJDPdPd3d1O4k4+7g3e0A4DTuAODdDgDg7g4A",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 15"
+    },
+    "image168": {
+        "data": "hwQLAAgAAAAA7u4O7t7XDt7d3u7e7d3t3iTi5O4j493eM9LdTd7e7t3U3Q7d3e0O7u7uAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 16"
+    },
+    "image169": {
+        "data": "hwQLAAkAAADu7g4AAAAAAN7d7g4AAAAA3i3d7g4AAADuPTPdDgAAAOBN3dQOAAAA4OTu5A4AAADgJ03dDgAAAO40M90OAAAA3i3d7g4AAADe3e4OAAAAAO7uDgAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 17"
+    },
+    "image170": {
+        "data": "hwQKAAgAAADg7g4A4N3uDuDd3Q7g3d0O7uTSDt49Mu7eRNPt7j1O7eDe1+4A7u4O",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 18"
+    },
+    "image171": {
+        "data": "hwQLAAgAAAAAAAAAAO7uAODe7e7g3dLt7jPd7d4k0+7eI03u3tRC7e7u3ecA4O7uAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 19"
+    },
+    "image172": {
+        "data": "hwQKAAgAAADu7t0O3e7U7t3d3dPd7kPe3t7U095D4+1O3u3tftJD4+5O7u0A3t3t",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level cantrip 20"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
