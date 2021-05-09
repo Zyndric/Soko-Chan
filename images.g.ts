@@ -2535,6 +2535,209 @@ e e e 3 d e e e e e
 . . e e e e e e e . . 
 . . . . . . . . . . . 
 `;
+            case "image193":
+            case "level petitesse 01":return img`
+. . . . . . . . . . . 
+. . . e e e e e . . . 
+. . . e d d d e . . . 
+. . . e 3 4 3 e . . . 
+. . . e d 4 d e . . . 
+. . . e 6 4 d e . . . 
+. . . e e e e e . . . 
+. . . . . . . . . . . 
+`;
+            case "image194":
+            case "level petitesse 02":return img`
+. . . . . . . . . . . 
+. . . e e e e e . . . 
+. . . e 3 d d e . . . 
+. . . e d 4 d e . . . 
+. . . e d 2 d e . . . 
+. . . e d 4 6 e . . . 
+. . . e e e e e . . . 
+. . . . . . . . . . . 
+`;
+            case "image195":
+            case "level petitesse 03":return img`
+. . . . . . . . . . 
+. . e e e e e e . . 
+. . e 3 d d d e . . 
+. . e 7 4 4 4 e . . 
+. . e 4 3 d 3 e . . 
+. . e d 3 4 3 e . . 
+. . e e e e e e . . 
+. . . . . . . . . . 
+`;
+            case "image196":
+            case "level petitesse 04":return img`
+. . . . . . . . . . 
+. . e e e e e e . . 
+. . e d d d d e . . 
+. . e 3 e d 3 e . . 
+. . e d 4 4 d e . . 
+. . e 3 7 4 d e . . 
+. . e e e e e e . . 
+. . . . . . . . . . 
+`;
+            case "image197":
+            case "level petitesse 05":return img`
+. . . . . . . . . . 
+. . e e e e e e . . 
+. . e d d 3 d e . . 
+. . e 6 4 2 d e . . 
+. . e 4 4 d d e . . 
+. . e d d 3 d e . . 
+. . e e e e e e . . 
+. . . . . . . . . . 
+`;
+            case "image198":
+            case "level petitesse 06":return img`
+. . . . . . . . . . . 
+. . e e e e e e . . . 
+. . e d d d 3 e e . . 
+. . e 6 2 d 4 3 e . . 
+. . e 4 4 d e d e . . 
+. . e d d d d d e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image199":
+            case "level petitesse 07":return img`
+. . . . . . . . . . . 
+. . . e e e e e e . . 
+. . e e d d 4 6 e . . 
+. . e d d 2 4 4 e . . 
+. . e d e d d 3 e . . 
+. . e d d 3 d d e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image200":
+            case "level petitesse 08":return img`
+. . . . . . . . . . . 
+. . e e e e e e e . . 
+. . e d 3 d d d e . . 
+. . e d d e 4 7 e . . 
+. . e d 2 d 4 2 e . . 
+. . e d d 3 d d e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image201":
+            case "level petitesse 09":return img`
+. . . . . . . . . . . 
+. . e e e e e e e . . 
+. . e d d 2 7 d e . . 
+. . e 3 d d e d e . . 
+. . e 4 4 2 d d e . . 
+. . e d 3 d d d e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image202":
+            case "level petitesse 10":return img`
+. . . . . . . . . . . 
+. . . e e e e e . . . 
+. . . e d d d e e . . 
+. . e e d e 4 d e . . 
+. . e d d 3 4 3 e . . 
+. . e d d d 4 7 e . . 
+. . e e e 3 d e e . . 
+. . . . e e e e . . . 
+. . . . . . . . . . . 
+`;
+            case "image203":
+            case "level petitesse 11":return img`
+. . . . . . . . . . . 
+. . . . e e e e e . . 
+. . e e e 3 d d e . . 
+. . e 3 4 3 d d e . . 
+. . e d 7 e d e e . . 
+. . e d 4 4 d e . . . 
+. . e e d d d e . . . 
+. . . e e e e e . . . 
+. . . . . . . . . . . 
+`;
+            case "image204":
+            case "level petitesse 12":return img`
+. . . . . . . . . . . 
+. . . e e e e e e . . 
+. . e e d d d 7 e . . 
+. . e d d d 4 d e . . 
+. . e 3 e e 4 e e . . 
+. . e 3 d d 4 d e . . 
+. . e 3 d d d d e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image205":
+            case "level petitesse 13":return img`
+. . . . . . . . . . . 
+. . e e e e e . . . . 
+. . e d d d e e e . . 
+. . e 7 2 d 4 d e . . 
+. . e e 4 d e 3 e . . 
+. . e d 4 d d 3 e . . 
+. . e d d d d 3 e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image206":
+            case "level petitesse 14":return img`
+. . e e e e e . . . . 
+. . e d d d e e e . . 
+. . e d e 7 4 d e . . 
+. . e 3 d 2 e d e . . 
+. . e d 4 3 d d e . . 
+. . e e d d e e e . . 
+. . . e d d e . . . . 
+. . . e e e e . . . . 
+`;
+            case "image207":
+            case "level petitesse 15":return img`
+. . e e e e e e e . . 
+. . e d d d d d e . . 
+. . e 2 4 e 4 d e . . 
+. . e 7 4 d d d e . . 
+. . e d e d 4 e e . . 
+. . e 3 2 d 4 d e . . 
+. . e 3 3 3 d 3 e . . 
+. . e e e e e e e . . 
+`;
+            case "image208":
+            case "level petitesse 16":return img`
+. . . . . . . . . . 
+. . e e e e e e . . 
+. . e 3 d 4 7 e . . 
+. . e 4 d 2 d e . . 
+. . e 3 4 d d e . . 
+. . e d d 3 d e . . 
+. . e e e e e e . . 
+. . . . . . . . . . 
+`;
+            case "image209":
+            case "level petitesse 17":return img`
+. . . . . . . . . . 
+. . e e e e e e . . 
+. . e d 2 d d e . . 
+. . e d d 2 d e . . 
+. . e 2 d 4 d e . . 
+. . e 7 4 3 d e . . 
+. . e d 3 d e e . . 
+. . e e e e e . . . 
+. . . . . . . . . . 
+`;
+            case "image210":
+            case "level petitesse 18":return img`
+. . e e e e e e . . 
+. . e d 2 d d e . . 
+. . e d d 2 d e . . 
+. . e 4 d 2 d e . . 
+. . e 7 2 d d e . . 
+. . e d 2 d e e . . 
+. . e 3 d d e . . . 
+. . e e e e e . . . 
+`;
         }
         return null;
     })

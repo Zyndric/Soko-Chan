@@ -18,7 +18,7 @@ function reset_states () {
 }
 function set_up_selection () {
     state_level = 0
-    button_lag = 8
+    button_lag = 6
     menu_selection = 1
     select_level = level
     select_levelset = levelset
@@ -145,6 +145,46 @@ function add_menu_item (y: number, text: string, changeable: boolean) {
     t.setBorder(1, 0, 2)
     t.setText(text)
     menu_items[menu_items.length] = t
+}
+function get_level_asset_petitesse (lv: number) {
+    if (lv == 1) {
+        return assets.image`level petitesse 01`
+    } else if (lv == 2) {
+        return assets.image`level petitesse 02`
+    } else if (lv == 3) {
+        return assets.image`level petitesse 03`
+    } else if (lv == 4) {
+        return assets.image`level petitesse 04`
+    } else if (lv == 5) {
+        return assets.image`level petitesse 05`
+    } else if (lv == 6) {
+        return assets.image`level petitesse 06`
+    } else if (lv == 7) {
+        return assets.image`level petitesse 07`
+    } else if (lv == 8) {
+        return assets.image`level petitesse 08`
+    } else if (lv == 9) {
+        return assets.image`level petitesse 09`
+    } else if (lv == 10) {
+        return assets.image`level petitesse 10`
+    } else if (lv == 11) {
+        return assets.image`level petitesse 11`
+    } else if (lv == 12) {
+        return assets.image`level petitesse 12`
+    } else if (lv == 13) {
+        return assets.image`level petitesse 13`
+    } else if (lv == 14) {
+        return assets.image`level petitesse 14`
+    } else if (lv == 15) {
+        return assets.image`level petitesse 15`
+    } else if (lv == 16) {
+        return assets.image`level petitesse 16`
+    } else if (lv == 17) {
+        return assets.image`level petitesse 17`
+    } else if (lv == 18) {
+        return assets.image`level petitesse 18`
+    }
+    return assets.image`level petitesse 01`
 }
 function update_moves () {
     update_camera()
@@ -287,8 +327,8 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
 function show_credits () {
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban (easy)          " + ":   by David Skinner     " + "Y. Murase (tricky)       " + ":   by Yoshio Murase     " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Sokogen (tricky)         " + ":   by Jacques Duthen    " + "Easy                     " + ":   some by Moobot   ", DialogLayout.Full)
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Takaken (hard)           " + ": by Kenichiro Takahashi " + "Cantrip (tricky)         " + ":   by David Holland     " + "De Clercq (easy-tricky)  " + ":   by Dries de Clercq   ", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban (easy)          " + ":   by David Skinner     " + "Murase (tricky)       " + ":   by Yoshio Murase     " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Sokogen (tricky)         " + ":   by Jacques Duthen    " + "Easy                     " + ":   some by Moobot   ", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Takaken (hard)           " + ": by Kenichiro Takahashi " + "Cantrip (tricky)         " + ":   by David Holland     " + "Blocks+co (easy-tricky)  " + ":   by Dries de Clercq   " + "Petitesse (?)            " + ":   by niwa              ", DialogLayout.Full)
 }
 /**
  * Check win condition and manage buttons in a continuous loop.
@@ -401,7 +441,7 @@ function control_level () {
 }
 function return_to_level () {
     state_selection = 0
-    button_lag = 10
+    button_lag = 8
     tiles.destroySpritesOfKind(SpriteKind.Text)
     scene.centerCameraAt(screen_center_x(), screen_center_y())
     if (scroll_level()) {
@@ -431,7 +471,7 @@ function scroll_level () {
         ].indexOf(level) >= 0
     }
     if (levelset == 5) {
-        return [3, 7].indexOf(level) >= 0
+        return [3, 6, 7].indexOf(level) >= 0
     }
     if (levelset == 6) {
         return [4, 15, 16, 20].indexOf(level) >= 0
@@ -603,6 +643,8 @@ function get_level_asset (group: number, lv: number) {
         return get_level_asset_cantrip(lv)
     } else if (group == 7) {
         return get_level_asset_declercq(lv)
+    } else if (group == 8) {
+        return get_level_asset_petitesse(lv)
     } else {
         return get_level_asset_easy(lv)
     }
@@ -989,12 +1031,13 @@ introduce_game()
 list_levelsets = [
 "Easy",
 "Microban",
-"Y. Murase",
+"Murase",
 "Nabokosmos",
 "Sokogen",
 "Takaken",
 "Cantrip",
-"De Clercq"
+"Blocks+co",
+"Petitesse"
 ]
 list_groupsize = [
 11,
@@ -1004,7 +1047,8 @@ list_groupsize = [
 15,
 7,
 20,
-20
+20,
+18
 ]
 levelset = 0
 level = 1
