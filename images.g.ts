@@ -2972,6 +2972,120 @@ e d d 4 d 4 d e . .
 e d d e e e e e . . 
 e e e e . . . . . . 
 `;
+            case "image231":
+            case "level microcosmos 21":return img`
+. . . e e e e e . . . 
+. . . e d d d e e e . 
+. e e e 2 e d 4 d e . 
+. e d 4 d 7 d e d e . 
+. e d e d 3 3 d d e . 
+. e d 3 d e 4 e e e . 
+. e e 4 3 d d e . . . 
+. . e d d e e e . . . 
+. . e e e e . . . . . 
+`;
+            case "image232":
+            case "level microcosmos 22":return img`
+. e e e e e d d e . 
+. e d 4 d d d d e . 
+e e d e 3 e e 4 e . 
+e d d e d 7 3 d e . 
+e d d 3 4 d e d e e 
+e e d e e 3 e d d e 
+. e d d d d 4 d d e 
+. e d d e e e e e e 
+`;
+            case "image233":
+            case "level microcosmos 23":return img`
+. . e e e e e . . . . 
+. . e d d d e e e . . 
+. . e 3 e 4 d d e . . 
+. . e d 7 4 2 d e . . 
+. . e d d 4 d d e . . 
+. . e e 3 e 3 e e . . 
+. . . e d d d e . . . 
+. . . e e e e e . . . 
+`;
+            case "image234":
+            case "level microcosmos 24":return img`
+. . . . . e e e e e 
+. e e e e e d d d e 
+. e d 4 d 3 d e d e 
+. e d e d 4 4 d d e 
+e e d e e d e d e e 
+e d d 4 3 4 3 d e . 
+e d e e d d d e e . 
+e d d 3 7 3 e e . . 
+e e e e e e e . . . 
+`;
+            case "image235":
+            case "level microcosmos 25":return img`
+. . . . . e e e e . 
+. . e e e e d d e . 
+. . e 3 3 d d d e . 
+e e e d 4 7 e d e e 
+e d d 4 d e 3 3 d e 
+e d 4 d d d 4 d d e 
+e e e e d d e e e e 
+. . . e e e e . . . 
+`;
+            case "image236":
+            case "level microcosmos 26":return img`
+. . e d d d e d d e 
+. . e d d d 4 3 d e 
+. e e e 4 e e d d e 
+. e d 4 3 e e d e e 
+e e d d 3 2 d d d e 
+e d d e 4 e d d d e 
+e d 3 7 d e e e e e 
+e e d d d e . . . . 
+`;
+            case "image237":
+            case "level microcosmos 27":return img`
+. . e e e e e . . . 
+. . e d d d e e e . 
+. e e d e 4 d 7 e . 
+. e d 3 d 4 d d e . 
+. e 3 3 3 e 4 e e . 
+. e d e d d 4 d e . 
+. e d d e d d d e . 
+. e e d d d e e e . 
+. . e e e e e . . . 
+`;
+            case "image238":
+            case "level microcosmos 28":return img`
+. . . . . . . . . . . 
+. . . . . . e e e e . 
+. . . . . e e d d e . 
+. . . . e e d 3 d e . 
+. e e e e d 4 d d e . 
+. e d 4 d 4 3 7 e e . 
+. e d d 3 d d e e . . 
+. e e e e e e e . . . 
+. . . . . . . . . . . 
+`;
+            case "image239":
+            case "level microcosmos 29":return img`
+. . . . . e e e e . . 
+. . . e e e d d e . . 
+. . e e d 7 4 d e . . 
+. . e d 3 4 d d e . . 
+. . e d 3 2 d e e . . 
+. . e d 3 4 d e . . . 
+. . e e d d e e . . . 
+. . . e e e e . . . . 
+`;
+            case "image240":
+            case "level microcosmos 30":return img`
+e d d d 3 e . . . . 
+e d 3 d 7 e . . . . 
+e d e d e e e . . . 
+e d e d 4 d e e . . 
+e d 2 3 d d d e e . 
+e e e e d 4 4 d e e 
+. . . e e d d d d e 
+. . . . e e d d d e 
+`;
         }
         return null;
     })

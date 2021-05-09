@@ -290,25 +290,25 @@ function get_level_asset_microcosmos (lv: number) {
     } else if (lv == 20) {
         return assets.image`level microcosmos 20`
     } else if (lv == 21) {
-        return assets.image`level microban 21`
+        return assets.image`level microcosmos 21`
     } else if (lv == 22) {
-        return assets.image`level microban 22`
+        return assets.image`level microcosmos 22`
     } else if (lv == 23) {
-        return assets.image`level microban 23`
+        return assets.image`level microcosmos 23`
     } else if (lv == 24) {
-        return assets.image`level microban 24`
+        return assets.image`level microcosmos 24`
     } else if (lv == 25) {
-        return assets.image`level microban 25`
+        return assets.image`level microcosmos 25`
     } else if (lv == 26) {
-        return assets.image`level microban 26`
+        return assets.image`level microcosmos 26`
     } else if (lv == 27) {
-        return assets.image`level microban 27`
+        return assets.image`level microcosmos 27`
     } else if (lv == 28) {
-        return assets.image`level microban 28`
+        return assets.image`level microcosmos 28`
     } else if (lv == 29) {
-        return assets.image`level microban 29`
+        return assets.image`level microcosmos 29`
     } else if (lv == 30) {
-        return assets.image`level microban 30`
+        return assets.image`level microcosmos 30`
     } else if (lv == 31) {
         return assets.image`level microban 31`
     } else if (lv == 32) {
@@ -561,7 +561,14 @@ function scroll_level () {
         return [4, 15, 16, 20].indexOf(level) >= 0
     }
     if (levelset == 9) {
-        return [2, 10, 14].indexOf(level) >= 0
+        return [
+        2,
+        10,
+        14,
+        22,
+        26,
+        30
+        ].indexOf(level) >= 0
     }
     return false
 }
@@ -1139,7 +1146,7 @@ list_groupsize = [
 20,
 20,
 18,
-20
+30
 ]
 levelset = 0
 level = 1

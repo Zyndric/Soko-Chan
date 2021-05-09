@@ -1154,6 +1154,56 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level microcosmos 20"
     },
+    "image231": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAADu7g4AAAAAAN7d7g4AAADuTj7UDgAAAN7S3dMOAAAA3n7j7Q4AAADe3UPtAAAAAO7k7e4AAAAA4N3tAAAAAADg7u4AAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 21"
+    },
+    "image232": {
+        "data": "hwQKAAgAAAAA7u4A7t7t7t7d3d1O7uPd3tPk7d5+Pe3dPu7k3dTd7e7u3u0AAO7u",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 22"
+    },
+    "image233": {
+        "data": "hwQLAAgAAAAAAAAAAAAAAO7u7gDe0+3u3n497d5E5O3uLT3t4N3t7uDu7gAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 23"
+    },
+    "image234": {
+        "data": "hwQKAAkAAAAAAO7uDgAAAODu3t0OAAAA4N3d3g4AAADg5E4+DgAAAODdPn0OAAAA7kNNPQ4AAADeTT7tDgAAAN7e3e4AAAAA3t3uDgAAAADu7g4AAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 24"
+    },
+    "image235": {
+        "data": "hwQKAAgAAAAA4O4OAODdDuDuTQ7g09Tu4EPd7e593u3e7UPu3t3TDu7u3Q4A4O4O",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 25"
+    },
+    "image236": {
+        "data": "hwQKAAgAAAAAAO7uAO7e7e7e3dPdTu3X3TRD3d3u4u5O7t0OPd3dDt3t3Q7u7u4O",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 26"
+    },
+    "image237": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAADu7u4AAAAA7t7T7Q4AAADePePdDgAAAN7e094OAAAA3kTe3Q4AAADu3UTtDgAAAODX3u0AAAAA4O7u7gAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 27"
+    },
+    "image238": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAA7u4AAAAAAADe7QAAAAAAAE7tAAAAAADg3uMAAAAAAO5N7QAAAADg3jTtAAAAAOA9fe4AAAAA4N3tDgAAAADg7u4AAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 28"
+    },
+    "image239": {
+        "data": "hwQLAAgAAAAAAAAAAAAAAADu7g7g3t3u4D0z7e5HQu3e1N3u3t3uDu7uDgAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 29"
+    },
+    "image240": {
+        "data": "hwQKAAgAAADu7u4A3d3tAD3u4gDd3eMOc07d7u7eTe0A7k3dAODe3QAA7t0AAODu",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 30"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
