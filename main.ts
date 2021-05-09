@@ -248,6 +248,90 @@ function get_level_asset_takaken (lv: number) {
     assets.image`level takaken 7`
     ][lv - 1]
 }
+function get_level_asset_microcosmos (lv: number) {
+    if (lv == 1) {
+        return assets.image`level microcosmos 01`
+    } else if (lv == 2) {
+        return assets.image`level microcosmos 02`
+    } else if (lv == 3) {
+        return assets.image`level microcosmos 03`
+    } else if (lv == 4) {
+        return assets.image`level microcosmos 04`
+    } else if (lv == 5) {
+        return assets.image`level microcosmos 05`
+    } else if (lv == 6) {
+        return assets.image`level microcosmos 06`
+    } else if (lv == 7) {
+        return assets.image`level microcosmos 07`
+    } else if (lv == 8) {
+        return assets.image`level microcosmos 08`
+    } else if (lv == 9) {
+        return assets.image`level microcosmos 09`
+    } else if (lv == 10) {
+        return assets.image`level microcosmos 10`
+    } else if (lv == 11) {
+        return assets.image`level microcosmos 11`
+    } else if (lv == 12) {
+        return assets.image`level microcosmos 12`
+    } else if (lv == 13) {
+        return assets.image`level microcosmos 13`
+    } else if (lv == 14) {
+        return assets.image`level microcosmos 14`
+    } else if (lv == 15) {
+        return assets.image`level microcosmos 15`
+    } else if (lv == 16) {
+        return assets.image`level microcosmos 16`
+    } else if (lv == 17) {
+        return assets.image`level microcosmos 17`
+    } else if (lv == 18) {
+        return assets.image`level microcosmos 18`
+    } else if (lv == 19) {
+        return assets.image`level microcosmos 19`
+    } else if (lv == 20) {
+        return assets.image`level microcosmos 20`
+    } else if (lv == 21) {
+        return assets.image`level microban 21`
+    } else if (lv == 22) {
+        return assets.image`level microban 22`
+    } else if (lv == 23) {
+        return assets.image`level microban 23`
+    } else if (lv == 24) {
+        return assets.image`level microban 24`
+    } else if (lv == 25) {
+        return assets.image`level microban 25`
+    } else if (lv == 26) {
+        return assets.image`level microban 26`
+    } else if (lv == 27) {
+        return assets.image`level microban 27`
+    } else if (lv == 28) {
+        return assets.image`level microban 28`
+    } else if (lv == 29) {
+        return assets.image`level microban 29`
+    } else if (lv == 30) {
+        return assets.image`level microban 30`
+    } else if (lv == 31) {
+        return assets.image`level microban 31`
+    } else if (lv == 32) {
+        return assets.image`level microban 32`
+    } else if (lv == 33) {
+        return assets.image`level microban 33`
+    } else if (lv == 34) {
+        return assets.image`level microban 34`
+    } else if (lv == 35) {
+        return assets.image`level microban 35`
+    } else if (lv == 36) {
+        return assets.image`level microban 36`
+    } else if (lv == 37) {
+        return assets.image`level microban 37`
+    } else if (lv == 38) {
+        return assets.image`level microban 38`
+    } else if (lv == 39) {
+        return assets.image`level microban 39`
+    } else if (lv == 40) {
+        return assets.image`level microban 40`
+    }
+    return assets.image`level microcosmos 01`
+}
 function move_to (tx: number, ty: number, push_tx: number, push_ty: number) {
     if (!(tiles.tileIsWall(tiles.getTileLocation(tx, ty)))) {
         if (box_on_tile(tx, ty)) {
@@ -328,7 +412,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
 })
 function show_credits () {
     game.showLongText("---  Level  Credits  --- " + "                         " + "Microban (easy)          " + ":   by David Skinner     " + "Murase (tricky)       " + ":   by Yoshio Murase     " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Sokogen (tricky)         " + ":   by Jacques Duthen    " + "Easy                     " + ":   some by Moobot   ", DialogLayout.Full)
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Takaken (hard)           " + ": by Kenichiro Takahashi " + "Cantrip (tricky)         " + ":   by David Holland     " + "Blocks+co (easy-tricky)  " + ":   by Dries de Clercq   " + "Petitesse (?)            " + ":   by niwa              ", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Takaken (hard)           " + ": by Kenichiro Takahashi " + "Cantrip (tricky)         " + ":   by David Holland     " + "Blocks+co (easy-tricky)  " + ":   by Dries de Clercq   " + "Petitesse (?)            " + ":   by niwa              " + "Microcosmos (?)          " + ":   by Aymeric du Peloux ", DialogLayout.Full)
 }
 /**
  * Check win condition and manage buttons in a continuous loop.
@@ -475,6 +559,9 @@ function scroll_level () {
     }
     if (levelset == 6) {
         return [4, 15, 16, 20].indexOf(level) >= 0
+    }
+    if (levelset == 9) {
+        return [2, 10, 14].indexOf(level) >= 0
     }
     return false
 }
@@ -645,6 +732,8 @@ function get_level_asset (group: number, lv: number) {
         return get_level_asset_declercq(lv)
     } else if (group == 8) {
         return get_level_asset_petitesse(lv)
+    } else if (group == 9) {
+        return get_level_asset_microcosmos(lv)
     } else {
         return get_level_asset_easy(lv)
     }
@@ -1037,7 +1126,8 @@ list_levelsets = [
 "Takaken",
 "Cantrip",
 "Blocks+co",
-"Petitesse"
+"Petitesse",
+"Microcosm"
 ]
 list_groupsize = [
 11,
@@ -1048,7 +1138,8 @@ list_groupsize = [
 7,
 20,
 20,
-18
+18,
+20
 ]
 levelset = 0
 level = 1

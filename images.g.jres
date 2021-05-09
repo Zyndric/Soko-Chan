@@ -1054,6 +1054,106 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level petitesse 18"
     },
+    "image211": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAODu7gAAAAAA4N3tAAAAAADgTe3uAAAAAODe3e0AAAAAAC424wAAAADg3k3tAAAAAOBN7e4AAAAA4N3tAAAAAADg7u4AAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 01"
+    },
+    "image212": {
+        "data": "hwQPAAgAAADgPd0O4E19DuDe7g7g3dMO4N3UDuDu7Q7g3dMO4N3UDuDu7Q7gPd0O4E3dDuDe7g7g3d0O4N3dDuDd3Q4=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 02"
+    },
+    "image213": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAODu7u4OAAAA4N09Mw4AAADg7e3eDgAAAO5E5H4OAAAA3u3t3g4AAADe3d3eDgAAAO7e3d0OAAAAAO7u7g4AAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 03"
+    },
+    "image214": {
+        "data": "hwQKAAgAAAAA7u4AAN7tAABO7Q4A3t0OAE7XDgDe3Q7gTuMO4E3jAODT4wDg7u4A",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 04"
+    },
+    "image215": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAA4O4OAAAA4O7u3Q4AAADgPT3dDgAAAODk5NIOAAAA4N3X7Q4AAADu5OTSDgAAAN49Pd0OAAAA3t3u3Q4AAADu7u7uDgAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 05"
+    },
+    "image216": {
+        "data": "hwQKAAgAAAAAAAAAAODuDu7u3e7e3dTt3i4i497d1O3u3u3tAO7d5gDg7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 06"
+    },
+    "image217": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAAAODu7gAAAADu7t3tDgAAAN7dM9MOAAAA3n7e3g4AAADe1NTUDgAAAO7e7e4OAAAAAO7uAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 07"
+    },
+    "image218": {
+        "data": "hwQKAAgAAAAAAAAA4O4OAODd7g7u3dMO3k1O7t7T1u3uTU7t4N3T7uDu7g4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 08"
+    },
+    "image219": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAODuDgAAAAAA4N3u7g4AAADg1N3UDgAAAOA9Pt0OAAAA7u3u5w4AAADePT7tAAAAAN7U3eQAAAAA7u7e7QAAAAAAAO7uAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 09"
+    },
+    "image220": {
+        "data": "hwQLAAoAAAAAAAAAAAAAAAAAAAAAAAAA7u4AAAAAAADe7e7u7gAAAN3U3d3dAAAA7XRO3t0AAAA909Pu7gAAAO7d7Q4AAAAA4O7uAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 10"
+    },
+    "image221": {
+        "data": "hwQLAAgAAAAAAAAAAADu7gDu3u3u3t3tbiIi7d7e3e7e3d4O7tTdDuDd7g7g7g4AAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 11"
+    },
+    "image222": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAA7u4OAAAAAADe3e7uAAAAAN5N3e0OAAAA3iIiYw4AAADeTd3tDgAAAO7d7u4AAAAA4O4OAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 12"
+    },
+    "image223": {
+        "data": "hwQKAAgAAAAAAAAA4O7uAO7d7QDe4+Tu3nPd7d5D7e3u4k3t4N3t7uDu7gAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 13"
+    },
+    "image224": {
+        "data": "hwQLAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7u4AAADu7u7e3QAAAD09PT3XAAAA7e3t7e0AAABNTU1N7QAAAO7d7u7uAAAA4O4OAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 14"
+    },
+    "image225": {
+        "data": "hwQKAAkAAADg7u7uDgAAAODd7t0OAAAA7t1N1A4AAADe7ePdDgAAAN7d7e0OAAAA7t4z5w4AAAAA7u3dDgAAAADgQ9QOAAAAAODu3Q4AAAAAAODuDgAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 15"
+    },
+    "image226": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAA7u4AAAAA7u7e7QAAAADeTd3tDgAAAN7t7dQOAAAA7t02Mw4AAADg5O3dDgAAAODdTe0OAAAA4N3u7gAAAADg7g4AAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 16"
+    },
+    "image227": {
+        "data": "hwQKAAkAAADu7g4AAAAAAN7d7g4AAAAA3k3d7g4AAADu5D3dDgAAAOA9c94OAAAA7uQ93Q4AAADe7e3tDgAAAN7dTe0AAAAA7u7e7QAAAAAAAO7uAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 17"
+    },
+    "image228": {
+        "data": "hwQLAAgAAAAAAAAAAODuDuDu3Q7u3d0O3tLSDt7d3u7u4tbt3t1N7d7d7u7u7g4AAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 18"
+    },
+    "image229": {
+        "data": "hwQLAAgAAAAAAAAAAADu7u7u3u3e1ETt3j3T7e7mPu7ePdPt3tRE7e7u3u0AAO7uAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 19"
+    },
+    "image230": {
+        "data": "hwQKAAkAAADg7u7uDgAAAODd3t0OAAAA4N3d3Q4AAADg3e7kDgAAAO5OPu0AAAAA3jTT5AAAAADeftPtAAAAAN7t7e4AAAAA7t3tAAAAAADg7u4AAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 20"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
