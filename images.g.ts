@@ -3368,6 +3368,144 @@ e e 4 e d 2 d d d e
 . e e e d d d e e . 
 . e e e e e e e e . 
 `;
+            case "image266":
+            case "level microban 41":return img`
+. . . . . . . . . . 
+. e e e e e e e . . 
+. e d d d d d e . . 
+. e 7 4 4 4 d e e . 
+. e d d e 3 3 3 e . 
+. e e d d d d e e . 
+. . e e e e e e . . 
+. . . . . . . . . . 
+`;
+            case "image267":
+            case "level microban 42":return img`
+. . . . . e e e e . . 
+. . . . . e d d e . . 
+. . . . . e 7 d e . . 
+. . e e e e 4 3 e . . 
+. . e d d d 4 3 e . . 
+. . e d e d 4 3 e . . 
+. . e d d d d e e . . 
+. . e e e e e e . . . 
+`;
+            case "image268":
+            case "level microban 43":return img`
+. . . . . . e e e e . 
+. . . . . . e d 7 e . 
+. . . . . . e d d e . 
+. e e e e e e d 3 e . 
+. e d d d 4 d d 3 e . 
+. e d d 4 4 e d 3 e . 
+. e d d d d e e e e . 
+. e e e d d e . . . . 
+. . . e e e e . . . . 
+`;
+            case "image269":
+            case "level microban 44":return img`
+. . . . . . . . . . . 
+. . . . . . . . . . . 
+. . . . . . . . . . . 
+. . . e e e e e . . . 
+. . . e 7 4 3 e . . . 
+. . . e e e e e . . . 
+. . . . . . . . . . . 
+. . . . . . . . . . . 
+. . . . . . . . . . . 
+`;
+            case "image270":
+            case "level microban 45":return img`
+. . . . . . . . . . 
+. . e e e e e e . . 
+. . e 3 3 3 d e . . 
+. . e d d 4 d e . . 
+. . e d e 4 e e . . 
+. . e d d 4 d e . . 
+. . e d d 7 d e . . 
+. . e e e e e e . . 
+. . . . . . . . . . 
+`;
+            case "image271":
+            case "level microban 46":return img`
+. . . e e e e e e . . 
+. . e e d d d d e . . 
+. . e d d e e d e . . 
+. . e d e d 4 d e . . 
+. . e d d 2 d 3 e . . 
+. . e e d e 7 e e . . 
+. . . e d d d e . . . 
+. . . e e e e e . . . 
+`;
+            case "image272":
+            case "level microban 47":return img`
+. . . . . . . . . . . 
+. . e e e e e e e . . 
+e e e d d d d d e . . 
+e d 4 d 4 d d d e . . 
+e d e e e d e e e e e 
+e d 7 d 3 d 3 d d d e 
+e d d d e e e d d d e 
+e e e e e . e e e e e 
+. . . . . . . . . . . 
+`;
+            case "image273":
+            case "level microban 48":return img`
+. e e e e e e . . . 
+. e d d 7 d e . . . 
+. e d d e d e e . . 
+. e d 3 e d d e e . 
+. e d 3 4 4 4 d e . 
+. e d 3 e d d d e . 
+. e e e e d d d e . 
+. . . . e e e e e . 
+`;
+            case "image274":
+            case "level microban 49":return img`
+. e d 7 d d e . . . 
+. e d 4 e d e . . . 
+. e d 4 d d e . . . 
+. e d 4 d e e . . . 
+. e e e d e e e e . 
+. . e d d e d d e . 
+. . e 3 3 3 d d e . 
+. . e d d d d d e . 
+`;
+            case "image275":
+            case "level microban 50":return img`
+. . . . . . . . . . 
+. . e e e e . . . . 
+e e e d d e e e e e 
+e d d 4 d d 7 3 3 e 
+e d 4 d d d d e d e 
+e e e d e e e e d e 
+. . e d d d d d d e 
+. . e e e e e e e e 
+. . . . . . . . . . 
+`;
+            case "image276":
+            case "level microban 51":return img`
+. . . . . . . . . . 
+. e e e e . . . . . 
+. e d d e e e . . . 
+. e d d d d e e e . 
+. e d d 4 2 7 d e . 
+. e e e d 3 e d e . 
+. . . e d d d d e . 
+. . . e e e e e e . 
+. . . . . . . . . . 
+`;
+            case "image277":
+            case "level microban 52":return img`
+. . . . e e e e . . 
+. . e e e d 7 e . . 
+. . e d d 4 d e . . 
+. . e d d 2 3 e . . 
+. . e d d 2 3 e . . 
+. . e d d 4 d e . . 
+. . e e e d d e . . 
+. . . . e e e e . . 
+`;
         }
         return null;
     })

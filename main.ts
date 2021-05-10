@@ -542,7 +542,7 @@ function return_to_level () {
 }
 function scroll_level () {
     if (levelset == 1) {
-        return [8, 35, 36].indexOf(level) >= 0
+        return [8, 35, 36, 49].indexOf(level) >= 0
     }
     if (levelset == 3) {
         return [
@@ -721,6 +721,30 @@ function get_level_asset_microban (lv: number) {
         return assets.image`level microban 39`
     } else if (lv == 40) {
         return assets.image`level microban 40`
+    } else if (lv == 41) {
+        return assets.image`level microban 41`
+    } else if (lv == 42) {
+        return assets.image`level microban 42`
+    } else if (lv == 43) {
+        return assets.image`level microban 43`
+    } else if (lv == 44) {
+        return assets.image`level microban 44`
+    } else if (lv == 45) {
+        return assets.image`level microban 45`
+    } else if (lv == 46) {
+        return assets.image`level microban 46`
+    } else if (lv == 47) {
+        return assets.image`level microban 47`
+    } else if (lv == 48) {
+        return assets.image`level microban 48`
+    } else if (lv == 49) {
+        return assets.image`level microban 49`
+    } else if (lv == 50) {
+        return assets.image`level microban 50`
+    } else if (lv == 51) {
+        return assets.image`level microban 51`
+    } else if (lv == 52) {
+        return assets.image`level microban 52`
     }
     return assets.image`level microban 01`
 }
@@ -1163,7 +1187,7 @@ list_levelsets = [
 ]
 list_groupsize = [
 11,
-40,
+52,
 20,
 40,
 20,
