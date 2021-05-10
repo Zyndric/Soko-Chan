@@ -194,22 +194,26 @@ function update_moves () {
 function set_level_skin (random: boolean) {
     level_skin = levelset
     if (random) {
-        level_skin = randint(1, 7)
+        level_skin = randint(1, 9)
     }
     if (level_skin == 1) {
         list_skin_sprites = [assets.image`wall purple bricks`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor dark purple`, assets.image`target dark purple`]
     } else if (level_skin == 2) {
-        list_skin_sprites = [assets.image`wall dark purple bricks`, assets.image`crate shrub`, assets.image`crate shrub on target`, assets.image`floor tan dotted`, assets.image`target patch`]
+        list_skin_sprites = [assets.image`wall steel`, assets.image`crate wood2`, assets.image`crate wood2 on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
     } else if (level_skin == 3) {
         list_skin_sprites = [assets.image`wall dark brown bricks`, assets.image`crate drawer`, assets.image`crate drawer on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
     } else if (level_skin == 4) {
-        list_skin_sprites = [assets.image`wall teal bricks`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
+        list_skin_sprites = [assets.image`wall dark purple bricks`, assets.image`crate wood2`, assets.image`crate wood2 on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
     } else if (level_skin == 5) {
         list_skin_sprites = [assets.image`wall steel`, assets.image`crate wood2`, assets.image`crate wood2 on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
     } else if (level_skin == 6) {
-        list_skin_sprites = [assets.image`wall steel`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
-    } else if (level_skin == 7) {
         list_skin_sprites = [assets.image`wall dark steel`, assets.image`crate chest`, assets.image`crate chest on target`, assets.image`floor light purple dotted`, assets.image`target light purple dotted`]
+    } else if (level_skin == 7) {
+        list_skin_sprites = [assets.image`wall steel`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
+    } else if (level_skin == 8) {
+        list_skin_sprites = [assets.image`wall dark brown bricks`, assets.image`crate drawer`, assets.image`crate drawer on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
+    } else if (level_skin == 9) {
+        list_skin_sprites = [assets.image`wall teal bricks`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
     } else {
         list_skin_sprites = [assets.image`wall steel`, assets.image`crate wood`, assets.image`crate wood on target`, assets.image`floor tan dotted`, assets.image`target tan dotted`]
     }
@@ -411,8 +415,8 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
 function show_credits () {
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban (easy)          " + ":   by David Skinner     " + "Murase (tricky)       " + ": gener.by Yoshio Murase " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Sokogen (tricky)         " + ": genr.by Jacques Duthen " + "Easy                     " + ":   some by Moobot   ", DialogLayout.Full)
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Takaken (hard)           " + ": by Kenichiro Takahashi " + "Cantrip (tricky)         " + ":   by David Holland     " + "Blocks+co (easy-tricky)  " + ":   by Dries de Clercq   " + "Petitesse (?)            " + ":   by niwa              " + "Microcosmos (?)          " + ":   by Aymeric du Peloux ", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Tutorial (easy)          " + ":   by Moobot            " + "Microban (easy)          " + ":   by David Skinner     " + "Blocks+co (easy/tricky)  " + ":   by Dries de Clercq   " + "Microcosmos (tricky)     " + ":   by Aymeric du Peloux " + "Cantrip (tricky)         " + ":   by David Holland", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Takaken (hard)           " + ": by Kenichiro Takahashi " + "Sokogen (tricky)         " + ": genr.by Jacques Duthen " + "Murase (tricky)          " + ": gener.by Yoshio Murase " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Petitesse (tricky)       " + ":   by niwa", DialogLayout.Full)
 }
 /**
  * Check win condition and manage buttons in a continuous loop.
@@ -446,32 +450,6 @@ function all_boxes_fit () {
     }
     return 1
 }
-function get_level_asset_easy (lv: number) {
-    if (lv == 1) {
-        return assets.image`level easy 01`
-    } else if (lv == 2) {
-        return assets.image`level easy 02`
-    } else if (lv == 3) {
-        return assets.image`level easy 03`
-    } else if (lv == 4) {
-        return assets.image`level easy 04`
-    } else if (lv == 5) {
-        return assets.image`level easy 05`
-    } else if (lv == 6) {
-        return assets.image`level easy 06`
-    } else if (lv == 7) {
-        return assets.image`level easy 07`
-    } else if (lv == 8) {
-        return assets.image`level easy 08`
-    } else if (lv == 9) {
-        return assets.image`level easy 09`
-    } else if (lv == 10) {
-        return assets.image`level easy 10`
-    } else if (lv == 11) {
-        return assets.image`level easy 11`
-    }
-    return assets.image`level easy 01`
-}
 function undo_move () {
     if (undo.length > 0) {
         undo_step = undo.pop()
@@ -488,6 +466,7 @@ function undo_move () {
 }
 function control_level () {
     if (all_boxes_fit()) {
+        pause(500)
         ban.setImage(assets.image`sokochan win`)
         music.playTone(392, music.beat(BeatFraction.Quarter))
         music.playTone(523, music.beat(BeatFraction.Whole))
@@ -542,9 +521,11 @@ function return_to_level () {
 }
 function scroll_level () {
     if (levelset == 1) {
+        // Microban
         return [8, 35, 36, 49].indexOf(level) >= 0
     }
-    if (levelset == 3) {
+    if (levelset == 8) {
+        // Nabokosmos
         return [
         2,
         7,
@@ -555,12 +536,15 @@ function scroll_level () {
         ].indexOf(level) >= 0
     }
     if (levelset == 5) {
+        // Takaken
         return [3, 6, 7].indexOf(level) >= 0
     }
-    if (levelset == 6) {
+    if (levelset == 4) {
+        // Cantrip
         return [4, 15, 16, 20].indexOf(level) >= 0
     }
-    if (levelset == 9) {
+    if (levelset == 3) {
+        // Microcosmos
         return [
         2,
         10,
@@ -637,6 +621,43 @@ function box_on_tile (tx: number, ty: number) {
     }
     return 0
 }
+/**
+ * Soko-Chan
+ * 
+ * TODO
+ * 
+ * - fix: on scrolling levels that have a width of 11 tiles, the move counter jumps around a bit (Nabokosmos 7)
+ * 
+ * Included Features
+ * 
+ * * many puzzles from different puzzle sets
+ * 
+ * * unlimited undo
+ * 
+ * * push/move counter
+ * 
+ * * remember personal best move scores between power-offs
+ * 
+ * * remember recently opened puzzle between power-offs
+ * 
+ * * continuous movement when button is being held down
+ * 
+ * * different sprites when on target tile
+ * 
+ * * puzzle selection menu with minimap
+ * 
+ * * help and credits
+ * 
+ * * puzzle reset
+ * 
+ * * puzzles of up to 11x9 tiles show without scrolling (up to 10x7 tiles of walkable area)
+ * 
+ * * different tile sets for different puzzle sets
+ * 
+ * Nice to Have
+ * 
+ * - a way to handle large levels without scrolling, maybe through smaller 8x8 sprite tilemaps
+ */
 function screen_center_x () {
     return tiles.tilemapColumns() * tiles.tileWidth() / 2
 }
@@ -755,23 +776,23 @@ function get_level_asset (group: number, lv: number) {
     if (group == 1) {
         return get_level_asset_microban(lv)
     } else if (group == 2) {
-        return get_level_asset_murase(lv)
+        return get_level_asset_declercq(lv)
     } else if (group == 3) {
-        return get_level_asset_nabo(lv)
+        return get_level_asset_microcosmos(lv)
     } else if (group == 4) {
-        return get_level_asset_sokogen(lv)
+        return get_level_asset_cantrip(lv)
     } else if (group == 5) {
         return get_level_asset_takaken(lv)
     } else if (group == 6) {
-        return get_level_asset_cantrip(lv)
+        return get_level_asset_sokogen(lv)
     } else if (group == 7) {
-        return get_level_asset_declercq(lv)
+        return get_level_asset_murase(lv)
     } else if (group == 8) {
-        return get_level_asset_petitesse(lv)
+        return get_level_asset_nabo(lv)
     } else if (group == 9) {
-        return get_level_asset_microcosmos(lv)
+        return get_level_asset_petitesse(lv)
     } else {
-        return get_level_asset_easy(lv)
+        return get_level_asset_tutorial(lv)
     }
 }
 function move_box (from_tx: number, from_ty: number, to_tx: number, to_ty: number) {
@@ -1080,6 +1101,30 @@ function get_level_asset_nabo (lv: number) {
     }
     return assets.image`level nabo 01`
 }
+function get_level_asset_tutorial (lv: number) {
+    if (lv == 1) {
+        return assets.image`level easy 01`
+    } else if (lv == 2) {
+        return assets.image`level easy 02`
+    } else if (lv == 3) {
+        return assets.image`level easy 03`
+    } else if (lv == 4) {
+        return assets.image`level easy 04`
+    } else if (lv == 5) {
+        return assets.image`level easy 05`
+    } else if (lv == 6) {
+        return assets.image`level easy 06`
+    } else if (lv == 7) {
+        return assets.image`level easy 07`
+    } else if (lv == 8) {
+        return assets.image`level easy 08`
+    } else if (lv == 9) {
+        return assets.image`level easy 10`
+    } else if (lv == 10) {
+        return assets.image`level easy 11`
+    }
+    return assets.image`level easy 01`
+}
 function target_tile (x: number, y: number) {
     for (let t of scene.getTilesByType(3)) {
         if (x == t.x) {
@@ -1090,50 +1135,6 @@ function target_tile (x: number, y: number) {
     }
     return 0
 }
-/**
- * Soko-Chan
- * 
- * TODO
- * 
- * - fix: on scrolling levels that have a width of 11 tiles, the move counter jumps around a bit (Nabokosmos 7)
- * 
- * Included Features
- * 
- * * many puzzles from different puzzle sets
- * 
- * * unlimited undo
- * 
- * * push/move counter
- * 
- * * remember personal best move scores between power-offs
- * 
- * * remember recently opened puzzle between power-offs
- * 
- * * continuous movement when button is being held down
- * 
- * * different sprites when on target tile
- * 
- * * puzzle selection menu with minimap
- * 
- * * help and credits
- * 
- * * puzzle reset
- * 
- * * puzzles of up to 11x9 tiles show without scrolling (up to 10x7 tiles of walkable area)
- * 
- * * different tile sets for different puzzle sets
- * 
- * Nice to Have
- * 
- * - a way to handle large levels without scrolling, maybe through smaller 8x8 sprite tilemaps
- */
-/**
- * Set up
- * 
- * Variables ban, level, "undo ban" and "undo box" are unique and used by name.
- * 
- * Variables box, c and t are loop and temporary variables.
- */
 let box: Sprite = null
 let text_introduction: TextSprite = null
 let text_frame: TextSprite = null
@@ -1174,19 +1175,19 @@ let list_groupsize: number[] = []
 let list_levelsets: string[] = []
 introduce_game()
 list_levelsets = [
-"Easy",
+"Tutorial",
 "Microban",
+"Blocks+co",
+"Microcosm",
+"Cantrip",
+"Takaken",
+"Sokogen",
 "Murase",
 "Nabokosmos",
-"Sokogen",
-"Takaken",
-"Cantrip",
-"Blocks+co",
-"Petitesse",
-"Microcosm"
+"Petitesse"
 ]
 list_groupsize = [
-11,
+10,
 52,
 20,
 40,
@@ -1194,8 +1195,8 @@ list_groupsize = [
 7,
 20,
 20,
-18,
-40
+40,
+18
 ]
 levelset = 0
 level = 1

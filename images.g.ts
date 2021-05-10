@@ -327,40 +327,6 @@ d c c c c c c c c c c c c c c c
 . e e e e e e e e e . 
 . . . . . . . . . . . 
 `;
-            case "image37":
-            case "level easy 07":return img`
-. . e e e e . . . . 
-. . e 7 d e e e . . 
-. . e d 4 d d e . . 
-. e e e d e d e e . 
-. e 3 e d e d d e . 
-. e 3 4 d d e d e . 
-. e 3 d d d 4 d e . 
-. e e e e e e e e . 
-`;
-            case "image35":
-            case "level easy 03":return img`
-. e e e e e . . . . . 
-. e d d d e . . . . . 
-. e d 4 7 e . e e e . 
-. e d 4 4 e . e 3 e . 
-. e e e d e e e 3 e . 
-. . e e d d d d 3 e . 
-. . e d d d e d d e . 
-. . e d d d e e e e . 
-. . e e e e e . . . . 
-`;
-            case "image36":
-            case "level easy 04":return img`
-. . . e e e e . . . 
-. . e e d d e . . . 
-. . e d 7 4 e . . . 
-. . e e 4 d e e . . 
-. . e e d 4 d e . . 
-. . e 3 4 d d e . . 
-. . e 3 3 2 3 e . . 
-. . e e e e e e . . 
-`;
             case "image45":
             case "level easy 05":return img`
 . . . . . . . . . . . 
@@ -405,29 +371,6 @@ e e e e . . . . . .
 . . e d 4 3 4 d e . . 
 . . e d d 7 d d e . . 
 . . e e e e e e e . . 
-`;
-            case "image54":
-            case "level easy 08":return img`
-. . . . . . . . . . 
-. . . e e e e e e . 
-. . . e d d d d e . 
-. e e e 4 4 4 d e . 
-. e 7 d 4 3 3 d e . 
-. e d 4 3 3 3 e e . 
-. e e e e d d e . . 
-. . . . e e e e . . 
-. . . . . . . . . . 
-`;
-            case "image57":
-            case "level easy 10":return img`
-. . . e e e e . . . 
-. . . e 3 3 e . . . 
-. . e e d 3 e e . . 
-. . e d d 4 3 e . . 
-. e e d 4 d d e e . 
-. e d d e 4 4 d e . 
-. e d d 7 d d d e . 
-. e e e e e e e e . 
 `;
             case "image55":
             case "level easy 09":return img`
@@ -1824,19 +1767,6 @@ eeedeeeede...ede....ede..
 eeedeeeedeeeeedeeeeeedeee
 eddddddddddddddddddddddde
 eeeeeeeeeeeeeeeeeeeeeeeee
-`;
-            case "image24":
-            case "level easy 02":return img`
-. . . . . . . . 
-. . . e e e . . 
-. . . e 3 e . . 
-e e e e d e . . 
-e 3 d 4 4 e e e 
-e e e 7 4 d 3 e 
-. . e 4 e e e e 
-. . e 3 e . . . 
-. . e e e . . . 
-. . . . . . . . 
 `;
             case "image132":
             case "level easy 11":return img`
@@ -3505,6 +3435,74 @@ e e e d e e e e d e
 . . e d d 4 d e . . 
 . . e e e d d e . . 
 . . . . e e e e . . 
+`;
+            case "image24":
+            case "level easy 02":return img`
+. . . . e e e . . . 
+. . . . e 3 e . . . 
+. e e e e d e . . . 
+. e 3 d 4 4 e e e . 
+. e e e 7 4 d 3 e . 
+. . . e 4 e e e e . 
+. . . e 3 e . . . . 
+. . . e e e . . . . 
+`;
+            case "image35":
+            case "level easy 03":return img`
+. e e e e e . . . . 
+. e 7 d d e . . . . 
+. e d 4 4 e e e e . 
+. e e e d e e 3 e . 
+. . e d d e e 3 e . 
+. . e d d d d d e . 
+. . e e e e d d e . 
+. . e e e e e e e . 
+`;
+            case "image37":
+            case "level easy 07":return img`
+. e e e e e . . . . 
+. e d d d e e e . . 
+. e 7 d 4 d d e . . 
+. e e e d e d e e . 
+. e 3 d d e d d e . 
+. e d d d d e d e . 
+. e 3 d d d 4 d e . 
+. e e e e e e e e . 
+`;
+            case "image57":
+            case "level easy 10":return img`
+. . . . . . . . . . . 
+. . . e e e e . . . . 
+. . e e 3 3 e e . . . 
+. . e d d 4 3 e . . . 
+. . e d 4 d d e e . . 
+. . e d e d 4 d e . . 
+. . e d 7 d d d e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image54":
+            case "level easy 08":return img`
+. . . . . . . . . . 
+. . . . e e e e e . 
+. . . . e d d d e . 
+. e e e e 4 4 d e . 
+. e 7 d 4 3 3 d e . 
+. e d 4 d 3 3 e e . 
+. e e e e d d e . . 
+. . . . e e e e . . 
+. . . . . . . . . . 
+`;
+            case "image36":
+            case "level easy 04":return img`
+. . . e e e e e . . . 
+. . e e d d d e . . . 
+. . e 7 d d 4 e . . . 
+. . e d 4 4 d e e . . 
+. . e e e d 4 d e . . 
+. . . e 3 2 3 d e . . 
+. . . e 3 3 2 d e . . 
+. . . e e e e e e . . 
 `;
         }
         return null;
