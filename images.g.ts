@@ -136,44 +136,6 @@ f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f
 f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
 . f f f f f f f f f f f f f f . 
 `;
-            case "image49":
-            case "crate shrub":return img`
-. . . . . . . c c . . . . . . . 
-. . . . c c c 6 5 c 6 6 . . . . 
-. . . . c 6 c 5 5 c 7 6 . . . . 
-. . . 6 c c 7 5 5 7 c 6 6 . . . 
-. . c c 7 7 7 7 7 5 7 7 c 6 . . 
-. 6 6 6 c 6 7 7 7 7 6 c c 6 6 . 
-c 7 7 7 6 c 7 c 6 7 6 7 7 7 7 6 
-c c c 6 6 6 c 6 6 6 6 7 7 6 6 6 
-. c c 7 6 6 6 6 6 7 7 7 7 c 6 . 
-. c 7 7 6 6 7 6 6 7 7 6 7 7 c . 
-. c c c c 7 7 6 f 7 7 c c c c . 
-. . . . c 7 c f f c 7 c . . . . 
-. . . . . 6 f e e e c . . . . . 
-. . . . . e e e e e e . . . . . 
-. . . . e e . e e . e e . . . . 
-. . . . . . . e e . . . . . . . 
-`;
-            case "image47":
-            case "crate shrub on target":return img`
-. . . . . . 6 6 6 6 . . . . . . 
-. . . . . c 6 7 7 6 c . . . . . 
-. . . . c 6 7 5 7 7 6 c . . . . 
-. . 6 6 c c 6 5 5 6 c c 6 6 . . 
-6 6 6 5 5 5 6 7 5 6 5 5 7 6 6 6 
-6 6 7 7 7 5 7 6 7 5 5 7 7 7 7 6 
-. c c c 6 6 7 6 6 5 7 6 c c 6 . 
-6 c 6 6 6 6 6 c c 6 6 6 6 6 c 6 
-6 6 7 7 7 c c c c c c 7 7 7 6 6 
-6 7 7 7 6 6 c c c c 6 6 7 7 7 6 
-c 6 c c 6 7 6 c c 6 7 6 c c 6 c 
-. c c 5 5 7 6 7 7 6 7 5 5 c c . 
-. c 6 7 5 5 6 7 7 6 5 5 7 6 c . 
-. 6 6 7 7 6 6 5 5 6 6 7 7 6 6 . 
-. . 6 6 6 6 c 6 7 6 c 6 6 6 . . 
-. . . 6 6 c . 6 6 6 . c 6 . . . 
-`;
             case "image114":
             case "floor tan dotted":return img`
 d d d d d d d d d d d d d d d d 
@@ -189,25 +151,6 @@ d d d d d d d d d d d d d d d d
 d d d d d d d d d d d d d d d d 
 1 1 d d d d d d d d d d d d d d 
 1 1 d d d d d d d d d d b d d d 
-d d d d d d 1 d d d d d d d d d 
-d d d d d d d d d d d d d d d d 
-d d d d d d d d d d d d d d b d 
-`;
-            case "image112":
-            case "target patch":return img`
-d d d d d d d d d d d d d d d d 
-d d d 1 1 d d d d d d d d b d d 
-d d d 1 1 d d d d d d d d d d d 
-d d d d 6 6 6 d d 6 d 6 d d d d 
-d d b d 7 7 7 7 7 6 7 6 d d d d 
-d d d d 6 7 7 7 7 6 7 7 7 d d d 
-d d d d 6 7 7 7 7 7 7 7 6 6 d d 
-d d d 6 7 7 7 7 7 7 7 7 7 7 d d 
-d d d 7 7 7 7 7 7 7 7 7 7 6 d d 
-d d d 6 6 7 7 7 7 7 7 7 7 6 d d 
-d d d d 6 7 7 7 7 6 7 7 6 d d d 
-1 1 d d 6 7 7 7 7 6 7 6 6 d d d 
-1 1 d d d 7 6 7 6 6 7 d b d d d 
 d d d d d d 1 d d d d d d d d d 
 d d d d d d d d d d d d d d d d 
 d d d d d d d d d d d d d d b d 
