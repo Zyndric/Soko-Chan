@@ -1204,6 +1204,81 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level microcosmos 30"
     },
+    "image241": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAODu7gAAAAAA4N3t7gAAAADu7dLtAAAAAN7S7e0OAAAA3t5t3Q4AAADeLd7UDgAAAO7e3e4OAAAA4O7uDgAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 31"
+    },
+    "image242": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAADu7g4AAAAAAN7d7gAAAADu3i7tDgAAAN7S3d0OAAAA3t5t3g4AAADeLd7UDgAAAO7e3e4OAAAA4O7uDgAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 32"
+    },
+    "image243": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAODuDgAAAAAA4N3uDgAAAADuLd3uDgAAAD493tQOAAAAfj3U3g4AAADu7dTdDgAAAODd7e4OAAAA4O7uAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 33"
+    },
+    "image244": {
+        "data": "hwQKAAgAAAAA4O4O4O7dDuDd0w7g3dQO4C4uDuDe0g7g3dcO4O3dDuDd7Q7g7u4A",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 34"
+    },
+    "image245": {
+        "data": "hwQKAAkAAAAAAAAAAAAAAODuDgAAAAAA4N3uAAAAAADgbe0OAAAAAOAt3e4AAAAA4CLU7QAAAADgLd3tAAAAAODd7e4AAAAA4O7uAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 35"
+    },
+    "image246": {
+        "data": "hwQLAAgAAAAAAAAAAO7uDu7e3Q7eMzQO3kc07u7u3e0A4NTtAODd7gDg3Q4A4O4OAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 36"
+    },
+    "image247": {
+        "data": "hwQKAAgAAADg7u4A4N3t7uDkTe3g3ePt4N3d7e40Lu7e7dMO3t3XDu7u3Q4A4O4O",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 37"
+    },
+    "image248": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAA4O4OAAAA4O7u3Q4AAADuLd3dDgAAAN7t7t0OAAAA3i3X7Q4AAADe7eTdDgAAAO4tPd0OAAAA4N3u7g4AAADg7g4AAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 38"
+    },
+    "image249": {
+        "data": "hwQKAAgAAAAAAAAA4O4OAODd7g7u1N0O3jRO7t5zLe3e493t7t3t7uDu7gAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 39"
+    },
+    "image250": {
+        "data": "hwQLAAgAAAAAAAAA4O4OAODd7g7u3dPu3jRO7d5+3e3ePd7u7k3dDuDu3Q4A4O4OAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level microcosmos 40"
+    },
+    "image251": {
+        "data": "hwQKAAgAAAAAAAAA4O7uDuDd3Q7gTd4O4EM3DuDt5A7gPd0O4N7dDgDu7g4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 16"
+    },
+    "image252": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg197tAAAAAOBN3e0AAAAA4E3T7QAAAADgTuPtAAAAAADe0+0AAAAAAO7u7gAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 17"
+    },
+    "image253": {
+        "data": "hwQLAAkAAAAAAAAAAAAAAAAAAAAAAAAA4O7u7gAAAADg3TTtAAAAAODd3e0AAAAA4N7k4wAAAADg7kftAAAAAODu3uMAAAAA4O7u7gAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 18"
+    },
+    "image254": {
+        "data": "hwQKAAgAAAAAAAAAAAAAAODu7g7gR9MO4E3dDuBNPg7g090O4O7uDgAAAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 19"
+    },
+    "image255": {
+        "data": "hwQKAAgAAAAAAAAA4O7uDuDX0w7g7d0O4N3UDuDt4g7gTd0O4N49DgDu7g4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level sokogen 20"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

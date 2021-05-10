@@ -310,25 +310,25 @@ function get_level_asset_microcosmos (lv: number) {
     } else if (lv == 30) {
         return assets.image`level microcosmos 30`
     } else if (lv == 31) {
-        return assets.image`level microban 31`
+        return assets.image`level microcosmos 31`
     } else if (lv == 32) {
-        return assets.image`level microban 32`
+        return assets.image`level microcosmos 32`
     } else if (lv == 33) {
-        return assets.image`level microban 33`
+        return assets.image`level microcosmos 33`
     } else if (lv == 34) {
-        return assets.image`level microban 34`
+        return assets.image`level microcosmos 34`
     } else if (lv == 35) {
-        return assets.image`level microban 35`
+        return assets.image`level microcosmos 35`
     } else if (lv == 36) {
-        return assets.image`level microban 36`
+        return assets.image`level microcosmos 36`
     } else if (lv == 37) {
-        return assets.image`level microban 37`
+        return assets.image`level microcosmos 37`
     } else if (lv == 38) {
-        return assets.image`level microban 38`
+        return assets.image`level microcosmos 38`
     } else if (lv == 39) {
-        return assets.image`level microban 39`
+        return assets.image`level microcosmos 39`
     } else if (lv == 40) {
-        return assets.image`level microban 40`
+        return assets.image`level microcosmos 40`
     }
     return assets.image`level microcosmos 01`
 }
@@ -525,7 +525,7 @@ function control_level () {
 }
 function return_to_level () {
     state_selection = 0
-    button_lag = 8
+    button_lag = 9
     tiles.destroySpritesOfKind(SpriteKind.Text)
     scene.centerCameraAt(screen_center_x(), screen_center_y())
     if (scroll_level()) {
@@ -619,7 +619,12 @@ function get_level_asset_sokogen (lv: number) {
     assets.image`level sokogen 12`,
     assets.image`level sokogen 13`,
     assets.image`level sokogen 14`,
-    assets.image`level sokogen 15`
+    assets.image`level sokogen 15`,
+    assets.image`level sokogen 16`,
+    assets.image`level sokogen 17`,
+    assets.image`level sokogen 18`,
+    assets.image`level sokogen 19`,
+    assets.image`level sokogen 20`
     ][lv - 1]
 }
 function box_on_tile (tx: number, ty: number) {
@@ -1141,12 +1146,12 @@ list_groupsize = [
 40,
 10,
 40,
-15,
+20,
 7,
 20,
 20,
 18,
-30
+40
 ]
 levelset = 0
 level = 1

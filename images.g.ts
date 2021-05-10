@@ -3086,6 +3086,178 @@ e e e e d 4 4 d e e
 . . . e e d d d d e 
 . . . . e e d d d e 
 `;
+            case "image241":
+            case "level microcosmos 31":return img`
+. . . e e e e e . . 
+. e e e d d d e e . 
+. e d d 2 e d e e . 
+. e d e d d 2 d e . 
+. e d 2 d d e d e . 
+. e e d e 6 d d e . 
+. . e d d d 4 e e . 
+. . e e e d d e . . 
+. . . . e e e e . . 
+`;
+            case "image242":
+            case "level microcosmos 32":return img`
+. . . e e e e e . . 
+. . . e d d d e e . 
+. e e e 2 e d e e . 
+. e d d d d 2 d e . 
+. e d e d d e d e . 
+. e d 2 d 6 d d e . 
+. e e d d e 4 e e . 
+. . e e d d d e . . 
+. . . e e e e e . . 
+`;
+            case "image243":
+            case "level microcosmos 33":return img`
+. . . e e e e . . . 
+. e e e 3 7 e e e . 
+. e d d d d d d e . 
+. e d 2 3 3 e d e . 
+. e e d e 4 4 d e . 
+. . e d d d d e e . 
+. . e e 4 e d e . . 
+. . . e d d d e . . 
+. . . e e e e e . . 
+`;
+            case "image244":
+            case "level microcosmos 34":return img`
+. . . . . . . . . . 
+. e e e e e e e e e 
+. e d d e e d d d e 
+e e d d 2 d d e d e 
+e d 3 4 e 2 7 d d e 
+e d d d 2 d d d e e 
+e e e e e e e e e . 
+. . . . . . . . . . 
+`;
+            case "image245":
+            case "level microcosmos 35":return img`
+. . . . . . . . . . 
+. e e e e e e e e . 
+. e d d d 2 d d e . 
+. e d 6 2 2 2 d e . 
+. e e d d 4 d d e . 
+. . e e d d d e e . 
+. . . e e d d e . . 
+. . . . e e e e . . 
+. . . . . . . . . . 
+`;
+            case "image246":
+            case "level microcosmos 36":return img`
+. . e e e e . . . . . 
+. . e d d e . . . . . 
+. e e 3 7 e . . . . . 
+. e d 3 4 e e e e e . 
+. e d 4 4 d 4 d d e . 
+. e d 3 3 d d d d e . 
+. e e e e d d e e e . 
+. . . . e e e e . . . 
+`;
+            case "image247":
+            case "level microcosmos 37":return img`
+. . . . . e e e e . 
+e e e e e e d d e . 
+e d 4 d d 4 d d e . 
+e d e d d 3 e d e e 
+e d d 3 d e 3 7 d e 
+e e 4 e d 2 d d d e 
+. e d d d e e e e e 
+. e e e e e . . . . 
+`;
+            case "image248":
+            case "level microcosmos 38":return img`
+. . . e e e e e . . . 
+. . e e d d d e e e . 
+. . e d d d d d d e . 
+. . e 2 e 2 e 2 d e . 
+. . e d e 7 4 d e e . 
+. e e d e d e 3 e . . 
+. e d d d d d d e . . 
+. e d d d e d d e . . 
+. e e e e e e e e . . 
+`;
+            case "image249":
+            case "level microcosmos 39":return img`
+. . . e e e e e . . 
+. e e e d d d e e . 
+. e d 4 4 3 3 d e . 
+. e d d 3 7 e d e . 
+. e e d e d d d e . 
+. . e d 4 2 d e e . 
+. . e e e d d e . . 
+. . . . e e e e . . 
+`;
+            case "image250":
+            case "level microcosmos 40":return img`
+. . . e e e e e . . . 
+. e e e d d d e e . . 
+. e d d 4 e d d e . . 
+. e d d 3 7 3 4 e e . 
+. e e 3 e d e d d e . 
+. . e d 4 d d d d e . 
+. . e e d d e e e e . 
+. . . e e e e . . . . 
+`;
+            case "image251":
+            case "level sokogen 16":return img`
+. . . . . . . . . . 
+. e e e e e e e . . 
+. e d d 3 d d e e . 
+. e d 4 4 e 3 d e . 
+. e d e 7 4 d d e . 
+. e d d 3 e d d e . 
+. e e e e e e e e . 
+. . . . . . . . . . 
+`;
+            case "image252":
+            case "level sokogen 17":return img`
+. . . . . . . . . . . 
+. . e e e e e . . . . 
+. . e 7 d d e e e . . 
+. . e d 4 4 4 d e . . 
+. . e e d 3 3 3 e . . 
+. . e d d d e d e . . 
+. . e d d d d d e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image253":
+            case "level sokogen 18":return img`
+. . . . . . . . . . . 
+. . e e e e e e e . . 
+. . e d d e e e e . . 
+. . e d d d e e e . . 
+. . e 4 d 4 7 e e . . 
+. . e 3 d e 4 d e . . 
+. . e d d 3 d 3 e . . 
+. . e e e e e e e . . 
+. . . . . . . . . . . 
+`;
+            case "image254":
+            case "level sokogen 19":return img`
+. . . . . . . . . . 
+. . e e e e e e . . 
+. . e 7 d d 3 e . . 
+. . e 4 4 4 d e . . 
+. . e 3 d e d e . . 
+. . e d d 3 d e . . 
+. . e e e e e e . . 
+. . . . . . . . . . 
+`;
+            case "image255":
+            case "level sokogen 20":return img`
+. . . . . . . . . . 
+. e e e e e e e . . 
+. e 7 d d d d e e . 
+. e d e d e 4 d e . 
+. e 3 d 4 2 d d e . 
+. e d d d e d 3 e . 
+. e e e e e e e e . 
+. . . . . . . . . . 
+`;
         }
         return null;
     })
