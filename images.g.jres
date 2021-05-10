@@ -1279,6 +1279,56 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level sokogen 20"
     },
+    "image256": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u7T5+7u7eTu7t3t7u7t7e7u09Tt7t1D7e7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 11"
+    },
+    "image257": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7t7d7u7ePdTj7i7t7e7eTefu3u3u7t7t7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 12"
+    },
+    "image258": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u4+7u7e3dTufkPe7t493e7uTe7u7t3u7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 13"
+    },
+    "image259": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u7d7e7eNNLj3t7t7d59Te3u7t3u7u7u7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 14"
+    },
+    "image260": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u4+fe7uPd7u7k3U7u7e7e7u3tTt7j7d7e7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 15"
+    },
+    "image261": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u7u3u3e7d3t3u1N7T4t3e5+5N3u7tPt7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 16"
+    },
+    "image262": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u7u3e5+PdTu3t1E7e7u0+3u7u3u7u7j7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 17"
+    },
+    "image263": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u7u7u7u093t7u3S7e7dROfu7j3u7u7d7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 18"
+    },
+    "image264": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u7ufu3u7t7t7t1N4+7tTeTuPdPt7u7u7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 19"
+    },
+    "image265": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7t7d7e7eJD3u3t7d7X5N3u3u3j7t7t7d7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 20"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

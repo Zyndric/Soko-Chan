@@ -411,7 +411,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
 function show_credits () {
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban (easy)          " + ":   by David Skinner     " + "Murase (tricky)       " + ":   by Yoshio Murase     " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Sokogen (tricky)         " + ":   by Jacques Duthen    " + "Easy                     " + ":   some by Moobot   ", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Microban (easy)          " + ":   by David Skinner     " + "Murase (tricky)       " + ": gener.by Yoshio Murase " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Sokogen (tricky)         " + ": genr.by Jacques Duthen " + "Easy                     " + ":   some by Moobot   ", DialogLayout.Full)
     game.showLongText("---  Level  Credits  --- " + "                         " + "Takaken (hard)           " + ": by Kenichiro Takahashi " + "Cantrip (tricky)         " + ":   by David Holland     " + "Blocks+co (easy-tricky)  " + ":   by Dries de Clercq   " + "Petitesse (?)            " + ":   by niwa              " + "Microcosmos (?)          " + ":   by Aymeric du Peloux ", DialogLayout.Full)
 }
 /**
@@ -873,6 +873,26 @@ function get_level_asset_murase (lv: number) {
         return assets.image`level murase 09`
     } else if (lv == 10) {
         return assets.image`level murase 10`
+    } else if (lv == 11) {
+        return assets.image`level murase 11`
+    } else if (lv == 12) {
+        return assets.image`level murase 12`
+    } else if (lv == 13) {
+        return assets.image`level murase 13`
+    } else if (lv == 14) {
+        return assets.image`level murase 14`
+    } else if (lv == 15) {
+        return assets.image`level murase 15`
+    } else if (lv == 16) {
+        return assets.image`level murase 16`
+    } else if (lv == 17) {
+        return assets.image`level murase 17`
+    } else if (lv == 18) {
+        return assets.image`level murase 18`
+    } else if (lv == 19) {
+        return assets.image`level murase 19`
+    } else if (lv == 20) {
+        return assets.image`level murase 20`
     }
     return assets.image`level murase 01`
 }
@@ -1144,7 +1164,7 @@ list_levelsets = [
 list_groupsize = [
 11,
 40,
-10,
+20,
 40,
 20,
 7,
