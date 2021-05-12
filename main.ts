@@ -415,8 +415,8 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
 function show_credits () {
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Tutorial (easy)          " + ":   by Moobot            " + "Microban (easy)          " + ":   by David Skinner     " + "Blocks+co (easy/tricky)  " + ":   by Dries de Clercq   " + "Microcosmos (tricky)     " + ":   by Aymeric du Peloux " + "Cantrip (tricky)         " + ":   by David Holland", DialogLayout.Full)
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Takaken (hard)           " + ": by Kenichiro Takahashi " + "Sokogen (tricky)         " + ": genr.by Jacques Duthen " + "Murase (tricky)          " + ": gener.by Yoshio Murase " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Petitesse (tricky)       " + ":   by niwa", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Tutorial                 " + ":   by Moobot            " + "Microban (easy)          " + ":   by David Skinner     " + "Blocks+co (easy/tricky)  " + ":   by Dries de Clercq   " + "Microcosmos (tricky)     " + ":   by Aymeric du Peloux " + "Cantrip (tricky)         " + ":   by David Holland", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Takaken (hard)           " + ": by Kenichiro Takahashi " + "Sokogen (easy)         " + ": genr.by Jacques Duthen " + "Murase (tricky)          " + ": gener.by Yoshio Murase " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Petitesse (tricky)       " + ":   by niwa", DialogLayout.Full)
 }
 /**
  * Check win condition and manage buttons in a continuous loop.
@@ -818,12 +818,14 @@ function control_selection () {
         menu_selection += -1
         menu_selection = (menu_selection + 4) % 4
         hilight_menu_item()
+        music.footstep.play()
         pressed_up = button_lag
     }
     if (controller.down.isPressed() && !(pressed_down)) {
         menu_selection += 1
         menu_selection = (menu_selection + 4) % 4
         hilight_menu_item()
+        music.footstep.play()
         pressed_down = button_lag
     }
     if (menu_selection == 0) {
@@ -834,6 +836,7 @@ function control_selection () {
                 select_level = list_groupsize[select_levelset]
             }
             draw_selection()
+            music.knock.play()
             pressed_left = button_lag
         }
         if (controller.right.isPressed() && !(pressed_right)) {
@@ -843,6 +846,7 @@ function control_selection () {
                 select_level = list_groupsize[select_levelset]
             }
             draw_selection()
+            music.knock.play()
             pressed_right = button_lag
         }
     }
@@ -851,12 +855,14 @@ function control_selection () {
             select_level += -1
             select_level = (select_level - 1 + list_groupsize[select_levelset]) % list_groupsize[select_levelset] + 1
             draw_selection()
+            music.thump.play()
             pressed_left = button_lag
         }
         if (controller.right.isPressed() && !(pressed_right)) {
             select_level += 1
             select_level = (select_level - 1 + list_groupsize[select_levelset]) % list_groupsize[select_levelset] + 1
             draw_selection()
+            music.thump.play()
             pressed_right = button_lag
         }
     }
