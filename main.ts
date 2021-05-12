@@ -415,8 +415,8 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     pressed_left = 0
 })
 function show_credits () {
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Tutorial                 " + ":   by Moobot            " + "Microban (easy)          " + ":   by David Skinner     " + "Blocks+co (easy/tricky)  " + ":   by Dries de Clercq   " + "Microcosmos (tricky)     " + ":   by Aymeric du Peloux " + "Cantrip (tricky)         " + ":   by David Holland", DialogLayout.Full)
-    game.showLongText("---  Level  Credits  --- " + "                         " + "Takaken (hard)           " + ": by Kenichiro Takahashi " + "Sokogen (easy)         " + ": genr.by Jacques Duthen " + "Murase (tricky)          " + ": gener.by Yoshio Murase " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Petitesse (tricky)       " + ":   by niwa", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Tutorial                 " + ":   by Moobot            " + "Microban (easy)          " + ":   by David Skinner     " + "Blocks+co (easy/tricky)  " + ":   by Dries de Clercq   " + "Microcosmos (tricky)     " + ":   by Aymeric du Peloux " + "Cantrip (tricky/hard)    " + ":   by David Holland", DialogLayout.Full)
+    game.showLongText("---  Level  Credits  --- " + "                         " + "Takaken (hard)           " + ": by Kenichiro Takahashi " + "Sokogen (easy)           " + ": genr.by Jacques Duthen " + "Murase (tricky)          " + ": gener.by Yoshio Murase " + "Nabokosmos (hard)        " + ":   by Aymeric du Peloux " + "Petitesse (tricky)       " + ":   by niwa", DialogLayout.Full)
 }
 /**
  * Check win condition and manage buttons in a continuous loop.
