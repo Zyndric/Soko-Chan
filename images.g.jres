@@ -124,11 +124,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level murase 01"
     },
-    "image59": {
-        "data": "hwQKAAgAAAAAAAAA7u7u7u7u7u7e3dPu3t7U7j7T5O5+Tu3u3t3t7u7u7u4AAAAA",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "level murase 02"
-    },
     "image60": {
         "data": "hwQKAAgAAAAAAAAA7u7u7u7d7u7u3U3t7tLT497U7u5+3e7u7u7u7u7u7u4AAAAA",
         "mimeType": "image/x-mkcd-f4",
@@ -1373,6 +1368,11 @@
         "data": "hwQLAAgAAAAAAAAAAAAAAODuDgDu1+7u3k0+495NLePe1DTi7u7d7QDg7u4AAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "level easy 04"
+    },
+    "image59": {
+        "data": "hwQKAAgAAAAAAAAA7u7u7u7u7u7e3dPu3t7U7j7T5O5+Tu3u3t3u7u7u7u4AAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "level murase 02"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",

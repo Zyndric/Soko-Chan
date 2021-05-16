@@ -374,17 +374,6 @@ e e e e e e e e e . .
 . e e e e e e e e . 
 . e e e e e e e e . 
 `;
-            case "image59":
-            case "level murase 02":return img`
-. e e e e e e e e . 
-. e e d d 3 7 d e . 
-. e e d e 3 e d e . 
-. e e d d d 4 d e . 
-. e e 3 4 4 d d e . 
-. e e d d e e e e . 
-. e e e e e e e e . 
-. e e e e e e e e . 
-`;
             case "image60":
             case "level murase 03":return img`
 . e e e e e e e e . 
@@ -3446,6 +3435,17 @@ e e e d e e e e d e
 . . . e 3 2 3 d e . . 
 . . . e 3 3 2 d e . . 
 . . . e e e e e e . . 
+`;
+            case "image59":
+            case "level murase 02":return img`
+. e e e e e e e e . 
+. e e d d 3 7 d e . 
+. e e d e 3 e d e . 
+. e e d d d 4 d e . 
+. e e 3 4 4 d e e . 
+. e e d d e e e e . 
+. e e e e e e e e . 
+. e e e e e e e e . 
 `;
         }
         return null;
