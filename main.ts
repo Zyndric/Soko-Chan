@@ -448,7 +448,12 @@ function all_boxes_fit () {
             return 0
         }
     }
-    return 1
+    if (sprites.allOfKind(SpriteKind.Crate).length > 0) {
+        if (count_pushes > 0) {
+            return 1
+        }
+    }
+    return 0
 }
 function undo_move () {
     if (undo.length > 0) {
