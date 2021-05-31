@@ -370,7 +370,7 @@ function ask_for_next_level () {
     if (blockSettings.exists(level_best_id(levelset, level))) {
         record = blockSettings.readNumberArray(level_best_id(levelset, level))
         str_record = "Your best:    " + record[0] + "/" + record[1]
-        if (count_moves < record[0]) {
+        if (count_moves < record[0] || record[0] == 0) {
             str_score_action = "New best! "
             blockSettings.writeNumberArray(level_best_id(levelset, level), [count_moves, count_pushes])
         }
@@ -401,7 +401,7 @@ function walk (dtx: number, dty: number) {
 function draw_selection () {
     menu_items[0].setText("Group: " + list_levelsets[select_levelset])
     menu_items[1].setText("Level: " + convertToText(select_level))
-    if (blockSettings.exists(level_best_id(select_levelset, select_level))) {
+    if (blockSettings.exists(level_best_id(select_levelset, select_level)) && blockSettings.readNumberArray(level_best_id(select_levelset, select_level))[0] > 0) {
         text_best.setText("" + blockSettings.readNumberArray(level_best_id(select_levelset, select_level))[0] + "/" + blockSettings.readNumberArray(level_best_id(select_levelset, select_level))[1])
     } else {
         text_best.setText("")

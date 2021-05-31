@@ -2,7 +2,7 @@
 
 This is a Sokoban clone. Built in MakeCode Arcade. Can be flashed onto a Meowbit console. I built this in order to play Sokoban on the go.
 
-[Try it out online.](https://zyndric.github.io/Soko-Chan/)
+[Try it out online.](https://zyndric.github.i1o/Soko-Chan/)
 
 Game features:
 
@@ -29,8 +29,7 @@ Except for the tutorial puzzles, all puzzles were authored by other people, who 
 
 - "Microcosmos" and "Nabokosmos" by Aymeric du Peloux. A set of 40 puzzles each, which I included whole. There are a lot more puzzles by Aymeric du Peloux, published in his Cosmos series: https://aymericdupeloux.wixsite.com/sokoban/home/categories/cosmos-sets
 
-- "Cantrip" by David Holland. A set of 20 puzzles, which I included whole:
-https://web.archive.org/web/20040806174456/http://www.clickfest88.freeserve.co.uk/cantrip/index.html
+- "Cantrip" by David Holland. A set of 20 puzzles, which I included whole: https://web.archive.org/web/20040806174456/http://www.clickfest88.freeserve.co.uk/cantrip/index.html
 
 - "Takaken" by Kenichiro Takahashi. A set of 7 puzzles, which I included whole.
 
@@ -38,7 +37,7 @@ https://web.archive.org/web/20040806174456/http://www.clickfest88.freeserve.co.u
 
 - "Murase" by Yoshio Murase. A set of 52 computer-generated puzzles, of which I included the first 20: https://web.archive.org/web/20021019225034/http://www.ne.jp:80/asahi/ai/yoshio/sokoban/auto52/auto52.htm
 
-- "Petitesse" by niwa. A set of 18 puzzles, which I included whole.
+- "Petitesse" by niwa (sokoniwa@yahoo.com). A set of 18 puzzles, which I included whole.
 
 
 # How to edit
