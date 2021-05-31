@@ -19,6 +19,10 @@ Game features:
 * varying graphics for different puzzle sets
 * puzzles of up to 11x9 tiles show without scrolling (up to 10x7 tiles of walkable area)
 
+Known issues:
+
+* Levels break and banners lag when the user opens the system menu during the game or level introduction. This is because the system menu continues to execute any running functions (that may be waiting on a "pause" call), but has all variables switched away for the time being.
+
 # Levels
 
 Except for the tutorial puzzles, all puzzles were authored by other people, who published them publicly, and retain the copyright on those levels. I selected mostly small puzzles that lend themselves to the constrained size of the display. That does not mean the puzzles be easy. I like to think the current selection is an interesting mix of easy and difficult puzzles.

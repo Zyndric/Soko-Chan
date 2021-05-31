@@ -995,6 +995,11 @@ function realize_tilemap () {
     scene.setTile(14, list_skin_sprites[0], true)
 }
 /**
+ * When the user opens the system menu, it does some sort of context switch, but continues executing any functions. When any function waits on a "pause" return, the system menu opens in between, and the "pause" returns, any succeeding commands execute right then, even if they cannot do much, because the variables have been switched away.
+ * 
+ * This results in broken levels and banners when the user opens the system menu during the game or level introduction.
+ */
+/**
  * Variables
  * 
  * setup scope
