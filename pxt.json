@@ -21,7 +21,8 @@
         "images.g.jres",
         "images.g.ts",
         "main.py",
-        "askNextLevel.ts"
+        "askNextLevel.ts",
+        "getSokobanRecord.ts"
     ],
     "testFiles": [
         "test.ts"
