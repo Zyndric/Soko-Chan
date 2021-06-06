@@ -369,7 +369,12 @@ function ask_for_next_level () {
     str_score_action = ""
     if (blockSettings.exists(level_best_id(levelset, level))) {
         record = blockSettings.readNumberArray(level_best_id(levelset, level))
-        str_record = "Your best:    " + record[0] + "/" + record[1]
+        str_record = "Your best:    " + record[0] + "/" + record[1] + game.isSokobanRecord(
+        levelset,
+        level - 1,
+        record[0],
+        record[1]
+        )
         if (count_moves < record[0] || record[0] == 0) {
             str_score_action = "New best! "
             blockSettings.writeNumberArray(level_best_id(levelset, level), [count_moves, count_pushes])
@@ -377,7 +382,12 @@ function ask_for_next_level () {
     } else {
         blockSettings.writeNumberArray(level_best_id(levelset, level), [count_moves, count_pushes])
     }
-    return game.askNextLevel("Moves/Pushes: " + count_moves + "/" + count_pushes, str_record, str_score_action)
+    return game.askNextLevel("Moves/Pushes: " + count_moves + "/" + count_pushes + game.isSokobanRecord(
+    levelset,
+    level - 1,
+    count_moves,
+    count_pushes
+    ), str_record, str_score_action)
 }
 function hilight_menu_item () {
     for (let t = 0; t <= 3; t++) {
@@ -402,7 +412,12 @@ function draw_selection () {
     menu_items[0].setText("Group: " + list_levelsets[select_levelset])
     menu_items[1].setText("Level: " + convertToText(select_level))
     if (blockSettings.exists(level_best_id(select_levelset, select_level)) && blockSettings.readNumberArray(level_best_id(select_levelset, select_level))[0] > 0) {
-        text_best.setText("" + blockSettings.readNumberArray(level_best_id(select_levelset, select_level))[0] + "/" + blockSettings.readNumberArray(level_best_id(select_levelset, select_level))[1])
+        text_best.setText("" + blockSettings.readNumberArray(level_best_id(select_levelset, select_level))[0] + "/" + blockSettings.readNumberArray(level_best_id(select_levelset, select_level))[1] + game.isSokobanRecord(
+        select_levelset,
+        select_level - 1,
+        blockSettings.readNumberArray(level_best_id(select_levelset, select_level))[0],
+        blockSettings.readNumberArray(level_best_id(select_levelset, select_level))[1]
+        ))
     } else {
         text_best.setText("")
     }
