@@ -328,6 +328,11 @@ namespace game {
             return "++"
         }
 
+        // newly discovered push record
+        if (record.length < 4 && (pushes < record[1])) {
+            return "++"
+        }
+
         // no record
         return ""
     }
