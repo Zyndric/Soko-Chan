@@ -29,7 +29,7 @@ Except for the tutorial puzzles, all puzzles were authored by other people, who 
 
 - "Microban" by David Skinner. A set of 155 puzzles, of which I included the first 52. There are a lot more puzzles by David Skinner, published in his "Microban" and "Sasquatch" series: https://web.archive.org/web/20130606220354/http://users.bentonrea.com:80/~sasquatch/sokoban
 
-- "Blocks" contains levels of "Blocks" and "Various" by Dries de Clercq. Two sets of 10 and 24 puzzles, respectively. I included all puzzles of "Blocks", and the first 10 puzzles of "Various".
+- "Blocks" contains levels of "Blocks" and "Various" by Dries de Clercq. Two sets of 11 and 24 puzzles, respectively. I included 10 puzzles of "Blocks" (I forgot to add the fifth puzzle), and the first 10 puzzles of "Various".
 
 - "Microcosmos" and "Nabokosmos" by Aymeric du Peloux. A set of 40 puzzles each, which I included whole. There are a lot more puzzles by Aymeric du Peloux, published in his Cosmos series: https://aymericdupeloux.wixsite.com/sokoban/home/categories/cosmos-sets
 
